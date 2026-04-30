@@ -742,3 +742,12 @@ html.dark .splide__arrow {
   background: rgba(255,255,255,0.15);
 }
 html.dark .splide__arrow svg { fill: white; }
+
+/* ---- Why Choose Us Cards ---- */
+.why-choose-card {
+  box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.13);
+}
+
+html.dark .why-choose-card {
+  box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.15);
+}
