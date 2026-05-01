@@ -9,8 +9,6 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com"></script>
   <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js" type="module"></script>
-  <script src="/Components/Common/header.js" defer></script>
-  <script src="index.js" defer></script>
 
 
   <!-- Splide CSS -->
@@ -27,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="assets/style/global.css" />
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 
 </head>
 
@@ -37,7 +35,7 @@
   <nav class="navbar md:hidden bg-white shadow-md relative z-[100]">
     <div class="container mx-auto flex items-center justify-between py-3 px-4">
       <!-- Logo -->
-      <a href="/" class="flex items-center">
+      <a href="./index.html" class="flex items-center">
         <img src="assets/images/logo/tequila_pos_logo_transparent.png"
           data-light-logo="assets/images/logo/tequila_pos_logo_transparent.png"
           data-dark-logo="assets/images/logo/tequila_dark_logo.png" class="theme-logo h-20" alt="Logo" />
@@ -88,7 +86,7 @@
           <a href="#features" class="block px-4 py-3 hover:bg-gray-50 rounded-lg font-bold text-gray-800">Features</a>
           <a href="#hardware" class="block px-4 py-3 hover:bg-gray-50 rounded-lg font-bold text-gray-800">Hardware</a>
           <a href="#pricing" class="block px-4 py-3 hover:bg-gray-50 rounded-lg font-bold text-gray-800">Pricing</a>
-          <a href="/light/resourse.html"
+          <a href="./index.html#faq"
             class="block px-4 py-3 hover:bg-gray-50 rounded-lg font-bold text-gray-800">Resources</a>
         </div>
 
@@ -126,7 +124,7 @@
 
       <!-- Left: Logo & Nav -->
       <div class="flex items-center gap-4">
-        <a href="/index.html">
+        <a href="./index.html">
           <img src="assets/images/logo/tequila_pos_logo_transparent.png"
             data-light-logo="assets/images/logo/tequila_pos_logo_transparent.png"
             data-dark-logo="assets/images/logo/tequila_dark_logo.png" alt="Logo"
@@ -158,10 +156,10 @@
             </div>
           </div>
 
-          <a href="/feature.html" class="font-bold text-xl text-gray-800 hover:text-blue-600">Feature</a>
-          <a href="/hardware.html" class="font-bold text-xl text-gray-800 hover:text-blue-600">Hardware</a>
-          <a href="/pricing.html" class="font-bold text-xl text-gray-800 hover:text-blue-600">Pricing</a>
-          <a href="/resources.html" class="font-bold text-xl text-gray-800 hover:text-blue-600">Resources</a>
+          <a href="./index.html#features" class="font-bold text-xl text-gray-800 hover:text-blue-600">Feature</a>
+          <a href="./index.html#features" class="font-bold text-xl text-gray-800 hover:text-blue-600">Hardware</a>
+          <a href="./index.html#features" class="font-bold text-xl text-gray-800 hover:text-blue-600">Pricing</a>
+          <a href="./index.html#faq" class="font-bold text-xl text-gray-800 hover:text-blue-600">Resources</a>
         </div>
       </div>
 
@@ -267,8 +265,8 @@
   </section>
 
   <!-- Features Section -->
-  <section id="features"
-    class=" group relative pt-2 w-full min-h-screen md:h-[90vh] bg-white overflow-hidden group cursor-pointer">
+  <section id="core-functionality"
+    class="group relative pt-2 w-full min-h-screen md:h-[90vh] bg-white overflow-hidden group cursor-pointer">
     <div class="container mx-auto px-4 md:px-2">
       <!-- Section Header -->
       <div class="text-center md:mb-20 mb-6">
@@ -286,31 +284,65 @@
         </div>
       </div>
 
-      <!-- Feature Cards -->
+      <!-- Touch slider with image + content -->
       <div class="absolute top-40 md:top-25 right-0 p-6
             opacity-0 translate-x-20 -translate-y-20
-            transition-all duration-1000  ease-[cubic-bezier(0.4,0,0.2,1)]
+            transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]
             group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0">
-        <div class="bg-white overflow-hidden">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 lg:p-12">
-            <div class="flex flex-col justify-center">
-              <h1 class="text-black text-2xl md:text-4xl w-full md:w-2/3 font-bold mb-6">
-                Real-Time Inventory Management
-              </h1>
-              <p class="text-[#4f4f4f] w-full md:w-2/3 text-base md:text-xl font-normal">
-                Real-time customer inventory management enables businesses to
-                monitor and update stock levels instantly as sales or
-                restocking occurs. This ensures accurate product availability,
-                reduces overstocking or stockouts, and enhances customer
-                satisfaction by providing up-to-date inventory data across all
-                channels. It also supports faster decision-making and improves
-                operational efficiency.
-              </p>
-            </div>
-            <div class="flex justify-end items-center">
-              <img class="w-full max-w-[397px] h-auto rounded-[48px]" src="assets/images/home/real-time.png"
-                alt="Inventory Management" />
-            </div>
+        <div id="core-feature-slider" class="splide mt-8 md:mt-12">
+          <div class="splide__track">
+            <ul class="splide__list">
+            <li class="splide__slide">
+              <div class="core-slide-panel grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 lg:p-12 items-center">
+                <div class="flex flex-col justify-center">
+                  <h3 class="text-black text-2xl md:text-4xl w-full md:w-2/3 font-bold mb-6">
+                    Real-Time Inventory Management
+                  </h3>
+                  <p class="text-[#4f4f4f] w-full md:w-2/3 text-base md:text-xl font-normal">
+                    Track and update stock levels instantly as sales happen, reduce stockouts, and improve decision-making with accurate live inventory visibility.
+                  </p>
+                </div>
+                <div class="flex justify-end items-center">
+                  <img class="w-full max-w-[397px] h-auto rounded-[48px]" src="assets/images/home/real-time.png"
+                    alt="Real-Time Inventory Management" />
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div class="core-slide-panel grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 lg:p-12 items-center">
+                <div class="flex flex-col justify-center">
+                  <h3 class="text-black text-2xl md:text-4xl w-full md:w-2/3 font-bold mb-6">
+                    Cloud-Based Reporting
+                  </h3>
+                  <p class="text-[#4f4f4f] w-full md:w-2/3 text-base md:text-xl font-normal">
+                    Access sales, performance, and trend reports from anywhere with secure cloud sync and real-time business insights.
+                  </p>
+                </div>
+                <div class="flex justify-end items-center">
+                  <img class="w-full max-w-[397px] h-auto rounded-[48px]" src="assets/images/home/cloud-base.png"
+                    alt="Cloud-Based Reporting" />
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide">
+              <div class="core-slide-panel grid grid-cols-1 md:grid-cols-2 gap-6 p-6 md:p-8 lg:p-12 items-center">
+                <div class="flex flex-col justify-center">
+                  <h3 class="text-black text-2xl md:text-4xl w-full md:w-2/3 font-bold mb-6">
+                    Customer Relationship Tools
+                  </h3>
+                  <p class="text-[#4f4f4f] w-full md:w-2/3 text-base md:text-xl font-normal">
+                    Build loyalty with customer history, targeted offers, and personalized service workflows that improve repeat business.
+                  </p>
+                </div>
+                <div class="flex justify-end items-center">
+                  <img class="w-full max-w-[397px] h-auto rounded-[48px]" src="assets/images/home/cust-rel.jpg"
+                    alt="Customer Relationship Tools" />
+                </div>
+              </div>
+            </li>
+            </ul>
           </div>
         </div>
       </div>
@@ -557,7 +589,7 @@
         </div>
 
         <!-- IMAGE SLIDER -->
-        <div class="splide w-full md:w-auto" id="feature-carousel">
+        <div class="splide w-full md:w-auto relative" id="feature-carousel">
           <div class="splide__track">
             <ul class="splide__list">
               <li class="splide__slide flex justify-center">
@@ -577,13 +609,13 @@
           </div>
 
           <!-- Arrows -->
-          <div class="splide__arrows flex justify-between mt-4">
+          <div class="splide__arrows">
             <button
-              class="splide__arrow splide__arrow--prev bg-gray-600 text-white font-bold p-4 text-2xl rounded-full shadow hover:bg-gray-700">
+              class="splide__arrow splide__arrow--prev">
               ‹
             </button>
             <button
-              class="splide__arrow splide__arrow--next bg-gray-600 text-white font-bold p-4 text-2xl rounded-full shadow hover:bg-gray-700">
+              class="splide__arrow splide__arrow--next">
               ›
             </button>
           </div>
@@ -596,7 +628,7 @@
   <!-- FEATURE DATA -->
   <script>
     const featureData = [
-      { title: "Reader for magstripe", desc: "Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack." },
+      { title: "PAX A920Pro", desc: "Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack." },
       { title: "MagTek DynaFlex", desc: "Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright." },
       { title: "PAX A920", desc: "Compact, tamper-resistant dock for seamless self-service swiping." },
       { title: "PAX A35", desc: "Secure kiosk stand for efficient customer self-service transactions." }
@@ -608,17 +640,15 @@
     document.addEventListener('DOMContentLoaded', function () {
       const splide = new Splide('#feature-carousel', {
         type: 'loop',
-        perPage: 1,          // default slides per view (desktop)
+        perPage: 1,
+        pagination: false,
         arrows: true,
-        gap: '1rem',         // optional spacing between slides
+        gap: '1rem',
         breakpoints: {
-          768: {             // screens smaller than 768px (mobile)
-            perPage: 1,      // show 1 slide per view on mobile
-            gap: '10px'    // smaller gap on mobile
+          768: {
+            perPage: 1,
+            gap: '10px'
           }
-
-
-
         }
       });
 
@@ -633,16 +663,83 @@
       updateText(0);
       splide.on('move', (newIndex) => updateText(newIndex));
       splide.mount();
+
+      const coreFeatureSliderEl = document.getElementById('core-feature-slider');
+      if (coreFeatureSliderEl) {
+        new Splide('#core-feature-slider', {
+          type: 'loop',
+          perPage: 1,
+          perMove: 1,
+          drag: true,
+          pagination: true,
+          arrows: false,
+          autoplay: true,
+          interval: 2800,
+          pauseOnHover: true,
+          pauseOnFocus: true,
+          speed: 700,
+          easing: 'cubic-bezier(0.4,0,0.2,1)',
+        }).mount();
+      }
     });
   </script>
 
   <style>
-    /* keeps arrows vertically centered over the image column */
-    #feature-carousel .feature-arrows {
-      top: 50%;
-      transform: translateY(-50%);
+    #feature-carousel .splide__arrows {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 20;
     }
 
+    #feature-carousel .splide__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 34px;
+      height: 34px;
+      border-radius: 9999px;
+      background: #d7d7d7;
+      color: #ffffff;
+      border: none;
+      font-size: 26px;
+      line-height: 1;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: auto;
+      cursor: pointer;
+    }
+
+    #feature-carousel .splide__arrow--prev {
+      left: 8px;
+    }
+
+    #feature-carousel .splide__arrow--next {
+      right: 8px;
+    }
+
+    #feature-carousel .splide__arrow svg {
+      display: none;
+    }
+
+    #core-feature-slider .splide__track {
+      overflow: hidden;
+    }
+
+    #core-feature-slider .core-slide-panel {
+      opacity: 0;
+      transform: translateX(56px);
+      transition: opacity 700ms ease, transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    #core-feature-slider .splide__slide.is-active .core-slide-panel {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    /* Dark mode theme */
     body {
       transition: background-color 0.25s ease, color 0.25s ease;
     }
@@ -672,10 +769,24 @@
       color: #c9c9c9 !important;
     }
 
+    body.dark-theme h1 span:first-child,
+    body.dark-theme h2 span:first-child {
+      color: #d6a63a !important;
+    }
+
+    /* Hero section dark-mode palette only (no animation changes) */
     body.dark-theme .hero-section,
     body.dark-theme .hero-section>div,
+    body.dark-theme .hero-section .md\:hidden,
+    body.dark-theme .hero-section .relative.group,
     body.dark-theme .hero-section .group.bg-white.overflow-hidden {
       background-color: #141414 !important;
+    }
+
+    body.dark-theme .hero-section h1,
+    body.dark-theme .hero-section h2,
+    body.dark-theme .hero-section .text-white {
+      color: #f5f5f5 !important;
     }
 
     body.dark-theme .hero-section .text-\[\#4f4f4f\] {
@@ -699,13 +810,17 @@
       background-color: #f3f3f3 !important;
     }
 
+    body.dark-theme .hero-section a.bg-black {
+      background-color: #f3f3f3 !important;
+    }
+
     body.dark-theme .hero-section a.bg-black span.text-white {
       color: #141414 !important;
     }
 
     body.dark-theme .hero-section a[href="#contact"] {
-      border-color: #f5f5f5 !important;
-      color: #f5f5f5 !important;
+      border-color: #f3f3f3 !important;
+      color: #f3f3f3 !important;
     }
 
     body.dark-theme .hero-section a[href="#contact"]:hover {
@@ -713,24 +828,16 @@
       color: #141414 !important;
     }
 
-    body.dark-theme .hero-section nav,
-    body.dark-theme .hero-section .navbar {
-      background-color: #141414 !important;
+    body.dark-theme .border-gray-300,
+    body.dark-theme .border-gray-100 {
+      border-color: #343434 !important;
+    }
+
+    body.dark-theme input {
+      background: #1d1d1d !important;
+      color: #f2f2f2 !important;
     }
   </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      new Splide("#feature-carousel", {
-        type: "loop",
-        perPage: 1,
-        pagination: false,
-        arrows: true,
-        autoplay: false,
-        gap: "1rem",
-      }).mount();
-    });      
-  </script>
   <!-- faq  -->
   <section id="faq" class="bg-white py-12 md:py-20">
     <div class="container mx-auto px-4 md:px-6 overflow-x-hidden">
@@ -984,11 +1091,15 @@
   <!-- Splide JS -->
   <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="../assets/js/navbar.js"></script>
-  <script src="../assets/js/faq-toggle.js"></script>
-  <script src="../assets/js/footer-accordion.js"></script>
+  <script src="assets/js/navbar.js"></script>
+  <script src="assets/js/faq-toggle.js"></script>
+  <script src="assets/js/footer-accordion.js"></script>
 
   <script>
+    AOS.init({
+      once: false,
+    });
+
     const themeToggle = document.getElementById("dark-mode-toggle");
     const themeToggleControl = document.getElementById("theme-toggle-control");
     const savedTheme = localStorage.getItem("tequila-theme");
@@ -1023,12 +1134,6 @@
           themeToggle.checked = !themeToggle.checked;
           applyTheme(themeToggle.checked);
         }
-      });
-    }
-
-    if (window.AOS && typeof AOS.init === "function") {
-      AOS.init({
-        once: false,
       });
     }
 

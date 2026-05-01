@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tequila POS - Smart POS Solutions</title>
+    <script src="../assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!--for Cash Discount slider-->
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Open+Sans:wght@700&display=swap");
+      html, body {
+        overflow-x: hidden;
+      }
       body {
         font-family: "Inter", sans-serif;
-        background-color: #242424;
       }
       /* Hide scrollbar for a cleaner look */
       .hide-scrollbar::-webkit-scrollbar {
@@ -19,6 +22,59 @@
       .hide-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+      }
+      /* Performance optimization for cards */
+      [data-img] {
+        will-change: transform;
+      }
+
+      /* ---- Light defaults ---- */
+      .mega-menu { background-color: #ffffff; }
+      #mobile-menu { background-color: #ffffff; }
+      #dropdownBtn { background-color: #f3f4f6; }
+      #dropdownMenu { background-color: #f9fafb; border-color: #e5e7eb; }
+
+      /* ---- Dark mode overrides ---- */
+      html.dark body    { background-color: #1c1c1c; color: #ffffff; }
+      html.dark footer  { background-color: #1c1c1c; }
+      html.dark section { background-color: #1c1c1c; }
+
+      html.dark .logo-dark { display: block; }
+      html.dark .logo-light { display: none; }
+      
+      html.dark .mega-menu { background-color: #000000; }
+      html.dark #mobile-menu { background-color: #1c1c1c; color: #ffffff; }
+      html.dark #dropdownBtn { background-color: #1f2937; color: #ffffff; }
+      html.dark #dropdownMenu { background-color: #111827; border-color: #374151; }
+
+      /* Text color overrides for dark mode */
+      html.dark .text-black,
+      html.dark .text-gray-900 { color: #ffffff; }
+      html.dark .text-[#505050],
+      html.dark .text-[#4F4F4F],
+      html.dark .text-gray-500,
+      html.dark .text-gray-600,
+      html.dark .text-gray-700,
+      html.dark .text-gray-800 { color: #cdcdcd; }
+      
+      /* Background and border overrides for dark mode */
+      html.dark .bg-white { background-color: #1c1c1c; }
+      html.dark .bg-gray-100,
+      html.dark .bg-gray-200 { background-color: #2c2c2c; }
+      html.dark .border-gray-100,
+      html.dark .border-gray-200,
+      html.dark .border-gray-300 { border-color: #444444; }
+
+      /* Tabs and Buttons */
+      html.dark button[data-tab] {
+        background-color: #2c2c2c;
+        color: #ffffff;
+        border-color: #444444;
+      }
+      html.dark button[data-tab].bg-black {
+        background-color: #ffffff;
+        color: #000000;
+        border-color: #ffffff;
       }
     </style>
     <!-- Custom styles for slider buttons -->
@@ -55,6 +111,91 @@
         -webkit-overflow-scrolling: touch;
       }
     </style>
+
+     <style>
+      /* ---- Light defaults ---- */
+      /* body { background-color: #ffffff; color: #000000; }
+      footer { background-color: #ffffff; }
+      section { background-color: #ffffff; }
+      
+      .logo-dark { display: none; }
+      .logo-light { display: block; } */
+
+      /* Light mode defaults */
+     
+      .mega-menu { background-color: #ffffff; }
+      #mobile-menu { background-color: #ffffff; }
+      #dropdownBtn { background-color: #f3f4f6; }
+      #dropdownMenu { background-color: #f9fafb; border-color: #e5e7eb; }
+
+      .slide-card  { background-color: #fafafa; }
+
+      .page-accent { color: #505050; }
+    .page-main   { color: #000000; }
+    .page-sub    { color: #4f4f4f; }
+    .page-btn { background-color: #000000; color: #ffffff; }
+      
+      /* ---- Dark mode overrides ---- */
+      html.dark body    { background-color: #1c1c1c; color: #ffffff; }
+      html.dark footer  { background-color: #1c1c1c; }
+      html.dark section { background-color: #1c1c1c; }
+
+      html.dark .slide-card  { background-color: #373737; }
+      
+      html.dark .logo-dark { display: block; }
+      html.dark .logo-light { display: none; }
+      html.dark .page-accent { color: #C98633; }
+    html.dark .page-main   { color: #ffffff; }
+    html.dark .page-sub    { color: #cdcdcd; }
+      html.dark .page-btn { background-color: #ffffff; color: #000000; }
+      
+      html.dark .mega-menu { background-color: #000000; }
+      html.dark #mobile-menu { background-color: #1c1c1c; color: #ffffff; }
+      html.dark #dropdownBtn { background-color: #1f2937; color: #ffffff; }
+      html.dark #dropdownMenu { background-color: #111827; border-color: #374151; }
+
+       html.dark .splide__arrow {
+        background: #111827 !important;
+        color: #ffffff !important;
+      }
+      
+      /* Text color overrides for dark mode */
+       html.dark .text-black { color: #ffffff; }
+      html.dark .text-\\[#4f4f4f\\],
+      html.dark .text-\\[#333\\],
+      html.dark .text-gray-500,
+      html.dark .text-gray-600,
+      html.dark .text-gray-700,
+      html.dark .text-gray-800 { color: #cdcdcd; }
+      
+      /* Background and border overrides for dark mode */
+      html.dark .bg-white { background-color: #1c1c1c; }
+      html.dark .bg-gray-100,
+      html.dark .bg-gray-200 { background-color: #2c2c2c; }
+      html.dark .border-gray-300,
+      html.dark .border-\\[#dbdbdb\\] { border-color: #444444; }
+      html.dark .shadow-\\[0px_4px_18.9px_rgba\\(0,0,0,0.25\\)\\] { box-shadow: 0px 4px 18.9px rgba(0,0,0,0.5); }
+
+      /* Product Guides section dark mode */
+      html.dark .product-guides-section { background-color: #373737 !important; }
+      
+      @media screen and (max-width: 780px) {
+  html.dark .heading_p { color: #ffffff !important; }
+}
+      
+      /* Form section dark mode */
+      html.dark .contact-form-container { background-color: #1c1c1c; }
+
+      /* Mobile Hero Heading (Figma) */
+      @media screen and (max-width: 767px) {
+        .hero-heading {
+          font-family: 'Open Sans', sans-serif !important;
+          font-weight: 700 !important;
+          line-height: 106% !important;
+          letter-spacing: 0% !important;
+        }
+      }
+    </style>
     <!-- Splide CSS -->
     <link
       rel="stylesheet"
@@ -68,162 +209,174 @@
     />
 
     <!-- aos -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
     <link rel="stylesheet" href="/assets/style/global.css" />
   </head>
-  <body class="bg-white font-inter text-sm">
+  <body class="font-inter text-sm">
     <!-- Navigation -->
-    <nav class="navbar md:block hidden">
-      <div class="navbar-container container mx-auto">
-        <!-- Logo -->
+    <nav class="navbar xl:block hidden">
+      <div class="navbar-container container mx-auto px-4">
         <div class="logo-container">
-          <a href="/light/index.html">
+          <a href="/index.html">
             <img
               src="/assets/images/logo/tequila_pos_logo_transparent.png"
-              class="logo"
+              class="logo-light logo"
+              alt="Logo"
+            />
+            <img
+              src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
+              class="logo-dark logo"
               alt="Logo"
             />
           </a>
-
           <div class="nav-links ml-4">
             <div class="nav-item relative group">
               <a href="#business-type" class="nav-link">Business Type</a>
-
-              <!-- Mega Menu -->
               <div
-                class="mega-menu mega-anim absolute left-0 top-full bg-white pt-10"
+                class="mega-menu mega-anim absolute left-0 top-full pt-10"
                 onmouseleave="clearActive()"
               >
                 <div class="flex flex-nowrap gap-10">
-                  <!-- LEFT: categories -->
                   <div
                     class="flex flex-col p-10 gap-4"
                     id="categoryList"
                     data-aos="fade-left"
                   >
                     <a
-                      href="#"
-                      class="text-black text-[26px] font-bold hover:underline"
+                      href="/food.html"
+                      class="text-[26px] font-bold hover:underline"
                       data-cat="food"
                       onmouseenter="setActive('food')"
                       onfocus="setActive('food')"
+                      >Food &amp; Beverage</a
                     >
-                      Food &amp; Beverage
-                    </a>
-
                     <a
-                      href="#"
-                      class="text-black text-[26px] font-bold hover:underline"
+                      href="/retail.html"
+                      class="text-[26px] font-bold hover:underline"
                       data-cat="retail"
                       onmouseenter="setActive('retail')"
                       onfocus="setActive('retail')"
+                      >Retail</a
                     >
-                      Retail
-                    </a>
                   </div>
-
-                  <!-- RIGHT: panels -->
                   <div class="flex gap-16 p-10">
-                    <!-- FOOD panel -->
                     <div class="flex justify-between gap-10" data-panel="food">
                       <div>
-                        <h6 class="text-black text-xs font-normal mb-[10px]">
+                        <h6
+                          class="text-xs font-normal mb-[10px]"
+                          style="color: inherit"
+                        >
                           Discover
                         </h6>
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
                               href="#"
-                              class="hover:underline text-black text-xl font-bold"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
                               >Overview</a
                             >
                           </li>
                           <li>
                             <a
                               href="#"
-                              class="hover:underline text-black text-xl font-bold"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
                               >Switch to Tequila</a
                             >
                           </li>
                         </ul>
                       </div>
                       <div>
-                        <h6 class="text-black text-xs font-normal mb-[10px]">
+                        <h6
+                          class="text-xs font-normal mb-[10px]"
+                          style="color: inherit"
+                        >
                           Capacity
                         </h6>
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Manage order from one place</a
+                              href="/resturent-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Resturents</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Take payment</a
+                              href="/bar-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Bars</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Keep customer coming back</a
+                              href="/food-truck-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Food Trucks and Pop-ups</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Scale your business</a
+                              href="/cafes-coffee-shop-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Cafes & Coffee Shops</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Improve operation</a
+                              href="/juice-bars-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Juice Bars & Smoothie Shops</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Schedule and pay your team</a
+                              href="/bakeries-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Bakeries</a
                             >
                           </li>
                           <li>
                             <a
-                              href="#"
-                              class="hover:underline text-black text-xl font-bold"
-                              >Manage your cash flow</a
+                              href="/ice-cream-shops-capabilities.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Ice Creams & Desserts Shops</a
                             >
                           </li>
                         </ul>
                       </div>
                     </div>
-
-                    <!-- RETAIL panel -->
                     <div class="space-y-6 hidden" data-panel="retail">
-                      <div class="gap-10">
-                        <h6 class="text-black text-xs font-normal mb-[10px]">
+                      <div>
+                        <h6
+                          class="text-xs font-normal mb-[10px]"
+                          style="color: inherit"
+                        >
                           Discover
                         </h6>
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
                               href="#"
-                              class="hover:underline text-black text-xl font-bold"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
                               >Overview</a
                             >
                           </li>
                           <li>
                             <a
                               href="#"
-                              class="hover:underline text-black text-xl font-bold"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
                               >Switch to Tequila</a
                             >
                           </li>
@@ -234,19 +387,15 @@
                 </div>
               </div>
             </div>
-
-            <!-- Other Links -->
-            <a href="/light/feature.html" class="nav-link">Feature</a>
-            <a href="/light/hardware.html" class="nav-link">Hardware</a>
-            <a href="/light/pricing.html" class="nav-link">Pricing</a>
-            <a href="/light/resourse.html" class="nav-link">Resources</a>
+            <a href="/feature.html" class="nav-link">Feature</a>
+            <a href="/hardware.html" class="nav-link">Hardware</a>
+            <a href="/pricing.html" class="nav-link">Pricing</a>
+            <a href="/resourse.html" class="nav-link">Resources</a>
           </div>
         </div>
-
-        <!-- Navigation Links -->
         <div class="nav-extra-links">
           <div
-            class="language-selector cursor-pointers"
+            class="language-selector cursor-pointer"
             onclick="toggleLanguage()"
           >
             <span id="language-text">ENGLISH</span>
@@ -257,32 +406,35 @@
               class="flag-icon"
             />
           </div>
-
           <a href="#signin" class="nav-link">Sign in</a>
-
-          <button class="demo-btn">
-            <span>Free Demo</span>
-          </button>
+          <a href="/free-demo.html"><button class="demo-btn"><span>Free Demo</span></button></a>
+          
         </div>
       </div>
     </nav>
 
     <!-- Mobile Navbar -->
-    <nav class="navbar md:hidden bg-white shadow-md relative">
+    <nav class="navbar xl:hidden shadow-md relative">
       <div
-        class="navbar-container container mx-auto flex items-center justify-between py-4"
+        class="navbar-container container mx-auto flex items-center justify-between py-2 px-4"
       >
-        <!-- Logo -->
         <div class="logo-container flex items-center">
           <img
             src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="logo h-10"
+            class="logo-light logo h-auto"
+            alt="Logo"
+          />
+          <img
+            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
+            class="logo-dark logo h-auto"
             alt="Logo"
           />
         </div>
-        <!-- Hamburger Button -->
-        <button id="mobile-menu-btn" class="md:hidden p-2 text-black">
-          <!-- Hamburger Icon -->
+        <button
+          id="mobile-menu-btn"
+          class="xl:hidden p-2"
+          style="color: inherit"
+        >
           <svg
             id="hamburger-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -298,8 +450,6 @@
               d="M4 6h16M4 12h16M4 18h16"
             />
           </svg>
-
-          <!-- Close Icon -->
           <svg
             id="close-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -317,129 +467,95 @@
           </svg>
         </button>
       </div>
-
-      <!-- Mobile Menu -->
-      <!-- Mobile Menu (White Version) -->
       <div
         id="mobile-menu"
-        class="fixed top-0 left-0 h-full w-72 bg-white text-gray-900 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg"
+        class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg"
+        style="background-color: var(--mobile-bg, #fff)"
       >
         <div class="p-4 space-y-4">
-          <!-- Dropdown -->
           <div class="relative">
             <button
               id="dropdownBtn"
-              class="flex justify-between items-center w-full px-4 py-2 bg-gray-100 rounded hover:bg-gray-200"
+              class="flex justify-between items-center w-full px-4 py-2 rounded"
+              style="color: inherit"
             >
               Business Type
               <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                class="w-5 h-5 text-gray-500 transition-transform duration-200"
+                class="w-5 h-5 transition-transform duration-200"
               >
                 <path
                   fill-rule="evenodd"
                   clip-rule="evenodd"
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 
-        11.94l3.72-3.72a.75.75 0 1 1 
-        1.06 1.06l-4.25 4.25a.75.75 0 
-        0 1-1.06 0L5.22 9.28a.75.75 
-        0 0 1 0-1.06Z"
+                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
                 />
               </svg>
             </button>
-
             <div
               id="dropdownMenu"
-              class="hidden mt-2 bg-gray-50 rounded shadow-lg overflow-hidden border border-gray-200"
+              class="hidden mt-2 rounded shadow-lg overflow-hidden border"
+              style="background: #f9fafb"
             >
-              <a
-                href="#"
-                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >Edit</a
+              <a href="/food.html" class="block px-4 py-2 hover:bg-gray-100"
+                >Food &amp; Beverage</a
               >
-              <a
-                href="#"
-                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >Duplicate</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >Archive</a
-              >
-              <a
-                href="#"
-                class="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                >Delete</a
-              >
+              <a href="/retail.html" class="block px-4 py-2 hover:bg-gray-100">Retail</a>
             </div>
           </div>
-
-          <!-- Regular Links -->
-          <a href="#features" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a
+            href="/feature.html"
+            class="block px-4 py-2 rounded hover:opacity-80"
             >Features</a
           >
-          <a href="#hardware" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a
+            href="/hardware.html"
+            class="block px-4 py-2 rounded hover:opacity-80"
             >Hardware</a
           >
-          <a href="#pricing" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a
+            href="/pricing.html"
+            class="block px-4 py-2 rounded hover:opacity-80"
             >Pricing</a
           >
           <a
-            href="/light/resourse.html"
-            class="block px-4 py-2 hover:bg-gray-100 rounded"
+            href="/resourse.html"
+            class="block px-4 py-2 rounded hover:opacity-80"
             >Resources</a
           >
-
-          <!-- Language Switcher -->
-          <div
-            class="flex items-center justify-between px-4 py-2 bg-gray-100 rounded"
-          >
-            <span class="text-sm">EN</span>
-            <label class="inline-flex items-center cursor-pointer">
-              <input type="checkbox" class="sr-only peer" />
-              <div
-                class="w-11 h-6 bg-gray-300 peer-checked:bg-blue-500 rounded-full relative after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-5 after:h-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full"
-              ></div>
-            </label>
-            <span class="text-sm">ES</span>
-          </div>
-
-          <!-- Sign in -->
-          <a href="#signin" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a href="#signin" class="block px-4 py-2 rounded hover:opacity-80"
             >Sign In</a
           >
-
-          <!-- CTA Button -->
           <a
-            href="#demo"
-            class="block text-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-2 rounded shadow hover:from-yellow-300 hover:to-yellow-400"
+            href="/free-demo.html"
+            class="block text-center font-bold py-2 rounded shadow"
+            style="background: #c89633; color: #000"
+            >Free Demo</a
           >
-            Free Demo
-          </a>
         </div>
       </div>
     </nav>
 
     <!-- hero section -->
 
-    <section class="bg-transparent-100 py-8 md:py-16">
+    <section class="py-8 md:py-16">
       <div
         class="container mx-auto px-4 items-center justify-between gap-4 md:gap-12"
       >
-        <div class="w-full md:w-[1300px] text-left">
+        <div class="w-full xl:w-[1300px] max-w-full text-left">
           <h1
-            class="text-[20px] md:text-[64px] lg:text-7xl font-bold text-[#505050] mb-4 md:mb-8"
+            class="hero-heading text-[24px] md:text-[48px] lg:text-[64px] xl:text-7xl font-bold mb-4 md:mb-8"
           >
+          <span class="page-accent">
             How TequilaPOS Helps
-            <span class="text-black"
-              >Restaurants of All Sizes Run Smoothly</span
-            >
+          </span>
+            
+            <span class="page-main"
+              >Restaurants of All Sizes Run Smoothly</span>
           </h1>
 
           <p
-            class="md:w-[611px] w-full text-[#4F4F4F] md:text-[20px] text-[10px] md:leading-[25.20px] leading-normal md:mb-8"
+            class="lg:w-[611px] w-full page-sub md:text-[20px] md:leading-[25.20px] mb-4 md:mb-8"
           >
             Smart Tools for Every Restaurant, From Food Trucks to Fine Dining
           </p>
@@ -457,16 +573,19 @@
 
     <!-- ========= Features Mosaic (Interactive) ========= -->
     <section id="features" class="container mx-auto px-4">
-      <div class="w-full md:w-[850px] text-left">
+      <div class="w-full lg:w-[850px] max-w-full text-left">
         <h1
-          class="text-[20px] md:text-[64px] lg:text-7xl font-bold text-[#505050] mb-4 md:mb-8"
+          class="text-[20px] md:text-[48px] lg:text-[64px] xl:text-7xl font-bold mb-4 md:mb-8"
         >
-          Built-In Intelligence for
-          <span class="text-black">Modern Restaurants</span>
+        <span class="page-accent">
+            Built-In Intelligence for
+        </span>
+          
+          <span class="page-main">Modern Restaurants</span>
         </h1>
 
         <p
-          class="md:w-[611px] w-full text-[#4F4F4F] md:text-[15px] text-[10px] md:leading-[25.20px] leading-normal md:mb-8"
+          class="lg:w-[611px] w-full page-sub md:text-[15px] md:leading-[25.20px] mb-4 md:mb-8"
         >
           Smart Tools for Every Restaurant, From Food Trucks to Fine Dining
         </p>
@@ -625,6 +744,13 @@
         outline: 4px solid rgba(255, 255, 255, 0.6);
         outline-offset: -4px;
       }
+      .swap-transition {
+        transition: opacity 0.5s ease-in-out, transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 50;
+      }
+      .swap-hidden {
+        opacity: 0.2;
+      }
     </style>
 
     <!-- ========= Minimal JS ========= -->
@@ -639,6 +765,8 @@
         const heroTit = root.querySelector('[data-hero="title"]');
         const heroDesc = root.querySelector('[data-hero="desc"]');
 
+        let isAnimating = false;
+
         // 1. Capture the initial state of the Big Card (only done once)
         const initialHeroData = {
           img: heroImg.src,
@@ -648,53 +776,96 @@
 
         let currentHeroData = { ...initialHeroData };
 
-        // Event delegation: handle clicks/keys from any small card with data-img
-        function swapFrom(clickedCard) {
-          if (!clickedCard?.dataset) return;
-
-          // 1. Capture data from the clicked small card
-          const { img, title, desc } = clickedCard.dataset;
-          if (!img) return; // Must have an image to swap
-
-          // 2. SAVE the current data from the Big Card.
-          //    This data will be written back to the small card.
+        // Core swap logic (shared between animated and instant modes)
+        function performSwap(clickedCard) {
           const outgoingData = {
             img: heroImg.src,
             title: heroTit.textContent.trim(),
             desc: heroDesc.textContent.trim(),
           };
 
-          // 3. UPDATE the Big Card with the clicked small card's data
+          const { img, title, desc } = clickedCard.dataset;
+
+          // Update Big Card
           heroImg.src = img;
           heroImg.alt = title || heroImg.alt;
           heroTit.textContent = title;
           heroDesc.textContent = desc;
 
-          // 4. UPDATE the clicked small card's attributes with the outgoing data
-          //    This makes the small card now visually represent the old Big Card.
+          // Update small card
           const smallCardImg = clickedCard.querySelector("img");
           const smallCardTit = clickedCard.querySelector("h4");
           const smallCardDesc = clickedCard.querySelector("p");
 
-          // Update data attributes
           clickedCard.dataset.img = outgoingData.img;
           clickedCard.dataset.title = outgoingData.title;
           clickedCard.dataset.desc = outgoingData.desc;
 
-          // Update visible elements
           smallCardImg.src = outgoingData.img;
           smallCardTit.textContent = outgoingData.title;
-          // Truncate the description for the small card preview
+          // Show very minimal info on small cards (smaller text)
           smallCardDesc.textContent =
-            outgoingData.desc.length > 30
-              ? outgoingData.desc.substring(0, 30) + "..."
+            outgoingData.desc.length > 20
+              ? outgoingData.desc.substring(0, 20) + "..."
               : outgoingData.desc;
 
-          // 5. Update the visual "active" state
+          // Update active state
           root
             .querySelectorAll("[data-img]")
             .forEach((c) => c.removeAttribute("data-active"));
           clickedCard.setAttribute("data-active", "true");
+        }
+
+        // Event delegation: handle clicks/keys from any small card with data-img
+        function swapFrom(clickedCard) {
+          if (isAnimating || !clickedCard?.dataset) return;
+
+          const isDesktop = window.innerWidth >= 1024;
+          if (!isDesktop) {
+            performSwap(clickedCard);
+            return;
+          }
+
+          isAnimating = true;
+
+          // --- PHYSICAL MOVEMENT START (Desktop only) ---
+          const heroRect = heroCard.getBoundingClientRect();
+          const clickedRect = clickedCard.getBoundingClientRect();
+
+          const deltaX = heroRect.left - clickedRect.left;
+          const deltaY = heroRect.top - clickedRect.top;
+
+          heroCard.classList.add("swap-transition");
+          clickedCard.classList.add("swap-transition");
+
+          clickedCard.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+          heroCard.style.transform = `translate(${-deltaX}px, ${-deltaY}px)`;
+
+          heroCard.classList.add("swap-hidden");
+          clickedCard.classList.add("swap-hidden");
+
+          setTimeout(() => {
+            performSwap(clickedCard);
+
+            // --- RESET POSITION ---
+            clickedCard.style.transition = "none";
+            heroCard.style.transition = "none";
+            clickedCard.style.transform = "";
+            heroCard.style.transform = "";
+
+            requestAnimationFrame(() => {
+              clickedCard.style.transition = "";
+              heroCard.style.transition = "";
+              heroCard.classList.remove("swap-hidden");
+              clickedCard.classList.remove("swap-hidden");
+
+              setTimeout(() => {
+                heroCard.classList.remove("swap-transition");
+                clickedCard.classList.remove("swap-transition");
+                isAnimating = false;
+              }, 500);
+            });
+          }, 500);
         }
 
         // --- Event Listeners (Keep as-is) ---
@@ -723,16 +894,21 @@
 
     <section class="py-8 md:py-16 lg:py-24">
       <div class="container mx-auto px-4">
-        <div class="w-full md:w-[850px] text-left">
+        <div class="w-full lg:w-[850px] max-w-full text-left">
           <h1
-            class="text-[20px] md:text-[64px] lg:text-7xl font-bold text-[#505050] mb-4 md:mb-8"
+            class="text-[20px] md:text-[48px] lg:text-[64px] xl:text-7xl font-bold mb-4 md:mb-8"
           >
+          <span class="page-accent">
             TequilaPOS: Sized Just
-            <span class="text-black">Right for Everyone</span>
+          </span>
+          <span class="page-main">
+            Right for Everyone
+          </span>
+            
           </h1>
 
           <p
-            class="md:w-[611px] w-full text-[#4F4F4F] md:text-[15px] text-[10px] md:leading-[25.20px] leading-normal md:mb-8"
+            class="lg:w-[611px] w-full page-sub md:text-[15px] text-[10px] md:leading-[25.20px] leading-normal md:mb-8"
           >
             Customizable tools to suit your kitchen, staff, and customer flow —
             no matter your scale.
@@ -814,7 +990,7 @@
                 </div>
                 <h4 class="mt-3 font-semibold text-gray-900">Fine Dining</h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Seamless table-side ordering</li>
                   <li>Advanced reservation system</li>
@@ -832,7 +1008,7 @@
                 </div>
                 <h4 class="mt-3 font-semibold text-gray-900">Casual Dining</h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Fast and flexible billing</li>
                   <li>Easy table and order management</li>
@@ -852,7 +1028,7 @@
                   Family Restaurants
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Easy multi-table handling</li>
                   <li>Customizable kid-friendly menus</li>
@@ -877,7 +1053,7 @@
                 </div>
                 <h4 class="mt-3 font-semibold text-gray-900">Cocktail Bars</h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Quick tab and counter billing</li>
                   <li>Happy hour & custom pricing</li>
@@ -895,7 +1071,7 @@
                 </div>
                 <h4 class="mt-3 font-semibold text-gray-900">Dive Bars</h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Simple and fast checkout</li>
                   <li>Cash-friendly billing options</li>
@@ -922,7 +1098,7 @@
                   Powerful tools in a compact setup
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>All-in-one POS with small footprint</li>
                   <li>Runs smoothly on tablets & mobiles</li>
@@ -950,7 +1126,7 @@
                   Perfect for rush hours
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Lightning-fast order processing</li>
                   <li>Smart kitchen coordination</li>
@@ -967,7 +1143,7 @@
                 </div>
                 <h4 class="mt-3 font-semibold text-gray-900">Loyal Regulars</h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Built-in loyalty programs</li>
                   <li>Personalized offers & rewards</li>
@@ -994,7 +1170,7 @@
                   For health-focused
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Nutrition info & custom orders</li>
                   <li>Inventory tracking for fresh produce</li>
@@ -1013,7 +1189,7 @@
                   Fast-moving businesses
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Ultra-fast billing & checkout</li>
                   <li>Real-time inventory updates</li>
@@ -1040,7 +1216,7 @@
                   Perfect for walk-ins
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Quick order-to-bill flow</li>
                   <li>No reservations needed</li>
@@ -1059,7 +1235,7 @@
                   Catering Orders
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Schedule & manage bulk orders</li>
                   <li>Custom menus & pricing options</li>
@@ -1086,7 +1262,7 @@
                   Great for customizable treats
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Easy add-ons & mix-in options</li>
                   <li>Visual modifiers for quick selection</li>
@@ -1105,7 +1281,7 @@
                   High-volume days
                 </h4>
                 <ul
-                  class="mt-2 space-y-1.5 text-sm text-gray-700 list-disc pl-5"
+                  class="mt-2 space-y-1.5 text-sm page-sub list-disc pl-5"
                 >
                   <li>Handles peak traffic with ease</li>
                   <li>Fast multi-order processing</li>
@@ -1118,7 +1294,7 @@
       </div>
 
       <script>
-        (function () {
+        document.addEventListener("DOMContentLoaded", function () {
           const tabs = document.querySelectorAll("#venue-tabs [data-tab]");
           const panels = document.querySelectorAll(
             "#venue-panels [data-panel]"
@@ -1153,7 +1329,7 @@
 
           // ensure default
           activate("restaurant");
-        })();
+        });
       </script>
 
       <!-- Optional: hide scrollbar for the pill row -->
@@ -1169,17 +1345,24 @@
     </section>
 
     <!-- Footer -->
-    <footer dclass="bg-white py-10">
+    <footer class="py-10">
       <div class="container mx-auto px-4">
         <!-- Top Logo + Switch -->
         <div
           class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center"
         >
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="w-10 md:w-40 h-auto"
-            alt=""
-          />
+          <a href="/index.html">
+            <img
+              src="/assets/images/logo/tequila_pos_logo_transparent.png"
+              class="logo-light w-10 md:w-40 h-auto"
+              alt="Logo"
+            />
+            <img
+              src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
+              class="logo-dark w-10 md:w-40 h-auto"
+              alt="Logo"
+            />
+          </a>
 
           <div class="flex items-center space-x-2">
             <p class="text-[#4f4f4f] text-[11px] font-normal select-none">
