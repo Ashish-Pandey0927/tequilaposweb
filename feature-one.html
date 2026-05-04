@@ -1,9 +1,10 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tequila POS - Smart POS Solutions</title>
+
     <script src="/assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -12,6 +13,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
+
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&
@@ -240,10 +242,8 @@
       /* Form section dark mode */
       html.dark .contact-form-container { background-color: #1c1c1c; }
     </style>
-
-    
   </head>
-  <body class="bg-white font-inter text-sm">
+  <body class="font-inter text-sm">
     <!-- Navigation -->
     <nav class="navbar xl:block hidden">
       <div class="navbar-container container mx-auto px-4">
@@ -302,7 +302,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -310,7 +310,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -396,7 +396,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -404,7 +404,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -567,67 +567,25 @@
     </nav>
 
     <!-- hero section -->
-    <section class="lg:py-16 py-8">
+    <section class="py-8 lg:py-16">
       <div class="container mx-auto px-4">
         <h1
-          class="lg:w-[1052px] md:text-[64px] lg:text-[96px] text-[40px] font-bold md:leading-[86.03px] leading-normal w-full"
+          class="md:w-[652px] text-[40px] md:text-[64px] lg:text-[96px] font-bold md:leading-[126.03px] leading-normal w-full"
         >
-          <span class="page-accent">Inventory Tracking</span
-          ><span class="page-main"> & Low Stock Alerts</span>
+          <span class="page-accent">Offline</span
+          ><span class="page-main"> Mode</span>
         </h1>
 
         <p
-          class="md:w-[655px] w-full md:text-[20px] page-sub text-[12px] font-normal"
+          class="md:w-[611px] w-full page-sub md:text-[20px] text-[12px] md:leading-[25.20px] leading-normal mb-8"
         >
-          Boost customer retention with seamless rewards, personalized offers,
-          and automated loyalty tracking—built right into your POS.
+          Seamless Transactions Anytime, Anywhere—With or Without Connectivity.
         </p>
       </div>
     </section>
 
-    <!--behind  Section -->
-    <section class="lg:py-16 py-8">
-      <div
-        class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-6 gap-10 items-center md:items-start"
-      >
-        <!-- Left Content -->
-        <div class="order-2 md:order-1 md:col-span-4 w-full md:w-[512px]">
-          <h2
-            class="md:text-[64px] text-4xl font-bold  md:leading-[80.64px] leading-normal"
-          >
-            <span class="page-accent">Smart Inventory </span
-            ><span class="page-main">Alerts</span>
-          </h2>
-          <p
-            class="md:w-[512px] md:text-[15px] w-full text-sm page-sub md:mb-10 mb-6"
-          >
-            Track stock in real time and get notified before you run low.
-          </p>
-
-          <img src="/assets/images/feature-3.png" alt="" class="lg:hidden w-full mb-4" />
-
-          <p class="text-[12px] mt-6 lg:mt-0 md:text-2xl leading-relaxed md:w-[712px] w-full">
-            Inventory Tracking & Low Stock Alerts is a built-in POS feature that
-            lets you monitor inventory levels in real time. It automatically
-            updates stock counts with every sale, return, or restock — across
-            all locations. When items run low, the system instantly notifies you
-            so you can reorder before you run out.
-          </p>
-        </div>
-
-        <!-- Right Images -->
-        <div class="hidden lg:block order-1 md:order-2 md:col-span-2 h-full">
-          <img
-            src="/assets/images/feature-one/feature-3-section-1.png"
-            alt="POS System"
-            class="w-full h-full"
-          />
-        </div>
-      </div>
-    </section>
-
     <!--slider-->
-    <section class="lg:py-16 py-8">
+    <section class="py-4 lg:py-16">
       <div class="container mx-auto px-4">
         <section id="main-slider" class="splide" aria-label="Splide Slider">
           <div class="my-slider-progress w-4/6 mx-auto">
@@ -661,15 +619,40 @@ arrow_forward
 
           <div class="splide__track">
             <ul class="splide__list">
+              <li class="splide__slide pt-10">
+                <h1
+                  class="lg:text-9xl md:text-7xl text-[48px] font-bold md:leading-[104.96px] leading-normal border-b border-gray-300 md:pb-5"
+                >
+                  <span class="page-accent">What</span
+                  ><span class="page-main"> it is</span>
+                </h1>
+                <div class="">
+                  <div
+                    class="page-sub md:text-2xl text-[20px] font-normal leading-relaxed tracking-wide md:mt-12 mt-6"
+                  >
+                    Offline Mode allows your POS system to keep working even
+                    when the internet goes down. It records all transactions,
+                    orders, and customer data locally on the device. Once the
+                    connection is restored, everything is automatically synced
+                    to the cloud or server—ensuring no data is lost.<br />This
+                    feature is essential for avoiding downtime, keeping sales
+                    running, and serving customers smoothly in areas with
+                    unreliable internet.
+                  </div>
+                </div>
+              </li>
+
               <li class="splide__slide relative pt-10">
                 <div class="p-4 md:p-8">
-                  <h1 class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.64px] leading-normal">
-                    <span class="page-accent">Manager Gets a Warning: </span
-                    ><span class="page-main"> “Only 5 Avocados Left”</span>
+                  <h1
+                    class="lg:text-9xl md:text-7xl text-[30px] font-bold md:leading-[104.96px] leading-normal"
+                  >
+                    <span class="page-accent">What users see</span
+                    ><span class="page-main"> (waiters/cashiers)</span>
                   </h1>
 
                   <div
-                    class="lg:block hidden lg:flex flex-row md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                    class="desktop-timeline hidden lg:flex flex flex-row lg:flex-row justify-between items-start md:mt-18 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30 "
                   >
                     <div
                       class="flex flex-col items-center text-center flex-1 min-w-0"
@@ -678,17 +661,21 @@ arrow_forward
                       <div class="w-full flex justify-center">
                         <blockquote class="relative w-full">
                           <p
-                            class="text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                            class="md:text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
                           >
                             “
                           </p>
-
                           <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                            class="text-lg font-bold  leading-snug"
                           >
-                            <strong>Instant Notifications:</strong> Get
-                            real-time alerts when stock drops below your set
-                            threshold.
+                            Zero Downtime, Always Ready
+                          </p>
+                          <p
+                            class="text-base text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Your staff can continue taking orders and processing
+                            payments even during internet outages—no delays, no
+                            lost business.
                           </p>
                           <p
                             class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
@@ -710,12 +697,17 @@ arrow_forward
                           >
                             “
                           </p>
-
                           <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                            class="text-lg font-bold  leading-snug"
                           >
-                            <strong>Prevent Stockouts:</strong> Take action
-                            before popular items run out and affect service.
+                            Secure Local Data Storage
+                          </p>
+                          <p
+                            class="text-base text-gray-600 mt-2 leading-relaxed"
+                          >
+                            All data is stored safely on the device during
+                            offline mode and synced automatically later,
+                            ensuring nothing is lost or duplicated.
                           </p>
                           <p
                             class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
@@ -737,15 +729,20 @@ arrow_forward
                           >
                             “
                           </p>
-
                           <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                            class="text-lg font-bold  leading-snug"
                           >
-                            <strong>Smarter Reordering:</strong> Helps plan
-                            restocks based on actual usage and demand.
+                            Automatic Resync
                           </p>
                           <p
-                            class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                            class="text-base text-gray-600 mt-2 leading-relaxed"
+                          >
+                            As soon as the internet returns, the POS updates
+                            everything in the cloud—sales, stock levels, and
+                            customer data—without manual work.
+                          </p>
+                          <p
+                            class="text-[10px] text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
                           >
                             ”
                           </p>
@@ -758,384 +755,86 @@ arrow_forward
                     <div class="timeline-item">
                       <span class="timeline-dot"></span>
                       <blockquote class="relative w-full">
-                        <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
-                        <p
-                          class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                        >
-                          <strong>Instant Notifications:</strong> Get
-                          real-time alerts when stock drops below your set
-                          threshold.
-                        </p>
-                        <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
-                      </blockquote>
+                          <p
+                            class="text-[14px] text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                          <p
+                            class="text-[14px] font-bold text-main leading-snug"
+                          >
+                            Secure Local Data Storage
+                          </p>
+                          <p
+                            class="text-[14px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            All data is stored safely on the device during
+                            offline mode and synced automatically later,
+                            ensuring nothing is lost or duplicated.
+                          </p>
+                          <p
+                            class="text-[14px ] text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
                     </div>
-
                     <div class="timeline-item">
                       <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
+                      <blockquote class="relative w-full">
                           <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                            class="text-[14px] text-gray-300 absolute -top-4 -left-3 hidden sm:block"
                           >
-                            <strong>Prevent Stockouts:</strong> Take action
-                            before popular items run out and affect service.
+                            “
                           </p>
-                          <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
+                          <p
+                            class="text-[14px] font-bold text-main leading-snug"
+                          >
+                            Automatic Resync
+                          </p>
+                          <p
+                            class="text-[14px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            As soon as the internet returns, the POS updates
+                            everything in the cloud—sales, stock levels, and
+                            customer data—without manual work.
+                          </p>
+                          <p
+                            class="text-[14px] text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
                         </blockquote>
-                      </div>
+                    </div>
 
                     <div class="timeline-item">
                       <span class="timeline-dot"></span>
                       <blockquote class="relative w-full">
-                            <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
-                            <p
-                              class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                            >
-                              <strong>Smarter Reordering:</strong> Helps plan
-                              restocks based on actual usage and demand.
-                            </p>
-                            <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
-                          </blockquote>
+                          <p
+                            class="text-[14px] text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                          <p
+                            class="text-[14px] font-bold text-main leading-snug"
+                          >
+                            Zero Downtime, Always Ready
+                          </p>
+                          <p
+                            class="text-[14px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Your staff can continue taking orders and processing
+                            payments even during internet outages—no delays, no
+                            lost business.
+                          </p>
+                          <p
+                            class="text-[14px] text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
                     </div>
                   </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative pt-10">
-                <div class="p-4 md:p-8">
-                  <h1
-                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.96px] leading-normal"
-                  >
-                    <span class="page-accent">Auto-Updates When </span
-                    ><span class="page-main"> Sales are Made</span>
-                  </h1>
-
-                  <div
-                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
-                  >
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Real-Time Tracking:</strong> Inventory
-                            levels adjust instantly as items are sold.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Zero Manual Work:</strong> No need to update
-                            stock manually — it’s all automated.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Accurate Insights:</strong> Always see your
-                            current stock status for better decision-making.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mobile-timeline lg:hidden mt-8">
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Real-Time Tracking:</strong> Inventory
-                            levels adjust instantly as items are sold.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Zero Manual Work:</strong> No need to update
-                            stock manually — it’s all automated.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                    </div>
-                      
-
-                      <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Accurate Insights:</strong> Always see your
-                            current stock status for better decision-making.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                        </div>
-                    </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative pt-10">
-                <div class="p-4 md:p-8">
-                  <h1
-                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.96px] leading-normal"
-                  >
-                    <span class="page-accent">Option to Mark Items </span
-                    ><span class="page-main"> as “Out of Stock”</span>
-                  </h1>
-
-                  <div
-                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
-                  >
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Clear Communication:</strong> Staff
-                            instantly knows which items are unavailable.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Avoids Customer Disappointment:</strong
-                            >Prevents orders of items you can’t fulfill.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Quick Action:</strong> Mark items out of
-                            stock with just a tap — no backend access needed.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mobile-timeline lg:hidden mt-12">
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Clear Communication:</strong> Staff
-                            instantly knows which items are unavailable.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Avoids Customer Disappointment:</strong
-                            >Prevents orders of items you can’t fulfill.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                    </div>
-                      
-
-                      <div class="timeline-item">
-                        <span class="timeline-dot"></span>
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
-                          >
-                            <strong>Quick Action:</strong> Mark items out of
-                            stock with just a tap — no backend access needed.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                  </div>
-                </div>
                 </div>
               </li>
             </ul>
@@ -1144,50 +843,96 @@ arrow_forward
       </div>
     </section>
 
-    <!-- why choose us -->
-    <section class="lg:py-16 py-8">
-      <div class="container mx-auto px-4">
-        <div class="mb-12 md:text-left text-center">
+    <!-- ===================== MOBILE TIMELINE ===================== -->
+    
+
+    <!--behind  Section -->
+    <section class="py-4">
+      <div
+        class="container mx-auto px-4  grid grid-cols-1 lg:grid-cols-6 gap-10 items-center md:items-start"
+      >
+        <!-- Left Content -->
+        <div class="order-2 md:order-1 md:col-span-4">
           <h2
-            class="md:text-[64px] text-4xl font-bold md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
+            class="text-[20px] md:text-[55px] font-[600] md:leading-[80.64px] leading-normal w-full md:w-[760px]"
           >
-            <span class="page-accent">Why it </span
-            ><span class="page-main">matters</span>
+            <span class="page-accent">Behind-the-Scenes Power for </span
+            ><span class="page-main">Seamless POS Performance</span>
           </h2>
           <p
-            class="text-sm md:text-[15px] page-sub leading-relaxed md:w-[512px] w-full"
+            class="md:w-[560px] md:text-[15px] w-full text-[10px] page-sub md:mb-10 mb-6"
           >
-            Prevent stockouts, reduce waste, and keep operations running
-            smoothly with timely inventory insights.
+            Discover the smart background systems that keep your sales flowing
+            and data secure in any condition.
+          </p>
+
+          <img src="/assets/images/Rectangle 289.png" alt="" class="lg:hidden mb-4">
+          <p class="text-[10px] md:text-[24px] page-sub leading-relaxed md:w-[750px] w-full">
+            When the internet goes down, the POS system automatically switches
+            to offline mode and stores all transactions locally on the device.
+            Each order is timestamped and safely queued. The system keeps
+            checking for internet reconnection and, once it’s back,
+            automatically syncs all data to the cloud—ensuring nothing is lost
+            or duplicated. It also keeps a log of offline activity for accurate
+            reporting and review.
+          </p>
+        </div>
+
+        <!-- Right Images -->
+        <div class="order-1 md:order-2 md:col-span-2 md:mt-36">
+          <img
+            src="/assets/images/feature-one/2ndSectionImg.png"
+            alt="POS System"
+            class="w-full h-full hidden lg:block"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- why choose us -->
+    <section class="py-4">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-left">
+          <h2
+            class="text-[20px] md:text-[60px] font-[600] md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
+          >
+            <span class="page-accent">Why Offline </span
+            ><span class="page-main">Capability Matters</span>
+          </h2>
+          <p
+            class="text-[10px] md:text-[15px] page-sub leading-relaxed md:w-[512px] w-full"
+          >
+            Because every second of downtime is a lost opportunity—our system
+            keeps you selling without interruption.
           </p>
         </div>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
+          class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8 text-center"
         >
           <div
             class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-3-card-1.png"
-                class="object-cover logo-light w-[70px] h-[70px]"
+                src="/assets/images/feature-one/card-one.png"
+                class="object-cover logo-light w-[30px] md:w-[60px]"
                 alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-3-card-1-dark.png"
-                class="object-cover logo-dark w-[70px] h-[70px]"
+                src="/assets/images/feature-one/card-one-dark.png"
+                class="object-cover logo-dark w-[30px] md:w-[60px]"
                 alt=""
               />
+
             </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Improve Efficiency
+            <h3 class="page-main md:text-xl text-[10px] font-bold mb-6">
+              Uninterrupted Service
             </h3>
-            <p class="text-sm font-normal leading-tight">
-              With real-time inventory updates, staff no longer needs to
-              manually check shelves or backrooms. They can quickly view stock
-              levels from the POS screen, allowing them to focus on customer
-              service, faster order processing, and smoother operations.
+            <p class="page-sub text-[8px] md:text-sm font-normal leading-tight">
+              Even when the internet is down, staff can continue billing,
+              processing payments, and printing receipts—ensuring smooth,
+              uninterrupted operations.
             </p>
           </div>
 
@@ -1196,26 +941,24 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-3-card-2.png"
-                class="object-cover logo-light w-[70px] h-[70px]"
+                src="/assets/images/feature-one/card-two.png"
+                class="object-cover logo-light w-[30px] md:w-[60px]"
                 alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-3-card-2-dark.png"
-                class="object-cover logo-dark w-[70px] h-[70px]"
+                src="/assets/images/feature-one/card-two-dark.png"
+                class="object-cover logo-dark w-[30px] md:w-[60px]"
                 alt=""
               />
-                
-              
             </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Reduce Waste
+            <h3 class="page-main md:text-xl text-[10px] font-bold mb-6">
+              Avoid Delays
             </h3>
-            <p class="text-sm font-normal leading-tight">
-              Accurate inventory tracking helps you avoid over-ordering items
-              that may expire or go unused. By knowing exactly what’s in stock
-              and what’s selling, you can make smarter purchasing decisions and
-              reduce spoilage, especially with perishable goods.
+            <p class="page-sub text-[8px] md:text-sm font-normal leading-tight">
+              Even if the internet drops, your staff can continue using the POS
+              system without any disruption. They can take orders, apply
+              discounts, split bills, and print receipts as usual—ensuring
+              smooth operations and a consistent customer experience.
             </p>
           </div>
 
@@ -1224,23 +967,22 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-3-card-3.png"
+                src="/assets/images/feature-one/card-three.png"
                 alt="taquila-pos"
-                class="object-cover logo-light w-[70px] h-[70px]"
+                class="object-cover logo-light w-[30px] md:w-[60px]"
               />
               <img
-                src="/assets/images/feature-one/feature-3-card-3-dark.png"
+                src="/assets/images/feature-one/card-three-dark.png"
                 alt="taquila-pos"
-                class="object-cover logo-dark w-[70px] h-[70px]"
+                class="object-cover logo-dark w-[30px] md:w-[60px]"
               />
-              
             </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Make Informed Decisions
+            <h3 class="page-main md:text-xl text-[10px] font-bold mb-6">
+              Works in Low-Connectivity Areas
             </h3>
-            <p class="text-sm font-normal leading-tight">
-              Access real-time data on stock and sales to reorder smarter, run
-              targeted promotions, and avoid overstocking slow-moving items.
+            <p class="page-sub text-[8px] md:text-sm font-normal leading-tight">
+              Perfect for food trucks, outdoor events, pop-up shops, or rural
+              locations where internet access is weak or unreliable.
             </p>
           </div>
         </div>
@@ -1612,22 +1354,23 @@ arrow_forward
         isEnglish = !isEnglish; // flip state
       }
 
-      // Main slider initialization
+      // Mobile timeline slider
       document.addEventListener('DOMContentLoaded', function () {
-        var splide = new Splide('#main-slider', {
+        var mobileTimelineSlider = new Splide('#mobile-timeline-slider', {
           type: 'loop',
           perPage: 1,
           autoplay: false,
           arrows: true,
           pagination: false,
+          gap: '1rem',
         });
-        splide.mount();
+        mobileTimelineSlider.mount();
 
         // Progress bar update
-        splide.on('moved', function () {
-          var bar = splide.root.querySelector('.my-slider-progress-bar');
-          var end = splide.Components.Controller.getEnd() + 1;
-          var rate = Math.min((splide.index + 1) / end, 1);
+        mobileTimelineSlider.on('moved', function () {
+          var bar = mobileTimelineSlider.root.querySelector('.my-slider-progress-bar');
+          var end = mobileTimelineSlider.Components.Controller.getEnd() + 1;
+          var rate = Math.min((mobileTimelineSlider.index + 1) / end, 1);
           bar.style.width = String(100 * rate) + '%';
         });
       });

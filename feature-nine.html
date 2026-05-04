@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tequila POS - Smart POS Solutions</title>
-
     <script src="/assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -152,12 +151,10 @@
       /* } */
 
       .splide__arrow {
-       position: relative !important;
-        /* top: -83px; */
-        /* width: full !important; */
-        
-        /* left: -10px;
-        right: -100px; */
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
         transform: none !important;
       }
       /* .splide__arrow--prev {
@@ -302,7 +299,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -310,7 +307,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -396,7 +393,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -404,7 +401,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -570,16 +567,17 @@
     <section class="lg:py-16 py-4">
       <div class="container mx-auto px-4">
         <h1
-          class="lg:w-[1052px] lg:text-8xl md:text-6xl text-[36px] font-bold lg:leading-[86.03px] leading-normal w-full"
+          class="lg:w-[1052px] lg:text-8xl md:text-6xl text-[32px] font-bold lg:leading-[86.03px] leading-normal w-full"
         >
-          <span class="page-accent">Real-Time Reporting </span
-          ><span class="page-main"> from Anywhere</span>
+          <span class="page-accent">Integrated Online & </span
+          ><span class="page-main">Delivery Orders</span>
         </h1>
 
         <p
-          class="md:w-[655px] w-full md:text-xl page-sub text-sm font-normal"
+          class="md:w-[655px] mt-4 w-full md:text-xl page-sub text-sm font-normal"
         >
-          Access live sales, staff, and inventory data—anytime, from any device.
+          treamline all third-party and direct online orders into one unified
+          system.
         </p>
       </div>
     </section>
@@ -592,33 +590,32 @@
         <!-- Left Content -->
         <div class="order-2 md:order-1 md:col-span-4">
           <h2
-            class="lg:text-[64px] md:text-6xl
-            text-[20px] w-full md:w-1/2 font-bold lg:leading-[80.64px] leading-normal"
+            class="text-[20px] md:text-[55px] font-[600] lg:leading-[80.64px] leading-normal w-full md:w-[760px]"
           >
             <span class="page-accent">Understanding </span
             ><span class="page-main">What It Is</span>
           </h2>
           <p
-            class="md:w-[512px] md:text-[15px] w-full text-[12px] page-sub md:mb-10 mb-6"
+            class="md:w-[512px] md:text-[15px] w-full text-sm page-sub md:mb-10 mb-6"
           >
-            Monitor your business remotely with real-time insights at your
-            fingertips.
+            A unified system that connects online platforms and delivery
+            services directly to your POS for faster, error-free order handling.
           </p>
-
-          <img src="/assets/images/feature-6.png" alt="" class="lg:hidden block w-full mb-4">
-
-          <p class="text-[12px] md:text-2xl leading-relaxed">
-            Business owners can instantly view sales, labor costs, and
-            performance reports from their phone or computer — no need to be
-            on-site. Whether they're managing one location or many, real-time
-            access keeps them informed and in control from anywhere.
+          <img src="/assets/images/feature-9.png" alt="" class="lg:hidden mb-4 w-full">
+          <p class="text-[12px] page-sub md:text-[15px] lg:text-2xl leading-relaxed">
+            Integrated Online & Delivery Orders refers to the seamless
+            connection between your restaurant’s POS system (Point of Sale) and
+            online ordering platforms (like Zomato, Swiggy, Uber Eats, or your
+            own website/app). This integration automatically sends online orders
+            directly into the POS and kitchen system—just like dine-in
+            orders—without the need for manual entry.
           </p>
         </div>
 
         <!-- Right Images -->
-        <div class="lg:block hidden order-1 md:order-2 md:col-span-2 h-full">
+        <div class="hidden lg:block order-1 md:order-2 md:col-span-2 h-full">
           <img
-            src="/assets/images/feature-one/feature-6-section-1.png"
+            src="/assets/images/feature-one/feature-nine-behind.png"
             alt="POS System"
             class="w-full h-full"
           />
@@ -626,7 +623,7 @@
       </div>
     </section>
 
-    <!--slider-->
+    <!--slider 1-->
     <section class="lg:py-16 py-4">
       <div class="container mx-auto px-4">
         <section id="main-slider" class="splide" aria-label="Splide Slider">
@@ -663,174 +660,11 @@ arrow_forward
             <ul class="splide__list">
               <li class="splide__slide relative pt-10">
                 <div class="p-4 md:p-8">
-                  <h1 class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[86.03px] leading-normal">
-                    <span class="page-accent">Login to TequilaPOS </span
-                    ><span class="page-main">Dashboard</span>
-                  </h1>
-
-                  <div
-                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
-                  >
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Log in anytime from your phone, tablet, or
-                            computer—manage your business on the go
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Protects your data by giving the right access to the
-                            right people—owners, managers, and staff see only
-                            what they need.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Simple, user-friendly design makes it easy to find
-                            reports and manage tasks—no training needed.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mobile-timeline lg:hidden mt-12">
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Log in anytime from your phone, tablet, or
-                          computer—manage your business on the go
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                        </blockquote>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Protects your data by giving the right access to the
-                          right people—owners, managers, and staff see only
-                          what they need.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                      </blockquote>
-                      </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Simple, user-friendly design makes it easy to find
-                          reports and manage tasks—no training needed.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                      </blockquote>
-
-                    </div>
-
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative pt-10">
-                <div class="p-4 md:p-8">
                   <h1
-                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[86.03px] leading-normal"
+                    class="lg:text-9xl md:text-6xl text-[30px] font-bold md:leading-[85.96px] leading-normal"
                   >
-                    <span class="page-accent">See Visual </span
-                    ><span class="page-main"> Reports</span>
+                    <span class="page-accent">Orders auto</span
+                    ><span class="page-main">-appear on POS</span>
                   </h1>
 
                   <div
@@ -851,8 +685,8 @@ arrow_forward
                           <p
                             class="text-[24px] text-gray-600 mt-2 leading-relaxed"
                           >
-                            Instantly see key metrics like sales, labor, and top
-                            items—clearly displayed in easy-to-read charts.
+                            Instant Sync: Online orders are automatically pushed
+                            to the POS in real time—no delays or manual entry.
                           </p>
                           <p
                             class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
@@ -878,8 +712,8 @@ arrow_forward
                           <p
                             class="text-[24px] text-gray-600 mt-2 leading-relaxed"
                           >
-                            Easily compare sales, labor, and performance trends
-                            across different days, shifts, or locations.
+                            Reduces Errors: Eliminates the risk of mistakes from
+                            copying orders between platforms.
                           </p>
                           <p
                             class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
@@ -905,8 +739,8 @@ arrow_forward
                           <p
                             class="text-[24px] text-gray-600 mt-2 leading-relaxed"
                           >
-                            Data refreshes instantly, so you always see the most
-                            current and accurate information.
+                            Saves Time: Frees up staff from re-entering orders,
+                            allowing them to focus on service and prep.
                           </p>
                           <p
                             class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
@@ -918,230 +752,879 @@ arrow_forward
                     </div>
                   </div>
 
-                  <div class="mobile-timeline lg:hidden mt-12">
+                  <div class="mobile-timeline lg:hidden mt-8">
                     <div class="timeline-item">
                       <span class="timeline-dot"></span>
                       <blockquote class="relative w-full">
                         <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                            class="md:text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
                         >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Instantly see key metrics like sales, labor, and top
-                          items—clearly displayed in easy-to-read charts.
+                          Instant Sync: Online orders are automatically pushed to
+                          the POS in real time—no delays or manual entry.
                         </p>
                         <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                        </blockquote>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Easily compare sales, labor, and performance trends
-                          across different days, shifts, or locations.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
+                            class="md:text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
                       </blockquote>
                     </div>
-
                     <div class="timeline-item">
                       <span class="timeline-dot"></span>
                       <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Data refreshes instantly, so you always see the most
-                          current and accurate information.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                      </blockquote>
-                    </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative pt-10">
-                <div class="p-4 md:p-8">
-                  <h1
-                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[86.03px] leading-normal"
-                  >
-                    <span class="page-accent">Can Filter by Date,</span
-                    ><span class="page-main"> Location, Employee, etc. </span>
-                  </h1>
-
-                  <div
-                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
-                  >
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
                           <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Quickly zoom in on specific dates, employees, or
-                            shifts to get precise insights.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Easily track and compare results across locations,
-                            time periods, or staff to spot trends and
-                            opportunities.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-
-                    <div
-                      class="flex flex-col items-center text-center flex-1 min-w-0"
-                    >
-                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
-                      <div class="w-full flex justify-center">
-                        <blockquote class="relative w-full">
-                          <p
-                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                          >
-                            “
-                          </p>
-
-                          <p
-                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
-                          >
-                            Tailor your dashboard to focus on the metrics that
-                            matter most—sales, staff, inventory, and more.
-                          </p>
-                          <p
-                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                          >
-                            ”
-                          </p>
-                        </blockquote>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="mobile-timeline lg:hidden mt-12">
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Quickly zoom in on specific dates, employees, or
-                          shifts to get precise insights.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                    </div>
-
-                    <div class="timeline-item">
-                      <span class="timeline-dot"></span>
-                      <blockquote class="relative w-full">
-                        <p
-                          class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
-                        >
-                          “
-                        </p>
-
-                        <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                          Easily track and compare results across locations,
-                          time periods, or staff to spot trends and
-                          opportunities.
-                        </p>
-                        <p
-                          class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
-                        >
-                          ”
-                        </p>
-                        </blockquote>
-                        </div>
-
-                        <div class="timeline-item">
-                          <span class="timeline-dot"></span>
-                          <blockquote class="relative w-full">
-                            <p
                               class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
                             >
                               “
                             </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Reduces Errors: Eliminates the risk of mistakes from
+                          copying orders between platforms.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Saves Time: Frees up staff from re-entering orders,
+                          allowing them to focus on service and prep.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
 
-                            <p class="text-base text-gray-600 mt-2 leading-relaxed">
-                              Tailor your dashboard to focus on the metrics that
-                              matter most—sales, staff, inventory, and more.
-                            </p>
-                            <p
-                              class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                  </div>
+                </div>
+              </li>
+
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-9xl md:text-6xl text-[30px] font-bold md:leading-[120.96px] leading-normal"
+                  >
+                    <span class="page-accent">Clearly labeled </span
+                    ><span class="page-main">by source</span>
+                  </h1>
+
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Easy Identification: Each order displays the source
+                            platform (e.g., Grubhub, Uber Eats, Website)
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Faster Fulfillment: Staff can prioritize based on
+                            order type—pickup, delivery, or dine-in.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Reduces Confusion: Minimizes mix-ups by clearly
+                            tagging where each order came from.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Easy Identification: Each order displays the source
+                          platform (e.g., Grubhub, Uber Eats, Website)
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                          <p
+                              class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
                             >
-                              ”
+                              “
                             </p>
-                          </blockquote>
-                        </div>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Faster Fulfillment: Staff can prioritize based on
+                          order type—pickup, delivery, or dine-in.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Reduces Confusion: Minimizes mix-ups by clearly
+                          tagging where each order came from.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                      </div>
+                  </div>
+                </div>
+              </li>
+
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-9xl md:text-6xl text-[30px] font-bold md:leading-[120.96px] leading-normal"
+                  >
+                    <span class="page-accent">Seamless </span
+                    ><span class="page-main">kitchen flow</span>
+                  </h1>
+
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Direct to Kitchen: Online orders go straight to the
+                            kitchen display or printer, just like dine-in
+                            tickets.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            No Re-entry Needed: Staff don’t waste time retyping
+                            orders—everything flows automatically.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl  text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Consistent Workflow: The kitchen handles all orders
+                            the same way, reducing confusion and speeding up
+                            prep.
+                          </p>
+
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Direct to Kitchen: Online orders go straight to the
+                          kitchen display or printer, just like dine-in tickets.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                          <p
+                              class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                            >
+                              “
+                            </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          No Re-entry Needed: Staff don’t waste time retyping
+                          orders—everything flows automatically.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl  text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Consistent Workflow: The kitchen handles all orders
+                          the same way, reducing confusion and speeding up prep.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                      </div>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-9xl md:text-6xl text-[30px] font-bold md:leading-[120.96px] leading-normal"
+                  >
+                    <span class="page-accent">Complete </span
+                    ><span class="page-main">order details</span>
+                  </h1>
+
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-base text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Full Order Info: Each ticket shows all items and any
+                            special modifiers (e.g., no onions, extra cheese).
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Timing Included: Orders display pickup or delivery
+                            time, helping staff manage prep schedules.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Customer Details: Contact info is included for
+                            smoother handoff or delivery coordination.
+                          </p>
+
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Full Order Info: Each ticket shows all items and any
+                          special modifiers (e.g., no onions, extra cheese).
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                          <p
+                              class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                            >
+                              “
+                            </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Timing Included: Orders display pickup or delivery time,
+                          helping staff manage prep schedules.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Customer Details: Contact info is included for smoother
+                          handoff or delivery coordination.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                      </div>
+                  </div>
+                </div>
+              </li>
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-9xl md:text-6xl text-[30px] font-bold md:leading-[120.96px] leading-normal"
+                  >
+                    <span class="page-accent">Smart </span
+                    ><span class="page-main">order filtering</span>
+                  </h1>
+
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Easy Sorting: Staff can quickly filter orders by
+                            type—Dine-In, Pickup, or Delivery.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Better Organization: Keeps the order screen clean
+                            and focused during busy hours.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            Faster Fulfillment: Helps prioritize tasks based on
+                            order type and urgency.
+                          </p>
+
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Easy Sorting: Staff can quickly filter orders by
+                          type—Dine-In, Pickup, or Delivery.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                          <p
+                              class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                            >
+                              “
+                            </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Better Organization: Keeps the order screen clean and
+                          focused during busy hours.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                    </div>
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+                        <p
+                          class="text-[18px] text-gray-600 mt-2 leading-relaxed"
+                        >
+                          Faster Fulfillment: Helps prioritize tasks based on
+                          order type and urgency.
+                        </p>
+                        <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                      </blockquote>
+                      </div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!--slider 2-->
+    <section class="lg:py-16 py-4">
+      <div class="container mx-auto px-4">
+        <div class="mb-12 text-left">
+          <h2
+            class="lg:text-[64px] md:text-4xl text-[20px] font-bold md:leading-[80.64px] leading-normal md:w-[661px] w-full"
+          >
+            <span class="page-accent">Empowering </span
+            ><span class="page-main">Restaurant Owners</span>
+          </h2>
+          <p
+            class="text-sm md:text-[15px] page-sub leading-relaxed md:w-[512px] w-full"
+          >
+            Key Actions You Can Take to Streamline Operations and Drive Growth
+          </p>
+        </div>
+        <section id="main-slider-two" class="splide" aria-label="Splide Slider">
+
+           <div class="absolute -bottom-0 md:-bottom-[0.5rem] left-8 z-10">
+            <div class="splide__arrows flex w-auto space-x-4">
+              <button
+                class="splide__arrow splide__arrow--prev text-4xl bg-slate-300 text-gray-900 hover:text-gray-900 transition"
+              aria-label="Previous Slide"
+              >
+                <span class="material-symbols-outlined">
+arrow_back
+</span>
+              </button>
+              <button
+                class="splide__arrow splide__arrow--next 
+                 md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
+                aria-label="Next Slide"
+              >
+                <span class="material-symbols-outlined">
+arrow_forward
+</span>
+              </button>
+            </div>
+          </div>
+          <div class="splide__track">
+            <ul class="splide__list">
+              <li class="splide__slide relative">
+                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                  <div class="md:order-1 order-2 col-span-1 md:col-span-8 mt-4 md:mt-16">
+                    <h1
+                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
+                    >
+                      Track all online orders in one dashboard
+                    </h1>
+
+                    <p
+                      class="md:w-[508px] page-sub text-[10px] lg:text-xl font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                    >
+                      Employees clock in using a unique PIN, QR code, or
+                      fingerprint—preventing buddy punching and ensuring
+                      accurate time tracking. Each entry is logged with the
+                      exact time and user ID, improving attendance accuracy and
+                      payroll reliability.
+                    </p>
+                  </div>
+                  <div class="md:order-2 order-1 col-span-1 md:col-span-4">
+                    <img
+                      src="/assets/images/feature-one/feature-nine-carousel-one.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="splide__slide relative">
+                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                  <div class="md:order-1 order-2 col-span-1 md:col-span-8 mt-4 md:mt-16">
+                    <h1
+                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
+                    >
+                      View total sales from Grubhub and Uber Eats
+                    </h1>
+
+                    <p
+                      class="md:w-[508px] page-sub text-[10px] lg:text-xl font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                    >
+                      Owners can easily view total sales from platforms like
+                      Grubhub and Uber Eats in one place. This helps track
+                      performance, compare channels, and make informed decisions
+                      without logging into multiple accounts.
+                    </p>
+                  </div>
+                  <div class="md:order-2 order-1 col-span-1 md:col-span-4">
+                    <img
+                      src="/assets/images/feature-one/feature-nine-carousel-two.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="splide__slide relative">
+                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                  <div class="md:order-1 order-2 col-span-1 md:col-span-8 mt-4 md:mt-16">
+                    <h1
+                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
+                    >
+                      Monitor fees and commissions from those platforms
+                    </h1>
+
+                    <p
+                      class="md:w-[508px] page-sub text-[10px] lg:text-xl font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                    >
+                      Keep track of fees and commissions from platforms like
+                      Grubhub and Uber Eats directly in your dashboard. This
+                      transparency helps owners understand true profit margins
+                      and manage costs more effectively.
+                    </p>
+                  </div>
+                  <div class="md:order-2 order-1 col-span-1 md:col-span-4">
+                    <img
+                      src="/assets/images/feature-one/feature-nine-carousel-three.png"
+                      alt=""
+                    />
+                  </div>
+                </div>
+              </li>
+
+              <li class="splide__slide relative">
+                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                  <div class="md:order-1 order-2 col-span-1 md:col-span-8 mt-4 md:mt-16">
+                    <h1
+                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
+                    >
+                      Adjust menu availability by platform (e.g., some items
+                      only available for dine-in)
+                    </h1>
+
+                    <p
+                      class="md:w-[508px] page-sub text-[10px] lg:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                    >
+                      Owners can customize menu availability by
+                      platform—offering certain items exclusively for dine-in,
+                      pickup, or delivery. This flexibility helps manage kitchen
+                      load, control costs, and tailor offerings to each service
+                      channel.
+                    </p>
+                  </div>
+                  <div class="md:order-2 order-1 col-span-1 md:col-span-4">
+                    <img
+                      src="/assets/images/feature-one/feature-nine-carousel-four.png"
+                      alt=""
+                    />
                   </div>
                 </div>
               </li>
@@ -1154,9 +1637,9 @@ arrow_forward
     <!-- why choose us -->
     <section class="lg:py-16 py-4">
       <div class="container mx-auto px-4">
-        <div class="mb-12 md:text-left text-center">
+        <div class="mb-12 text-left">
           <h2
-            class="lg:text-[64px] md:text-4xl text-3xl font-bold md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
+            class="md:text-[64px] text-[20px] font-bold md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
           >
             <span class="page-accent">Why it </span
             ><span class="page-main">matters</span>
@@ -1177,24 +1660,25 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-6-card-1.png"
+                src="/assets/images/feature-one/feature-nine-card-one.png"
                 class="object-cover logo-light"
                 alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-6-card-1-dark.png"
+                src="/assets/images/feature-one/feature-nine-card-one-dark.png"
                 class="object-cover logo-dark"
                 alt=""
               />
+              
             </div>
             <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Daily Summaries
+              No Manual Entry Errors
             </h3>
-            <p class="text-sm font-normal leading-tight">
-              Real-time reporting provides a clear snapshot of the day’s
-              performance—total sales, top-selling items, labor costs, and more.
-              This helps owners quickly assess how the business did each day,
-              spot any issues, and make informed decisions for the next shift.
+            <p class="text-sm page-sub font-normal leading-tight">
+              Orders flow directly from the customer to the POS, eliminating
+              manual entry errors like wrong items, quantities, or modifiers.
+              This ensures greater accuracy and fewer mistakes reaching the
+              kitchen.
             </p>
           </div>
 
@@ -1203,22 +1687,23 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-6-card-2.png"
+                src="/assets/images/feature-one/feature-nine-card-two.png"
                 class="object-cover logo-light"
                 alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-6-card-2-dark.png"
+                src="/assets/images/feature-one/feature-nine-card-two-dark.png"
                 class="object-cover logo-dark"
                 alt=""
               />
             </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">Taxes</h3>
-            <p class=" text-sm font-normal leading-tight">
-              Accurate real-time data simplifies tax preparation by keeping
-              detailed records of sales, discounts, and expenses. Business
-              owners can easily export reports needed for filing, reducing
-              errors and saving time during tax season.
+            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
+              Faster Counter Service
+            </h3>
+            <p class="text-sm page-sub font-normal leading-tight">
+              Staff no longer need to re-enter online or third-party orders into
+              the system, speeding up service and reducing bottlenecks at the
+              register or order station.
             </p>
           </div>
 
@@ -1227,24 +1712,98 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-6-card-3.png"
+                src="/assets/images/feature-one/feature-nine-card-three.png"
+                class="object-cover logo-light"
+                alt="taquila-pos"
+              />
+              <img
+                src="/assets/images/feature-one/feature-nine-card-three-dark.png"
+                class="object-cover logo-dark"
+                alt="taquila-pos"
+              />
+
+            </div>
+            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
+              Quicker Prep & Delivery
+            </h3>
+            <p class="text-sm page-sub font-normal leading-tight">
+              As orders go straight to the kitchen display system (KDS) or
+              printer, kitchen staff can start preparing meals
+              immediately—reducing wait times and improving delivery speed.
+            </p>
+          </div>
+
+          <div
+            class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="flex justify-center mb-1">
+              <img
+                src="/assets/images/feature-one/feature-nine-card-four.png"
                 alt="taquila-pos"
                 class="object-cover logo-light"
               />
               <img
-                src="/assets/images/feature-one/feature-6-card-3-dark.png"
+                src="/assets/images/feature-one/feature-nine-card-four-dark.png"
                 alt="taquila-pos"
                 class="object-cover logo-dark"
               />
             </div>
             <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Business Growth
+              No Tablet Juggling
             </h3>
-            <p class="text-sm font-normal leading-tight">
-              Real-time insights help identify trends—like best-selling items,
-              peak hours, and high-performing staff. With this data, owners can
-              make smarter decisions on inventory, staffing, and promotions,
-              driving long-term growth and profitability.
+            <p class="text-sm page-sub font-normal leading-tight">
+              Instead of toggling between multiple third-party apps and devices,
+              all online orders are integrated into a single
+              platform—streamlining workflows and reducing stress for
+              front-of-house staff.
+            </p>
+          </div>
+          <div
+            class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="flex justify-center mb-1">
+              <img
+                src="/assets/images/feature-one/feature-nine-card-five.png"
+                alt="taquila-pos"
+                class="object-cover logo-light"
+              />
+              <img
+                src="/assets/images/feature-one/feature-nine-card-five-dark.png"
+                alt="taquila-pos"
+                class="object-cover logo-dark"
+              />
+            </div>
+            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
+              Better Guest Experience
+            </h3>
+            <p class="text-sm page-sub font-normal leading-tight">
+              With faster order transmission and fewer mistakes, guests receive
+              their meals quicker and exactly how they ordered them, leading to
+              higher satisfaction and more efficient kitchen performance.
+            </p>
+          </div>
+          <div
+            class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
+          >
+            <div class="flex justify-center mb-1">
+              <img
+                src="/assets/images/feature-one/feature-nine-card-six.png"
+                alt="taquila-pos"
+                class="object-cover logo-light"
+              />
+              <img
+                src="/assets/images/feature-one/feature-nine-card-six-dark.png"
+                alt="taquila-pos"
+                class="object-cover logo-dark"
+              />
+            </div>
+            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
+              Clear Sales Breakdown
+            </h3>
+            <p class="text-sm page-sub font-normal leading-tight">
+              Integrated systems automatically categorize sales channels,
+              helping managers track performance, plan staffing, and make
+              informed business decisions based on clear data.
             </p>
           </div>
         </div>
@@ -1254,7 +1813,7 @@ arrow_forward
     <!-- What Makes Us Different Section -->
 
     <!-- Footer -->
-    <footer class="py-10">
+     <footer class="py-10">
       <div class="container mx-auto px-4">
         <!-- Top Logo + Switch -->
         <div
@@ -1593,6 +2152,36 @@ arrow_forward
     <script src="../assets/js/footer-accordion.js"></script>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 1. Initialize Splide
+        var splide = new Splide("#main-slider-two", {
+          type: "loop", // Use 'loop' for continuous navigation
+          rewind: false, // Keep rewind false because loop handles continuous movement
+          arrows: true, // Keep the arrows for navigation (we will style them)
+          pagination: false, // Explicitly hide the default Splide dots
+          speed: 500, // Match the transition speed to the CSS transition
+        });
+
+        // 2. Select the progress bar element
+        var bar = splide.root.querySelector(".my-slider-progress-bar");
+
+        // 3. Attach the event listener to update the bar width
+        splide.on("mounted move", function () {
+          // Get the last index of the slides
+          var end = splide.Components.Controller.getEnd() + 1;
+          var currentIndex = splide.index % end;
+
+          // Calculate the percentage: (current index + 1) / total slides * 100
+          var percentage = String((100 * (currentIndex + 1)) / end) + "%";
+
+          // Apply the calculated width to the progress bar element
+          bar.style.width = percentage;
+        });
+
+        // 4. Mount the slider to start it
+        splide.mount();
+      });
+
       function toggleFaq(element) {
         element.classList.toggle("active");
       }

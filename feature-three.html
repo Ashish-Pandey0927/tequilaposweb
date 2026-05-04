@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tequila POS - Smart POS Solutions</title>
-
     <script src="/assets/js/theme.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -13,9 +12,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     />
-
-
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_forward" />
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&
     icon_names=arrow_back" />
@@ -153,10 +150,12 @@
       /* } */
 
       .splide__arrow {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
+       position: relative !important;
+        /* top: -83px; */
+        /* width: full !important; */
+        
+        /* left: -10px;
+        right: -100px; */
         transform: none !important;
       }
       /* .splide__arrow--prev {
@@ -241,8 +240,10 @@
       /* Form section dark mode */
       html.dark .contact-form-container { background-color: #1c1c1c; }
     </style>
+
+    
   </head>
-  <body class="font-inter text-sm">
+  <body class="bg-white font-inter text-sm">
     <!-- Navigation -->
     <nav class="navbar xl:block hidden">
       <div class="navbar-container container mx-auto px-4">
@@ -301,7 +302,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -309,7 +310,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -395,7 +396,7 @@
                         <ul class="space-y-2 text-sm">
                           <li>
                             <a
-                              href="#"
+                              href="/overview.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Overview</a
@@ -403,7 +404,7 @@
                           </li>
                           <li>
                             <a
-                              href="#"
+                              href="/feature.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Switch to Tequila</a
@@ -566,58 +567,58 @@
     </nav>
 
     <!-- hero section -->
-    <section class="lg:py-16 py-6">
+    <section class="lg:py-16 py-8">
       <div class="container mx-auto px-4">
         <h1
-          class="lg:w-[1052px] lg:text-8xl md:text-6xl text-[32px] font-bold lg:leading-[86.03px] leading-normal w-full"
+          class="lg:w-[1052px] md:text-[64px] lg:text-[96px] text-[40px] font-bold md:leading-[86.03px] leading-normal w-full"
         >
-          <span class="page-accent">Employee Clock-In & </span
-          ><span class="page-main"> Permission Control</span>
+          <span class="page-accent">Inventory Tracking</span
+          ><span class="page-main"> & Low Stock Alerts</span>
         </h1>
 
         <p
-          class="md:w-[655px] mt-4 w-full md:text-xl page-sub text-sm font-normal"
+          class="md:w-[655px] w-full md:text-[20px] page-sub text-[12px] font-normal"
         >
-          Track Attendance & Manage Staff Access with Ease
+          Boost customer retention with seamless rewards, personalized offers,
+          and automated loyalty tracking—built right into your POS.
         </p>
       </div>
     </section>
 
     <!--behind  Section -->
-    <section class="lg:py-16 py-4">
+    <section class="lg:py-16 py-8">
       <div
         class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-6 gap-10 items-center md:items-start"
       >
         <!-- Left Content -->
-        <div class="order-2 md:order-1 md:col-span-4">
+        <div class="order-2 md:order-1 md:col-span-4 w-full md:w-[512px]">
           <h2
-            class="md:text-[43px] lg:text-[64px] text-[20px] font-bold lg:leading-[80.64px] leading-normal"
+            class="md:text-[64px] text-4xl font-bold  md:leading-[80.64px] leading-normal"
           >
-            <span class="page-accent">Understanding What It Is </span
-            ><span class="page-main">Permission Control</span>
+            <span class="page-accent">Smart Inventory </span
+            ><span class="page-main">Alerts</span>
           </h2>
           <p
             class="md:w-[512px] md:text-[15px] w-full text-sm page-sub md:mb-10 mb-6"
           >
-            A reliable system to log staff hours and enforce role-based access
-            across your POS platform.
+            Track stock in real time and get notified before you run low.
           </p>
 
-          <img src="/assets/images/feature-4.png" alt="" class="lg:hidden  w-full mb-4">
-          <p class="text-[12px] md:text-[15px] lg:text-2xl leading-relaxed">
-            Employee Clock-In & Permission Control is a feature in POS systems
-            that allows staff to log their working hours directly through the
-            system and ensures that only authorized personnel can access
-            specific functions. It helps track attendance, manage shift timings,
-            and control access to sensitive data or operations—like refunds,
-            discounts, or reports—based on roles or permissions.
+          <img src="/assets/images/feature-3.png" alt="" class="lg:hidden w-full mb-4" />
+
+          <p class="text-[12px] mt-6 lg:mt-0 md:text-2xl leading-relaxed md:w-[712px] w-full">
+            Inventory Tracking & Low Stock Alerts is a built-in POS feature that
+            lets you monitor inventory levels in real time. It automatically
+            updates stock counts with every sale, return, or restock — across
+            all locations. When items run low, the system instantly notifies you
+            so you can reorder before you run out.
           </p>
         </div>
 
         <!-- Right Images -->
         <div class="hidden lg:block order-1 md:order-2 md:col-span-2 h-full">
           <img
-            src="/assets/images/feature-one/feature-4-section-1.png"
+            src="/assets/images/feature-one/feature-3-section-1.png"
             alt="POS System"
             class="w-full h-full"
           />
@@ -626,14 +627,20 @@
     </section>
 
     <!--slider-->
-    <section class="lg:py-16 py-4">
+    <section class="lg:py-16 py-8">
       <div class="container mx-auto px-4">
         <section id="main-slider" class="splide" aria-label="Splide Slider">
-          <div class="absolute -bottom-0 md:bottom-6 left-8 z-10">
-            <div class="splide__arrows flex w-auto space-x-4">
+          <div class="my-slider-progress w-4/6 mx-auto">
+            <div class="my-slider-progress-bar"></div>
+          </div>
+
+          <div class="w-full absolute mx-0 left-0 right-0 z-10">
+            <div class="splide__arrows flex w-full ">
               <button
-                class="splide__arrow splide__arrow--prev text-4xl bg-slate-300 text-gray-900 hover:text-gray-900 transition"
-              aria-label="Previous Slide"
+                class="splide__arrow splide__arrow--prev 
+                left-0
+                 md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
+                aria-label="Previous Slide"
               >
                 <span class="material-symbols-outlined">
 arrow_back
@@ -641,6 +648,7 @@ arrow_back
               </button>
               <button
                 class="splide__arrow splide__arrow--next 
+                right-0
                  md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
                 aria-label="Next Slide"
               >
@@ -653,148 +661,481 @@ arrow_forward
 
           <div class="splide__track">
             <ul class="splide__list">
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="md:order-1 order-2 col-span-1 md:col-span-8 mt-4 lg:mt-16">
-                    <h1
-                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Secure Clock-In
-                    </h1>
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1 class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.64px] leading-normal">
+                    <span class="page-accent">Manager Gets a Warning: </span
+                    ><span class="page-main"> “Only 5 Avocados Left”</span>
+                  </h1>
 
-                    <p
-                      class="md:w-[508px] text-black text-[10px] lg:text-xl text-[1rem] font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                  <div
+                    class="lg:block hidden lg:flex flex-row md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
                     >
-                      Employees clock in using a unique PIN, QR code, or
-                      fingerprint—preventing buddy punching and ensuring
-                      accurate time tracking. Each entry is logged with the
-                      exact time and user ID, improving attendance accuracy and
-                      payroll reliability.
-                    </p>
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Instant Notifications:</strong> Get
+                            real-time alerts when stock drops below your set
+                            threshold.
+                          </p>
+                          <p
+                            class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Prevent Stockouts:</strong> Take action
+                            before popular items run out and affect service.
+                          </p>
+                          <p
+                            class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-4xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Smarter Reordering:</strong> Helps plan
+                            restocks based on actual usage and demand.
+                          </p>
+                          <p
+                            class="text-4xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
                   </div>
-                  <div class="col-span-1 md:col-span-4 order-1 md:order-2">
-                    <img
-                      src="/assets/images/feature-one/feature-4-carousel-1.png"
-                      alt=""
-                    />
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                        <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
+                        <p
+                          class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                        >
+                          <strong>Instant Notifications:</strong> Get
+                          real-time alerts when stock drops below your set
+                          threshold.
+                        </p>
+                        <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
+                      </blockquote>
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Prevent Stockouts:</strong> Take action
+                            before popular items run out and affect service.
+                          </p>
+                          <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
+                        </blockquote>
+                      </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                      <blockquote class="relative w-full">
+                            <p class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block">“</p>
+                            <p
+                              class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                            >
+                              <strong>Smarter Reordering:</strong> Helps plan
+                              restocks based on actual usage and demand.
+                            </p>
+                            <p class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block">”</p>
+                          </blockquote>
+                    </div>
                   </div>
                 </div>
               </li>
 
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="order-2 md:order-1 col-span-1 md:col-span-8 mt-4 lg:mt-16">
-                    <h1
-                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Role-Based Access
-                    </h1>
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.96px] leading-normal"
+                  >
+                    <span class="page-accent">Auto-Updates When </span
+                    ><span class="page-main"> Sales are Made</span>
+                  </h1>
 
-                    <p
-                      class="md:w-[508px] text-black text-[10px] lg:text-xl text-[1rem] font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
                     >
-                      Each employee is given access only to the functions they
-                      need. For example, cashiers can take orders and payments,
-                      while only managers can issue refunds or view reports.
-                      This limits errors, protects sensitive data, and keeps
-                      operations secure.
-                    </p>
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Real-Time Tracking:</strong> Inventory
+                            levels adjust instantly as items are sold.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Zero Manual Work:</strong> No need to update
+                            stock manually — it’s all automated.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Accurate Insights:</strong> Always see your
+                            current stock status for better decision-making.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
                   </div>
-                  <div class="order-1 md:order-2 col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/feature-one/feature-4-carousel-2.png"
-                      alt=""
-                    />
-                  </div>
+
+                  <div class="mobile-timeline lg:hidden mt-8">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Real-Time Tracking:</strong> Inventory
+                            levels adjust instantly as items are sold.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Zero Manual Work:</strong> No need to update
+                            stock manually — it’s all automated.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                    </div>
+                      
+
+                      <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Accurate Insights:</strong> Always see your
+                            current stock status for better decision-making.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                        </div>
+                    </div>
                 </div>
               </li>
 
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 lg:mt-16 order-2 md:order-1">
-                    <h1
-                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Action Logging
-                    </h1>
+              <li class="splide__slide relative pt-10">
+                <div class="p-4 md:p-8">
+                  <h1
+                    class="lg:text-8xl md:text-[4rem] text-[34px] font-bold md:leading-[85.96px] leading-normal"
+                  >
+                    <span class="page-accent">Option to Mark Items </span
+                    ><span class="page-main"> as “Out of Stock”</span>
+                  </h1>
 
-                    <p
-                      class="md:w-[508px] text-black text-[10px] lg:text-xl text-[1rem] font-normal leading-normal md:leading-7 mt-2 lg:mt-14"
+                  <div
+                    class="lg:block hidden lg:flex flex-col md:flex-row justify-between items-start md:mt-12 mt-8 md:space-x-8 space-y-8 md:space-y-0 border-t border-gray-30"
+                  >
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
                     >
-                      All critical actions—such as voids, refunds, and
-                      clock-outs—are automatically recorded with the employee’s
-                      ID and timestamp. This creates a clear, auditable trail
-                      that improves accountability and helps resolve disputes or
-                      errors quickly.
-                    </p>
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Clear Communication:</strong> Staff
+                            instantly knows which items are unavailable.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Avoids Customer Disappointment:</strong
+                            >Prevents orders of items you can’t fulfill.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
+
+                    <div
+                      class="flex flex-col items-center text-center flex-1 min-w-0"
+                    >
+                      <div class="w-3 h-3 bg-black rounded-full mb-4"></div>
+                      <div class="w-full flex justify-center">
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[24px] text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Quick Action:</strong> Mark items out of
+                            stock with just a tap — no backend access needed.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      </div>
+                    </div>
                   </div>
-                  <div class="order-1 md:order-2 col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/feature-one/feature-4-carousel-3.png"
-                      alt=""
-                    />
+
+                  <div class="mobile-timeline lg:hidden mt-12">
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Clear Communication:</strong> Staff
+                            instantly knows which items are unavailable.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                      
+                    </div>
+
+                    <div class="timeline-item">
+                      <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Avoids Customer Disappointment:</strong
+                            >Prevents orders of items you can’t fulfill.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
+                    </div>
+                      
+
+                      <div class="timeline-item">
+                        <span class="timeline-dot"></span>
+                        <blockquote class="relative w-full">
+                          <p
+                            class="text-6xl text-gray-300 absolute -top-4 -left-3 hidden sm:block"
+                          >
+                            “
+                          </p>
+
+                          <p
+                            class="text-[12px] text-center text-gray-600 mt-2 leading-relaxed"
+                          >
+                            <strong>Quick Action:</strong> Mark items out of
+                            stock with just a tap — no backend access needed.
+                          </p>
+                          <p
+                            class="text-6xl text-gray-300 absolute -bottom-4 -right-3 hidden sm:block"
+                          >
+                            ”
+                          </p>
+                        </blockquote>
                   </div>
                 </div>
-              </li>
-
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="order-2 md:order-1 col-span-1 md:col-span-8 mt-4 lg:mt-14 md:mt-4">
-                    <h1
-                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Instant Alerts
-                    </h1>
-
-                    <p
-                      class="md:w-[508px] text-black text-[10px] lg:text-xl text-[1rem] font-normal leading-normal md:leading-7 mt-2 lg:mt-10"
-                    >
-                      Managers receive real-time alerts for sensitive actions
-                      like refunds, voids, or opening the cash drawer without a
-                      sale. These notifications help spot unusual activity
-                      quickly and maintain better control over daily operations.
-                    </p>
-                  </div>
-                  <div class="order-1 md:order-2 col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/feature-one/feature-4-carousel-4.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="order-2 md:order-1 col-span-1 md:col-span-8 mt-4 lg:mt-14 md:mt-4">
-                    <h1
-                      class="justify-start text-black lg:text-5xl md:text-3xl text-[20px] font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Sensitive Action Alerts
-                    </h1>
-
-                    <p
-                      class="md:w-[508px] text-black text-[10px] lg:text-xl text-[1rem] font-normal leading-normal md:leading-7 mt-2 lg:mt-10"
-                    >
-                      Actions like refunds, voids, manual labor edits, or
-                      unauthorized discounts trigger instant alerts to managers
-                      via email or mobile—ensuring quick response to potential
-                      misuse or irregularities.
-                    </p>
-
-                    <p class="text-gray-600 text-[10px] md:text-xl">Common alert triggers include:</p>
-                    <ul class="list-disc list-inside text-[10px] md:text-xl">
-                      <li>Voiding tickets</li>
-                      <li>Issuing refunds</li>
-                      <li>Applying unauthorized discounts</li>
-                    </ul>
-                  </div>
-                  <div class="order-1 md:order-2 col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/feature-one/feature-4-carousel-5.png"
-                      alt=""
-                    />
-                  </div>
                 </div>
               </li>
             </ul>
@@ -804,11 +1145,11 @@ arrow_forward
     </section>
 
     <!-- why choose us -->
-    <section class="lg:py-16 py-4">
+    <section class="lg:py-16 py-8">
       <div class="container mx-auto px-4">
-        <div class="mb-12 text-left">
+        <div class="mb-12 md:text-left text-center">
           <h2
-            class="md:text-[64px] text-[20px] font-bold md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
+            class="md:text-[64px] text-4xl font-bold md:leading-[80.64px] leading-normal lg:w-[880px] w-full"
           >
             <span class="page-accent">Why it </span
             ><span class="page-main">matters</span>
@@ -816,8 +1157,8 @@ arrow_forward
           <p
             class="text-sm md:text-[15px] page-sub leading-relaxed md:w-[512px] w-full"
           >
-            Ensure accurate time tracking and limit access to sensitive
-            functions, reducing errors and misuse.
+            Prevent stockouts, reduce waste, and keep operations running
+            smoothly with timely inventory insights.
           </p>
         </div>
 
@@ -829,123 +1170,77 @@ arrow_forward
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-4-card-1.png"
-                class="object-cover logo-light"
+                src="/assets/images/feature-one/feature-3-card-1.png"
+                class="object-cover logo-light w-[70px] h-[70px]"
                 alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-4-card-1-dark.png"
-                class="object-cover logo-dark"
-                alt=""
-              />
-            </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Reduces Theft & Misuse
-            </h3>
-            <p class="page-sub text-sm font-normal leading-tight">
-              By limiting access and tracking every action, the system helps
-              prevent internal theft, unauthorized discounts, and accidental
-              errors—keeping your operations secure.
-            </p>
-          </div>
-
-          <div
-            class="rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
-          >
-            <div class="flex justify-center mb-1">
-              <img
-                src="/assets/images/feature-one/feature-4-card-2.png"
-                class="object-cover logo-light"
-                alt=""
-              />
-              <img
-                src="/assets/images/feature-one/feature-4-card-2-dark.png"
-                class="object-cover logo-dark"
+                src="/assets/images/feature-one/feature-3-card-1-dark.png"
+                class="object-cover logo-dark w-[70px] h-[70px]"
                 alt=""
               />
             </div>
             <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Improves Time Tracking
+              Improve Efficiency
             </h3>
-            <p class="page-sub text-sm font-normal leading-tight">
-              Accurate clock-ins and automated logs ensure reliable attendance
-              records, making payroll processing faster, easier, and error-free.
+            <p class="text-sm font-normal leading-tight">
+              With real-time inventory updates, staff no longer needs to
+              manually check shelves or backrooms. They can quickly view stock
+              levels from the POS screen, allowing them to focus on customer
+              service, faster order processing, and smoother operations.
             </p>
           </div>
 
           <div
-            class="rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
+            class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-4-card-3.png"
-                alt="taquila-pos"
-                class="object-cover logo-light"
+                src="/assets/images/feature-one/feature-3-card-2.png"
+                class="object-cover logo-light w-[70px] h-[70px]"
+                alt=""
               />
               <img
-                src="/assets/images/feature-one/feature-4-card-3-dark.png"
-                alt="taquila-pos"
-                class="object-cover logo-dark"
+                src="/assets/images/feature-one/feature-3-card-2-dark.png"
+                class="object-cover logo-dark w-[70px] h-[70px]"
+                alt=""
               />
-
+                
+              
             </div>
             <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Protects Business Data
+              Reduce Waste
             </h3>
-            <p class="page-sub text-sm font-normal leading-tight">
-              Role-based access ensures that only authorized staff can view or
-              perform sensitive actions, keeping your financial and operational
-              data secure.
+            <p class="text-sm font-normal leading-tight">
+              Accurate inventory tracking helps you avoid over-ordering items
+              that may expire or go unused. By knowing exactly what’s in stock
+              and what’s selling, you can make smarter purchasing decisions and
+              reduce spoilage, especially with perishable goods.
             </p>
           </div>
 
           <div
-            class="rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
+            class="why-choose-card rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
           >
             <div class="flex justify-center mb-1">
               <img
-                src="/assets/images/feature-one/feature-4-card-4.png"
+                src="/assets/images/feature-one/feature-3-card-3.png"
                 alt="taquila-pos"
-                class="object-cover logo-light"
+                class="object-cover logo-light w-[70px] h-[70px]"
               />
               <img
-                src="/assets/images/feature-one/feature-4-card-4-dark.png"
+                src="/assets/images/feature-one/feature-3-card-3-dark.png"
                 alt="taquila-pos"
-                class="object-cover logo-dark"
+                class="object-cover logo-dark w-[70px] h-[70px]"
               />
+              
             </div>
             <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Builds Accountability
+              Make Informed Decisions
             </h3>
-            <p class="page-sub text-sm font-normal leading-tight">
-              Every action is tied to an individual user, encouraging
-              responsible behavior and making it easy to trace and resolve any
-              issues.
-            </p>
-          </div>
-
-          <div
-            class="rounded-[38px] shadow-[0px_1px_2px_1px_rgba(0,0,0,0.13)] p-6 hover:shadow-xl transition-shadow duration-300"
-          >
-            <div class="flex justify-center mb-1">
-              <img
-                src="/assets/images/feature-one/feature-4-card-5.png"
-                alt="taquila-pos"
-                class="object-cover logo-light"
-              />
-              <img
-                src="/assets/images/feature-one/feature-4-card-5-dark.png"
-                alt="taquila-pos"
-                class="object-cover logo-dark"
-              />
-
-            </div>
-            <h3 class="page-main md:text-xl text-sm font-bold mb-6">
-              Peace of Mind for Owners
-            </h3>
-            <p class="page-sub text-sm font-normal leading-tight">
-              With real-time alerts and complete activity logs, owners can stay
-              informed and in control—even when they’re away from the business.
+            <p class="text-sm font-normal leading-tight">
+              Access real-time data on stock and sales to reorder smarter, run
+              targeted promotions, and avoid overstocking slow-moving items.
             </p>
           </div>
         </div>
@@ -1316,6 +1611,26 @@ arrow_forward
 
         isEnglish = !isEnglish; // flip state
       }
+
+      // Main slider initialization
+      document.addEventListener('DOMContentLoaded', function () {
+        var splide = new Splide('#main-slider', {
+          type: 'loop',
+          perPage: 1,
+          autoplay: false,
+          arrows: true,
+          pagination: false,
+        });
+        splide.mount();
+
+        // Progress bar update
+        splide.on('moved', function () {
+          var bar = splide.root.querySelector('.my-slider-progress-bar');
+          var end = splide.Components.Controller.getEnd() + 1;
+          var rate = Math.min((splide.index + 1) / end, 1);
+          bar.style.width = String(100 * rate) + '%';
+        });
+      });
     </script>
   </body>
 </html>
