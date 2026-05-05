@@ -659,22 +659,22 @@
   <footer class="py-10">
       <div class="container mx-auto px-4">
         <!-- Top Logo + Switch -->
-        <div
+         <div
           class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center"
         >
           <img
             src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="logo-light w-10 md:w-40 h-auto"
+            class="w-10 md:w-40 h-auto logo-light"
             alt=""
           />
           <img
             src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-            class="logo-dark w-10 md:w-40 h-auto"
+            class="w-10 md:w-40 h-auto logo-dark"
             alt=""
           />
 
           <div class="flex items-center space-x-2">
-            <p id="theme-toggle-label" class="text-[11px] font-normal select-none footer-label">
+            <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
               Switch to dark mode
             </p>
 
@@ -693,12 +693,8 @@
                 title="Toggle dark mode"
                 placeholder="Toggle dark mode"
               />
-              <div
-                class="md:w-[80px] md:h-[40px] w-[40px] h-[20px] bg-gray-300 rounded-full peer transition-colors duration-300"
-              ></div>
-              <div
-                class="absolute left-[5px] top-auto lg:w-[44px] lg:h-[33px] w-[22px] h-[16px] bg-white rounded-full shadow transform peer-checked:translate-x-3 md:peer-checked:translate-x-7 transition-transform duration-300"
-              ></div>
+              <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
+              <div class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]"></div>
             </label>
           </div>
         </div>
