@@ -8,15 +8,14 @@
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="/assets/js/theme.js"></script>
     <title>Tequila POS - Smart POS Solutions</title>
 
     
     <script src="https://cdn.tailwindcss.com/"></script>
     <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/%40splidejs/splide%404.1.4/dist/css/splide.min.css">
     <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/%40splidejs/splide%404.1.4/dist/css/themes/splide-default.min.css">
-    <link rel="stylesheet" href="/assets/style/global.css">
-    <link rel="stylesheet" href="assets/style/global.css">
+    <link rel="stylesheet" href="../assets/style/global.css">
 
         <link rel="stylesheet" href="../unpkg.com/aos%402.3.1/dist/aos.css">
     <style>
@@ -33,84 +32,96 @@
                   top: 69% !important;
                 }
               }
+.flip-card {
+  background-color: transparent;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  max-height: 600px;
+  perspective: 1000px;
+}
 
-              .flip-card {
-                background-color: transparent;
-                width: min(100%, 335px);
-                height: clamp(420px, 74vw, 488px);
-                perspective: 1000px;
-              }
+@media screen and (max-width: 768px) {
+  .flip-card {
+    aspect-ratio: 1 / 1;
+    max-width: 100%;
+  }
+}
 
-              .flip-card-face-image {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-              }
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s cubic-bezier(.4,0,.2,1);
+  transform-style: preserve-3d;
+}
 
-              .flip-card-inner {
-                position: relative;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                transition: transform 0.6s;
-                transform-style: preserve-3d;
-              }
+/* Desktop hover flip — only on real pointer devices */
+@media (hover: hover) and (pointer: fine) {
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
 
-              .flip-card:hover .flip-card-inner {
-                transform: rotateY(180deg);
-              }
+/* JS-controlled flip for touch */
+.flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
 
-              .flip-card.is-flipped .flip-card-inner {
-                transform: rotateY(180deg);
-              }
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
 
-              .flip-card-front,
-              .flip-card-back {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-                overflow: hidden;
-              }
+.flip-card-front {
+  background: #f0f0f0;
+}
 
-              .flip-card-front {
-                background-color: transparent;
-                color: black;
-                border-radius: 38px;
-              }
+/* THE MAIN IMAGE FIX */
+.flip-card-front img.flip-card-face-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  padding: 20px;
+  border-radius: 0;
+}
 
-              .flip-card-back {
-                background-color: #dcdcdce6;
-                color: white;
-                transform: rotateY(180deg);
-                border-radius: 38px;
-              }
+.flip-card-back {
+  background-color: #dcdcdce6;
+  color: white;
+  transform: rotateY(180deg);
+  border-radius: 24px;
+}
 
-              .flip-card-front .flip-card-face-image {
-                border-radius: 38px;
-              }
+.flip-touch-indicator {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  line-height: 1;
+  z-index: 3;
+  border: none;
+  cursor: pointer;
+}
 
-              .flip-touch-indicator {
-                position: absolute;
-                right: 14px;
-                bottom: 14px;
-                width: 36px;
-                height: 36px;
-                border-radius: 999px;
-                display: none;
-                align-items: center;
-                justify-content: center;
-                font-size: 22px;
-                line-height: 1;
-                z-index: 3;
-                border: 1px solid transparent;
-              }
+.flip-touch-indicator.light {
+  background: #ffffff;
+  color: #111111;
+}
 
-              .flip-touch-indicator.light {
-                background: #ffffff;
-                color: #111111;
-              }
 
               .flip-touch-indicator.dark {
                 background: #111111;
@@ -350,30 +361,22 @@
                   width: min(100%, 335px);
                 }
 
-                .flip-touch-indicator {
-                  display: inline-flex;
-                }
-
-                /* Prevent sticky hover conflicts on touch devices */
-                .flip-card:hover .flip-card-inner {
-                  transform: none;
-                }
-
-                .flip-card.is-flipped .flip-card-inner {
-                  transform: rotateY(180deg);
-                }
+                 
               }
+              @media (hover: none), (pointer: coarse) {
+  .flip-touch-indicator {
+    display: inline-flex;
+  }
 
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+
+  .flip-card.is-flipped .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+}
               @media screen and (max-width: 768px) {
-                .flip-card {
-                  height: min(128vw, 460px);
-                }
-
-                .flip-card-mobile-single {
-                  grid-column: 1 / 2;
-                  justify-self: start;
-                  width: 100%;
-                }
 
                 .flip-card-back h1 span {
                   font-size: clamp(1.55rem, 6.2vw, 2.1rem) !important;
@@ -438,219 +441,7 @@
                 transition: all 0.4s ease;
               }
 
-              body[data-theme="dark"] {
-                background: #141619 !important;
-                color: #f1f2f4 !important;
-              }
-
-              body[data-theme="dark"] nav,
-              body[data-theme="dark"] section,
-              body[data-theme="dark"] footer,
-              body[data-theme="dark"] .bg-white {
-                background: #141619 !important;
-              }
-
-              body[data-theme="dark"] .navbar .nav-link {
-                color: #ffffff !important;
-              }
-
-              body[data-theme="dark"] .navbar .nav-link:hover {
-                color: #d9a63a !important;
-              }
-
-              body[data-theme="light"] .navbar .nav-link:hover,
-              body[data-theme="light"] .navbar .nav-link:focus,
-              body[data-theme="light"] .navbar .nav-link.active,
-              body[data-theme="light"] .navbar .nav-item:hover > .nav-link {
-                color: #505050 !important;
-              }
-
-              body[data-theme="dark"] .navbar {
-                background: #141619 !important;
-                border-bottom: 1px solid #2b3038;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu {
-                background: #141619 !important;
-                color: #f1f2f4 !important;
-                border-right: 1px solid #2b3038;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu a,
-              body[data-theme="dark"] .navbar #mobile-menu button,
-              body[data-theme="dark"] .navbar #mobile-menu span {
-                color: #f1f2f4 !important;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu .bg-gray-100,
-              body[data-theme="dark"] .navbar #mobile-menu .bg-gray-50 {
-                background: #1b1f24 !important;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu .text-gray-700,
-              body[data-theme="dark"] .navbar #mobile-menu .text-gray-900,
-              body[data-theme="dark"] .navbar #mobile-menu .text-gray-500 {
-                color: #f1f2f4 !important;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu .border-gray-200 {
-                border-color: #2b3038 !important;
-              }
-
-              body[data-theme="dark"] .navbar #mobile-menu a:hover,
-              body[data-theme="dark"] .navbar #mobile-menu button:hover {
-                color: #d9a63a !important;
-              }
-
-              body[data-theme="dark"] .logo,
-              body[data-theme="dark"] img[data-theme-logo="true"] {
-                background: transparent !important;
-                border: none !important;
-                box-shadow: none !important;
-              }
-
-              body[data-theme="dark"] [class*="text-black"],
-              body[data-theme="dark"] [class*="text-gray-800"] {
-                color: #f1f2f4 !important;
-              }
-
-              body[data-theme="dark"] [class*="text-gray-500"],
-              body[data-theme="dark"] [class*="text-gray-600"],
-              body[data-theme="dark"] [class*="text-[#4f4f4f]"] {
-                color: #b7bec8 !important;
-              }
-
-              body[data-theme="dark"] h1 span[class*="text-[#4f4f4f]"],
-              body[data-theme="dark"] h2 span[class*="text-[#4f4f4f]"],
-              body[data-theme="dark"] h3 span[class*="text-[#4f4f4f]"] {
-                color: #d9a63a !important;
-              }
-
-              body[data-theme="dark"] [class*="border-gray-300"] {
-                border-color: #2b3038 !important;
-              }
-
-              body[data-theme="dark"] .elys-eye-section {
-                background: #141619 !important;
-              }
-
-              body[data-theme="dark"] .elys-eye-label {
-                color: #d9a63a;
-              }
-
-              body[data-theme="dark"] .elys-eye-title,
-              body[data-theme="dark"] .elys-eye-description,
-              body[data-theme="dark"] .elys-eye-explore {
-                color: #f1f2f4;
-              }
-
-              body[data-theme="dark"] .elys-eye-arrow {
-                background: #2a2f36;
-                color: #d9a63a;
-              }
-
-              body[data-theme="dark"] .elys-eye-arrow:hover {
-                background: #353c45;
-              }
-
-              body[data-theme="dark"] .elys-eye-media::after {
-                background: radial-gradient(
-                  ellipse at center,
-                  rgba(230, 234, 241, 0.44) 0%,
-                  rgba(185, 194, 206, 0.24) 45%,
-                  rgba(82, 91, 103, 0.14) 74%,
-                  rgba(20, 22, 25, 0) 100%
-                );
-              }
-
-              body[data-theme="dark"] #dark-mode-toggle + div {
-                background: #2a2f36 !important;
-              }
-
-              body[data-theme="dark"] #dark-mode-toggle:checked + div {
-                background: #d9a63a !important;
-              }
-
-              body[data-theme="dark"] .smart-tools-grid > div img {
-                filter: brightness(0) saturate(100%) invert(64%) sepia(31%) saturate(1117%) hue-rotate(352deg) brightness(92%) contrast(86%);
-              }
-
-              body[data-theme="dark"] .bg-\[\#FAFAFA\] {
-                background: #2b2d31 !important;
-              }
-
-              body[data-theme="dark"] .smart-tools-grid > div {
-                background: #16181b !important;
-              }
-
-              body[data-theme="dark"] .smart-tools-grid > div h3 {
-                color: #f4f5f7 !important;
-              }
-
-              body[data-theme="dark"] .smart-tools-grid > div p {
-                color: #c7ccd4 !important;
-              }
-
-              body[data-theme="dark"] .demo-btn {
-                background: #000000 !important;
-                color: #ffffff !important;
-                border: 1.5px solid #c98633 !important;
-              }
-
-              body[data-theme="dark"] .demo-btn span {
-                color: #ffffff !important;
-              }
-
-              body[data-theme="dark"] .language-selector,
-              body[data-theme="dark"] .language-selector #language-text,
-              body[data-theme="dark"] .language-selector .flag-icon {
-                background: #000000 !important;
-                color: #ffffff !important;
-              }
-
-              body[data-theme="dark"] .language-selector .flag-icon {
-                border-radius: 4px;
-              }
-
-              body[data-theme="light"] .hero-elys-text {
-                color: #505050 !important;
-              }
-
-              /* Keep pre-footer spacing and logo block identical in both themes */
-              #features + footer {
-                margin-top: 0 !important;
-              }
-
-              footer .footer-top-brand-row {
-                padding-top: 24px !important;
-                padding-bottom: 24px !important;
-                margin-bottom: 40px !important;
-              }
-
-              footer img.footer-theme-logo {
-                width: auto !important;
-                height: 62px !important;
-                max-width: 220px;
-                object-fit: contain;
-                display: block;
-                opacity: 1 !important;
-                filter: none !important;
-                mix-blend-mode: normal;
-              }
-
-              body[data-theme="light"] footer img.footer-theme-logo,
-              body[data-theme="dark"] footer img.footer-theme-logo {
-                opacity: 1 !important;
-                filter: none !important;
-              }
-
-              @media screen and (max-width: 768px) {
-                footer img.footer-theme-logo {
-                  height: 46px !important;
-                  max-width: 170px;
-                }
-              }
-    </style>
+                  </style>
 
     <style>
       /* ---- Light defaults ---- */
@@ -696,6 +487,9 @@
       .page-sub {
         color: #4f4f4f;
       }
+      .page-border {
+        border: 1px solid#e5e7eb;
+      }
 
       .splide__arrow--prev {
         left: 50rem !important;
@@ -736,6 +530,10 @@
       }
       html.dark .page-sub {
         color: #cdcdcd;
+      }
+
+      html.dark .page-border {
+        border: 1px solid #c98633;
       }
 
       html.dark .mega-menu {
@@ -1179,14 +977,12 @@
 
             <!-- Cards -->
             <div class="">
-              <div
-                class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6 place-items-center"
-              >
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 place-items-stretch">
                 <div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img
-                        src="/assets/images/elys%20workstation/flip-image-1.png"
+                        src="/assets/images/elys workstation/flip-image-1.png"
                         alt="Avatar"
                         class="flip-card-face-image"
                       />
@@ -1201,9 +997,9 @@
                         &#8594;
                       </button>
                       <h1 class="flex justify-center items-center gap-2 mb-2">
-                        <span class="page-accent text-[40px] font-bold"
+                        <span class="page-accent text-2xl md:text-4xl font-bold"
                           >Pogo </span
-                        ><span class="page-main text-[40px] font-bold">Pin</span>
+                        ><span class="page-main text-2xl md:text-4xl font-bold">Pin</span>
                       </h1>
                       <p
                         class="text-center justify-start page-sub text-base font-semibold"
@@ -1215,10 +1011,10 @@
                       <ul class="list-disc pl-5">
                         <li class="flex justify-start items-start gap-1">
                           <div>
-                            <img
-                              src="/assets/images/elys%20workstation/Done.png"
+                            <!-- <img
+                              src="/assets/images/elys workstation/flip-image-2.png"
                               alt=""
-                            />
+                            /> -->
                           </div>
 
                           <p class="text-black text-xl font-semibold text-start">
@@ -1234,7 +1030,7 @@
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img
-                        src="/assets/images/elys%20workstation/flip-image-2.png"
+                        src="/assets/images/elys workstation/flip-image-2.png"
                         alt="Avatar"
                         class="flip-card-face-image"
                       />
@@ -1249,9 +1045,9 @@
                         &#8594;
                       </button>
                       <h1 class="flex justify-center items-center gap-2 mb-2">
-                        <span class="page-accent text-[40px] font-bold"
+                        <span class="page-accent text-2xl md:text-4xl font-bold"
                           >Front </span
-                        ><span class="page-main text-[40px] font-bold">
+                        ><span class="page-main text-2xl md:text-4xl font-bold">
                           Camera</span
                         >
                       </h1>
@@ -1293,7 +1089,7 @@
                   </div>
                 </div>
 
-                <div class="flip-card flip-card-mobile-single md:col-span-1 md:justify-self-auto">
+                <div class="flip-card">
                   <div class="flip-card-inner">
                     <div class="flip-card-front">
                       <img
@@ -1312,9 +1108,9 @@
                         &#8594;
                       </button>
                       <h1 class="flex justify-center items-center gap-2 mb-2">
-                        <span class="page-accent text-[40px] font-bold"
+                        <span class="page-accent text-2xl md:text-4xl font-bold"
                           >Fingerprint </span
-                        ><span class="page-main text-[40px] font-bold">ID</span>
+                        ><span class="page-main text-2xl md:text-4xl font-bold">ID</span>
                       </h1>
                       <p
                         class="text-center justify-start page-sub text-base font-semibold"
@@ -1346,7 +1142,7 @@
         </section>
 
         <!-- samter tools -->
-        <section class="md:mt-10 mt-5">
+        <section class="py-6 lg:py-20">
           <div class="container px-4 md:px-2 mx-auto">
             <div class="text-center md:mb-10 mb-6">
               <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
@@ -1368,11 +1164,16 @@
             <div class="container px-4 md:px-2 mx-auto">
               <div class="smart-tools-grid grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-4 p-6">
                 <!-- Card -->
-                <div class="rounded-[38px] md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
-                      src="assets/images/elys%20workstation/display.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      src="assets/images/a920/a920 a/operation.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/a920/a920 a/operation-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1388,11 +1189,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
+                      src="assets/images/elys%20workstation/camera-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
+                      alt=""
+                    />
+                    <img
                       src="assets/images/elys%20workstation/camera.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
                       alt=""
                     />
                     <h3
@@ -1408,11 +1214,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/display.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/display-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1428,11 +1239,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/ports.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/port-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1448,11 +1264,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/communication.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/Communication-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1468,11 +1289,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/finger-id.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/finger-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1488,11 +1314,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/processor.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/processor-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1508,11 +1339,16 @@
                   </div>
                 </div>
 
-                <div class="rounded-[38px] bg-white md:py-6 md:px-10 py-3 px-5">
+                <div class="rounded-[38px] page-border md:py-6 md:px-10 py-3 px-5">
                   <div class="flex flex-col items-start text-left space-y-2">
                     <img
                       src="assets/images/elys%20workstation/memory.png"
-                      class="md:w-auto md:h-auto h-10 w-10"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-light"
+                      alt=""
+                    />
+                    <img
+                      src="assets/images/elys%20workstation/card-dark.png"
+                      class="md:w-20 md:h-20 h-10 w-10 logo-dark"
                       alt=""
                     />
                     <h3
@@ -1563,7 +1399,7 @@
                     <span class="page-main">day or night</span>
                   </h1>
                   <p
-                    class="mt-4 text-[#4f4f4f] text-base sm:text-lg md:text-xl font-normal md:w-[562px] w-full"
+                    class="mt-4 page-sub text-base sm:text-lg md:text-xl font-normal md:w-[562px] w-full"
                   >
                     The bright touchscreen shows vibrant colors anytime of day. With
                     a 14inch screen and 1920 x 1080 Pixels, you can clearly see
@@ -1694,8 +1530,8 @@
                   <article class="elys-eye-slide is-active">
                     <div class="elys-eye-slide-inner">
                       <div class="elys-eye-content">
-                        <h2 class="elys-eye-title">Elys Printer</h2>
-                        <p class="elys-eye-description">
+                        <h2 class="elys-eye-title page-main">Elys Printer</h2>
+                        <p class="elys-eye-description page-sub">
                           Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright for easy access and clean presentation.                        </p>
                         <a class="elys-eye-explore" href="javascript:void(0)">EXPLORE MORE</a>
                       </div>
@@ -1712,8 +1548,8 @@
                   <article class="elys-eye-slide">
                     <div class="elys-eye-slide-inner">
                       <div class="elys-eye-content">
-                        <h2 class="elys-eye-title">Elys Cashdrawer</h2>
-                        <p class="elys-eye-description">
+                        <h2 class="elys-eye-title page-main">Elys Cashdrawer</h2>
+                        <p class="elys-eye-description page-sub">
                           Magstripe Reader Kiosk Stand – compact, tamper-resistant dock that securely holds the reader at kiosk height for seamless self-service swiping.                        </p>
                         <a class="elys-eye-explore" href="javascript:void(0)">EXPLORE MORE</a>
                       </div>
@@ -1730,8 +1566,8 @@
                   <article class="elys-eye-slide">
                     <div class="elys-eye-slide-inner">
                       <div class="elys-eye-content">
-                        <h2 class="elys-eye-title">Elys Printer</h2>
-                        <p class="elys-eye-description">
+                        <h2 class="elys-eye-title page-main">Elys Printer</h2>
+                        <p class="elys-eye-description page-sub">
                           Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright for easy access and clean presentation.                        </p>
                         <a class="elys-eye-explore" href="javascript:void(0)">EXPLORE MORE</a>
                       </div>
@@ -1748,8 +1584,8 @@
                   <article class="elys-eye-slide">
                     <div class="elys-eye-slide-inner">
                       <div class="elys-eye-content">
-                        <h2 class="elys-eye-title">Elys Tablet</h2>
-                        <p class="elys-eye-description">
+                        <h2 class="elys-eye-title page-main">Elys Tablet</h2>
+                        <p class="elys-eye-description page-sub">
                           Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack.                        </p>
                         <a class="elys-eye-explore" href="javascript:void(0)">EXPLORE MORE</a>
                       </div>
@@ -1773,119 +1609,340 @@
 
       <!-- Splide JS -->
 
-        <footer class="py-10 mt-10">
-    <div class="container mx-auto px-4 sm:px-8 lg:px-16">
-      <div class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center">
-        <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="logo-light w-10 md:w-40 h-auto" alt="Logo Light" />
-        <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="logo-dark w-10 md:w-40 h-auto" alt="Logo Dark" />
-        <div class="flex items-center space-x-2">
-          <p class="footer-label text-[11px] font-normal select-none">
-            Switch to dark mode
-          </p>
-          <label for="dark-mode-toggle" class="relative inline-flex items-center cursor-pointer">
-            <label for="dark-mode-toggle" class="sr-only">Toggle dark mode</label>
-            <input type="checkbox" id="dark-mode-toggle" class="sr-only peer" />
-            <div class="w-9 h-5 bg-gray-300 rounded-full peer peer-checked:bg-black transition-colors duration-300"></div>
-            <div class="absolute left-[2px] top-[2px] w-4 h-4 bg-white rounded-full shadow transform peer-checked:translate-x-4 transition-transform duration-300"></div>
-          </label>
-        </div>
-      </div>
-      <div class="border-t border-gray-300 pt-6">
-        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12">
-          <div>
-            <button class="footer-heading w-full flex justify-start items-center font-medium text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none" aria-expanded="false" aria-controls="company-links" onclick="toggleAccordion(this)">
-              Company
-              <svg class="w-5 h-5 transition-transform duration-300 sm:hidden footer-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="company-links" class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="footer-link block">About Us</a>
-              <a href="#" class="footer-link block">Contact Us</a>
-              <a href="#" class="footer-link block">Hardware</a>
-              <a href="#" class="footer-link block">Terms of Service</a>
-              <a href="#" class="footer-link block">Privacy Policy</a>
-            </div>
-          </div>
-          <div>
-            <button class="footer-heading w-full flex justify-start items-center font-medium text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none" aria-expanded="false" aria-controls="products" onclick="toggleAccordion(this)">
-              Products
-              <svg class="w-5 h-5 transition-transform duration-300 sm:hidden footer-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="products" class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="footer-link block">PAX A920</a>
-              <a href="#" class="footer-link block">PAX A35</a>
-              <a href="#" class="footer-link block">MagTek DynaFlex</a>
-              <a href="#" class="footer-link block">PAX Elys Workstation</a>
-            </div>
-          </div>
-          <div>
-            <button class="footer-heading w-full flex justify-start items-center font-medium text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none" aria-expanded="false" aria-controls="footer-resources" onclick="toggleAccordion(this)">
-              Resources
-              <svg class="w-5 h-5 transition-transform duration-300 sm:hidden footer-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="footer-resources" class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="footer-link block">Product Guides &amp; Tutorials</a>
-              <a href="#" class="footer-link block">Video Tutorials</a>
-              <a href="#" class="footer-link block">FAQs</a>
-            </div>
-          </div>
-          <div>
-            <button class="footer-heading w-full flex justify-start items-center font-medium text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none" aria-expanded="false" aria-controls="legal" onclick="toggleAccordion(this)">
-              Legal
-              <svg class="w-5 h-5 transition-transform duration-300 sm:hidden footer-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="legal" class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="footer-link block">Privacy Policy</a>
-              <a href="#" class="footer-link block">Terms &amp; Condition</a>
-            </div>
-          </div>
-          <div>
-            <button class="footer-heading w-full flex justify-start items-center font-medium text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none" aria-expanded="false" aria-controls="social" onclick="toggleAccordion(this)">
-              Social
-              <svg class="w-5 h-5 transition-transform duration-300 sm:hidden footer-chevron" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-              </svg>
-            </button>
-            <div id="social" class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="footer-link block">Twitter</a>
-              <a href="#" class="footer-link block">Instagram</a>
-              <a href="#" class="footer-link block">Facebook</a>
-              <a href="#" class="footer-link block">Youtube</a>
-            </div>
+        <footer class="py-10">
+      <div class="container mx-auto px-4">
+        <!-- Top Logo + Switch -->
+         <div
+          class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center"
+        >
+          <img
+            src="/assets/images/logo/tequila_pos_logo_transparent.png"
+            class="w-10 md:w-40 h-auto logo-light"
+            alt=""
+          />
+          <img
+            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
+            class="w-10 md:w-40 h-auto logo-dark"
+            alt=""
+          />
+
+          <div class="flex items-center space-x-2">
+            <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
+              Switch to dark mode
+            </p>
+
+            <!-- Toggle Switch -->
+            <label
+              for="dark-mode-toggle"
+              class="relative inline-flex items-center cursor-pointer"
+            >
+              <label for="dark-mode-toggle" class="sr-only"
+                >Toggle dark mode</label
+              >
+              <input
+                type="checkbox"
+                id="dark-mode-toggle"
+                class="sr-only peer"
+                title="Toggle dark mode"
+                placeholder="Toggle dark mode"
+              />
+              <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
+              <div class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]"></div>
+            </label>
           </div>
         </div>
+
+        <!-- Links -->
         <div class="border-t border-gray-300 pt-6">
-          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12"
+          >
+            <!-- Company -->
             <div>
-              <h4 class="footer-heading font-medium text-xl sm:text-2xl mb-2">Subscribe</h4>
-              <p class="footer-link text-sm sm:text-base mb-1">Join our community to receive updates</p>
+              <!-- Accordion Header Button -->
+              <button
+                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+                aria-expanded="false"
+                aria-controls="company-links"
+                onclick="toggleAccordion(this)"
+              >
+                Company
+                <svg
+                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+
+              <!-- Links Container -->
+              <div
+                id="company-links"
+                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
+              >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >About Us</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Contact Us</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Hardware</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Terms of Service</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Privacy Policy</a
+                >
+              </div>
             </div>
+
+            <!-- Products -->
             <div>
-              <p class="footer-label text-xs ps-3 pb-1">Stay up to date</p>
-              <div class="flex w-full sm:w-auto">
-                <input type="email" placeholder="Enter your email" class="h-9 rounded-l-full px-4 w-full sm:w-64 text-base border-0 outline-none" style="background:#f3f4f6; color:#4b5563" />
-                <button class="h-9 rounded-r-full px-6 text-white text-base transition-colors" style="background:#000">Subscribe</button>
+              <button
+                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+                aria-expanded="false"
+                aria-controls="products"
+                onclick="toggleAccordion(this)"
+              >
+                Products
+                <svg
+                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="products"
+                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
+              >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >PAX A920</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >PAX A35</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >MagTek DynaFlex</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >PAX Elys Workstation</a
+                >
+              </div>
+            </div>
+
+            <!-- Resources -->
+            <div>
+              <button
+                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+                aria-expanded="false"
+                aria-controls="resources"
+                onclick="toggleAccordion(this)"
+              >
+                Resources
+                <svg
+                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="resources"
+                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
+              >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Product Guides & Tutorials</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Video Tutorials</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >FAQs</a
+                >
+              </div>
+            </div>
+
+            <!-- Legal -->
+            <div>
+              <button
+                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+                aria-expanded="false"
+                aria-controls="legal"
+                onclick="toggleAccordion(this)"
+              >
+                Legal
+                <svg
+                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="legal"
+                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
+              >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Privacy Policy</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Terms & Condition</a
+                >
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div>
+              <button
+                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+                aria-expanded="false"
+                aria-controls="social"
+                onclick="toggleAccordion(this)"
+              >
+                Social
+                <svg
+                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <div
+                id="social"
+                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
+              >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Twitter</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Instagram</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Facebook</a
+                >
+                <a
+                  href="#"
+                  class="text-gray-500 hover:text-gray-800 transition-colors block"
+                  >Youtube</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Subscribe -->
+          <div class="border-t border-gray-300 pt-6">
+            <div
+              class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
+            >
+              <div>
+                <h4
+                  class="font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-2"
+                >
+                  Subscribe
+                </h4>
+                <p class="text-gray-500 text-sm sm:text-base mb-1">
+                  Join our community to receive updates
+                </p>
+              </div>
+              <div>
+                <p class="text-gray-800 text-xs ps-3 pb-1">Stay up to date</p>
+                <div class="flex w-full sm:w-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    class="bg-gray-100 h-9 rounded-l-full px-4 w-full sm:w-64 text-gray-600 text-base border-0 outline-none"
+                  />
+                  <button
+                    class="bg-black h-9 rounded-r-full px-6 text-white text-base hover:bg-gray-800 transition-colors"
+                  >
+                    Subscribe
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <script src="../cdn.jsdelivr.net/npm/%40splidejs/splide%404.1.4/dist/js/splide.min.js"></script>
     <script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/faq-toggle.js"></script>
     <script src="assets/js/footer-accordion.js"></script>
 
-    <script>
+    <!-- <script>
         (function () {
             const toggle = document.getElementById('dark-mode-toggle');
             const body = document.body;
@@ -1942,7 +1999,7 @@
 
             document.addEventListener('DOMContentLoaded', initAOS);
         })();
-    </script>
+    </script> -->
 
 
     <script>
@@ -2042,16 +2099,26 @@
       });
 
       document.addEventListener("DOMContentLoaded", () => {
-        document.querySelectorAll(".flip-card [data-flip-toggle]").forEach((btn) => {
-          btn.addEventListener("click", (event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            const card = btn.closest(".flip-card");
-            if (!card) return;
-            card.classList.toggle("is-flipped");
-          });
-        });
-      });
+  // Button tap flips the card
+  document.querySelectorAll(".flip-card [data-flip-toggle]").forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const card = btn.closest(".flip-card");
+      if (card) card.classList.toggle("is-flipped");
+    });
+  });
+
+  // Tapping anywhere on the card also works on touch devices
+  document.querySelectorAll(".flip-card").forEach((card) => {
+    card.addEventListener("click", (e) => {
+      const isTouch = window.matchMedia("(hover: none), (pointer: coarse)").matches;
+      if (!isTouch) return;
+      if (e.target.closest("[data-flip-toggle]")) return; // avoid double-fire
+      card.classList.toggle("is-flipped");
+    });
+  });
+});
     </script>
 
         <script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>

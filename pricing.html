@@ -45,6 +45,7 @@
     .page-accent { color: #505050; }
     .page-main   { color: #000000; }
     .page-sub    { color: #4f4f4f; }
+    .page-border { border-color: #e5e7eb; }
 
     .logo-dark { display: none; }
       .logo-light { display: block; } 
@@ -59,6 +60,7 @@
       html.dark .page-accent { color: #C98633; }
     html.dark .page-main   { color: #ffffff; }
     html.dark .page-sub    { color: #cdcdcd; }
+    html.dark .page-border { border-color: #C98633; }
       
       html.dark .mega-menu { background-color: #000000; }
       html.dark #mobile-menu { background-color: #1c1c1c; color: #ffffff; }
@@ -67,8 +69,8 @@
       
       /* Text color overrides for dark mode */
       html.dark .text-black { color: #ffffff; }
-      html.dark .text-\\[#4f4f4f\\],
-      html.dark .text-\\[#333\\],
+      html.dark .text-\[#4f4f4f\] { color: #cdcdcd; }
+      html.dark .text-\[#333\] { color: #cdcdcd; }
       html.dark .text-gray-500,
       html.dark .text-gray-600,
       html.dark .text-gray-700,
@@ -79,8 +81,8 @@
       html.dark .bg-gray-100,
       html.dark .bg-gray-200 { background-color: #2c2c2c; }
       html.dark .border-gray-300,
-      html.dark .border-\\[#dbdbdb\\] { border-color: #444444; }
-      html.dark .shadow-\\[0px_4px_18.9px_rgba\\(0,0,0,0.25\\)\\] { box-shadow: 0px 4px 18.9px rgba(0,0,0,0.5); }
+      html.dark .border-\[#dbdbdb\] { border-color: #C98633; }
+      html.dark .shadow-\[0px_4px_18\.9px_rgba\(0\,0\,0\,0\.25\)\] { box-shadow: 0px 4px 18.9px rgba(0,0,0,0.5); }
     </style>
   </head>
 
@@ -426,8 +428,8 @@
     </nav>
 
     <!-- hero section -->
-    <section class="md:pb-20 pb-9">
-      <div class="container mx-auto px-4  md:mt-12 mt-8">
+    <section class="lg:pb-20 pb-9">
+      <div class="container mx-auto px-4 md:mt-12 mt-8">
         <div class="text-center md:mb-14 mb-3">
           <h2
             class="mb-1 md:mb-4 font-bold md:text-[40px] text-xl w-full leading-tight"
@@ -441,7 +443,7 @@
           </h2>
           <div class="flex justify-center">
             <p
-              class="md:w-[562px] w-full text-center text-[#4f4f4f] md:text-[15px] text-[10px] font-normal"
+              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
             >
               Get started with features that scale as you grow.
             </p>
@@ -459,7 +461,7 @@
     </section>
 
     <!-- pricing Section -->
-    <section class="bg-white md:pb-20 pb-9">
+    <section class="lg:pb-20 pb-9">
       <div
         class="container mx-auto px-4"
       >
@@ -486,7 +488,7 @@
           class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-6 mt-10"
         >
           <div
-            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] border-[#dbdbdb] md:px-8 px-4 py-6 flex flex-col"
+            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] page-border md:px-8 px-4 py-6 flex flex-col"
           >
             <!-- Icon -->
             <div
@@ -500,11 +502,11 @@
             </div>
 
             <!-- Title -->
-            <p class="text-black md:text-2xl text-sm font-medium">Personal</p>
+            <p class="text-main md:text-2xl text-sm font-medium">Personal</p>
 
             <!-- Description -->
             <p
-              class="md:w-[319px] w-full text-[#4f4f4f] md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
+              class="md:w-[319px] w-full page-sub md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -513,7 +515,7 @@
             <!-- Price -->
             <p
               id="personalPrice"
-              class="text-black md:text-[32px] text-xs font-medium md:mt-6 mt-2"
+              class="text-main md:text-[32px] text-xs font-medium md:mt-6 mt-2"
             >
               Free
             </p>
@@ -529,7 +531,7 @@
           </div>
 
           <div
-            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] border-[#dbdbdb] md:px-8 px-4 py-6 flex flex-col"
+            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] page-border md:px-8 px-4 py-6 flex flex-col"
           >
             <!-- Icon -->
             <div
@@ -543,11 +545,11 @@
             </div>
 
             <!-- Title -->
-            <p class="text-black md:text-2xl text-sm font-medium">Starter</p>
+            <p class="text-main md:text-2xl text-sm font-medium">Starter</p>
 
             <!-- Description -->
             <p
-              class="md:w-[319px] w-full text-[#4f4f4f] md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
+              class="md:w-[319px] w-full page-sub md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -556,7 +558,7 @@
             <!-- Price -->
             <p
               id="starterPrice"
-              class="text-black md:text-[32px] text-xs font-medium md:mt-6 mt-2"
+              class="page-main md:text-[32px] text-xs font-medium md:mt-6 mt-2"
             >
               Free
             </p>
@@ -572,7 +574,7 @@
           </div>
 
           <div
-            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] border-[#dbdbdb] md:px-8 px-4 py-6 flex flex-col"
+            class="md:h-[392px] h-full bg-white md:rounded-[38px] rounded-2xl shadow-[0px_4px_18.9px_rgba(0,0,0,0.25)] border-[0.5px] page-border md:px-8 px-4 py-6 flex flex-col"
           >
             <!-- Icon -->
             <div
@@ -586,11 +588,11 @@
             </div>
 
             <!-- Title -->
-            <p class="text-black md:text-2xl text-sm font-medium">Premium</p>
+            <p class="page-main md:text-2xl text-sm font-medium">Premium</p>
 
             <!-- Description -->
             <p
-              class="md:w-[319px] w-full text-[#4f4f4f] md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
+              class="md:w-[319px] w-full page-sub md:text-[15px] text-[8px] font-normal md:mt-5 mt-2 leading-tight"
             >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -599,7 +601,7 @@
             <!-- Price -->
             <p
               id="premiumPrice"
-              class="text-black md:text-[32px] text-xs font-medium md:mt-6 mt-2"
+              class="page-main md:text-[32px] text-xs font-medium md:mt-6 mt-2"
             >
               Free
             </p>
@@ -618,7 +620,7 @@
     </section>
 
     <!-- smarter soluitons -->
-    <section class="bg-white md:pb-20 pb-9 overflow-hidden">
+    <section class="lg:pb-20 pb-9 overflow-hidden">
       <div class="container mx-auto px-4">
         <!-- Section Header -->
         <div class="text-center md:mb-10 mb-6">
@@ -628,7 +630,7 @@
           </h2>
           <div class="flex justify-center">
             <p
-              class="md:w-[562px] w-full text-center text-[#4f4f4f] md:text-[15px] text-[10px] font-normal"
+              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
             >
               Our clients praise us for our reliable systems, fast service, and
               dependable support that help their business grow.
@@ -641,7 +643,7 @@
           class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-6 mt-10 group"
         >
           <div
-            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border border-[#c5c5c5] overflow-hidden transform lg:-translate-x-[150px] lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border page-border overflow-hidden transform lg:-translate-x-[150px] lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]"
           >
             <div class="pt-[10px] pb-[15px] md:px-10 md:py-10 px-2">
               <div class="flex items-center justify-center pt-[10px]">
@@ -652,7 +654,7 @@
                 />
               </div>
 
-              <p class="text-center text-black md:text-xl text-xs font-medium">
+              <p class="text-center text-main md:text-xl text-xs font-medium">
                 Cian Rayes
               </p>
               <svg
@@ -693,7 +695,7 @@
                 />
 
                 <span
-                  class="text-black md:text-lg text-[10px] font-normal leading-normal"
+                  class="page-sub md:text-lg text-[10px] font-normal leading-normal"
                 >
                   This POS system has completely streamlined our billing and
                   inventory—fast, reliable, and easy to use!
@@ -708,9 +710,9 @@
               </div>
 
               <p class="text-center">
-                <span class="text-black md:text-base text-[8px] font-medium"
+                <span class="page-main md:text-base text-[8px] font-medium"
                   >Restaurant name: </span
-                ><span class="text-black md:text-base text-[8px] font-normal"
+                ><span class="page-sub md:text-base text-[8px] font-normal"
                   >Spicy & Grill</span
                 >
               </p>
@@ -719,7 +721,7 @@
 
           <!-- client -2 -->
           <div
-            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border border-[#c5c5c5] overflow-hidden transform lg:translate-y-[150px] lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-700 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border page-border overflow-hidden transform lg:translate-y-[150px] lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-700 delay-100 ease-[cubic-bezier(0.25,1,0.5,1)]"
           >
             <div class="pt-[10px] pb-[15px] md:px-10 md:py-10 px-2">
               <div class="flex items-center justify-center pt-[10px]">
@@ -730,7 +732,7 @@
                 />
               </div>
 
-              <p class="text-center text-black md:text-xl text-xs font-medium">
+              <p class="text-center text-main md:text-xl text-xs font-medium">
                 Cian Rayes
               </p>
               <svg
@@ -771,7 +773,7 @@
                 />
 
                 <p
-                  class="text-black md:text-lg text-[10px] font-normal leading-normal"
+                  class="page-sub md:text-lg text-[10px] font-normal leading-normal"
                 >
                   The cloud-based system lets me track sales from
                   anywhere—perfect for managing multiple locations!
@@ -787,9 +789,9 @@
               </div>
 
               <p class="text-center">
-                <span class="text-black md:text-base text-[8px] font-medium"
+                <span class="page-main md:text-base text-[8px] font-medium"
                   >Restaurant name: </span
-                ><span class="text-black md:text-base text-[8px] font-normal"
+                ><span class="page-sub md:text-base text-[8px] font-normal"
                   >Spicy & Grill</span
                 >
               </p>
@@ -798,7 +800,7 @@
 
           <!-- client 3 -->
           <div
-            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border border-[#c5c5c5] overflow-hidden transform lg:translate-x-[150px] lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 transition-all duration-700 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)]"
+            class="md:h-[420px] bg-white md:rounded-[38px] rounded-[17px] border page-border overflow-hidden transform lg:translate-x-[150px] lg:opacity-0 lg:group-hover:translate-x-0 lg:group-hover:opacity-100 transition-all duration-700 delay-200 ease-[cubic-bezier(0.25,1,0.5,1)]"
           >
             <div class="pt-[10px] pb-[15px] md:px-10 md:py-10 px-2">
               <div class="flex items-center justify-center pt-[10px]">
@@ -809,7 +811,7 @@
                 />
               </div>
 
-              <p class="text-center text-black md:text-xl text-xs font-medium">
+              <p class="text-center text-main md:text-xl text-xs font-medium">
                 Cian Rayes
               </p>
               <svg
@@ -850,7 +852,7 @@
                 />
 
                 <p
-                  class="text-black md:text-lg text-[10px] font-normal leading-normal"
+                  class="page-main md:text-lg text-[10px] font-normal leading-normal"
                 >
                   Support is always responsive and helpful. We’ve never felt
                   stuck thanks to their amazing team.
@@ -868,7 +870,7 @@
               <p class="text-center">
                 <span class="text-black md:text-base text-[8px] font-medium"
                   >Restaurant name: </span
-                ><span class="text-black md:text-base text-[8px] font-normal"
+                ><span class="page-sub md:text-base text-[8px] font-normal"
                   >Spicy & Grill</span
                 >
               </p>
@@ -879,7 +881,7 @@
     </section>
 
     <!-- how real restuarnt use ut  -->
-    <section class="md:pb-20 pb-9">
+    <section class="lg:pb-20 pb-9">
       <div class="text-center md:mb-10 mb-6 mx-auto px-4">
         <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
           <span class="page-accent">How real restaurants</span>
@@ -890,7 +892,7 @@
         </h2>
         <div class="flex justify-center">
           <p
-            class="md:w-[562px] w-full text-center text-[#4f4f4f] md:text-[15px] text-[10px] font-normal"
+            class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
           >
             Real restaurants rely on our POS to streamline orders, speed up
             service, and manage operations—all in one place.
@@ -927,24 +929,24 @@
                 >
                   <dl class="space-y-4 md:text-base text-sm">
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Name of Restaurants :
                       </dt>
-                      <dd class="text-black">Spice & Grill</dd>
+                      <dd class="page-sub">Spice & Grill</dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Types of product :
                       </dt>
-                      <dd class="text-black">mobile POS, kiosk, cloud POS</dd>
+                      <dd class="page-sub">mobile POS, kiosk, cloud POS</dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Location :
                       </dt>
-                      <dd class="text-black">Cityview (sales–cordelia)</dd>
+                      <dd class="page-sub">Cityview (sales–cordelia)</dd>
                     </div>
                   </dl>
 
@@ -979,26 +981,26 @@
                 >
                   <dl class="space-y-4 md:text-base text-sm">
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Name of Restaurants :
                       </dt>
-                      <dd class="text-black">Harbor Kitchen</dd>
+                      <dd class="page-sub">Harbor Kitchen</dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Types of product :
                       </dt>
-                      <dd class="text-black">
+                      <dd class="page-sub">
                         table ordering, QR pay, kitchen display
                       </dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Location :
                       </dt>
-                      <dd class="text-black">Bay District</dd>
+                      <dd class="page-sub">Bay District</dd>
                     </div>
                   </dl>
 
@@ -1032,26 +1034,26 @@
                 >
                   <dl class="space-y-4 md:text-base text-sm">
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Name of Restaurants :
                       </dt>
-                      <dd class="text-black">Urban Noodles</dd>
+                      <dd class="page-sub">Urban Noodles</dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Types of product :
                       </dt>
-                      <dd class="text-black">
+                      <dd class="page-sub">
                         handheld POS, inventory, loyalty
                       </dd>
                     </div>
 
                     <div class="flex gap-2">
-                      <dt class="min-w-[160px] text-[#4f4f4f] font-semibold">
+                      <dt class="min-w-[160px] page-main font-semibold">
                         Location :
                       </dt>
-                      <dd class="text-black">Downtown</dd>
+                      <dd class="page-sub">Downtown</dd>
                     </div>
                   </dl>
 
@@ -1072,7 +1074,7 @@
     <!-- how real restuarnt use ut  end -->
 
     <!-- contact section -->
-    <section class="md:pb-20 pb-9">
+    <section class="lg:pb-20 pb-9">
       <div
         class="container mx-auto px-4"
       >
@@ -1084,7 +1086,7 @@
           </h2>
 
           <p
-            class="md:w-[562px] w-full mx-auto text-[#6b6b6b] md:text-[15px] text-[13px] mt-4"
+            class="md:w-[562px] w-full mx-auto page-sub md:text-[15px] text-[13px] mt-4"
           >
             Have questions or ready to get started? Connect with us—we’re here
             to help.
