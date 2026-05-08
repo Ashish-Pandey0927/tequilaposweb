@@ -160,6 +160,80 @@
         .dark-theme #mobile-core-feature-slider .splide__pagination__page.is-active {
           background: #ffffff !important;
         }
+
+        /* ---- Flip Card Styles ---- */
+        .flip-card {
+          background-color: transparent;
+          width: 100%;
+          height: 300px; /* Fixed height for consistency */
+          perspective: 1000px;
+          cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+          .flip-card {
+            height: 200px; /* Shorter on mobile */
+          }
+        }
+
+        .flip-card-inner {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          text-align: center;
+          transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+        }
+
+        /* Hover effect for desktop */
+        @media (min-width: 1025px) {
+          .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+          }
+        }
+
+        /* Toggle class for mobile/touch */
+        .flip-card.flipped .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-radius: 0; /* Keep it square as per grid */
+        }
+
+        .flip-card-front img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .flip-card-back {
+          background-color: #f3f4f6;
+          color: black;
+          transform: rotateY(180deg);
+          padding: 2rem;
+        }
+
+        .flip-card-back h2 {
+          font-size: 1.25rem;
+          font-weight: 700;
+          line-height: 1.2;
+        }
+
+        html.dark .flip-card-back {
+          background-color: #373737;
+          color: white;
+        }
     </style>
 
 </head>
@@ -593,7 +667,7 @@
 
   <!-- Features Section -->
   <section id="core-functionality"
-    class="group relative py-6 lg:py-20 w-full min-h-screen md:min-h-[850px] bg-transparent overflow-hidden cursor-pointer">
+    class="group relative py-6 lg:py-20 w-full md:min-h-[850px] bg-transparent overflow-hidden cursor-pointer">
     <div class="container mx-auto px-4">
       <!-- Section Header -->
       <div class="text-center md:mb-20 mb-6">
@@ -867,44 +941,36 @@
         <div class="hover:scale-[1.03] transition-transform duration-300">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
-              <!-- FRONT FACE: Image (bg-white retained as fallback/placeholder) -->
-              <div class="flip-card-front bg-white overflow-hidden p-0">
-                <img src="/assets/images/home/grid-1.png" class="object-cover w-full h-full" alt="Payment Terminal" />
+              <div class="flip-card-front">
+                <img src="/assets/images/home/grid-1.png" alt="Fast Transactions" />
               </div>
-
-              <!-- BACK FACE: Content -->
-              <div class="flip-card-back bg-gray-200 page-main shadow-xl">
-                <h2>
-                  <span class="page-accent"> Lightning-Fast </span>
-                  <span class="page-accent"> Transactions — </span>
-                  <span class="page-main">
-                    No delays, just smooth
-                  </span>
-                  <span class="page-main">
-                    checkouts.
-                  </span>
+              <div class="flip-card-back shadow-xl">
+                <h2 class="text-center">
+                  <span class="page-accent">Lightning-Fast</span>
+                  <br/>
+                  <span class="page-main">Transactions — No delays, just smooth checkouts.</span>
                 </h2>
               </div>
             </div>
           </div>
         </div>
 
-        <div>
+        <div class="h-[200px] md:h-[300px]">
           <img src="/assets/images/home/grid-2.png" class="object-cover w-full h-full" alt="why choose us" />
         </div>
         <div class="hover:scale-[1.03] transition-transform duration-300">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
-              <!-- FRONT FACE: Image (bg-white retained as fallback/placeholder) -->
-              <div class="flip-card-front bg-white overflow-hidden p-0">
-                <img src="/assets/images/home/grid-3.png" class="object-cover w-full h-full" alt="Payment Terminal" />
+              <!-- FRONT FACE: Image -->
+              <div class="flip-card-front">
+                <img src="/assets/images/home/grid-3.png" alt="Secure Payments" />
               </div>
 
               <!-- BACK FACE: Content -->
-              <div class="flip-card-back bg-gray-200 page-main shadow-xl">
-                <h2>
+              <div class="flip-card-back shadow-xl">
+                <h2 class="text-center">
                   <span class="page-accent">Secure & PCI-Compliant — </span>
-
+                  <br/>
                   <span class="page-main">
                     Your data and customer payments are always protected.
                   </span>
@@ -914,25 +980,20 @@
           </div>
         </div>
 
-        <div>
+        <div class="h-[200px] md:h-[300px]">
           <img src="/assets/images/home/grid-4.png" class="object-cover w-full h-full" alt="why choose us" />
         </div>
         <div class="hover:scale-[1.03] transition-transform duration-300">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
-              <!-- FRONT FACE: Image (bg-white retained as fallback/placeholder) -->
-              <div class="flip-card-front bg-white overflow-hidden p-0">
-                <img src="/assets/images/home/grid-5.png" class="object-cover w-full h-full" alt="Payment Terminal" />
+              <div class="flip-card-front">
+                <img src="/assets/images/home/grid-5.png" alt="Industry Specific" />
               </div>
-
-              <!-- BACK FACE: Content -->
-              <div class="flip-card-back bg-gray-200 page-main shadow-xl">
-                <h2>
-                  <span class="page-accent">Built for Restaurants & Retail — Industry-</span>
-
-                  <span class="page-main">
-                    specific tools, not one-size-fits-all.
-                  </span>
+              <div class="flip-card-back shadow-xl">
+                <h2 class="text-center">
+                  <span class="page-accent">Built for Restaurants & Retail — </span>
+                  <br/>
+                  <span class="page-main">Industry-specific tools, not one-size-fits-all.</span>
                 </h2>
               </div>
             </div>
@@ -941,22 +1002,14 @@
         <div class="hover:scale-[1.03] transition-transform duration-300">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
-              <!-- FRONT FACE: Image (bg-white retained as fallback/placeholder) -->
-              <div class="flip-card-front bg-white overflow-hidden p-0">
-                <img src="/assets/images/home/grid-6.png" class="object-cover w-full h-full" alt="Payment Terminal" />
+              <div class="flip-card-front">
+                <img src="/assets/images/home/grid-6.png" alt="Hardware Compatibility" />
               </div>
-
-              <!-- BACK FACE: Content -->
-              <div class="flip-card-back bg-gray-200 page-main shadow-xl">
-                <h2>
+              <div class="flip-card-back shadow-xl">
+                <h2 class="text-center text-sm">
                   <span class="page-accent">All-in-One Hardware Compatibility-</span>
-                  </span>
-
-                  <span class="page-main">
-                    Our system works seamlessly with printers, cash drawers,
-                    barcode scanners, and tablets. Choose your setup or use
-                    what you already have—it's fully flexible.
-                  </span>
+                  <br/>
+                  <span class="page-main text-xs">Our system works seamlessly with printers, cash drawers, barcode scanners, and tablets.</span>
                 </h2>
               </div>
             </div>
@@ -978,21 +1031,14 @@
         <div class="hover:scale-[1.03] transition-transform duration-300">
           <div class="flip-card" onclick="this.classList.toggle('flipped')">
             <div class="flip-card-inner">
-              <!-- FRONT FACE: Image (bg-white retained as fallback/placeholder) -->
-              <div class="flip-card-front bg-white overflow-hidden p-0">
-                <img src="/assets/images/home/grid-7.png" class="object-cover w-full h-full" alt="Payment Terminal" />
+              <div class="flip-card-front">
+                <img src="/assets/images/home/grid-7.png" alt="24/7 Support" />
               </div>
-
-              <!-- BACK FACE: Content -->
-              <div class="flip-card-back bg-gray-200 page-main shadow-xl">
-                <h2>
+              <div class="flip-card-back shadow-xl">
+                <h2 class="text-center">
                   <span class="page-accent">Exceptional 24/7 Support- </span>
-
-                  <span class="page-main">
-                    Our expert support team is available around the clock.
-                    From setup to troubleshooting, we're with you every step
-                    of the way.
-                  </span>
+                  <br/>
+                  <span class="page-main">Our expert support team is available around the clock.</span>
                 </h2>
               </div>
             </div>
