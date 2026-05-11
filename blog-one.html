@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tequila POS - Smart POS Solutions</title>
-    <script src="/assets/js/theme.js"></script>
+    <script src="/assets/js/theme.js"></script><script src="/assets/js/translations.js"></script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <!--for Cash Discount slider-->
@@ -21,6 +21,104 @@
       .hide-scrollbar {
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
+      }
+
+      /* Real Savings Card Hover Animations */
+      .savings-card {
+        transition: all 0.3s ease;
+      }
+      
+      /* Light Mode -> Dark Mode Hover */
+      html:not(.dark) .savings-card:hover {
+        background-color: #373737 !important;
+        color: #ffffff !important;
+        border-color: #444444 !important;
+      }
+      html:not(.dark) .savings-card:hover .page-sub {
+        color: #cdcdcd !important;
+      }
+      html:not(.dark) .savings-card:hover .border-b,
+      html:not(.dark) .savings-card:hover .divide-y > * {
+        border-color: #444444 !important;
+      }
+      
+      /* Dark Mode -> Light Mode Hover */
+      html.dark .savings-card:hover {
+        background-color: #ffffff !important;
+        color: #000000 !important;
+        border-color: #e5e7eb !important;
+      }
+      html.dark .savings-card:hover .page-sub {
+        color: #4f4f4f !important;
+      }
+      html.dark .savings-card:hover .border-b,
+      html.dark .savings-card:hover .divide-y > * {
+        border-color: #e5e7eb !important;
+      }
+
+      /* Flexible Payments Animation */
+      #flexible-animation-container {
+        --img1-w: calc(50% - 0.5rem);
+        --img1-h: 100%;
+        --img1-l: 0;
+        --img1-t: 0;
+        --img1-rad: 0.75rem;
+
+        --img2-w: calc(50% - 0.5rem);
+        --img2-h: 100%;
+        --img2-l: calc(50% + 0.5rem);
+        --img2-t: 0;
+        --img2-rad: 0.75rem;
+      }
+
+      #flexible-animation-container.state-b {
+        --img1-w: 38%;
+        --img1-h: 45%;
+        --img1-l: 52%;
+        --img1-t: 15%;
+        --img1-rad: 2rem;
+
+        --img2-w: 38%;
+        --img2-h: 45%;
+        --img2-l: 62%;
+        --img2-t: 45%;
+        --img2-rad: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        #flexible-animation-container {
+          height: 600px !important;
+          --img1-w: 100%;
+          --img1-h: calc(50% - 0.5rem);
+          --img1-l: 0;
+          --img1-t: 0;
+          
+          --img2-w: 100%;
+          --img2-h: calc(50% - 0.5rem);
+          --img2-l: 0;
+          --img2-t: calc(50% + 0.5rem);
+        }
+        #flexible-animation-container.state-b {
+          height: 1000px !important;
+          --img1-w: 80%;
+          --img1-h: 250px;
+          --img1-l: 0;
+          --img1-t: 500px;
+
+          --img2-w: 80%;
+          --img2-h: 250px;
+          --img2-l: 20%;
+          --img2-t: 700px;
+        }
+      }
+
+      .flex-anim-img {
+        width: var(--img-w);
+        height: var(--img-h);
+        left: var(--img-l);
+        top: var(--img-t);
+        border-radius: var(--img-rad);
+        transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
       }
     </style>
 
@@ -385,7 +483,7 @@
                           </li>
                           <li>
                             <a
-                              href="/ice-cream-dessert-capabilities.html"
+                              href="/ice-cream-shops-capabilities.html"
                               class="hover:underline text-xl font-bold"
                               style="color: inherit"
                               >Ice Creams & Desserts Shops</a
@@ -547,7 +645,7 @@
                       <a href="/cafes-coffee-shop-capabilities.html" class="block py-1 text-sm font-bold">Cafes & Coffee Shops</a>
                       <a href="/juice-bars-capabilities.html" class="block py-1 text-sm font-bold">Juice Bars & Smoothie Shops</a>
                       <a href="/bakeries-capabilities.html" class="block py-1 text-sm font-bold">Bakeries</a>
-                      <a href="/ice-cream-dessert-capabilities.html" class="block py-1 text-sm font-bold">Ice Creams & Desserts</a>
+                      <a href="/ice-cream-shops-capabilities.html" class="block py-1 text-sm font-bold">Ice Creams & Desserts</a>
                     </div>
                   </div>
                 </div>
@@ -957,36 +1055,84 @@
               merchants end up paying a percentage of every transaction.
             </p>
           </div>
-        </div>
-        <div
-          class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12"
-        >
-          <div class="w-full lg:w-1/2 text-center lg:text-left">
-            <h1
-              class="text-left mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main"
-            >
-              The Cost of Convenience: Understanding
-              <span class="page-sub"
-                >Traditional<br />Credit Card Processing</span
-              >
-            </h1>
-
-            <p
-              class="md:w-[562px] w-full text-left page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Learn how businesses are charged through interchange, processor
-              markups, and hidden fees in the standard payment model.
-            </p>
-          </div>
-
-          <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
-            <img
-              src="/assets/images/blog-one/traditional-payment.png"
-              alt=""
-              class="w-full h-auto"
-            />
+    <section id="traditional-payment-wrapper" class="relative flex justify-center w-full bg-transparent" style="height: 300vh;">
+      <div class="sticky top-0 flex flex-col items-center justify-center max-w-full overflow-hidden w-full h-screen">
+        
+        <!-- Slide 1 -->
+        <div class="traditional-slide absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-700 ease-in-out" style="opacity: 1; transform: translateY(0px); z-index: 30;">
+          <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 class="text-left mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main">
+                The Cost of Convenience: Understanding
+                <span class="page-sub">Traditional<br />Credit Card Processing</span>
+              </h1>
+              <p class="md:w-[562px] w-full text-left page-sub md:text-[15px] text-[10px] font-normal">
+                Learn how businesses are charged through interchange, processor
+                markups, and hidden fees in the standard payment model.
+              </p>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <img src="/assets/images/blog-one/traditional-payment.png" alt="Traditional Payment" class="w-full h-auto max-h-[500px] object-contain" />
+            </div>
           </div>
         </div>
+
+        <!-- Slide 2 -->
+        <div class="traditional-slide absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-700 ease-in-out" style="opacity: 0; transform: translateY(40px); z-index: 20; pointer-events: none;">
+          <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 class="text-left mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main">
+                What is Traditional <br><span class="font-extrabold">Credit Card Processing?</span>
+              </h1>
+              <div class="md:w-[562px] w-full text-left page-sub md:text-[15px] text-[10px] font-normal flex flex-col gap-4">
+                <p>Traditional processing refers to the standard method where a business accepts credit or debit card payments and pays a processing fee to various parties involved in the transaction (banks, card networks, processors).</p>
+                <p>In this model, merchants absorb the cost of accepting card payments, meaning a portion of every sale goes to processing fees, reducing overall profit margins.</p>
+              </div>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <img src="/assets/images/blog-one/slider-two.png" alt="Card Tap" class="w-full h-auto rounded-[32px] object-cover max-h-[500px] shadow-lg" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="traditional-slide absolute inset-0 flex items-center justify-center w-full h-full transition-all duration-700 ease-in-out" style="opacity: 0; transform: translateY(40px); z-index: 10; pointer-events: none;">
+          <div class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12">
+            <div class="w-full lg:w-1/2 text-center lg:text-left">
+              <h1 class="text-left mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main">
+                How Are <span class="font-extrabold">Fees Structured?</span>
+              </h1>
+              <div class="md:w-[562px] w-full text-left page-sub md:text-[14px] text-[10px] font-normal flex flex-col gap-3">
+                <div>
+                  <strong class="page-main">Interchange Fee (set by card-issuing banks):</strong>
+                  <ul class="list-disc pl-5 mt-1 space-y-1">
+                    <li>Charged by the customer's bank.</li>
+                    <li>Varies based on card type (credit/debit, rewards cards).</li>
+                    <li>Typically 1.5%-2% per transaction.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong class="page-main">Assessment Fee (set by card networks like Visa, Mastercard):</strong>
+                  <ul class="list-disc pl-5 mt-1 space-y-1">
+                    <li>Fixed percentage for using the card brand's network.</li>
+                    <li>Usually 0.13%-0.15% of the transaction.</li>
+                  </ul>
+                </div>
+                <div>
+                  <strong class="page-main">Processor Markup (charged by your payment processor or POS provider):</strong>
+                  <ul class="list-disc pl-5 mt-1 space-y-1">
+                    <li>The profit margin for the processor.</li>
+                    <li>Can include a flat fee per transaction + percentage (e.g., ₹0.30 + 0.5%).</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+              <img src="/assets/images/blog-one/slider-three.png" alt="Card Insertion" class="w-full h-auto rounded-[32px] object-cover max-h-[500px] shadow-lg" />
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
     <!--Real Savings section-->
@@ -1027,7 +1173,7 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
               <!-- Aspect Column (first column) -->
               <div
-                class="rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
+                class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
               >
                 <div
                   class="text-center font-bold md:text-[36px] p-6 md:p-8 text-2xl border-b border-gray-200"
@@ -1070,7 +1216,7 @@
 
               <!-- Traditional Column (second column) -->
               <div
-                class="rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
+                class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
               >
                 <div
                   class="text-center font-bold md:text-[36px] p-6 md:p-8 text-2xl border-b border-gray-200"
@@ -1113,7 +1259,7 @@
 
               <!-- Cash Discount Column (third column) -->
               <div
-                class="rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
+                class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden"
               >
                 <div
                   class="text-center font-bold md:text-[36px] p-6 md:p-8 text-2xl border-b border-gray-200"
@@ -1511,67 +1657,27 @@
           </div>
         </div>
 
-        <!-- STATE A: 2 big images -->
-        <div
-          id="stateA"
-          class="grid grid-cols-1 md:grid-cols-2 gap-4 transition-all duration-700 ease-out opacity-100 translate-y-0"
-        >
-          <img
-            src="/assets/images/blog-one/image-one.png"
-            alt="Payment terminal"
-            class="w-full h-auto rounded-xl shadow object-cover"
-          />
-          <img
-            src="/assets/images/blog-one/image-two.png"
-            alt="Cash in hand"
-            class="w-full h-auto rounded-xl shadow object-cover"
-          />
-        </div>
+        <!-- PPT-Style Animation Container -->
+        <div id="flexible-animation-container" class="relative w-full h-[400px] md:h-[600px] mt-10 transition-all duration-[1200ms] ease-in-out">
+           
+           <!-- Text Container (Left) -->
+           <div id="flex-text" class="absolute left-0 top-0 w-full md:w-[48%] h-auto md:h-full flex flex-col justify-start md:justify-center opacity-0 transition-all duration-1000 ease-in-out pointer-events-none translate-y-4 md:translate-y-0 z-10">
+             <h2 class="mb-1 md:mb-6 font-bold md:text-[36px] text-xl md:leading-[46px] w-full">
+               <span class="page-sub">How TequilaPOS Supports Both </span>
+               <span class="page-main"> Models — and Helps You Decide</span>
+             </h2>
+             <p class="text-sm md:text-base page-sub leading-relaxed mb-4">
+               TequilaPOS is designed with flexibility in mind, offering full support for both Traditional Payment Processing and the Cash Discount Program. Whether your business prefers to absorb processing fees quietly or pass them through with a compliant cash discount model, TequilaPOS makes it seamless. You can easily configure pricing, apply automatic discounts, and display customer-facing messages — all within the same system. If you're unsure which model is best for your business, our team helps you evaluate your average card usage, customer base, and profitability goals. With built-in tools, real-time reports, and legal-compliant setup options, TequilaPOS empowers you to make an informed decision and switch between models anytime — no extra hardware or setup needed.
+             </p>
+             <a href="#contact" class="text-sm font-semibold underline underline-offset-4 hover:text-black transition-colors md:pt-10 pt-6">
+               CONNECT TO US
+             </a>
+           </div>
 
-        <!-- STATE B: Text left, 2 stacked small images right -->
-        <div
-          id="stateB"
-          class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start mt-6 opacity-0 -translate-y-3 hidden transition-all duration-700 ease-out"
-        >
-          <!-- LEFT TEXT -->
-          <div class="flex flex-col justify-center md:pt-6">
-            <h2
-              class="mb-1 md:mb-6 font-bold md:text-[36px] text-xl md:leading-[46px] md:w-[604px] w-full"
-            >
-              <span class="page-sub">How TequilaPOS Supports Both </span>
-              <span class="page-main"> Models — and Helps You Decide</span>
-            </h2>
-            <p class="text-sm md:text-base page-sub leading-relaxed mb-4">
-              TequilaPOS is designed with flexibility in mind, offering full
-              support for both Traditional Payment Processing and the Cash
-              Discount Program. Whether your business prefers to absorb
-              processing fees quietly or pass them through with a compliant cash
-              discount model, TequilaPOS makes it seamless. You can easily
-              configure pricing, apply automatic discounts, and display
-              customer-facing messages — all within the same system. If you're
-              unsure which model is best for your business, our team helps you
-              evaluate your average card usage, customer base, and profitability
-              goals. With built-in tools, real-time reports, and legal-compliant
-              setup options, TequilaPOS empowers you to make an informed
-              decision and switch between models anytime — no extra hardware or
-              setup needed.
-            </p>
-            <a
-              href="#contact"
-              class="text-sm font-semibold underline underline-offset-4 hover:text-black transition-colors md:pt-10 pt-6"
-            >
-              CONNECT TO US
-            </a>
-          </div>
-
-          <!-- RIGHT: TWO STACKED IMAGES -->
-          <div class="flex flex-col gap-4">
-            <img
-              src="/assets/images/blog-one/final-image.png"
-              alt="Card tapping"
-              class="rounded-2xl shadow object-cover w-full h-auto opacity-0 translate-y-3 transition-all duration-700 delay-300"
-            />
-          </div>
+           <!-- Images -->
+           <img src="/assets/images/blog-one/image-one.png" alt="Payment terminal" class="flex-anim-img absolute object-cover shadow-lg z-20" style="--img-w: var(--img1-w); --img-h: var(--img1-h); --img-l: var(--img1-l); --img-t: var(--img1-t); --img-rad: var(--img1-rad);" />
+           
+           <img src="/assets/images/blog-one/image-two.png" alt="Cash in hand" class="flex-anim-img absolute object-cover shadow-lg z-20" style="--img-w: var(--img2-w); --img-h: var(--img2-h); --img-l: var(--img2-l); --img-t: var(--img2-t); --img-rad: var(--img2-rad);" />
         </div>
       </div>
     </section>
@@ -1579,63 +1685,23 @@
     <script>
       (function () {
         const section = document.getElementById("payments-section");
-        const stateA = document.getElementById("stateA");
-        const stateB = document.getElementById("stateB");
+        const container = document.getElementById("flexible-animation-container");
+        const text = document.getElementById("flex-text");
 
-        if (
-          !section ||
-          !stateA ||
-          !stateB ||
-          !("IntersectionObserver" in window)
-        )
-          return;
+        if (!section || !container || !("IntersectionObserver" in window)) return;
 
-        const DURATION = 700; // match Tailwind duration
-
-        const fadeOut = (el, cb) => {
-          el.classList.remove("opacity-100", "translate-y-0");
-          el.classList.add("opacity-0", "-translate-y-3");
-          setTimeout(() => {
-            el.classList.add("hidden");
-            cb && cb();
-          }, DURATION);
-        };
-
-        const fadeIn = (el) => {
-          el.classList.remove("hidden");
-          requestAnimationFrame(() => {
-            el.classList.remove("opacity-0", "-translate-y-3");
-            el.classList.add("opacity-100", "translate-y-0");
-          });
-        };
-
-        function showA() {
-          if (!stateA.classList.contains("hidden")) return;
-          fadeIn(stateA);
-          fadeOut(stateB);
-        }
-
-        function showB() {
-          if (!stateB.classList.contains("hidden")) return;
-          fadeOut(stateA, () => {
-            fadeIn(stateB);
-            // animate images after B shows
-            const imgs = stateB.querySelectorAll("img");
-            imgs.forEach((img, i) => {
-              setTimeout(() => {
-                img.classList.remove("opacity-0", "translate-y-3");
-                img.classList.add("opacity-100", "translate-y-0");
-              }, 200 + i * 200);
-            });
-          });
-        }
-
-        // observe when section is visible
         const io = new IntersectionObserver(
           (entries) => {
-            entries.forEach((e) => {
-              if (e.isIntersecting) showB();
-              else showA();
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                container.classList.add("state-b");
+                text.classList.remove("opacity-0", "translate-y-4", "pointer-events-none");
+                text.classList.add("opacity-100", "translate-y-0", "pointer-events-auto");
+              } else {
+                container.classList.remove("state-b");
+                text.classList.add("opacity-0", "translate-y-4", "pointer-events-none");
+                text.classList.remove("opacity-100", "translate-y-0", "pointer-events-auto");
+              }
             });
           },
           { threshold: 0.35 }
@@ -1780,22 +1846,22 @@
                 class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
               >
                 <a
-                  href="/a920.html"
+                  href="#"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >PAX A920</a
                 >
                 <a
-                  href="/a35-android.html"
+                  href="#"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >PAX A35</a
                 >
                 <a
-                  href="/magtek.html"
+                  href="#"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >MagTek DynaFlex</a
                 >
                 <a
-                  href="/elys-workstation.html"
+                  href="#"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >PAX Elys Workstation</a
                 >
@@ -2051,5 +2117,48 @@
         isEnglish = !isEnglish; // flip state
       }
     </script>
+    <script>
+      // Sticky Scroll Animation Logic
+      document.addEventListener('DOMContentLoaded', () => {
+        const wrapper = document.getElementById('traditional-payment-wrapper');
+        const slides = document.querySelectorAll('.traditional-slide');
+        
+        if (!wrapper || slides.length === 0) return;
+
+        window.addEventListener('scroll', () => {
+          const rect = wrapper.getBoundingClientRect();
+          // Calculate progress from 0 to 1 based on how much of the wrapper has been scrolled
+          // It starts when the top of the wrapper hits the top of the viewport (rect.top <= 0)
+          // It ends when the bottom of the wrapper hits the bottom of the viewport (rect.bottom <= window.innerHeight)
+          const totalScrollableDistance = rect.height - window.innerHeight;
+          let progress = -rect.top / totalScrollableDistance;
+          
+          progress = Math.max(0, Math.min(1, progress));
+
+          let activeIndex = 0;
+          if (progress < 0.33) {
+            activeIndex = 0;
+          } else if (progress < 0.66) {
+            activeIndex = 1;
+          } else {
+            activeIndex = 2;
+          }
+
+          slides.forEach((slide, idx) => {
+            if (idx === activeIndex) {
+              slide.style.opacity = '1';
+              slide.style.transform = 'translateY(0px)';
+              slide.style.pointerEvents = 'auto';
+            } else {
+              slide.style.opacity = '0';
+              // Slide out top if it's a previous slide, slide in bottom if it's a next slide
+              slide.style.transform = idx < activeIndex ? 'translateY(-40px)' : 'translateY(40px)';
+              slide.style.pointerEvents = 'none';
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
+
