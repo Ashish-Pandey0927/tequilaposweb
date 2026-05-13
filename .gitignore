@@ -1,2 +1,4 @@
 /.vscode
 node_modules
+light/anti-idel.py
+anti_idle_log.txt
