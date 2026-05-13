@@ -135,7 +135,7 @@
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
-          color: black !important;
+          /* color: black !important; */
           border: none !important;
           visibility: visible !important;
           opacity: 1 !important;
@@ -587,8 +587,11 @@
       <div class="xl:hidden text-center flex flex-col justify-center items-center py-6 md:py-12 px-4">
         <!-- MOBILE Lottie (autoplay) -->
         <div class="w-screen -mx-4 md:w-full md:mx-0 flex justify-center overflow-hidden h-[350px] md:h-[400px]">
-          <dotlottie-wc class="border-none outline-none scale-[1.5] md:scale-[1.2]" style="width: 100%; height: 100%; background: transparent;"
-            src="https://lottie.host/1f5f17c8-a0a7-4921-bab0-345c47ecb0a2/JXjlte1V8J.lottie" autoplay background="transparent" transparent="true" data-background-color="transparent">
+          <dotlottie-wc class="border-none outline-none scale-[1.5] logo-light md:scale-[1.2]" style="width: 100%; height: 100%; background: transparent;"
+            src="/hero-anim-light.lottie" autoplay background="transparent" transparent="true" data-background-color="transparent">
+          </dotlottie-wc>
+          <dotlottie-wc class="border-none outline-none scale-[1.5] logo-dark md:scale-[1.2]" style="width: 100%; height: 100%; background: transparent;"
+            src="/hero-anim-dark.lottie" autoplay background="transparent" transparent="true" data-background-color="transparent">
           </dotlottie-wc>
         </div>
         
@@ -619,7 +622,7 @@
 
            <!-- Button -->
            <a href="/contact.html"
-            class="inline-flex items-center justify-center rounded-[38px] page-btn px-4 md:px-8 py-2 md:py-3 text-[10px] md:text-sm font-medium text-white hover:bg-neutral-900 transition">
+            class="inline-flex items-center justify-center rounded-[38px] page-btn px-4 md:px-8 py-2 md:py-3 text-[10px] md:text-sm font-medium hover:bg-neutral-900 transition">
             GET IN TOUCH
            </a>
         </div>
@@ -628,8 +631,12 @@
       <!-- DESKTOP (exact UI) -->
       <div class="relative group overflow-hidden hidden xl:block lg:w-[1440px] md:h-[649px] mx-auto"
         data-aos="fade-up" data-aos-delay="100">
-        <dotlottie-wc class="border-none outline-none"
-          src="https://lottie.host/1f5f17c8-a0a7-4921-bab0-345c47ecb0a2/JXjlte1V8J.lottie"
+        <dotlottie-wc class="border-none outline-none logo-light"
+          src="/hero-anim-light.lottie"
+          stateMachineId="StateMachine1" style="margin-top: -110px; background: transparent;" background="transparent" transparent="true" data-background-color="transparent">
+        </dotlottie-wc>
+        <dotlottie-wc class="border-none outline-none logo-dark"
+          src="/hero-anim-dark.lottie"
           stateMachineId="StateMachine1" style="margin-top: -110px; background: transparent;" background="transparent" transparent="true" data-background-color="transparent">
         </dotlottie-wc>
         <div class="absolute left-[337px] top-[320px] text-center opacity-0 translate-y-6 transition-all duration-1000 delay-700 group-hover:opacity-100 group-hover:translate-y-0">
@@ -648,8 +655,8 @@
         <!-- Line between text and button -->
         <div class="absolute w-[935px] h-[1px] left-[237px] top-[500px] bg-black opacity-0 translate-y-6 transition-all duration-1000 delay-1000 group-hover:opacity-100 group-hover:translate-y-0"></div>
 
-        <a href="#contact" class="absolute left-[1207px] top-[476px] inline-flex items-center justify-center w-[165px] h-[49px] page-btn rounded-[38px] hover:bg-neutral-900 transition opacity-0 translate-y-6 transition-all duration-1000 delay-1000 group-hover:opacity-100 group-hover:translate-y-0">
-          <span class="text-white text-base font-medium">GET IN TOUCH</span>
+        <a href="#" class="absolute left-[1207px] top-[476px] inline-flex items-center justify-center w-[165px] h-[49px] page-btn rounded-[38px] hover:bg-neutral-900 transition opacity-0 translate-y-6 transition-all duration-1000 delay-1000 group-hover:opacity-100 group-hover:translate-y-0">
+          <span class="text-base font-medium">GET IN TOUCH</span>
         </a>
 
         <!-- Dots on the line -->
@@ -1090,10 +1097,10 @@
 
           <!-- Arrows -->
           <div class="splide__arrows">
-            <button class="splide__arrow splide__arrow--prev">
+            <button class="splide__arrow page-accent splide__arrow--prev">
               ‹
             </button>
-            <button class="splide__arrow splide__arrow--next">
+            <button class="splide__arrow page-accent splide__arrow--next">
               ›
             </button>
           </div>
@@ -1200,7 +1207,7 @@
       height: 34px;
       border-radius: 9999px;
       background: #d7d7d7;
-      color: #ffffff;
+      /* color: #ffffff; */
       border: none;
       font-size: 26px;
       line-height: 1;
@@ -1241,22 +1248,9 @@
     }
 
     /* Dark mode theme */
-    body {
-      transition: background-color 0.25s ease, color 0.25s ease;
-    }
+   
 
-    .dark body {
-      background: #0f0f0f !important;
-      color: #f5f5f5;
-    }
-
-    .dark nav,
-    .dark section,
-    .dark footer,
-    .dark .bg-white,
-    .dark .bg-gray-50 {
-      background-color: #121212 !important;
-    }
+   
 
     .dark .text-black,
     .dark .page-main,
@@ -1315,19 +1309,19 @@
     }
 
     /* Hero section dark-mode palette only (no animation changes) */
-    .dark .hero-section,
+    /* .dark .hero-section,
     .dark .hero-section>div,
     .dark .hero-section .md\:hidden,
     .dark .hero-section .relative.group,
     .dark .hero-section .group.bg-white.overflow-hidden {
       background-color: #141414 !important;
-    }
+    } */
 
-    .dark .hero-section h1,
+    /* .dark .hero-section h1,
     .dark .hero-section h2,
     .dark .hero-section .text-white {
       color: #f5f5f5 !important;
-    }
+    } */
 
     .dark .hero-section .text-\[\#4f4f4f\] {
       color: #d3952a !important;
