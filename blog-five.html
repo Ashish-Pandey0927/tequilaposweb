@@ -27,6 +27,15 @@
         display: none;
       }
 
+      /* Hide scrollbar for a cleaner look */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
       .splide__arrow {
         -ms-flex-align: center;
         align-items: center;
@@ -698,7 +707,7 @@
           <h2
             class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[650px] mx-auto"
           >
-            <span class="page-sub">Understanding Bitcoin as a </span>
+            <span class="page-accent">Understanding Bitcoin as a </span>
             <span class="page-main">Digital Payment Solution</span>
           </h2>
           <div class="flex justify-center">
@@ -712,143 +721,91 @@
           </div>
         </div>
         <!-- Slider Section -->
-        <div class="w-full container mx-auto px-4">
-          <div class="relative rounded-2xl shadow-xl overflow-hidden">
+        <div class="relative overflow-visible">
+          <div class="relative rounded-2xl overflow-visible">
             <!-- Main Slider Content Container -->
             <div
               id="slider-container"
               class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory"
             >
               <!-- Slide 1 -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center"
-              >
-                <!-- Image Column -->
-                <div class="w-full">
-                  <img
-                    src="/assets/images/blog-five/digital-payment-slider-one.png"
-                    alt="A hand holding a stack of dollar bills, representing a cash discount."
-                    class="w-full h-auto object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="p-8 sm:p-12">
-                  <h2
-                    class="text-2xl sm:text-3xl font-extrabold tracking-wide page-sub mb-4"
-                  >
-                    WHAT IS BITCOIN ?
-                  </h2>
-                  <p class="page-sub leading-relaxed mb-4">
-                    Bitcoin is a type of digital currency (also called
-                    cryptocurrency) that allows people to send and receive money
-                    over the internet without needing a bank or payment
-                    processor. It was invented in 2009 by an unknown person or
-                    group using the name Satoshi Nakamoto.
-                  </p>
-                  <p class="page-sub leading-relaxed">
-                    Instead of relying on a central authority, Bitcoin uses a
-                    decentralized network of computers (called nodes) that
-                    verify and record all transactions on a public ledger known
-                    as the blockchain. This makes it secure, transparent, and
-                    nearly impossible to alter.
-                  </p>
+              <div class="flex-shrink-0 w-full snap-center py-8">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start justify-between gap-12">
+                  <!-- Image Column -->
+                  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-1">
+                    <img
+                      src="/assets/images/blog-five/digital-payment-slider-one.png"
+                      alt="Bitcoin digital payment explanation"
+                      class="w-full max-h-[500px] object-cover"
+                    />
+                  </div>
+                  <!-- Text Content Column -->
+                  <div class="w-full lg:w-1/2 text-center lg:text-left order-2 lg:self-start">
+                    <div class="h-px bg-gray-200 w-full mb-6"></div>
+                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight">
+                      WHAT IS <span class="font-bold uppercase">BITCOIN?</span>
+                    </h2>
+                    <div class="h-px bg-gray-200 w-full my-6"></div>
+                    <div class="space-y-4">
+                      <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
+                        Bitcoin is a type of digital currency (also called cryptocurrency) that allows people to send and receive money over the internet without needing a bank or payment processor. It was invented in 2009 by an unknown person or group using the name Satoshi Nakamoto.
+                      </p>
+                      <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
+                        Instead of relying on a central authority, Bitcoin uses a decentralized network of computers (called nodes) that verify and record all transactions on a public ledger known as the blockchain. This makes it secure, transparent, and nearly impossible to alter.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Slide 2 -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center"
-              >
-                <!-- Image Column -->
-                <div class="w-full">
-                  <img
-                    src="/assets/images/blog-five/digital-payment-slider-two.png"
-                    alt="A person receiving a gift, representing customer loyalty rewards."
-                    class="w-full h-auto object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="p-8 sm:p-12">
-                  <h2
-                    class="text-2xl sm:text-3xl font-extrabold tracking-wide page-sub mb-4"
-                  >
-                    HOW BITCOIN WORKS FOR PAYMENTS
-                  </h2>
-                  <div class="max-w-full p-4 sm:p-6 lg:p-8">
-                    <div
-                      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-0 border-t border-gray-200"
-                    >
-                      <div
-                        class="p-6 md:p-8 border-r border-b sm:border-b-0 md:border-b border-gray-200"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 page-main"
-                            >01</span
-                          >
-                          Digital Wallet
+              <div class="flex-shrink-0 w-full snap-center py-8">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start justify-between gap-12">
+                  <!-- Image Column -->
+                  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-1">
+                    <img
+                      src="/assets/images/blog-five/digital-payment-slider-two.png"
+                      alt="Bitcoin payment process illustration"
+                      class="w-full max-h-[500px] object-cover"
+                    />
+                  </div>
+                  <!-- Text Content Column -->
+                  <div class="w-full lg:w-1/2 text-center lg:text-left order-2 lg:self-start">
+                    <div class="h-px bg-gray-200 w-full mb-6"></div>
+                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight uppercase">
+                      HOW BITCOIN WORKS FOR <br /><span class="font-bold">PAYMENTS</span>
+                    </h2>
+                    <div class="h-px bg-gray-200 w-full my-6"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                      <div class="flex flex-col gap-2 text-left p-6 border-b border-r border-gray-200">
+                        <div class="text-xl font-bold flex items-baseline gap-2">
+                          <span class="text-3xl font-black page-accent opacity-50">01</span>
+                          <span class="page-main">Digital Wallet</span>
                         </div>
-                        <p class="page-sub">
-                          Users store their Bitcoin in a digital wallet (an app
-                          or software).
-                        </p>
+                        <p class="page-sub text-sm leading-relaxed">Users store their Bitcoin in a digital wallet (an app or software).</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-b sm:border-b-0 md:border-b border-gray-200"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 page-main"
-                            >02</span
-                          >
-                          Sending Bitcoin
+                      <div class="flex flex-col gap-2 text-left p-6 border-b border-gray-200">
+                        <div class="text-xl font-bold flex items-baseline gap-2">
+                          <span class="text-3xl font-black page-accent opacity-50">02</span>
+                          <span class="page-main">Sending Bitcoin</span>
                         </div>
-                        <p class="page-sub">
-                          To make a payment, the sender enters the recipient's
-                          wallet address and the amount, then authorizes the
-                          transaction.
-                        </p>
+                        <p class="page-sub text-sm leading-relaxed">To make a payment, the sender enters the recipient's wallet address and the amount, then authorizes the transaction.</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-r border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-gray-200"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 page-main"
-                            >03</span
-                          >
-                          Transaction Verification
+                      <div class="flex flex-col gap-2 text-left p-6 border-r border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-gray-200">
+                        <div class="text-xl font-bold flex items-baseline gap-2">
+                          <span class="text-3xl font-black page-accent opacity-50">03</span>
+                          <span class="page-main">Transaction Verification</span>
                         </div>
-                        <p class="page-sub">
-                          The network verifies the transaction using a process
-                          called mining, ensuring it's legitimate.
-                        </p>
+                        <p class="page-sub text-sm leading-relaxed">The network verifies the transaction using a process called mining, ensuring it's legitimate.</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-gray-200"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 page-main"
-                            >04</span
-                          >
-                          Confirmation
+                      <div class="flex flex-col gap-2 text-left p-6">
+                        <div class="text-xl font-bold flex items-baseline gap-2">
+                          <span class="text-3xl font-black page-accent opacity-50">04</span>
+                          <span class="page-main">Confirmation</span>
                         </div>
-                        <p class="page-sub">
-                          Once verified, the transaction is recorded on the
-                          blockchain and the payment is complete—usually within
-                          minutes.
-                        </p>
+                        <p class="page-sub text-sm leading-relaxed">Once verified, the transaction is recorded on the blockchain and the payment is complete—usually within minutes.</p>
                       </div>
                     </div>
-                    <div class="h-px bg-gray-200 hidden md:block"></div>
                   </div>
                 </div>
               </div>
@@ -858,11 +815,11 @@
             <!-- Left Arrow -->
             <button
               id="prev-button"
-              class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10 hidden md:block"
+              class="absolute top-1/2 -left-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
               aria-label="Previous slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -879,11 +836,11 @@
             <!-- Right Arrow -->
             <button
               id="next-button"
-              class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10 hidden md:block"
+              class="absolute top-1/2 -right-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
               aria-label="Next slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -908,14 +865,14 @@
           <h2
             class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto"
           >
-            <span class="text-[#4f4f4f]"
+            <span class="page-accent"
               >Understanding Customer Preferences
             </span>
-            <span class="text-black">for Cryptocurrency Payments</span>
+            <span class="page-main">for Cryptocurrency Payments</span>
           </h2>
           <div class="flex justify-center">
             <p
-              class="md:w-[562px] w-full text-center text-[#4f4f4f] md:text-[15px] text-[10px] font-normal"
+              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
             >
               Each feature solves a real-world problem — here’s how they make
               daily operations smoother and more profitable.
@@ -1052,21 +1009,21 @@
           <div class="flex space-x-2 mb-8 bg-gray-100 p-1 rounded-full w-fit">
             <button
               id="tab-permissions"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-black text-white"
+              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-black page-main"
               data-target="content-permissions"
             >
               Credit Cards
             </button>
             <button
               id="tab-audit"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-700 hover:bg-gray-200"
+              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
               data-target="content-audit"
             >
               No Chargebacks
             </button>
             <button
               id="tab-reports"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-700 hover:bg-gray-200"
+              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
               data-target="content-reports"
             >
               Fast Settlement
@@ -1231,42 +1188,42 @@
                   <input
                     type="text"
                     placeholder="Enter your name here"
-                    class="w-full border-b border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
+                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <input
                     type="email"
                     placeholder="Enter your email here"
-                    class="w-full border-b border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
+                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
                     placeholder="Business name"
-                    class="w-full border-b border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
+                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <input
                     type="tel"
                     placeholder="Phone no."
-                    class="w-full border-b border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
+                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <input
                     type="text"
                     placeholder="Product you want"
-                    class="w-full border-b border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
+                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
                   />
                 </div>
                 <div>
                   <textarea
                     placeholder="Have any question?"
                     rows="4"
-                    class="w-full border border-gray-300 focus:border-black focus:outline-none p-3 text-sm page-main placeholder-gray-400 rounded-lg"
+                    class="w-full border bg-transparent border-gray-300 focus:border-black focus:outline-none p-3 text-sm page-main placeholder-gray-400 rounded-lg"
                   ></textarea>
                 </div>
                 <button
@@ -1306,7 +1263,7 @@
             <div
               class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
             >
-              <h2 class="text-xl font-bold page-sub">
+              <h2 class="text-xl font-bold page-main">
                 Major Brands Are Leading the Way
               </h2>
               <ul class="list-none space-y-3 px-2 page-sub text-left">
@@ -1335,7 +1292,7 @@
             <div
               class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-left text-center space-y-4"
             >
-              <h2 class="text-xl font-bold page-sub">
+              <h2 class="text-xl font-bold page-main">
                 Independent Restaurants and Cafés Are Joining In
               </h2>
               <h3 class="text-[15px] font-bold page-main text-left">
@@ -1368,7 +1325,7 @@
             <div
               class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
             >
-              <h2 class="text-xl font-bold page-sub">
+              <h2 class="text-xl font-bold page-main">
                 Hotels and Resorts Accepting Crypto
               </h2>
 

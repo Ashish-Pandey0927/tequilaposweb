@@ -26,6 +26,15 @@
         display: none;
       }
 
+      /* Hide scrollbar for a cleaner look */
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+
       /* .splide__arrow {
         -ms-flex-align: center;
         align-items: center;
@@ -386,157 +395,104 @@
           </div>
         </div>
         <!-- Slider Section -->
-        <div class="w-full container mx-auto px-4">
-          <div class="relative rounded-2xl shadow-xl overflow-hidden">
+        <div class="relative overflow-visible">
+          <div class="relative rounded-2xl overflow-visible">
             <!-- Main Slider Content Container -->
             <div
               id="slider-container"
               class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory"
             >
               <!-- Slide 1 -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center"
-              >
-                <!-- Image Column -->
-                <div class="w-full">
-                  <img
-                    src="/assets/images/blog-five/digital-payment-slider-one.png"
-                    alt="A hand holding a stack of dollar bills, representing a cash discount."
-                    class="w-full h-auto object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="p-8 sm:p-12">
-                  <h2
-                    class="text-2xl sm:text-3xl font-extrabold tracking-wide text-white mb-4"
-                  >
-                    WHAT IS BITCOIN ?
-                  </h2>
-                  <p class="text-[#CDCDCD] leading-relaxed mb-4">
-                    Bitcoin is a type of digital currency (also called
-                    cryptocurrency) that allows people to send and receive money
-                    over the internet without needing a bank or payment
-                    processor. It was invented in 2009 by an unknown person or
-                    group using the name Satoshi Nakamoto.
-                  </p>
-                  <p class="text-[#CDCDCD] leading-relaxed">
-                    Instead of relying on a central authority, Bitcoin uses a
-                    decentralized network of computers (called nodes) that
-                    verify and record all transactions on a public ledger known
-                    as the blockchain. This makes it secure, transparent, and
-                    nearly impossible to alter.
-                  </p>
+              <div class="flex-shrink-0 w-full snap-center py-8">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start justify-between gap-12">
+                  <!-- Image Column -->
+                  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-1">
+                    <img
+                      src="/assets/images/blog-five/digital-payment-slider-one.png"
+                      alt="Bitcoin digital payment explanation"
+                      class="w-full max-h-[500px] object-cover"
+                    />
+                  </div>
+                  <!-- Text Content Column -->
+                  <div class="w-full lg:w-1/2 text-center lg:text-left order-2 lg:self-start">
+                    <div class="h-px bg-gray-200 w-full mb-6"></div>
+                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto text-white leading-tight">
+                      WHAT IS <span class="font-bold uppercase">BITCOIN?</span>
+                    </h2>
+                    <div class="h-px bg-gray-200 w-full my-6"></div>
+                    <div class="space-y-4">
+                      <p class="text-[#CDCDCD] text-base md:text-[18px] leading-relaxed text-left">
+                        Bitcoin is a type of digital currency (also called cryptocurrency) that allows people to send and receive money over the internet without needing a bank or payment processor. It was invented in 2009 by an unknown person or group using the name Satoshi Nakamoto.
+                      </p>
+                      <p class="text-[#CDCDCD] text-base md:text-[18px] leading-relaxed text-left">
+                        Instead of relying on a central authority, Bitcoin uses a decentralized network of computers (called nodes) that verify and record all transactions on a public ledger known as the blockchain. This makes it secure, transparent, and nearly impossible to alter.
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Slide 2 -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center"
-              >
-                <!-- Image Column -->
-                <div class="w-full">
-                  <img
-                    src="/assets/images/blog-five/digital-payment-slider-two.png"
-                    alt="A person receiving a gift, representing customer loyalty rewards."
-                    class="w-full h-auto object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="p-8 sm:p-12">
-                  <h2
-                    class="text-2xl sm:text-3xl font-extrabold tracking-wide text-white mb-4"
-                  >
-                   HOW BITCOIN WORKS FOR PAYMENTS
-                  </h2>
-                  <div class="max-w-full p-4 sm:p-6 lg:p-8">
-                    <div
-                      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-0 border-t border-white"
-                    >
-                      <div
-                        class="p-6 md:p-8 border-r border-b sm:border-b-0 md:border-b border-white"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline text-white"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 text-white"
-                            >01</span
-                          >
-                          Digital Wallet
+              <div class="flex-shrink-0 w-full snap-center py-8">
+                <div class="container mx-auto px-4 flex flex-col lg:flex-row items-start justify-between gap-12">
+                  <!-- Image Column -->
+                  <div class="w-full lg:w-1/2 flex justify-center lg:justify-start order-1">
+                    <img
+                      src="/assets/images/blog-five/digital-payment-slider-two.png"
+                      alt="Bitcoin payment process illustration"
+                      class="w-full max-h-[500px] object-cover"
+                    />
+                  </div>
+                  <!-- Text Content Column -->
+                  <div class="w-full lg:w-1/2 text-center lg:text-left order-2 lg:self-start">
+                    <div class="h-px bg-gray-200 w-full mb-6"></div>
+                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto text-white leading-tight uppercase">
+                      HOW BITCOIN WORKS FOR <br /><span class="font-bold">PAYMENTS</span>
+                    </h2>
+                    <div class="h-px bg-gray-200 w-full my-6"></div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                      <div class="flex flex-col gap-2 text-left p-6 border-b border-r border-white">
+                        <div class="text-xl font-bold flex items-baseline gap-2 text-white">
+                          <span class="text-3xl font-black page-accent opacity-50">01</span>
+                          <span class="text-white">Digital Wallet</span>
                         </div>
-                        <p class="text-[#CDCDCD]">
-                          Users store their Bitcoin in a digital wallet (an app
-                          or software).
-                        </p>
+                        <p class="text-[#CDCDCD] text-sm leading-relaxed">Users store their Bitcoin in a digital wallet (an app or software).</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-b sm:border-b-0 md:border-b border-white"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline text-white"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 text-white"
-                            >02</span
-                          >
-                          Sending Bitcoin
+                      <div class="flex flex-col gap-2 text-left p-6 border-b border-white">
+                        <div class="text-xl font-bold flex items-baseline gap-2 text-white">
+                          <span class="text-3xl font-black page-accent opacity-50">02</span>
+                          <span class="text-white">Sending Bitcoin</span>
                         </div>
-                        <p class="text-[#CDCDCD]">
-                          To make a payment, the sender enters the recipient's
-                          wallet address and the amount, then authorizes the
-                          transaction.
-                        </p>
+                        <p class="text-[#CDCDCD] text-sm leading-relaxed">To make a payment, the sender enters the recipient's wallet address and the amount, then authorizes the transaction.</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-r border-b sm:border-t sm:border-t-white md:border-t-0 border-white"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline text-white"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 text-white"
-                            >03</span
-                          >
-                          Transaction Verification
+                      <div class="flex flex-col gap-2 text-left p-6 border-r border-b sm:border-t sm:border-t-white md:border-t-0 border-white">
+                        <div class="text-xl font-bold flex items-baseline gap-2 text-white">
+                          <span class="text-3xl font-black page-accent opacity-50">03</span>
+                          <span class="text-white">Transaction Verification</span>
                         </div>
-                        <p class="text-[#CDCDCD]">
-                          The network verifies the transaction using a process
-                          called mining, ensuring it's legitimate.
-                        </p>
+                        <p class="text-[#CDCDCD] text-sm leading-relaxed">The network verifies the transaction using a process called mining, ensuring it's legitimate.</p>
                       </div>
-
-                      <div
-                        class="p-6 md:p-8 border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-white"
-                      >
-                        <div
-                          class="text-xl font-semibold mb-2 flex items-baseline text-white"
-                        >
-                          <span class="text-3xl font-extrabold mr-2 text-white"
-                            >04</span
-                          >
-                          Confirmation
+                      <div class="flex flex-col gap-2 text-left p-6">
+                        <div class="text-xl font-bold flex items-baseline gap-2 text-white">
+                          <span class="text-3xl font-black page-accent opacity-50">04</span>
+                          <span class="text-white">Confirmation</span>
                         </div>
-                        <p class="text-[#CDCDCD]">
-                          Once verified, the transaction is recorded on the
-                          blockchain and the payment is complete—usually
-                          within minutes.
-                        </p>
+                        <p class="text-[#CDCDCD] text-sm leading-relaxed">Once verified, the transaction is recorded on the blockchain and the payment is complete—usually within minutes.</p>
                       </div>
                     </div>
-                    <div class="h-px bg-gray-200 hidden md:block"></div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Slider Navigation Arrows -->
-            <!-- Left Arrow -->
             <button
               id="prev-button"
-              class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10 hidden md:block"
+              class="absolute top-1/2 -left-10 transform -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 transition rounded-full z-20 hidden md:block shadow-lg"
               aria-label="Previous slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -550,14 +506,13 @@
                 ></path>
               </svg>
             </button>
-            <!-- Right Arrow -->
             <button
               id="next-button"
-              class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10 hidden md:block"
+              class="absolute top-1/2 -right-10 transform -translate-y-1/2 p-2 bg-white/10 hover:bg-white/20 transition rounded-full z-20 hidden md:block shadow-lg"
               aria-label="Next slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
