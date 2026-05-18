@@ -687,16 +687,32 @@ html.dark {
 }
 
 /* ---- Mobile navbar ---- */
-html.dark nav.navbar.lg\\:hidden {
-  background-color: #1c1c1c;
+#mobile-menu {
+  background-color: #ffffff !important;
+  color: #000000 !important;
 }
+
+#mobile-menu a,
+#mobile-menu button,
+#mobile-menu span,
+#mobile-menu h6,
+#mobile-menu div {
+  color: #000000 !important;
+}
+
 html.dark #mobile-menu {
-  background-color: #1c1c1c;
-  color: #ffffff;
+  background-color: #1c1c1c !important;
+  color: #ffffff !important;
 }
-html.dark #mobile-menu a {
-  color: #ffffff;
+
+html.dark #mobile-menu a,
+html.dark #mobile-menu button,
+html.dark #mobile-menu span,
+html.dark #mobile-menu h6,
+html.dark #mobile-menu div {
+  color: #ffffff !important;
 }
+
 html.dark #dropdownBtn {
   background-color: #2c2c2c;
   color: #ffffff;

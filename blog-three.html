@@ -417,6 +417,34 @@
                         </ul>
                       </div>
                     </div>
+                    <div class="space-y-6 hidden" data-panel="retail">
+                      <div>
+                        <h6
+                          class="text-xs font-normal mb-[10px]"
+                          style="color: inherit"
+                        >
+                          Discover
+                        </h6>
+                        <ul class="space-y-2 text-sm">
+                          <li>
+                            <a
+                              href="/overview.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Overview</a
+                            >
+                          </li>
+                          <li>
+                            <a
+                              href="/feature.html"
+                              class="hover:underline text-xl font-bold"
+                              style="color: inherit"
+                              >Switch to Tequila</a
+                            >
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -429,7 +457,7 @@
         </div>
         <div class="nav-extra-links">
           <div
-            class="language-selector cursor-pointers"
+            class="language-selector cursor-pointer"
             onclick="toggleLanguage()"
           >
             <span id="language-text">ENGLISH</span>
@@ -440,34 +468,36 @@
               class="flag-icon"
             />
           </div>
-          <a href="/login.html" class="nav-link">Sign in</a>
-          <button class="demo-btn">
-            <span>Free Demo</span>
-          </button>
+          <a href="#signin" class="nav-link">Sign in</a>
+          <a href="/free-demo.html"
+            ><button class="demo-btn"><span>Free Demo</span></button></a
+          >
         </div>
       </div>
     </nav>
 
     <!-- Mobile Navbar -->
-    <nav class="navbar xl:hidden bg-white shadow-md relative">
+    <nav class="navbar xl:hidden shadow-md relative">
       <div
-        class="navbar-container container mx-auto flex items-center justify-between py-4"
+        class="navbar-container container mx-auto flex items-center justify-between py-2 px-4"
       >
         <div class="logo-container flex items-center">
-          <a href="/index.html">
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent.png"
-              class="logo-light logo h-10"
-              alt="Logo"
-            />
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-              class="logo-dark logo h-10"
-              alt="Logo"
-            />
-          </a>
+          <img
+            src="/assets/images/logo/tequila_pos_logo_transparent.png"
+            class="logo-light logo"
+            alt="Logo"
+          />
+          <img
+            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
+            class="logo-dark logo"
+            alt="Logo"
+          />
         </div>
-        <button id="mobile-menu-btn" class="xl:hidden p-2 text-black">
+        <button
+          id="mobile-menu-btn"
+          class="xl:hidden p-2"
+          style="color: inherit"
+        >
           <svg
             id="hamburger-icon"
             xmlns="http://www.w3.org/2000/svg"
@@ -500,22 +530,23 @@
           </svg>
         </button>
       </div>
-
       <div
         id="mobile-menu"
-        class="fixed top-0 left-0 h-full w-72 bg-white text-gray-900 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg"
+        class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg overflow-y-auto"
+        style="background-color: var(--nav-bg, #fff)"
       >
-        <div class="p-4 space-y-4">
-          <div class="relative">
+        <div class="p-4 space-y-2">
+          <!-- Business Type (Level 1 Accordion) -->
+          <div class="mobile-nav-accordion">
             <button
-              id="dropdownBtn"
-              class="flex justify-between items-center w-full px-4 py-2 bg-gray-100 rounded hover:bg-gray-200"
+              class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg"
+              style="color: var(--text-primary)"
             >
               Business Type
               <svg
                 viewBox="0 0 20 20"
                 fill="currentColor"
-                class="w-5 h-5 text-gray-500 transition-transform duration-200"
+                class="w-5 h-5 transition-transform duration-200"
               >
                 <path
                   fill-rule="evenodd"
@@ -525,50 +556,163 @@
               </svg>
             </button>
             <div
-              id="dropdownMenu"
-              class="hidden mt-2 bg-gray-50 rounded shadow-lg overflow-hidden border border-gray-200"
+              class="accordion-content hidden border-l-2 border-gray-200 ml-4"
             >
-              <a href="/food.html" class="block px-4 py-2 hover:bg-gray-100"
-                >Food & Beverage</a
-              >
-              <a href="/retail.html" class="block px-4 py-2 hover:bg-gray-100"
-                >Retail</a
-              >
+              <!-- Food & Beverage (Level 2 Accordion) -->
+              <div class="mobile-sub-accordion">
+                <button
+                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
+                >
+                  Food & Beverage
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-transform duration-200"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                    />
+                  </svg>
+                </button>
+                <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                  <div>
+                    <h6
+                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
+                    >
+                      Discover
+                    </h6>
+                    <a
+                      href="/overview.html"
+                      class="block py-1 text-sm font-bold"
+                      >Overview</a
+                    >
+                    <a href="/feature.html" class="block py-1 text-sm font-bold"
+                      >Switch to Tequila</a
+                    >
+                  </div>
+                  <div>
+                    <h6
+                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
+                    >
+                      Capacity
+                    </h6>
+                    <div class="grid grid-cols-1 gap-1">
+                      <a
+                        href="/resturent-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Restaurants</a
+                      >
+                      <a
+                        href="/bar-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Bars</a
+                      >
+                      <a
+                        href="/food-truck-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Food Trucks & Pop-ups</a
+                      >
+                      <a
+                        href="/cafes-coffee-shop-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Cafes & Coffee Shops</a
+                      >
+                      <a
+                        href="/juice-bars-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Juice Bars & Smoothie Shops</a
+                      >
+                      <a
+                        href="/bakeries-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Bakeries</a
+                      >
+                      <a
+                        href="/ice-cream-dessert-capabilities.html"
+                        class="block py-1 text-sm font-bold"
+                        >Ice Creams & Desserts</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Retail (Level 2 Accordion) -->
+              <div class="mobile-sub-accordion">
+                <button
+                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
+                >
+                  Retail
+                  <svg
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    class="w-4 h-4 transition-transform duration-200"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                    />
+                  </svg>
+                </button>
+                <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                  <div>
+                    <h6
+                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
+                    >
+                      Discover
+                    </h6>
+                    <a
+                      href="/overview.html"
+                      class="block py-1 text-sm font-bold"
+                      >Overview</a
+                    >
+                    <a href="/feature.html" class="block py-1 text-sm font-bold"
+                      >Switch to Tequila</a
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <a href="/feature.html" class="block px-4 py-2 hover:bg-gray-100 rounded"
+
+          <a href="/feature.html" class="block px-4 py-3 font-bold text-lg"
             >Features</a
           >
-          <a href="/hardware.html" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a href="/hardware.html" class="block px-4 py-3 font-bold text-lg"
             >Hardware</a
           >
-          <a href="/pricing.html" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a href="/pricing.html" class="block px-4 py-3 font-bold text-lg"
             >Pricing</a
           >
-          <a href="/resourse.html" class="block px-4 py-2 hover:bg-gray-100 rounded"
+          <a href="/resourse.html" class="block px-4 py-3 font-bold text-lg"
             >Resources</a
           >
-          <div
-            class="flex items-center justify-between px-4 py-2 bg-gray-100 rounded"
-          >
-            <span class="text-sm">EN</span>
-            <label class="inline-flex items-center cursor-pointer">
-              <input type="checkbox" class="sr-only peer" />
-              <div
-                class="w-11 h-6 bg-gray-300 peer-checked:bg-blue-500 rounded-full relative after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:w-5 after:h-5 after:rounded-full after:transition-all peer-checked:after:translate-x-full"
-              ></div>
-            </label>
-            <span class="text-sm">ES</span>
+
+          <div class="px-4 py-3 border-t border-gray-100">
+            <div
+              class="language-selector flex items-center gap-2 cursor-pointer"
+              onclick="toggleLanguage()"
+            >
+              <span id="mobile-language-text" class="font-bold text-sm"
+                >ENGLISH</span
+              >
+              <img
+                id="mobile-flag-icon"
+                src="/assets/images/flags/usa.png"
+                alt="USA"
+                class="w-6 h-4 object-cover"
+              />
+            </div>
           </div>
-          <a href="/login.html" class="block px-4 py-2 hover:bg-gray-100 rounded"
-            >Sign In</a
-          >
-          <a
-            href="#demo"
-            class="block text-center bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold py-2 rounded shadow hover:from-yellow-300 hover:to-yellow-400"
-          >
-            Free Demo
-          </a>
+
+          <div class="px-4 py-4 space-y-4 border-t border-gray-100">
+            <a href="#signin" class="block font-bold text-lg">Sign In</a>
+            <a href="/free-demo.html" class="block">
+              <button class="demo-btn w-full"><span>Free Demo</span></button>
+            </a>
+          </div>
         </div>
       </div>
     </nav>
