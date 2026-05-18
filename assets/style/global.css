@@ -960,3 +960,54 @@ html.dark .market-list-title {
 html.dark .market-list-bullet {
   background-color: #9ca3af;
 }
+
+/* ============================================================
+   GLOBAL SECTION BUTTON STYLES (Light/Dark Mode Uniformity)
+   ============================================================ */
+
+/* Light Mode: Background Black, Text White */
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn),
+section .demo-btn,
+section a.bg-black {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+  transition: all 0.3s ease !important;
+}
+
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn) span,
+section .demo-btn span,
+section a.bg-black span {
+  color: #ffffff !important;
+}
+
+/* Light Mode Hover: Dark Charcoal */
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):hover,
+section .demo-btn:hover,
+section a.bg-black:hover {
+  background-color: #222222 !important;
+  border-color: #222222 !important;
+}
+
+/* Dark Mode: Background White, Text Black */
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn),
+html.dark section .demo-btn,
+html.dark section a.bg-black {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #ffffff !important;
+}
+
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn) span,
+html.dark section .demo-btn span,
+html.dark section a.bg-black span {
+  color: #000000 !important;
+}
+
+/* Dark Mode Hover: Light Grey */
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):hover,
+html.dark section .demo-btn:hover,
+html.dark section a.bg-black:hover {
+  background-color: #e0e0e0 !important;
+  border-color: #e0e0e0 !important;
+}
