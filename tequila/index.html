@@ -118,7 +118,7 @@
           display: flex !important;
           justify-content: space-between !important;
           padding: 0 10px !important;
-          z-index: 50 !important;
+          z-index: 10 !important;
           pointer-events: none !important;
           visibility: visible !important;
           opacity: 1 !important;
@@ -942,10 +942,12 @@
         <div id="feature-text" class="flex flex-col justify-center w-full md:w-1/2 space-y-4 md:space-y-6">
           <p id="feature-title" class="text-black md:text-[32px] text-lg font-semibold"></p>
           <p id="feature-desc" class="text-[#4f4f4f] md:text-[15px] text-sm"></p>
-          <button
+          <a
+            id="feature-link"
+            href="../a920.html"
             class="btn text-black text-sm md:text-[15px] font-semibold underline hover:no-underline hover:text-black w-max">
             EXPLORE MORE
-          </button>
+          </a>
         </div>
 
         <!-- IMAGE SLIDER -->
@@ -988,10 +990,10 @@
   <!-- FEATURE DATA -->
   <script>
     const featureData = [
-      { title: "PAX A920Pro", desc: "Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack." },
-      { title: "MagTek DynaFlex", desc: "Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright." },
-      { title: "PAX A920", desc: "Compact, tamper-resistant dock for seamless self-service swiping." },
-      { title: "PAX A35", desc: "Secure kiosk stand for efficient customer self-service transactions." }
+      { title: "PAX A920Pro", desc: "Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack.", link: "../a920.html" },
+      { title: "MagTek DynaFlex", desc: "Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright.", link: "../magtek.html" },
+      { title: "PAX A920", desc: "Compact, tamper-resistant dock for seamless self-service swiping.", link: "../a920.html" },
+      { title: "PAX A35", desc: "Secure kiosk stand for efficient customer self-service transactions.", link: "../a35-android.html" }
     ];
   </script>
 
@@ -999,7 +1001,8 @@
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const splide = new Splide('#feature-carousel', {
-        type: 'loop',
+        type: 'fade',
+        rewind: true,
         perPage: 1,
         pagination: false,
         arrows: true,
@@ -1012,16 +1015,42 @@
         }
       });
 
+      const featureTextEl = document.getElementById('feature-text');
       const titleEl = document.getElementById('feature-title');
       const descEl = document.getElementById('feature-desc');
+      const linkEl = document.getElementById('feature-link');
 
-      function updateText(index) {
-        titleEl.textContent = featureData[index].title;
-        descEl.textContent = featureData[index].desc;
+      function updateText(index, animate = false) {
+        if (!featureData[index]) return;
+
+        if (!animate || !featureTextEl) {
+          titleEl.textContent = featureData[index].title;
+          descEl.textContent = featureData[index].desc;
+          if (linkEl && featureData[index].link) {
+            linkEl.href = featureData[index].link;
+          }
+          return;
+        }
+
+        // Disappearing animation: fade out and slide slightly down
+        featureTextEl.style.transition = "opacity 0.2s ease-in-out, transform 0.2s ease-in-out";
+        featureTextEl.style.opacity = "0";
+        featureTextEl.style.transform = "translateY(8px)";
+
+        setTimeout(() => {
+          titleEl.textContent = featureData[index].title;
+          descEl.textContent = featureData[index].desc;
+          if (linkEl && featureData[index].link) {
+            linkEl.href = featureData[index].link;
+          }
+          // Appearing animation: fade in and slide back to position
+          featureTextEl.style.opacity = "1";
+          featureTextEl.style.transform = "translateY(0)";
+        }, 200);
       }
 
-      updateText(0);
-      splide.on('move', (newIndex) => updateText(newIndex));
+      updateText(0, false);
+      splide.on('move', (newIndex) => updateText(newIndex, true));
       splide.mount();
 
       const coreFeatureSliderEl = document.getElementById('core-feature-slider');
@@ -1062,7 +1091,7 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      z-index: 20;
+      z-index: 10;
     }
 
     #feature-carousel .splide__arrow {
@@ -1385,11 +1414,11 @@
             <!-- Links Container -->
             <div id="company-links"
               class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">About Us</a>
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Contact Us</a>
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Hardware</a>
+              <a href="../about.html" class="text-gray-500 hover:text-gray-800 transition-colors block">About Us</a>
+              <a href="../contact.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Contact Us</a>
+              <a href="../hardware.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Hardware</a>
               <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Terms of Service</a>
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy Policy</a>
+              <a href="../privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy Policy</a>
             </div>
           </div>
 
@@ -1446,8 +1475,8 @@
             </button>
             <div id="legal"
               class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy Policy</a>
-              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Terms & Condition</a>
+              <a href="../privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy Policy</a>
+              <a href="../terms-and-conditions.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Terms & Condition</a>
             </div>
           </div>
 

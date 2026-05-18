@@ -208,7 +208,7 @@
         display: flex !important;
         justify-content: space-between !important;
         padding: 0 10px !important;
-        z-index: 50 !important;
+        z-index: 10 !important;
         pointer-events: none !important;
         visibility: visible !important;
         opacity: 1 !important;
@@ -263,6 +263,35 @@
       @media (max-width: 768px) {
         .flip-card {
           height: 200px; /* Shorter on mobile */
+        }
+
+        .flip-card-back h2 {
+          font-size: 0.85rem !important;
+          line-height: 1.3 !important;
+        }
+
+        /* Curved flip arrow indicator on the bottom right of the card fronts */
+        .flip-card-front::after {
+          content: "";
+          position: absolute;
+          bottom: 12px;
+          right: 12px;
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+          background-color: rgba(255, 255, 255, 0.95);
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23505050'%3E%3Cpath d='M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z'/%3E%3C/svg%3E");
+          background-size: 14px;
+          background-position: center;
+          background-repeat: no-repeat;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+          pointer-events: none;
+          z-index: 10;
+        }
+
+        html.dark .flip-card-front::after {
+          background-color: rgba(28, 28, 28, 0.95);
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23c98633'%3E%3Cpath d='M19 8l-4 4h3c0 3.31-2.69 6-6 6-1.01 0-1.97-.25-2.8-.7l-1.46 1.46C8.97 19.54 10.43 20 12 20c4.42 0 8-3.58 8-8h3l-4-4zM6 12c0-3.31 2.69-6 6-6 1.01 0 1.97.25 2.8.7l1.46-1.46C15.03 4.46 13.57 4 12 4c-4.42 0-8 3.58-8 8H1l4 4 4-4H6z'/%3E%3C/svg%3E");
         }
       }
 
@@ -323,6 +352,38 @@
       html.dark .flip-card-back {
         background-color: #373737;
         color: white;
+      }
+
+      /* Prevent dotlottie canvas from rendering blurry when switching themes */
+      dotlottie-wc.logo-light,
+      dotlottie-wc.logo-dark {
+        display: block !important;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+      }
+      
+      dotlottie-wc.logo-dark {
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      
+      html.dark dotlottie-wc.logo-light {
+        position: absolute !important;
+        inset: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        pointer-events: none !important;
+      }
+      
+      html.dark dotlottie-wc.logo-dark {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
       }
     </style>
   </head>
@@ -893,13 +954,13 @@
           <div
             class="absolute left-0 w-full top-[476px] flex justify-center items-center gap-6 opacity-0 translate-y-6 transition-all duration-1000 delay-1000 group-hover:opacity-100 group-hover:translate-y-0"
           >
-            <div class="flex items-center w-[935px]">
+            <div class="flex items-center w-[830px]">
               <div class="w-3 h-3 bg-black rounded-full flex-shrink-0"></div>
               <div class="flex-grow h-[1px] bg-black mx-2"></div>
               <div class="w-3 h-3 bg-black rounded-full flex-shrink-0"></div>
             </div>
             <a
-              href="#"
+              href="contact.html"
               class="inline-flex items-center justify-center w-[165px] h-[49px] page-btn rounded-[38px] hover:bg-neutral-900 transition flex-shrink-0"
             >
               <span class="text-base font-medium">GET IN TOUCH</span>
@@ -959,11 +1020,9 @@
                         Real-Time Inventory Management
                       </h3>
                       <p
-                        class="page-sub w-full md:w-2/3 text-base md:text-xl font-normal"
+                        class="page-sub w-full text-base md:text-xl font-normal"
                       >
-                        Track and update stock levels instantly as sales happen,
-                        reduce stockouts, and improve decision-making with
-                        accurate live inventory visibility.
+                        Real-time customer inventory management enables businesses to monitor and update stock levels instantly as sales or restocking occurs. This ensures accurate product availability, reduces overstocking or stockouts, and enhances customer satisfaction by providing up-to-date inventory data across all channels. It also supports faster decision-making and improves operational efficiency.
                       </p>
                     </div>
                     <div class="flex justify-end items-center">
@@ -984,14 +1043,13 @@
                       <h3
                         class="page-main text-2xl md:text-4xl w-full md:w-2/3 font-bold mb-6"
                       >
-                        Cloud-Based Reporting
+                        Cloud-Based & Mobile Capability
                       </h3>
                       <p
-                        class="page-sub w-full md:w-2/3 text-base md:text-xl font-normal"
+                        class="page-sub w-full text-base md:text-xl font-normal"
                       >
-                        Access sales, performance, and trend reports from
-                        anywhere with secure cloud sync and real-time business
-                        insights.
+                        loud-based mobile POS systems enable businesses to manage sales, inventory, and customer data from smartphones or tablets, offering flexibility and real-time access. These systems reduce upfront costs by eliminating the need for expensive hardware and provide automatic software updates, ensuring businesses stay current without manual intervention. Additionally, they offer robust security measures like data encryption and automatic backups, protecting sensitive information.
+Sources
                       </p>
                     </div>
                     <div class="flex justify-end items-center">
@@ -1015,10 +1073,9 @@
                         Customer Relationship Management
                       </h3>
                       <p
-                        class="page-sub w-full md:w-2/3 text-base md:text-xl font-normal"
+                        class="page-sub w-full text-base md:text-xl font-normal"
                       >
-                        Integrating CRM into your POS website means every customer interaction—like name, contact details, purchase history—is automatically captured and centralized. This enables targeted offers, loyalty rewards, personalized recommendations at checkout, and stronger customer relationships based on real-time data
-                      </p>
+Integrating CRM into your POS website means every customer interaction—like name, contact details, purchase history—is automatically captured and centralized. This enables targeted offers, loyalty rewards, personalized recommendations at checkout, and stronger customer relationships based on real-time data                      </p>
                     </div>
                     <div class="flex justify-end items-center">
                       <img
@@ -1041,7 +1098,7 @@
                         Integrated Payment Processing
                       </h3>
                       <p
-                        class="page-sub w-full md:w-2/3 text-base md:text-xl font-normal"
+                        class="page-sub w-full text-base md:text-xl font-normal"
                       >
                         Integrating payment processing into your POS system
                         creates a seamless sales workflow—each transaction
@@ -1772,13 +1829,13 @@
                     class="max-w-full h-auto"
                   />
                 </li>
-                <li class="splide__slide flex justify-center">
+                <!-- <li class="splide__slide flex justify-center">
                   <img
                     src="/assets/images/home/px135.png"
                     alt="PAX A35"
                     class="max-w-full h-auto"
                   />
-                </li>
+                </li> -->
               </ul>
             </div>
 
@@ -1807,7 +1864,8 @@
               class="page-sub text-base md:text-[18px] leading-relaxed"
             ></p>
             <a
-              href="#"
+              id="feature-link"
+              href="a920.html"
               class="page-main text-base font-bold underline underline-offset-4 hover:no-underline w-max"
             >
               EXPLORE MORE
@@ -1823,28 +1881,33 @@
         {
           title: "PAX A920Pro",
           desc: "Magstripe Reader – plug-and-play swipe dongle for secure, rapid card transactions on any POS setup via a 3.5 mm jack.",
+          link: "a920.html",
         },
         {
           title: "MagTek DynaFlex",
           desc: "Reader Stand – sleek countertop dock designed to securely hold the magstripe reader upright.",
+          link: "magtek.html",
         },
         {
           title: "PAX A920",
           desc: "Compact, tamper-resistant dock for seamless self-service swiping.",
+          link: "a920.html",
         },
-        {
-          title: "PAX A35",
-          desc: "Secure kiosk stand for efficient customer self-service transactions.",
-        },
+        // {
+        //   title: "PAX A35",
+        //   desc: "Secure kiosk stand for efficient customer self-service transactions.",
+        //   link: "a35-android.html",
+        // },
       ];
     </script>
 
     <!-- SPLIDE INIT -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        /* ── Feature carousel (unchanged) ── */
+        /* ── Feature carousel ── */
         const splide = new Splide("#feature-carousel", {
-          type: "loop",
+          type: "fade",
+          rewind: true,
           perPage: 1,
           pagination: false,
           arrows: true,
@@ -1852,15 +1915,41 @@
           breakpoints: { 768: { perPage: 1, gap: "10px" } },
         });
 
+        const featureTextEl = document.getElementById("feature-text");
         const titleEl = document.getElementById("feature-title");
         const descEl = document.getElementById("feature-desc");
+        const linkEl = document.getElementById("feature-link");
 
-        function updateText(index) {
-          titleEl.textContent = featureData[index].title;
-          descEl.textContent = featureData[index].desc;
+        function updateText(index, animate = false) {
+          if (!featureData[index]) return;
+
+          if (!animate || !featureTextEl) {
+            titleEl.textContent = featureData[index].title;
+            descEl.textContent = featureData[index].desc;
+            if (linkEl && featureData[index].link) {
+              linkEl.href = featureData[index].link;
+            }
+            return;
+          }
+
+          // Disappearing animation: fade out and slide slightly down
+          featureTextEl.style.transition = "opacity 0.2s ease-in-out, transform 0.2s ease-in-out";
+          featureTextEl.style.opacity = "0";
+          featureTextEl.style.transform = "translateY(8px)";
+
+          setTimeout(() => {
+            titleEl.textContent = featureData[index].title;
+            descEl.textContent = featureData[index].desc;
+            if (linkEl && featureData[index].link) {
+              linkEl.href = featureData[index].link;
+            }
+            // Appearing animation: fade in and slide back to position
+            featureTextEl.style.opacity = "1";
+            featureTextEl.style.transform = "translateY(0)";
+          }, 200);
         }
-        updateText(0);
-        splide.on("move", (newIndex) => updateText(newIndex));
+        updateText(0, false);
+        splide.on("move", (newIndex) => updateText(newIndex, true));
         splide.mount();
 
         /* ── Desktop core-feature slider + two-finger swipe ── */
@@ -1932,7 +2021,7 @@
         position: absolute;
         inset: 0;
         pointer-events: none;
-        z-index: 20;
+        z-index: 10;
       }
 
       #feature-carousel .splide__arrow {
@@ -2317,17 +2406,17 @@
                 class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
               >
                 <a
-                  href="#"
+                  href="about.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >About Us</a
                 >
                 <a
-                  href="#"
+                  href="contact.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >Contact Us</a
                 >
                 <a
-                  href="#"
+                  href="hardware.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >Hardware</a
                 >
@@ -2337,7 +2426,7 @@
                   >Terms of Service</a
                 >
                 <a
-                  href="#"
+                  href="privacy-policy.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >Privacy Policy</a
                 >
@@ -2467,12 +2556,12 @@
                 class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
               >
                 <a
-                  href="#"
+                  href="privacy-policy.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >Privacy Policy</a
                 >
                 <a
-                  href="#"
+                  href="terms-and-conditions.html"
                   class="text-gray-500 hover:text-gray-800 transition-colors block"
                   >Terms & Condition</a
                 >
@@ -2601,6 +2690,9 @@
           }
         });
         localStorage.setItem("theme", isDark ? "dark" : "light");
+
+        // Force a window resize dispatch to crisp up all active Canvas/Lottie renders instantly
+        window.dispatchEvent(new Event("resize"));
       }
 
       if (themeToggle) {
@@ -2654,6 +2746,20 @@
         document.getElementById(tabId).classList.add("active");
         event.currentTarget.classList.add("active");
       }
+
+      // Force dotlottie animations to reload/refresh so they never render blurry from cache or navigation
+      window.addEventListener("pageshow", function (event) {
+        const lotties = document.querySelectorAll("dotlottie-wc");
+        lotties.forEach((lottie) => {
+          const src = lottie.getAttribute("src");
+          if (src) {
+            lottie.setAttribute("src", "");
+            setTimeout(() => {
+              lottie.setAttribute("src", src);
+            }, 50);
+          }
+        });
+      });
     </script>
   </body>
 </html>
