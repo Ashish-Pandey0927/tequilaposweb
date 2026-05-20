@@ -108,7 +108,7 @@ class WebNavHeader extends HTMLElement {
             <span class="text-sm font-bold">ENGLISH</span>
             <img src="/assets/images/flags/usa.png" alt="USA" class="w-6 h-4 object-cover shadow-sm" />
           </div>
-          <a href="#signin" class="font-bold text-gray-800">Sign in</a>
+          <a href="/login.html" class="font-bold text-gray-800">Sign in</a>
           <button class="bg-black text-white px-6 py-3 rounded-full font-bold hover:bg-gray-900 transition">
             Free Demo
           </button>

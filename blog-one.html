@@ -425,6 +425,25 @@
       
       /* Form section dark mode */
       html.dark .contact-form-container { background-color: #1c1c1c; }
+
+      /* Slider Navigation Custom Arrows */
+      #prev-button, #next-button {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06) !important;
+        transition: all 0.2s ease !important;
+      }
+      #prev-button:hover, #next-button:hover {
+        background-color: #f3f4f6 !important;
+      }
+      html.dark #prev-button, html.dark #next-button {
+        background-color: #373737 !important;
+        border: 1px solid #4b5563 !important;
+        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -1px rgba(0,0,0,0.18) !important;
+      }
+      html.dark #prev-button:hover, html.dark #next-button:hover {
+        background-color: #4b5563 !important;
+      }
     </style>
   </head>
   <body class="bg-white font-inter text-sm">
@@ -620,7 +639,7 @@
               class="flag-icon"
             />
           </div>
-          <a href="#signin" class="nav-link">Sign in</a>
+          <a href="/login.html" class="nav-link">Sign in</a>
           <a href="/free-demo.html"
             ><button class="demo-btn"><span>Free Demo</span></button></a
           >
@@ -860,7 +879,7 @@
           </div>
 
           <div class="px-4 py-4 space-y-4 border-t border-gray-100">
-            <a href="#signin" class="block font-bold text-lg">Sign In</a>
+            <a href="/login.html" class="block font-bold text-lg">Sign In</a>
             <a href="/free-demo.html" class="block">
               <button class="demo-btn w-full"><span>Free Demo</span></button>
             </a>
@@ -1071,7 +1090,7 @@
             <!-- Left Arrow -->
             <button
               id="prev-button"
-              class="absolute top-1/2 -left-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
+              class="absolute top-1/2 left-4 lg:-left-12 transform -translate-y-1/2 p-2 transition rounded-full z-20 hidden md:block"
               aria-label="Previous slide"
             >
               <svg
@@ -1092,7 +1111,7 @@
             <!-- Right Arrow -->
             <button
               id="next-button"
-              class="absolute top-1/2 -right-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
+              class="absolute top-1/2 right-4 lg:-right-12 transform -translate-y-1/2 p-2 transition rounded-full z-20 hidden md:block"
               aria-label="Next slide"
             >
               <svg
@@ -1134,7 +1153,10 @@
               merchants end up paying a percentage of every transaction.
             </p>
           </div>
-      <section id="traditional-payment-wrapper" class="relative flex justify-center w-full bg-transparent" style="height: 300vh;">
+        </div>
+      </div>
+    </section>
+    <section id="traditional-payment-wrapper" class="relative flex justify-center w-full bg-transparent" style="height: 300vh;">
       <div class="traditional-sticky max-w-full w-full">
         
         <!-- Slide 1 -->

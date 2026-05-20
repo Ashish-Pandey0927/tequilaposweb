@@ -31,7 +31,7 @@ h6 {
     letter-spacing: 0% !important;
   }
   .page-sub {
-    font-family: 'Open Sans', sans-serif !important;
+    /* font-family: 'Open Sans', sans-serif !important; */
     font-weight: 400 !important;
     font-size: 10px !important;
     line-height: 100% !important;
@@ -534,13 +534,28 @@ h6 {
   width: 40px;
   height: 40px;
   border: none;
-  color: black !important;
+  color: #000000 !important;
 }
 
 .splide__arrow svg {
-  fill: black !important;
+  fill: #000000 !important;
   width: 16px;
   height: 16px;
+}
+
+/* Theme-responsive arrows (page-accent) */
+.splide__arrow.page-accent,
+.splide__arrow.page-accent .material-symbols-outlined,
+.splide__arrow.page-accent svg,
+.carousel-arrow-left.page-accent,
+.carousel-arrow-left.page-accent .material-symbols-outlined,
+.carousel-arrow-left.page-accent svg,
+.carousel-arrow-right.page-accent,
+.carousel-arrow-right.page-accent .material-symbols-outlined,
+.carousel-arrow-right.page-accent svg {
+  color: #000000 !important;
+  fill: #000000 !important;
+  stroke: #000000 !important;
 }
 
 .splide__arrow:disabled {
@@ -621,7 +636,7 @@ h6 {
   .carousel-arrow-right svg {
     width: 16px;
     height: 16px;
-    fill: white;
+    fill: #000000 !important;
   }
 
   /* Wrapper for image + arrows */
@@ -858,9 +873,34 @@ html.dark .text-\#4f4f4f.select-none { color: #cdcdcd !important; }
 
 /* ---- Splide arrows dark ---- */
 html.dark .splide__arrow {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
+  color: #ffffff !important;
 }
-html.dark .splide__arrow svg { fill: white; }
+html.dark .splide__arrow svg {
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Theme-responsive arrows (page-accent) - Dark mode override */
+html.dark .splide__arrow.page-accent,
+html.dark .splide__arrow.page-accent .material-symbols-outlined,
+html.dark .splide__arrow.page-accent svg,
+html.dark .carousel-arrow-left.page-accent,
+html.dark .carousel-arrow-left.page-accent .material-symbols-outlined,
+html.dark .carousel-arrow-left.page-accent svg,
+html.dark .carousel-arrow-right.page-accent,
+html.dark .carousel-arrow-right.page-accent .material-symbols-outlined,
+html.dark .carousel-arrow-right.page-accent svg {
+  color: #ffffff !important;
+  fill: #ffffff !important;
+  stroke: #ffffff !important;
+}
+
+/* Custom carousel arrows dark mode override */
+html.dark .carousel-arrow-left svg,
+html.dark .carousel-arrow-right svg {
+  fill: #ffffff !important;
+}
 
 /* ---- Why Choose Us Cards ---- */
 .why-choose-card {
@@ -966,7 +1006,7 @@ html.dark .market-list-bullet {
    ============================================================ */
 
 /* Light Mode: Background Black, Text White */
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn),
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more),
 section .demo-btn,
 section a.bg-black {
   background-color: #000000 !important;
@@ -975,14 +1015,14 @@ section a.bg-black {
   transition: all 0.3s ease !important;
 }
 
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn) span,
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more) span,
 section .demo-btn span,
 section a.bg-black span {
   color: #ffffff !important;
 }
 
 /* Light Mode Hover: Dark Charcoal */
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):hover,
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):hover,
 section .demo-btn:hover,
 section a.bg-black:hover {
   background-color: #222222 !important;
@@ -990,7 +1030,7 @@ section a.bg-black:hover {
 }
 
 /* Dark Mode: Background White, Text Black */
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn),
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more),
 html.dark section .demo-btn,
 html.dark section a.bg-black {
   background-color: #ffffff !important;
@@ -998,16 +1038,78 @@ html.dark section a.bg-black {
   border-color: #ffffff !important;
 }
 
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn) span,
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more) span,
 html.dark section .demo-btn span,
 html.dark section a.bg-black span {
   color: #000000 !important;
 }
 
 /* Dark Mode Hover: Light Grey */
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):hover,
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):hover,
 html.dark section .demo-btn:hover,
 html.dark section a.bg-black:hover {
   background-color: #e0e0e0 !important;
   border-color: #e0e0e0 !important;
 }
+
+/* ============================================================
+   PLAIN TEXT / EXPLORE MORE BUTTON UNIFORMITY (No Background)
+   ============================================================ */
+section button.btn,
+section button#exploreBtn,
+section button.underline,
+section button.elys-eye-explore,
+section button.explore-more,
+section button[style*="underline"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  width: auto !important;
+  min-width: 0 !important;
+  color: #000000 !important;
+  text-decoration: underline !important;
+  cursor: pointer !important;
+}
+
+section button.btn span,
+section button#exploreBtn span,
+section button.underline span,
+section button.elys-eye-explore span,
+section button.explore-more span,
+section button[style*="underline"] span {
+  color: #000000 !important;
+}
+
+/* Dark Mode Overrides for Plain Text Buttons */
+html.dark section button.btn,
+html.dark section button#exploreBtn,
+html.dark section button.underline,
+html.dark section button.elys-eye-explore,
+html.dark section button.explore-more,
+html.dark section button[style*="underline"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+}
+
+html.dark section button.btn span,
+html.dark section button#exploreBtn span,
+html.dark section button.underline span,
+html.dark section button.elys-eye-explore span,
+html.dark section button.explore-more span,
+html.dark section button[style*="underline"] span {
+  color: #ffffff !important;
+}
+
+/* Workstation page custom arrow styling */
+.elys-eye-arrow {
+  color: #000000 !important;
+}
+html.dark .elys-eye-arrow {
+  color: #ffffff !important;
+}
+

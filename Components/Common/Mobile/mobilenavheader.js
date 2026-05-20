@@ -108,7 +108,7 @@ loadLocalScript(path) {
 
           <!-- Footer Actions -->
           <div class="pt-4 space-y-3">
-             <a href="#signin" class="block text-center px-4 py-3 font-bold text-gray-800 hover:text-blue-600">Sign In</a>
+             <a href="/login.html" class="block text-center px-4 py-3 font-bold text-gray-800 hover:text-blue-600">Sign In</a>
              <a href="#demo" class="block text-center bg-black text-white font-bold py-4 rounded-xl shadow-lg active:scale-95 transition-transform">
               Free Demo
             </a>
