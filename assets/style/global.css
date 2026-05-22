@@ -12,6 +12,23 @@ body {
   padding: 0;
 }
 
+/* ============================================================
+   GLOBAL SECTION SPACING
+   38px padding on desktop, 20px on mobile/tablet
+   Overrides all py-* Tailwind classes on sections
+   ============================================================ */
+section {
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+}
+
+@media (min-width: 1024px) {
+  section {
+    padding-top: 38px !important;
+    padding-bottom: 38px !important;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -30,13 +47,15 @@ h6 {
     line-height: 106% !important;
     letter-spacing: 0% !important;
   }
+
   .page-sub {
     /* font-family: 'Open Sans', sans-serif !important; */
     font-weight: 400 !important;
     font-size: 10px !important;
-    line-height: 100% !important;
-    letter-spacing: 0% !important;
+    /* line-height: 100% !important;
+    letter-spacing: 0% !important; */
   }
+
   .mosaic-p-mobile {
     font-family: 'Roboto', sans-serif !important;
     font-weight: 400 !important;
@@ -44,6 +63,7 @@ h6 {
     line-height: 100% !important;
     letter-spacing: 0% !important;
   }
+
   .mosaic-h-mobile {
     font-size: 12px !important;
   }
@@ -96,12 +116,14 @@ h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: black;
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
+  /* text-xl */
   transition: color 0.3s;
 }
 
 .nav-link:hover {
-  color: #f59e0b; /* hover:text-amber-600 */
+  color: #f59e0b;
+  /* hover:text-amber-600 */
 }
 
 /* Mega Menu */
@@ -127,8 +149,10 @@ h6 {
 
 .mega-menu-column h3 {
   font-weight: 700;
-  font-size: 1.25rem; /* text-xl */
-  color: #1f2937; /* text-gray-800 */
+  font-size: 1.25rem;
+  /* text-xl */
+  color: #1f2937;
+  /* text-gray-800 */
 }
 
 .mega-menu-list {
@@ -138,15 +162,18 @@ h6 {
 
 .mega-menu-link {
   display: block;
-  color: #4b5563; /* text-gray-600 */
-  font-size: 1rem; /* text-base */
+  color: #4b5563;
+  /* text-gray-600 */
+  font-size: 1rem;
+  /* text-base */
   font-weight: 400;
   padding: 0.25rem 0;
   transition: color 0.3s;
 }
 
 .mega-menu-link:hover {
-  color: #f59e0b; /* hover:text-amber-600 */
+  color: #f59e0b;
+  /* hover:text-amber-600 */
 }
 
 /* Smooth open/close */
@@ -156,10 +183,13 @@ h6 {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease,
-    visibility 0s linear 0.25s; /* delay visibility so it hides *after* fade-out */
+    visibility 0s linear 0.25s;
+  /* delay visibility so it hides *after* fade-out */
   will-change: opacity, transform;
-  border-radius: 0.375rem; /* keep your rounded menu */
-  width: 60vw; /* keep your width */
+  border-radius: 0.375rem;
+  /* keep your rounded menu */
+  width: 60vw;
+  /* keep your width */
 }
 
 /* Hover/focus opens it (animates because we don’t use display) */
@@ -169,7 +199,8 @@ h6 {
   transform: translateY(0) scale(1);
   visibility: visible;
   pointer-events: auto;
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s; /* make visibility immediate on open */
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0s linear 0s;
+  /* make visibility immediate on open */
 }
 
 /* Optional: staggered fade-up for content inside panels */
@@ -178,22 +209,27 @@ h6 {
     opacity: 0;
     transform: translateY(6px);
   }
+
   to {
     opacity: 1;
     transform: none;
   }
 }
-.panel .stagger > * {
+
+.panel .stagger>* {
   opacity: 0;
   animation: fadeUp 0.25s ease forwards;
 }
-.panel .stagger > *:nth-child(1) {
+
+.panel .stagger>*:nth-child(1) {
   animation-delay: 0.06s;
 }
-.panel .stagger > *:nth-child(2) {
+
+.panel .stagger>*:nth-child(2) {
   animation-delay: 0.1s;
 }
-.panel .stagger > *:nth-child(3) {
+
+.panel .stagger>*:nth-child(3) {
   animation-delay: 0.14s;
 }
 
@@ -203,7 +239,8 @@ h6 {
     transition: none;
     transform: none;
   }
-  .panel .stagger > * {
+
+  .panel .stagger>* {
     animation: none;
     opacity: 1;
   }
@@ -212,13 +249,14 @@ h6 {
 /* Other Styles */
 .nav-extra-links {
   display: flex;
-  gap: 1.5rem;  
+  gap: 1.5rem;
   /* margin-right: 31px; */
   align-items: center;
 }
 
 .language-selector {
-  background-color: #f3f4f6; /* bg-gray-100 */
+  background-color: #f3f4f6;
+  /* bg-gray-100 */
   height: 2.25rem;
   border-radius: 9999px;
   padding: 0 0.75rem;
@@ -232,7 +270,8 @@ h6 {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: black;
-  font-size: 0.875rem; /* text-xs */
+  font-size: 0.875rem;
+  /* text-xs */
 }
 
 .flag-icon {
@@ -251,21 +290,24 @@ h6 {
 }
 
 .demo-btn:hover {
-  background-color: #f3f4f6; /* hover:bg-gray-50 */
+  background-color: #f3f4f6;
+  /* hover:bg-gray-50 */
 }
 
 .demo-btn span {
   font-family: "Open Sans", sans-serif;
   font-weight: 700;
   color: black;
-  font-size: 1.25rem; /* text-xl */
+  font-size: 1.25rem;
+  /* text-xl */
 }
 
 /* Footer Styles */
 .footer {
   background-color: white;
   padding: 4rem 0;
-  border-top: 1px solid #e5e7eb; /* border-gray-200 */
+  border-top: 1px solid #e5e7eb;
+  /* border-gray-200 */
 }
 
 /* ---- Laptop (1024px to 1440px) Navbar Adjustments ---- */
@@ -273,22 +315,28 @@ h6 {
   .nav-links {
     gap: 1rem;
   }
+
   .nav-extra-links {
     gap: 0.75rem;
   }
+
   .nav-link {
     font-size: 0.9rem;
   }
+
   .logo {
     height: 3rem;
   }
+
   .demo-btn {
     padding: 0 0.75rem;
   }
+
   .demo-btn span {
     font-size: 0.9rem;
   }
 }
+
 /* end */
 
 /* Custom CSS for 3D Flip Effect (from Tequila folder) */
@@ -356,7 +404,8 @@ h6 {
 /* Touch devices: allow flipping via .flipped class or hover */
 @media (max-width: 1024px) {
   .flip-card {
-    perspective: 1000px; /* Restore perspective */
+    perspective: 1000px;
+    /* Restore perspective */
   }
 
   .flip-card.flipped .flip-card-inner {
@@ -392,11 +441,11 @@ h6 {
 }
 
 .sectionHeaderMute {
-  @apply text-[#4f4f4f]  font-bold md:text-[40px] text-xl;
+  @apply text-[#4f4f4f] font-bold md:text-[40px] text-xl;
 }
 
 .sectionHeader {
-  @apply text-black md:text-[40px]  font-bold  text-xl;
+  @apply text-black md:text-[40px] font-bold text-xl;
 }
 
 .smart-card-feature-card {
@@ -431,12 +480,15 @@ h6 {
 .card-rotate-1 {
   transform: rotate(-5deg);
 }
+
 .card-rotate-2 {
   transform: rotate(5deg);
 }
+
 .card-rotate-3 {
   transform: rotate(-5deg);
 }
+
 .card-rotate-4 {
   transform: rotate(5deg);
 }
@@ -452,6 +504,7 @@ h6 {
 }
 
 @media (max-width: 768px) {
+
   .card-rotate-1,
   .card-rotate-2,
   .card-rotate-3,
@@ -525,10 +578,50 @@ h6 {
   z-index: 10;
 }
 
+/* ============================================================
+   SLIDER: Progress bar + arrows aligned in a single flex row
+   Usage: wrap both the progress bar div and the arrows div
+   inside <div class="slider-progress-row">
+   ============================================================ */
+.slider-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.slider-progress-row .my-slider-progress {
+  flex: 1;
+  margin: 0;
+}
+
+/* Arrows inside the progress row: static, not absolute */
+.slider-progress-row .splide__arrows {
+  position: static;
+  transform: none;
+  top: auto;
+  left: auto;
+  width: auto;
+  display: flex;
+  gap: 8px;
+  pointer-events: all;
+  flex-shrink: 0;
+}
+
+.slider-progress-row .splide__arrow {
+  position: static;
+  transform: none !important;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}
+
 /* Style arrows */
 .splide__arrow {
   pointer-events: all;
-  background: rgba(118, 118, 118, 0.15); /* light gray */
+  background: rgba(118, 118, 118, 0.15);
+  /* light gray */
   backdrop-filter: blur(6px);
   border-radius: 50%;
   width: 40px;
@@ -563,6 +656,7 @@ h6 {
 }
 
 @media (max-width: 767px) {
+
   .splide__slide figure,
   .splide__slide .content {
     transform: none !important;
@@ -571,80 +665,81 @@ h6 {
   }
 
   .splide__arrows {
-    top: 30%; /* align with image center */
+    top: 30%;
+    /* align with image center */
     z-index: 10;
     color: white;
   }
 }
 
 
- /* Hide default splide arrows — we use custom positioned ones */
-  #image-carousel .splide__arrow {
-    display: none;
-  }
+/* Hide default splide arrows — we use custom positioned ones */
+#image-carousel .splide__arrow {
+  display: none;
+}
 
-  /* Pagination dots — positioned below the image column, centered under right half */
-  #image-carousel .splide__pagination {
-    position: static;
-    display: flex;
-    justify-content: center;
-    gap: 6px;
-    margin-top: 24px;
-    padding: 0;
-  }
+/* Pagination dots — positioned below the image column, centered under right half */
+#image-carousel .splide__pagination {
+  position: static;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin-top: 24px;
+  padding: 0;
+}
 
-  #image-carousel .splide__pagination__page {
-    width: 13px;
-    height: 14px;
-    border-radius: 50%;
-    background: #D9D9D9;
-    border: none;
-    opacity: 1;
-    transition: background 0.2s;
-  }
+#image-carousel .splide__pagination__page {
+  width: 13px;
+  height: 14px;
+  border-radius: 50%;
+  background: #D9D9D9;
+  border: none;
+  opacity: 1;
+  transition: background 0.2s;
+}
 
-  #image-carousel .splide__pagination__page.is-active {
-    background: #515151;
-    transform: none;
-  }
+#image-carousel .splide__pagination__page.is-active {
+  background: #515151;
+  transform: none;
+}
 
-  /* Custom arrow buttons wrapper */
-  .carousel-arrow-left,
-  .carousel-arrow-right {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 10;
-    width: 38px;
-    height: 40px;
-    background: #BFBFBF;
-    border-radius: 50%;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.2s;
-  }
+/* Custom arrow buttons wrapper */
+.carousel-arrow-left,
+.carousel-arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 38px;
+  height: 40px;
+  background: #BFBFBF;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
 
-  .carousel-arrow-left:hover,
-  .carousel-arrow-right:hover {
-    background: #999;
-  }
+.carousel-arrow-left:hover,
+.carousel-arrow-right:hover {
+  background: #999;
+}
 
-  .carousel-arrow-left svg,
-  .carousel-arrow-right svg {
-    width: 16px;
-    height: 16px;
-    fill: #000000 !important;
-  }
+.carousel-arrow-left svg,
+.carousel-arrow-right svg {
+  width: 16px;
+  height: 16px;
+  fill: #000000 !important;
+}
 
-  /* Wrapper for image + arrows */
-  .carousel-image-wrapper {
-    position: relative;
-  }
+/* Wrapper for image + arrows */
+.carousel-image-wrapper {
+  position: relative;
+}
 
-  /* On mobile, hide arrows
+/* On mobile, hide arrows
   @media (max-width: 767px) {
     .carousel-arrow-left,
     .carousel-arrow-right {
@@ -667,32 +762,40 @@ html.dark body {
 html.dark .navbar {
   background-color: #1c1c1c;
 }
+
 html.dark .nav-link {
   color: #ffffff;
 }
+
 html.dark .mega-anim {
   background-color: #1c1c1c !important;
 }
+
 html.dark .mega-anim a,
 html.dark .mega-anim h6,
 html.dark .mega-anim p {
   color: #ffffff;
 }
+
 html.dark .language-selector {
   background: #000;
   box-shadow: 0 0 4px 0 #a2a2a2 inset;
 }
+
 html.dark .language-selector span,
 html.dark .language-text {
   color: #ffffff;
 }
+
 html.dark .demo-btn {
   border-color: #c98633;
   background-color: transparent;
 }
+
 html.dark .demo-btn span {
   color: #ffffff;
 }
+
 html.dark .demo-btn:hover {
   background-color: #333;
 }
@@ -732,30 +835,46 @@ html.dark #dropdownBtn {
   background-color: #2c2c2c;
   color: #ffffff;
 }
+
 html.dark #dropdownMenu {
   background-color: #2c2c2c;
 }
+
 html.dark #dropdownMenu a {
   color: #d1d5db;
 }
+
 html.dark #dropdownMenu a:hover {
   background-color: #374151;
 }
+
 html.dark #mobile-menu-btn {
   color: #ffffff;
 }
 
 /* ---- Logo swap ---- */
-.logo-light { display: block; }
-.logo-dark  { display: none;  }
-html.dark .logo-light { display: none;  }
-html.dark .logo-dark  { display: block; }
+.logo-light {
+  display: block;
+}
+
+.logo-dark {
+  display: none;
+}
+
+html.dark .logo-light {
+  display: none;
+}
+
+html.dark .logo-dark {
+  display: block;
+}
 
 /* ---- Page & section backgrounds ---- */
 html.dark section,
 html.dark .bg-white {
   background-color: #1c1c1c !important;
 }
+
 html.dark footer {
   background-color: #1c1c1c;
 }
@@ -764,6 +883,7 @@ html.dark footer {
 html.dark .my-slider-progress {
   background: #cfcfcf;
 }
+
 html.dark .my-slider-progress-bar {
   background: #757575;
 }
@@ -772,15 +892,19 @@ html.dark .my-slider-progress-bar {
 html.dark .splide__slide h1 span.text-\#4f4f4f {
   color: #C98633 !important;
 }
+
 html.dark .splide__slide h1 span.text-black {
   color: #ffffff !important;
 }
+
 html.dark .splide__slide .w-3.h-3.bg-black {
   background-color: #ffffff;
 }
+
 html.dark .splide__slide p.text-gray-600 {
   color: #e5e7eb !important;
 }
+
 html.dark .splide__slide blockquote p.text-gray-300 {
   color: #9ca3af !important;
 }
@@ -789,12 +913,15 @@ html.dark .splide__slide blockquote p.text-gray-300 {
 html.dark .text-\#4f4f4f {
   color: #C89633 !important;
 }
+
 html.dark .text-black {
   color: #ffffff !important;
 }
+
 html.dark p.text-\#4f4f4f {
   color: #cdcdcd !important;
 }
+
 html.dark p.text-gray-600 {
   color: #cdcdcd !important;
 }
@@ -802,11 +929,13 @@ html.dark p.text-gray-600 {
 /* ---- Why Choose Us cards ---- */
 html.dark .rounded-\5B 38px\5D .bg-white {
   background-color: #1c1c1c !important;
-  box-shadow: 0px 1px 2px 1px rgba(255,255,255,0.13);
+  box-shadow: 0px 1px 2px 1px rgba(255, 255, 255, 0.13);
 }
+
 html.dark .rounded-\5B 38px\5B h3.text-black {
   color: #ffffff !important;
 }
+
 html.dark .rounded-\5B 38px\5B p.text-\#4f4f4f {
   color: #cdcdcd !important;
 }
@@ -818,24 +947,28 @@ html.dark .card-rotate-3,
 html.dark .card-rotate-4 {
   background-color: #373737 !important;
 }
+
 html.dark .card-rotate-1 h2,
 html.dark .card-rotate-2 h2,
 html.dark .card-rotate-3 h2,
 html.dark .card-rotate-4 h2 {
   color: #ffffff;
 }
+
 html.dark .card-rotate-1 h3,
 html.dark .card-rotate-2 h3,
 html.dark .card-rotate-3 h3,
 html.dark .card-rotate-4 h3 {
   color: #f3f4f6;
 }
+
 html.dark .card-rotate-1 p,
 html.dark .card-rotate-2 p,
 html.dark .card-rotate-3 p,
 html.dark .card-rotate-4 p {
   color: #9ca3af;
 }
+
 html.dark .card-rotate-1 .absolute.bg-gray-800,
 html.dark .card-rotate-2 .absolute.bg-gray-800,
 html.dark .card-rotate-3 .absolute.bg-gray-800,
@@ -847,35 +980,68 @@ html.dark .card-rotate-4 .absolute.bg-gray-800 {
 html.dark .space-y-16 h3.text-gray-900 {
   color: #f3f4f6 !important;
 }
+
 html.dark .space-y-16 p.text-gray-600 {
   color: #e5e7eb !important;
 }
+
 html.dark hr.border-gray-200 {
   border-color: #374151;
 }
 
 /* ---- Footer ---- */
-html.dark footer button { color: #ffffff; }
-html.dark footer button svg { stroke: white; }
-html.dark footer a.text-gray-500 { color: #cdcdcd; }
-html.dark footer a.text-gray-500:hover { color: #ffffff; }
-html.dark footer h4 { color: #ffffff; }
-html.dark footer p.text-gray-500 { color: #cdcdcd; }
-html.dark footer p.text-gray-800 { color: #cdcdcd; }
+html.dark footer button {
+  color: #ffffff;
+}
+
+html.dark footer button svg {
+  stroke: white;
+}
+
+html.dark footer a.text-gray-500 {
+  color: #cdcdcd;
+}
+
+html.dark footer a.text-gray-500:hover {
+  color: #ffffff;
+}
+
+html.dark footer h4 {
+  color: #ffffff;
+}
+
+html.dark footer p.text-gray-500 {
+  color: #cdcdcd;
+}
+
+html.dark footer p.text-gray-800 {
+  color: #cdcdcd;
+}
+
 html.dark footer .border-gray-300,
-html.dark footer .border-t { border-color: #444444; }
+html.dark footer .border-t {
+  border-color: #444444;
+}
+
 html.dark footer input[type="email"] {
   background-color: #2c2c2c;
   color: #cdcdcd;
 }
-html.dark footer button.bg-black { background-color: #C98633; }
-html.dark .text-\#4f4f4f.select-none { color: #cdcdcd !important; }
+
+html.dark footer button.bg-black {
+  background-color: #C98633;
+}
+
+html.dark .text-\#4f4f4f.select-none {
+  color: #cdcdcd !important;
+}
 
 /* ---- Splide arrows dark ---- */
 html.dark .splide__arrow {
   background: rgba(255, 255, 255, 0.15);
   color: #ffffff !important;
 }
+
 html.dark .splide__arrow svg {
   fill: #ffffff !important;
   stroke: #ffffff !important;
@@ -974,8 +1140,15 @@ html.dark .why-choose-card {
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Dark mode overrides for market tabs */
@@ -1109,7 +1282,7 @@ html.dark section button[style*="underline"] span {
 .elys-eye-arrow {
   color: #000000 !important;
 }
+
 html.dark .elys-eye-arrow {
   color: #ffffff !important;
 }
-
