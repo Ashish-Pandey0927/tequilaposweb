@@ -1179,7 +1179,7 @@ html.dark .market-list-bullet {
    ============================================================ */
 
 /* Light Mode: Background Black, Text White */
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more),
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg),
 section .demo-btn,
 section a.bg-black {
   background-color: #000000 !important;
@@ -1188,14 +1188,14 @@ section a.bg-black {
   transition: all 0.3s ease !important;
 }
 
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more) span,
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg) span,
 section .demo-btn span,
 section a.bg-black span {
   color: #ffffff !important;
 }
 
 /* Light Mode Hover: Dark Charcoal */
-section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):hover,
+section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg):hover,
 section .demo-btn:hover,
 section a.bg-black:hover {
   background-color: #222222 !important;
@@ -1203,7 +1203,7 @@ section a.bg-black:hover {
 }
 
 /* Dark Mode: Background White, Text Black */
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more),
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg),
 html.dark section .demo-btn,
 html.dark section a.bg-black {
   background-color: #ffffff !important;
@@ -1211,14 +1211,14 @@ html.dark section a.bg-black {
   border-color: #ffffff !important;
 }
 
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more) span,
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg) span,
 html.dark section .demo-btn span,
 html.dark section a.bg-black span {
   color: #000000 !important;
 }
 
 /* Dark Mode Hover: Light Grey */
-html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):hover,
+html.dark section button:not(.faq-question):not(.splide__arrow):not(.carousel-arrow-left):not(.carousel-arrow-right):not(.mwc-tab-btn):not(.market-tab-btn):not(.tab-button):not(#monthlyBtn):not(#annuallyBtn):not(.btn):not(#exploreBtn):not(.underline):not([style*="underline"]):not(.elys-eye-explore):not(.explore-more):not([type="submit"]):not(.submit-btn):not(.no-bg):hover,
 html.dark section .demo-btn:hover,
 html.dark section a.bg-black:hover {
   background-color: #e0e0e0 !important;
@@ -1276,6 +1276,16 @@ html.dark section button.elys-eye-explore span,
 html.dark section button.explore-more span,
 html.dark section button[style*="underline"] span {
   color: #ffffff !important;
+}
+
+/* Transparent Resets for Submit / No-Background Custom Buttons */
+section button.submit-btn,
+section button.no-bg,
+html.dark section button.submit-btn,
+html.dark section button.no-bg {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 /* Workstation page custom arrow styling */

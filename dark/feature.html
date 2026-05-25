@@ -1231,8 +1231,8 @@
               offline.
             </p>
 
-            <button id="exploreBtn"
-              class="underline text-white md:text-base font-semibold text-start md:mt-6 hidden md:block"
+            <button
+              class="explore-btn-trigger underline text-white md:text-base font-semibold text-start md:mt-6 hidden md:block no-bg"
             >
               EXPLORE MORE
             </button>
@@ -1259,7 +1259,7 @@
             </p>
 
             <button
-              class="underline text-white md:text-base text-xs font-semibold text-start md:mt-6 mt-4 block md:hidden"
+              class="explore-btn-trigger underline text-white md:text-base text-xs font-semibold text-start md:mt-6 mt-4 block md:hidden no-bg"
             >
               EXPLORE MORE
             </button>
@@ -1269,7 +1269,7 @@
       </div>
       <div id="security-expanded" class="hidden">
         <div
-          class="container mx-auto lg:px-2 px-4 max-w-[1400px]"
+          class="container mx-auto px-4 sm:px-8 lg:px-16 max-w-[1280px] xl:max-w-[1400px] 2xl:max-w-[1600px]"
         >
           <!-- Heading -->
           <div class="text-center mb-10 md:mb-14">
@@ -1296,7 +1296,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/1.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/1.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px] leading-tight">
                   End-to-End Encryption
                 </h4>
@@ -1314,7 +1314,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/2.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/2.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Two-Factor Authentication
                 </h4>
@@ -1331,7 +1331,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/3.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/3.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   PCI-DSS Compliance
                 </h4>
@@ -1348,7 +1348,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/4.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/4.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Role-Based Access Control
                 </h4>
@@ -1365,7 +1365,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/3.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/3.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Compliance Ready
                 </h4>
@@ -1382,7 +1382,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/5.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/5.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Secure Cloud Storage
                 </h4>
@@ -1399,7 +1399,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/6.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/6.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Automatic Session Timeout
                 </h4>
@@ -1416,7 +1416,7 @@
               class="p-7 border border-[#dcdcdc] rounded-[30px] min-h-[260px] flex flex-col gap-4 hover:shadow-sm transition-all duration-300"
             >
               <div class="flex items-start gap-3">
-                <img src="/assets/images/Feature Icons/7.png" alt="" class="w-10 h-10 object-contain">
+                <img src="/assets/images/Feature Icons/7.png" alt="" class="page-accent w-10 h-10 object-contain">
                 <h4 class="text-white font-semibold text-[17px]">
                   Activity Logs
                 </h4>
@@ -1767,20 +1767,30 @@
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/footer-accordion.js"></script>
     <script>
-  const exploreBtn = document.getElementById("exploreBtn");
+  const exploreBtns = document.querySelectorAll(".explore-btn-trigger");
   const defaultSection = document.getElementById("security-default");
   const expandedSection = document.getElementById("security-expanded");
 
   // Show expanded layout
-  exploreBtn.addEventListener("click", () => {
-    defaultSection.classList.add("hidden");
-    expandedSection.classList.remove("hidden");
+  exploreBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      defaultSection.classList.add("hidden");
+      expandedSection.classList.remove("hidden");
+    });
   });
 
   // Click anywhere on expanded section → go back
   expandedSection.addEventListener("click", () => {
     expandedSection.classList.add("hidden");
     defaultSection.classList.remove("hidden");
+  });
+
+  // Mouse leave expanded section → go back (desktop only)
+  expandedSection.addEventListener("mouseleave", () => {
+    if (window.innerWidth >= 1024) {
+      expandedSection.classList.add("hidden");
+      defaultSection.classList.remove("hidden");
+    }
   });
 </script>
     <script>

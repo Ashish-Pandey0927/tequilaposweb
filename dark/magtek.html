@@ -256,17 +256,17 @@
     <!-- hero section -->
     <section class="bg-transparent py-16">
       <div
-        class="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-12"
+        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12"
       >
-        <div class="w-full lg:w-1/2 text-center lg:text-left">
+        <div class="w-full md:w-1/2 text-center md:text-left">
           <h1
-            class="text-5xl md:text-6xl lg:text-7xl font-bold text-[#C98633] mb-8"
+            class="text-5xl md:text-[54px] lg:text-7xl font-bold text-[#C98633] mb-8"
           >
             DynaFlex <br /><span class="text-white">II Go</span>
           </h1>
 
           <p
-            class="md:w-[611px] text-[#CDCDCD] w-full md:text-xl text-sm font-semibold md:leading-[25.20px] leading-normal mb-8"
+            class="w-full lg:w-[611px] text-[#CDCDCD] md:text-xl text-sm font-semibold md:leading-[25.20px] leading-normal mb-8"
           >
             Compact, wireless, and built for mobility — accept EMV, contactless,
             and magstripe payments on the go.
@@ -280,7 +280,7 @@
           </a>
         </div>
 
-        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div class="w-full md:w-1/2 flex justify-center md:justify-end">
           <img
             src="/assets/images/magtek/magtek-hero.png"
             alt=""
@@ -703,7 +703,8 @@
         </div>
 
         <!-- TIMELINE -->
-        <div class="relative max-w-6xl mx-auto mt-16 pb-12">
+        <!-- Desktop / Tablet Timeline -->
+        <div class="hidden md:block relative max-w-6xl mx-auto mt-16 pb-12">
           <!-- Desktop Horizontal Spine -->
           <div
             class="hidden md:block absolute inset-x-0 top-0 h-0.5 bg-gray-600 mx-auto z-0"
@@ -907,6 +908,70 @@
                   <h3 class="font-bold text-xl text-white">Connectivity</h3>
                   <p class="text-[#CDCDCD] text-sm">USB-C, Wi-Fi, Bluetooth</p>
                 </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+
+        <!-- Mobile Timeline -->
+        <div class="block md:hidden relative mt-8 pb-12 w-full">
+          <!-- Spine Line -->
+          <div class="absolute inset-x-0 top-0 h-0.5 bg-gray-600 w-full z-0"></div>
+
+          <ol class="flex flex-row justify-between items-start gap-1 relative px-1 w-full">
+            <!-- 1. OS -->
+            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-500 z-10"></span>
+              <span class="w-px bg-gray-600 top-0 h-[35px]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 z-10"></span>
+              <div class="bg-[#1C1C1C] border border-gray-700 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+                <div class="w-5 h-5 flex items-center justify-center mb-1">
+                  <img src="/assets/images/a920/os-dark.png" class="object-contain" alt="" />
+                </div>
+                <h3 class="font-bold text-[9px] leading-tight text-white mb-0.5">OS</h3>
+                <p class="text-[#CDCDCD] text-[7.5px] leading-snug">Android 10</p>
+              </div>
+            </li>
+
+            <!-- 2. Display -->
+            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-500 z-10"></span>
+              <span class="w-px bg-gray-600 top-0 h-[95px]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 z-10"></span>
+              <div class="bg-[#1C1C1C] border border-gray-700 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+                <div class="w-5 h-5 flex items-center justify-center mb-1">
+                  <img src="/assets/images/a920/display-dark.png" class="object-contain" alt="" />
+                </div>
+                <h3 class="font-bold text-[9px] leading-tight text-white mb-0.5">Display</h3>
+                <p class="text-[#CDCDCD] text-[7.5px] leading-snug">4.0" Capacitive Touch</p>
+              </div>
+            </li>
+
+            <!-- 3. Card Reader -->
+            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-500 z-10"></span>
+              <span class="w-px bg-gray-600 top-0 h-[75px]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 z-10"></span>
+              <div class="bg-[#1C1C1C] border border-gray-700 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+                <div class="w-5 h-5 flex items-center justify-center mb-1">
+                  <img src="/assets/images/a920/card-dark.png" class="object-contain" alt="" />
+                </div>
+                <h3 class="font-bold text-[9px] leading-tight text-white mb-0.5">Card Reader</h3>
+                <p class="text-[#CDCDCD] text-[7.5px] leading-snug">EMV, NFC, Magstripe</p>
+              </div>
+            </li>
+
+            <!-- 4. Connectivity -->
+            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-500 z-10"></span>
+              <span class="w-px bg-gray-600 top-0 h-[45px]"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-gray-500 z-10"></span>
+              <div class="bg-[#1C1C1C] border border-gray-700 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+                <div class="w-5 h-5 flex items-center justify-center mb-1">
+                  <img src="/assets/images/a920/connectivity-dark.png" class="object-contain" alt="" />
+                </div>
+                <h3 class="font-bold text-[9px] leading-tight text-white mb-0.5">Connectivity</h3>
+                <p class="text-[#CDCDCD] text-[7.5px] leading-snug">USB-C, Wi-Fi, BT</p>
               </div>
             </li>
           </ol>

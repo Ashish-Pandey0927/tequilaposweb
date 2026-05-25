@@ -476,3 +476,17 @@ h6 {
       display: none;
     }
   }
+
+/* Transparent Resets for Submit and Plain Text/Explore Buttons */
+button.submit-btn,
+button.no-bg,
+button.btn,
+button#exploreBtn,
+button.underline,
+button.elys-eye-explore,
+button.explore-more,
+button[style*="underline"] {
+  background-color: transparent !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
