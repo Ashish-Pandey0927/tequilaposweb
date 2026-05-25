@@ -746,33 +746,22 @@
     <section class="lg:py-16 py-4">
       <div class="container mx-auto px-4">
         <section id="main-slider" class="splide" aria-label="Splide Slider">
-          <div class="my-slider-progress w-4/6 mx-auto">
-            <div class="my-slider-progress-bar"></div>
-          </div>
-
-          <div class="w-full absolute mx-0 left-0 right-0 z-10">
-            <div class="splide__arrows flex w-full ">
-              <button
-                class="splide__arrow splide__arrow--prev 
-                left-0
-                 md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
-                aria-label="Previous Slide"
-              >
-                <span class="material-symbols-outlined">
-arrow_back
-</span>
-              </button>
-              <button
-                class="splide__arrow splide__arrow--next 
-                right-0
-                 md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
-                aria-label="Next Slide"
-              >
-                <span class="material-symbols-outlined">
-arrow_forward
-</span>
-              </button>
+          <div class="slider-progress-row splide__arrows">
+            <button
+              class="splide__arrow splide__arrow--prev md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
+              aria-label="Previous Slide"
+            >
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div class="my-slider-progress">
+              <div class="my-slider-progress-bar"></div>
             </div>
+            <button
+              class="splide__arrow splide__arrow--next md:text-4xl text-2xl text-gray-900 hover:text-gray-900 transition"
+              aria-label="Next Slide"
+            >
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
           </div>
 
           <div class="splide__track">

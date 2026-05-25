@@ -530,20 +530,18 @@
   <section class="py-16 md:hidden">
     <div class="container mx-auto px-4">
       <section id="mobile-slider" class="splide" aria-label="Mobile Timeline Slider">
-        <div class="my-slider-progress w-[80%] mx-auto mb-4">
-          <div class="my-slider-progress-bar"></div>
-        </div>
-        <div class="flex justify-end mb-6 top-0 left-0">
-          <div class="splide__arrows flex space-x-4 absolute top-0">
-            <button class="splide__arrow splide__arrow--prev transition w-[50px]" aria-label="Previous Slide">
-              <img src="/assets/images/feature-one/Left.png" class="logo-light" alt="" />
-              <img src="/assets/images/feature-one/left-white.png" class="logo-dark" alt="" />
-            </button>
-            <button class="splide__arrow splide__arrow--next transition w-[50px]" aria-label="Next Slide">
-              <img src="/assets/images/feature-one/Right.png" class="logo-light" alt="" />
-              <img src="/assets/images/feature-one/right-white.png" class="logo-dark" alt="" />
-            </button>
+        <div class="slider-progress-row splide__arrows">
+          <button class="splide__arrow splide__arrow--prev transition w-[50px]" aria-label="Previous Slide">
+            <img src="/assets/images/feature-one/Left.png" class="logo-light" alt="" />
+            <img src="/assets/images/feature-one/left-white.png" class="logo-dark" alt="" />
+          </button>
+          <div class="my-slider-progress">
+            <div class="my-slider-progress-bar"></div>
           </div>
+          <button class="splide__arrow splide__arrow--next transition w-[50px]" aria-label="Next Slide">
+            <img src="/assets/images/feature-one/Right.png" class="logo-light" alt="" />
+            <img src="/assets/images/feature-one/right-white.png" class="logo-dark" alt="" />
+          </button>
         </div>
 
         <div class="splide__track">
@@ -664,22 +662,20 @@
   <section class="py-16 hidden md:block">
     <div class="container mx-auto px-4">
       <section id="main-slider" class="splide" aria-label="Splide Slider">
-        <div class="slider-progress-row">
-          <div class="my-slider-progress w-full">
+        <div class="slider-progress-row splide__arrows">
+          <button class="splide__arrow splide__arrow--prev" aria-label="Previous Slide">
+            <!-- Light arrow -->
+            <img src="/assets/images/feature-one/Left.png" class="logo-light" alt="" />
+            <!-- Dark arrow -->
+            <img src="/assets/images/feature-one/left-white.png" class="logo-dark" alt="" />
+          </button>
+          <div class="my-slider-progress">
             <div class="my-slider-progress-bar"></div>
           </div>
-          <div class="splide__arrows flex space-x-2">
-            <button class="splide__arrow splide__arrow--prev" aria-label="Previous Slide">
-              <!-- Light arrow -->
-              <img src="/assets/images/feature-one/Left.png" class="logo-light" alt="" />
-              <!-- Dark arrow -->
-              <img src="/assets/images/feature-one/left-white.png" class="logo-dark" alt="" />
-            </button>
-            <button class="splide__arrow splide__arrow--next" aria-label="Next Slide">
-              <img src="/assets/images/feature-one/Right.png" class="logo-light" alt="" />
-              <img src="/assets/images/feature-one/right-white.png" class="logo-dark" alt="" />
-            </button>
-          </div>
+          <button class="splide__arrow splide__arrow--next" aria-label="Next Slide">
+            <img src="/assets/images/feature-one/Right.png" class="logo-light" alt="" />
+            <img src="/assets/images/feature-one/right-white.png" class="logo-dark" alt="" />
+          </button>
         </div>
 
         <div class="splide__track">

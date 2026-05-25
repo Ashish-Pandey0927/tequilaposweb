@@ -490,3 +490,40 @@ button[style*="underline"] {
   background: transparent !important;
   box-shadow: none !important;
 }
+
+/* ============================================================
+   SLIDER: Progress bar + arrows aligned in a single flex row
+   ============================================================ */
+.slider-progress-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.slider-progress-row .my-slider-progress {
+  flex: 1;
+  margin: 0;
+}
+
+/* Arrows inside the progress row: static, not absolute */
+.slider-progress-row .splide__arrows {
+  position: static;
+  transform: none;
+  top: auto;
+  left: auto;
+  width: auto;
+  display: flex;
+  gap: 8px;
+  pointer-events: all;
+  flex-shrink: 0;
+}
+
+.slider-progress-row .splide__arrow {
+  position: static;
+  transform: none !important;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+}

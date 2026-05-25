@@ -749,18 +749,16 @@
     <section class="lg:py-16 py-4">
       <div class="container mx-auto px-4">
         <section id="main-slider" class="splide" aria-label="Splide Slider">
-          <div class="slider-progress-row">
-            <div class="my-slider-progress w-full">
+          <div class="slider-progress-row splide__arrows">
+            <button class="splide__arrow splide__arrow--prev" aria-label="Previous Slide">
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <div class="my-slider-progress">
               <div class="my-slider-progress-bar"></div>
             </div>
-            <div class="splide__arrows flex space-x-2">
-              <button class="splide__arrow splide__arrow--prev" aria-label="Previous Slide">
-                <span class="material-symbols-outlined">arrow_back</span>
-              </button>
-              <button class="splide__arrow splide__arrow--next" aria-label="Next Slide">
-                <span class="material-symbols-outlined">arrow_forward</span>
-              </button>
-            </div>
+            <button class="splide__arrow splide__arrow--next" aria-label="Next Slide">
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
           </div>
 
           <div class="splide__track">
