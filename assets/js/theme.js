@@ -209,23 +209,16 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
 
-    // Reorder the flag and text without breaking layout
+    // For mobile sidebar: we want it to act like a full-width row with space-between
     selectors.forEach(selector => {
       selector.style.display = 'flex';
       selector.style.alignItems = 'center';
       if (!selector.style.gap) selector.style.gap = '8px';
-
-      const span = selector.querySelector('span');
-      const img = selector.querySelector('img');
       
-      if (span && img) {
-        if (isEnglish) {
-          // English: Flag on left, Text on right
-          selector.insertBefore(img, span);
-        } else {
-          // Spanish: Text on left, Flag on right
-          selector.insertBefore(span, img);
-        }
+      // If this is the mobile language selector, stretch it out so the flag doesn't jump around
+      if (selector.closest('#mobile-menu')) {
+        selector.style.justifyContent = 'space-between';
+        selector.style.width = '100%';
       }
     });
   }
@@ -359,4 +352,65 @@ document.addEventListener('DOMContentLoaded', function () {
   if (typeof window.__wireNavItem === 'function') {
     window.__wireNavItem(wrapper);
   }
+});// ── Mobile Resources Accordion Injection ──
+// Runs on every page that loads theme.js (mobile menu).
+// Finds the plain <a href="/resourse.html">Resources</a> nav-link in the mobile menu and
+// replaces it with a full accordion dropdown matching the Business Type style.
+document.addEventListener('DOMContentLoaded', function () {
+  var mobileMenu = document.getElementById('mobile-menu');
+  if (!mobileMenu) return;
+
+  var mobileLinks = mobileMenu.querySelectorAll('a');
+  var resourcesLinkMobile = null;
+  mobileLinks.forEach(function (link) {
+    if (link.textContent.trim() === 'Resources' && link.getAttribute('href') === '/resourse.html') {
+      resourcesLinkMobile = link;
+    }
+  });
+
+  if (!resourcesLinkMobile) return;
+
+  var wrapper = document.createElement('div');
+  wrapper.className = 'mobile-nav-accordion';
+
+  wrapper.innerHTML = [
+    '<button class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg" style="color: var(--text-primary)">',
+    '  Resources',
+    '  <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 transition-transform duration-200">',
+    '    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />',
+    '  </svg>',
+    '</button>',
+    '<div class="accordion-content hidden border-l-2 border-gray-200 ml-4 py-2">',
+    '  <a href="/resourse.html#blogs" class="block py-2 px-4 text-sm font-semibold">Blogs</a>',
+    '  <a href="/resourse.html#tutorials" class="block py-2 px-4 text-sm font-semibold">Tutorials</a>',
+    '  <a href="/resourse.html#manuals" class="block py-2 px-4 text-sm font-semibold">Manuals</a>',
+    '  <div class="mt-2 pl-4 border-t border-gray-100 pt-2">',
+    '    <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">Discover</h6>',
+    '    <div class="space-y-3">',
+    '      <a href="/blog-one.html" class="block text-sm font-bold">Cash Discount vs Traditional...</a>',
+    '      <a href="/blog-two.html" class="block text-sm font-bold">How This Restaurant Cut...</a>',
+    '      <a href="/blog-three.html" class="block text-sm font-bold">5 Features Your Restaurant...</a>',
+    '      <a href="/blog-four.html" class="block text-sm font-bold">Stop Employee Theft Before...</a>',
+    '      <a href="/blog-five.html" class="block text-sm font-bold">Why Accepting Bitcoin Is...</a>',
+    '      <a href="/blog-six.html" class="block text-sm font-bold">Free Download: Weekly Sales...</a>',
+    '    </div>',
+    '  </div>',
+    '</div>'
+  ].join('\n');
+
+  resourcesLinkMobile.parentNode.replaceChild(wrapper, resourcesLinkMobile);
+
+  // Wire up the new accordion button
+  var header = wrapper.querySelector('.accordion-header');
+  header.addEventListener('click', function (e) {
+    var content = this.nextElementSibling;
+    var icon = this.querySelector('svg');
+    if (content.classList.contains('hidden')) {
+      content.classList.remove('hidden');
+      if (icon) icon.classList.add('rotate-180');
+    } else {
+      content.classList.add('hidden');
+      if (icon) icon.classList.remove('rotate-180');
+    }
+  });
 });
