@@ -27,6 +27,30 @@
         line-height: 1.4 !important;
       }
     }
+
+      /* Slider Navigation Custom Arrows */
+      #prev-button,
+      #next-button {
+        background-color: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+        transition: all 0.2s ease !important;
+      }
+      #prev-button:hover,
+      #next-button:hover {
+        background-color: #f3f4f6 !important;
+      }
+      html.dark #prev-button,
+      html.dark #next-button {
+        background-color: #373737 !important;
+        border: 1px solid #4b5563 !important;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
+      }
+      html.dark #prev-button:hover,
+      html.dark #next-button:hover {
+        background-color: #4b5563 !important;
+      }
+
 </style>
     <!-- Splide CSS -->
     <link
@@ -282,7 +306,7 @@
       >
         <div class="w-full md:w-1/2 lg:w-[900px] text-left">
           <h1
-            class="text-[20px] md:text-4xl lg:text-7xl font-bold text-[#C98633] mb-4 md:mb-8"
+            class="text-[20px] md:text-3xl lg:text-7xl font-bold text-[#C98633] mb-4 md:mb-8"
           >
             How This Restaurant Cut Credit Card<span class="text-white"
               >Fees by 30% with TequilaPOS</span
@@ -290,7 +314,7 @@
           </h1>
 
           <p
-            class="md:w-[611px] w-full text-[#CDCDCD] text-[10px] md:text-base lg:text-[20px] font-semibold md:leading-[25.20px] leading-normal md:mb-8"
+            class="lg:w-[611px] w-full text-[#CDCDCD] text-[10px] md:text-base lg:text-[20px] font-semibold md:leading-[25.20px] leading-normal md:mb-8"
           >
             Understanding the Real Cost of Card Payments
           </p>
