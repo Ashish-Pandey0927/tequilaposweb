@@ -71,18 +71,15 @@
       border: 1px solid #e5e7eb !important;
       box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
       transition: all 0.2s ease !important;
-      width: 3rem;
-      height: 3rem;
-      border-radius: 9999px;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%) !important;
       z-index: 20;
       color: #505050 !important;
       opacity: 0.8;
-      display: flex;
+      display: flex !important;
       align-items: center;
       justify-content: center;
+      position: absolute !important;
+      top: 50% !important;
+      transform: translateY(-50%) !important;
     }
     
     #main-slider-two .splide__arrow:hover {
@@ -91,19 +88,10 @@
     }
 
     #main-slider-two .splide__arrow svg {
-      width: 1.25rem;
-      height: 1.25rem;
       fill: currentColor;
     }
 
-    #main-slider-two .splide__arrow--prev {
-      left: -3rem;
-    }
-
-    #main-slider-two .splide__arrow--next {
-      right: -3rem;
-    }
-
+    /* Dark mode overrides for arrows */
     html.dark #main-slider-two .splide__arrow {
       background-color: #373737 !important;
       border: 1px solid #4b5563 !important;
@@ -115,13 +103,61 @@
       background-color: #4b5563 !important;
     }
 
-    @media screen and (max-width: 1200px) {
-      #main-slider-two .splide__arrow--prev {
-        left: 0.5rem;
-      }
+    /* Responsive arrow sizing & positioning + slide padding */
+    
+    /* 1. Mobile View (< 768px) */
+    #main-slider-two .splide__arrow {
+      width: 2.25rem !important;
+      height: 2.25rem !important;
+    }
+    #main-slider-two .splide__arrow svg {
+      width: 1rem;
+      height: 1rem;
+    }
+    #main-slider-two .splide__arrow--prev {
+      left: 0.25rem !important;
+    }
+    #main-slider-two .splide__arrow--next {
+      right: 0.25rem !important;
+    }
+    #main-slider-two .splide__slide {
+      padding-left: 3rem !important;
+      padding-right: 3rem !important;
+    }
 
+    /* 2. Tablet & Small Desktop (768px to 1399px) */
+    @media screen and (min-width: 768px) {
+      #main-slider-two .splide__arrow {
+        width: 3rem !important;
+        height: 3rem !important;
+      }
+      #main-slider-two .splide__arrow svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+      #main-slider-two .splide__arrow--prev {
+        left: 0.5rem !important;
+      }
       #main-slider-two .splide__arrow--next {
-        right: 0.5rem;
+        right: 0.5rem !important;
+      }
+      #main-slider-two .splide__slide {
+        padding-left: 4.5rem !important;
+        padding-right: 4.5rem !important;
+      }
+    }
+
+    /* 3. Large Desktop View (>= 1400px) */
+    @media screen and (min-width: 1400px) {
+      #main-slider-two .splide__arrow--prev {
+        left: -3.5rem !important;
+      }
+      #main-slider-two .splide__arrow--next {
+        right: -3.5rem !important;
+      }
+      #main-slider-two .splide__slide {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
       }
     }
 
@@ -290,20 +326,6 @@
         } */
     /* } */
 
-    .splide__arrow {
-      position: relative !important;
-      top: auto !important;
-      left: auto !important;
-      right: auto !important;
-      transform: none !important;
-    }
-
-    /* .splide__arrow--prev {
-        left: -50px;
-      }
-      .splide__arrow--next {
-        right: -1150px;
-      } */
   </style>
 
   <style>
@@ -1249,16 +1271,16 @@
       <section id="main-slider-two" class="splide" aria-label="Splide Slider">
         <div class="splide__track">
           <ul class="splide__list">
-            <li class="splide__slide relative px-10 md:px-0">
+            <li class="splide__slide relative">
               <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
                 <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
                   <h1
-                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    class="justify-start page-main text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                     Built-In Bitcoin Payment Support
                   </h1>
 
                   <p
-                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    class="w-full lg:w-[808px] page-main text-base md:text-lg lg:text-xl font-normal leading-normal md:leading-7 mt-4 md:mt-8 mb-2 md:mb-4">
                     TequilaPOS comes with native integration for Bitcoin and
                     other cryptocurrencies. That means no third-party hardware
                     or complicated setup—it's already part of your POS system.
@@ -1287,16 +1309,16 @@
               </div>
             </li>
 
-            <li class="splide__slide relative px-10 md:px-0">
+            <li class="splide__slide relative">
               <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
                 <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
                   <h1
-                    class="justify-start text-black md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    class="justify-start page-main text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                     Easy, Guided Checkout for Staff
                   </h1>
 
                   <p
-                    class="w-full lg:w-[808px] text-black text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    class="w-full lg:w-[808px] page-main text-base md:text-lg lg:text-xl font-normal leading-normal md:leading-7 mt-4 md:mt-8 mb-2 md:mb-4">
                     When a customer wants to pay with Bitcoin:
                   </p>
                   <ul class="list-none space-y-3 px-2 page-sub text-left">
@@ -1329,16 +1351,16 @@
               </div>
             </li>
 
-            <li class="splide__slide relative px-10 md:px-0">
+            <li class="splide__slide relative">
               <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
                 <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
                   <h1
-                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    class="justify-start page-main text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                     Real-Time Confirmation and Receipts
                   </h1>
 
                   <p
-                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    class="w-full lg:w-[808px] page-main text-base md:text-lg lg:text-xl font-normal leading-normal md:leading-7 mt-4 md:mt-8 mb-2 md:mb-4">
                     TequilaPOS tracks each payment in real time:
                   </p>
                   <ul class="list-none space-y-3 px-2 page-sub text-left">
@@ -1364,16 +1386,16 @@
                 </div>
               </div>
             </li>
-            <li class="splide__slide relative px-10 md:px-0">
+            <li class="splide__slide relative">
               <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
                 <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
                   <h1
-                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    class="justify-start page-main text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                     Full Reporting and Accounting Integration
                   </h1>
 
                   <p
-                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    class="w-full lg:w-[808px] page-main text-base md:text-lg lg:text-xl font-normal leading-normal md:leading-7 mt-4 md:mt-8 mb-2 md:mb-4">
                     Crypto payments are included in:
                   </p>
                   <ul class="list-none space-y-3 px-2 page-sub text-left">
@@ -1396,16 +1418,16 @@
                 </div>
               </div>
             </li>
-            <li class="splide__slide relative px-10 md:px-0">
+            <li class="splide__slide relative">
               <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
                 <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
                   <h1
-                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    class="justify-start page-main text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                     Staff Training Not Required
                   </h1>
 
                   <p
-                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    class="w-full lg:w-[808px] page-main text-base md:text-lg lg:text-xl font-normal leading-normal md:leading-7 mt-4 md:mt-8 mb-2 md:mb-4">
                     Because TequilaPOS handles the technical backend:
                   </p>
                   <ul class="list-none space-y-3 px-2 page-sub text-left">
