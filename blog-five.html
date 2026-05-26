@@ -1,155 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tequila POS - Smart POS Solutions</title>
-    <script src="/assets/js/theme.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
 
-    <style>
-      .my-slider-progress {
-        /* This is the background/track of the progress bar */
-        height: 4px;
-        background: #e5e7eb; /* Tailwind gray-200 */
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tequila POS - Smart POS Solutions</title>
+  <script src="/assets/js/theme.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-      .my-slider-progress-bar {
-        /* This is the actual progress fill */
-        background: #1f2937; /* Tailwind gray-800 for the fill color */
-        height: 100%;
-        width: 0; /* Starts at 0, JavaScript changes this */
-        transition: width 0.5s ease-in-out; /* Match slider transition speed */
-      }
+  <style>
+    .my-slider-progress {
+      /* This is the background/track of the progress bar */
+      height: 4px;
+      background: #e5e7eb;
+      /* Tailwind gray-200 */
+    }
 
-      /* Hide default pagination dots that Splide includes */
-      .splide__pagination {
-        display: none;
-      }
+    .my-slider-progress-bar {
+      /* This is the actual progress fill */
+      background: #1f2937;
+      /* Tailwind gray-800 for the fill color */
+      height: 100%;
+      width: 0;
+      /* Starts at 0, JavaScript changes this */
+      transition: width 0.5s ease-in-out;
+      /* Match slider transition speed */
+    }
 
-      /* Hide scrollbar for a cleaner look */
-      .hide-scrollbar::-webkit-scrollbar {
-        display: none;
-      }
-      .hide-scrollbar {
-        -ms-overflow-style: none; /* IE and Edge */
-        scrollbar-width: none; /* Firefox */
-      }
+    /* Hide default pagination dots that Splide includes */
+    .splide__pagination {
+      display: none;
+    }
 
-      .splide__arrow {
-        -ms-flex-align: center;
-        align-items: center;
-        background: transparent !important;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        display: -ms-flexbox;
-        display: flex;
-        height: 2em;
-        -ms-flex-pack: center;
-        justify-content: center;
-        opacity: 0.7;
-        padding: 0;
-        position: absolute;
-        top: 0%;
-        transform: translateY(-53%) !important;
-        width: 2em;
-        z-index: 1;
-      }
-      /* Custom CSS for the progress bar */
-      /* Scope all arrow styles to ONLY this slider */
-      #main-slider-two .splide__arrow {
-        -ms-flex-align: center;
-        align-items: center;
-        background: #ccc;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        display: -ms-flexbox;
-        display: flex;
-        height: 2em;
-        -ms-flex-pack: center;
-        justify-content: center;
-        opacity: 0.7;
-        padding: 0;
-        position: absolute;
-        top: 84%;
-        transform: translateY(-50%);
-        width: 2em;
-        z-index: 1;
+    /* Hide scrollbar for a cleaner look */
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .splide__arrow {
+      -ms-flex-align: center;
+      align-items: center;
+      background: transparent !important;
+      border: 0;
+      border-radius: 50%;
+      cursor: pointer;
+      display: -ms-flexbox;
+      display: flex;
+      height: 2em;
+      -ms-flex-pack: center;
+      justify-content: center;
+      opacity: 0.7;
+      padding: 0;
+      position: absolute;
+      top: 0%;
+      transform: translateY(-53%) !important;
+      width: 2em;
+      z-index: 1;
+    }
+
+    /* Scope all arrow styles to ONLY this slider */
+    #main-slider-two .splide__arrow {
+      background-color: #ffffff !important;
+      border: 1px solid #e5e7eb !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06) !important;
+      transition: all 0.2s ease !important;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) !important;
+      z-index: 20;
+      color: #505050 !important;
+      opacity: 0.8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    #main-slider-two .splide__arrow:hover {
+      background-color: #f3f4f6 !important;
+      opacity: 1;
+    }
+
+    #main-slider-two .splide__arrow svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+    }
+
+    #main-slider-two .splide__arrow--prev {
+      left: -3rem;
+    }
+
+    #main-slider-two .splide__arrow--next {
+      right: -3rem;
+    }
+
+    html.dark #main-slider-two .splide__arrow {
+      background-color: #373737 !important;
+      border: 1px solid #4b5563 !important;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18) !important;
+      color: #ffffff !important;
+    }
+
+    html.dark #main-slider-two .splide__arrow:hover {
+      background-color: #4b5563 !important;
+    }
+
+    @media screen and (max-width: 1200px) {
+      #main-slider-two .splide__arrow--prev {
+        left: 0.5rem;
       }
 
       #main-slider-two .splide__arrow--next {
-        right: 102em;
+        right: 0.5rem;
       }
+    }
 
-      #main-slider-two .splide__arrow--prev {
-        left: -0.1em;
-      }
-
-      /* Responsive Fix */
-      @media screen and (max-width: 1024px) {
-        #main-slider-two .splide__arrow--next {
-          right: 1em;
-        }
-
-        #main-slider-two .splide__arrow {
-          top: 108%;
-        }
-      }
-    
     /* Tablet view heading line-height fix */
     @media (min-width: 768px) and (max-width: 1023px) {
-      h1, h2, h3 {
+
+      h1,
+      h2,
+      h3 {
         line-height: 1.4 !important;
       }
     }
-</style>
+  </style>
 
-    <!-- Splide CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    />
+  <!-- Splide CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
 
-    <!-- Optional: Default Theme -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css"
-    />
+  <!-- Optional: Default Theme -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css" />
 
-    <!-- aos -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
+  <!-- aos -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
-    <link rel="stylesheet" href="/assets/style/global.css" />
+  <link rel="stylesheet" href="/assets/style/global.css" />
 
-    <style>
-      /* Custom CSS for the progress bar */
-      .my-slider-progress {
-        /* This is the background/track of the progress bar */
-        height: 4px;
-        background: #e5e7eb; /* Tailwind gray-200 */
-        /* Responsive width: centered with max-width on smaller screens, full width on 1440px+ */
-      }
+  <style>
+    /* Custom CSS for the progress bar */
+    .my-slider-progress {
+      /* This is the background/track of the progress bar */
+      height: 4px;
+      background: #e5e7eb;
+      /* Tailwind gray-200 */
+      /* Responsive width: centered with max-width on smaller screens, full width on 1440px+ */
+    }
 
-      /* On 1440px and larger screens, use full width */
+    /* On 1440px and larger screens, use full width */
 
-      .my-slider-progress-bar {
-        /* This is the actual progress fill */
-        background: #1f2937; /* Tailwind gray-800 for the fill color */
-        height: 100%;
-        width: 0; /* Starts at 0, JavaScript changes this */
-        transition: width 0.5s ease-in-out; /* Match slider transition speed */
-      }
+    .my-slider-progress-bar {
+      /* This is the actual progress fill */
+      background: #1f2937;
+      /* Tailwind gray-800 for the fill color */
+      height: 100%;
+      width: 0;
+      /* Starts at 0, JavaScript changes this */
+      transition: width 0.5s ease-in-out;
+      /* Match slider transition speed */
+    }
 
-      /* Hide default pagination dots that Splide includes */
-      .splide__pagination {
-        display: none;
-      }
+    /* Hide default pagination dots that Splide includes */
+    .splide__pagination {
+      display: none;
+    }
 
-      .mobile-timeline {
+    .mobile-timeline {
       position: relative;
     }
+
     .mobile-timeline::before {
       content: "";
       position: absolute;
@@ -159,14 +189,17 @@
       width: 2px;
       background: #e5e7eb;
     }
+
     .mobile-timeline .timeline-item {
       position: relative;
       padding-left: 2.5rem;
       margin-bottom: 2.5rem;
     }
+
     .mobile-timeline .timeline-item:last-child {
       margin-bottom: 0;
     }
+
     .mobile-timeline .timeline-dot {
       position: absolute;
       left: 0;
@@ -176,16 +209,24 @@
       border-radius: 9999px;
       background: #000;
     }
+
     .mobile-timeline blockquote {
       padding-left: 0.5rem;
     }
-    html.dark .mobile-timeline::before { background: #4b5563; }
-    html.dark .mobile-timeline .timeline-dot { background: #fff; }
+
+    html.dark .mobile-timeline::before {
+      background: #4b5563;
+    }
+
+    html.dark .mobile-timeline .timeline-dot {
+      background: #fff;
+    }
 
     .mobile-svg-lines {
       z-index: -1;
       opacity: 0.7;
     }
+
     .mobile-diff-card {
       position: absolute;
       width: 163px;
@@ -193,12 +234,14 @@
       box-shadow: 0 30px 80px rgba(15, 23, 42, 0.12);
       z-index: 1;
     }
+
     .mobile-diff-card h2,
     .mobile-diff-card h3,
     .mobile-diff-card p {
       position: relative;
       z-index: 1;
     }
+
     .mobile-diff-dot {
       position: absolute;
       left: 50%;
@@ -210,10 +253,13 @@
       background: #000;
       z-index: 2;
     }
-    html.dark .mobile-diff-dot { background: #fff; }
+
+    html.dark .mobile-diff-dot {
+      background: #fff;
+    }
 
 
-      /* .splide__arrow {
+    /* .splide__arrow {
         -ms-flex-align: center;
         align-items: center;
         background: transparent !important;
@@ -242,1965 +288,1439 @@
         .splide__arrow--prev {
           left: 0rem !important;
         } */
-      /* } */
+    /* } */
 
-      .splide__arrow {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        transform: none !important;
-      }
-      /* .splide__arrow--prev {
+    .splide__arrow {
+      position: relative !important;
+      top: auto !important;
+      left: auto !important;
+      right: auto !important;
+      transform: none !important;
+    }
+
+    /* .splide__arrow--prev {
         left: -50px;
       }
       .splide__arrow--next {
         right: -1150px;
       } */
-    </style>
+  </style>
 
-    <style>
-      /* ---- Light defaults ---- */
-      /* body { background-color: #ffffff; color: #000000; }
+  <style>
+    /* ---- Light defaults ---- */
+    /* body { background-color: #ffffff; color: #000000; }
       footer { background-color: #ffffff; }
       section { background-color: #ffffff; }
       
       .logo-dark { display: none; }
       .logo-light { display: block; } */
 
-      /* Light mode defaults */
-     
-      .mega-menu { background-color: #ffffff; }
-      #mobile-menu { background-color: #ffffff; }
-      #dropdownBtn { background-color: #f3f4f6; }
-      #dropdownMenu { background-color: #f9fafb; border-color: #e5e7eb; }
+    /* Light mode defaults */
 
-      .slide-card  { background-color: #fafafa; }
+    .mega-menu {
+      background-color: #ffffff;
+    }
 
-      .page-accent { color: #505050; }
-    .page-main   { color: #000000; }
-    .page-sub    { color: #4f4f4f; }
-    .page-btn { background-color: #000000; color: #ffffff; }
-      
-      /* ---- Dark mode overrides ---- */
-      html.dark body    { background-color: #1c1c1c; color: #ffffff; }
-      html.dark footer  { background-color: #1c1c1c; }
-      html.dark section { background-color: #1c1c1c; }
+    #mobile-menu {
+      background-color: #ffffff;
+    }
 
-      html.dark .slide-card  { background-color: #373737; }
-      
-      html.dark .logo-dark { display: block; }
-      html.dark .logo-light { display: none; }
-      html.dark .page-accent { color: #C98633; }
-    html.dark .page-main   { color: #ffffff; }
-    html.dark .page-sub    { color: #cdcdcd; }
-      html.dark .page-btn { background-color: #ffffff; color: #000000; }
-      
-      html.dark .mega-menu { background-color: #000000; }
-      html.dark #mobile-menu { background-color: #1c1c1c; color: #ffffff; }
-      html.dark #dropdownBtn { background-color: #1f2937; color: #ffffff; }
-      html.dark #dropdownMenu { background-color: #111827; border-color: #374151; }
+    #dropdownBtn {
+      background-color: #f3f4f6;
+    }
 
-       html.dark .splide__arrow {
-        background: #111827 !important;
+    #dropdownMenu {
+      background-color: #f9fafb;
+      border-color: #e5e7eb;
+    }
+
+    .slide-card {
+      background-color: #fafafa;
+    }
+
+    .page-accent {
+      color: #505050;
+    }
+
+    .page-main {
+      color: #000000;
+    }
+
+    .page-sub {
+      color: #4f4f4f;
+    }
+
+    .page-btn {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ---- Dark mode overrides ---- */
+    html.dark body {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    html.dark footer {
+      background-color: #1c1c1c;
+    }
+
+    html.dark section {
+      background-color: #1c1c1c;
+    }
+
+    html.dark .slide-card {
+      background-color: #373737;
+    }
+
+    html.dark .logo-dark {
+      display: block;
+    }
+
+    html.dark .logo-light {
+      display: none;
+    }
+
+    html.dark .page-accent {
+      color: #C98633;
+    }
+
+    html.dark .page-main {
+      color: #ffffff;
+    }
+
+    html.dark .page-sub {
+      color: #cdcdcd;
+    }
+
+    html.dark .page-btn {
+      background-color: #ffffff;
+      color: #000000;
+    }
+
+    html.dark .mega-menu {
+      background-color: #000000;
+    }
+
+    html.dark #mobile-menu {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    html.dark #dropdownBtn {
+      background-color: #1f2937;
+      color: #ffffff;
+    }
+
+    html.dark #dropdownMenu {
+      background-color: #111827;
+      border-color: #374151;
+    }
+
+    html.dark .splide__arrow {
+      background: #111827 !important;
+      color: #ffffff !important;
+    }
+
+    /* Text color overrides for dark mode */
+    html.dark .text-black {
+      color: #ffffff;
+    }
+
+    html.dark .text-\\[#4f4f4f\\],
+    html.dark .text-\\[#333\\],
+    html.dark .text-gray-500,
+    html.dark .text-gray-600,
+    html.dark .text-gray-700,
+    html.dark .text-gray-800 {
+      color: #cdcdcd;
+    }
+
+    /* Background and border overrides for dark mode */
+    html.dark .bg-white {
+      background-color: #1c1c1c;
+    }
+
+    html.dark .bg-gray-100,
+    html.dark .bg-gray-200 {
+      background-color: #2c2c2c;
+    }
+
+    html.dark .border-gray-300,
+    html.dark .border-\\[#dbdbdb\\] {
+      border-color: #444444;
+    }
+
+    html.dark .shadow-\\[0px_4px_18.9px_rgba\\(0, 0, 0, 0.25\\)\\] {
+      box-shadow: 0px 4px 18.9px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Product Guides section dark mode */
+    html.dark .product-guides-section {
+      background-color: #373737 !important;
+    }
+
+    @media screen and (max-width: 780px) {
+      html.dark .heading_p {
         color: #ffffff !important;
       }
-      
-      /* Text color overrides for dark mode */
-       html.dark .text-black { color: #ffffff; }
-      html.dark .text-\\[#4f4f4f\\],
-      html.dark .text-\\[#333\\],
-      html.dark .text-gray-500,
-      html.dark .text-gray-600,
-      html.dark .text-gray-700,
-      html.dark .text-gray-800 { color: #cdcdcd; }
-      
-      /* Background and border overrides for dark mode */
-      html.dark .bg-white { background-color: #1c1c1c; }
-      html.dark .bg-gray-100,
-      html.dark .bg-gray-200 { background-color: #2c2c2c; }
-      html.dark .border-gray-300,
-      html.dark .border-\\[#dbdbdb\\] { border-color: #444444; }
-      html.dark .shadow-\\[0px_4px_18.9px_rgba\\(0,0,0,0.25\\)\\] { box-shadow: 0px 4px 18.9px rgba(0,0,0,0.5); }
+    }
 
-      /* Product Guides section dark mode */
-      html.dark .product-guides-section { background-color: #373737 !important; }
-      
-      @media screen and (max-width: 780px) {
-  html.dark .heading_p { color: #ffffff !important; }
-}
-      
-      /* Form section dark mode */
-      html.dark .contact-form-container { background-color: #1c1c1c; }
-    </style>
-  </head>
-  <body class="font-inter text-sm">
-    <!-- Navigation -->
-    <nav class="navbar xl:block hidden">
-      <div class="navbar-container container mx-auto px-4">
-        <div class="logo-container">
-          <a href="/index.html">
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent.png"
-              class="logo-light logo"
-              alt="Logo"
-            />
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-              class="logo-dark logo"
-              alt="Logo"
-            />
+    /* Form section dark mode */
+    html.dark .contact-form-container {
+      background-color: #1c1c1c;
+    }
+  </style>
+</head>
+
+<body class="font-inter text-sm">
+  <!-- Navigation -->
+  <nav class="navbar xl:block hidden">
+    <div class="navbar-container container mx-auto px-4">
+      <div class="logo-container">
+        <a href="/index.html">
+          <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="logo-light logo" alt="Logo" />
+          <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="logo-dark logo" alt="Logo" />
+        </a>
+        <div class="nav-links ml-4">
+          <div class="nav-item relative group">
+            <a href="#business-type" class="nav-link">Business Type</a>
+            <div class="mega-menu mega-anim absolute left-0 top-full pt-10" onmouseleave="clearActive()">
+              <div class="flex flex-nowrap gap-10">
+                <div class="flex flex-col p-10 gap-4" id="categoryList" data-aos="fade-left">
+                  <a href="/food.html" class="text-[26px] font-bold hover:underline" data-cat="food"
+                    onmouseenter="setActive('food')" onfocus="setActive('food')">Food &amp; Beverage</a>
+                  <a href="/retail.html" class="text-[26px] font-bold hover:underline" data-cat="retail"
+                    onmouseenter="setActive('retail')" onfocus="setActive('retail')">Retail</a>
+                </div>
+                <div class="flex gap-16 p-10">
+                  <div class="flex justify-between gap-10" data-panel="food">
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Discover
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/overview.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Overview</a>
+                        </li>
+                        <li>
+                          <a href="/feature.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Switch to Tequila</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Capacity
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/resturent-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Resturents</a>
+                        </li>
+                        <li>
+                          <a href="/bar-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Bars</a>
+                        </li>
+                        <li>
+                          <a href="/food-truck-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Food Trucks and Pop-ups</a>
+                        </li>
+                        <li>
+                          <a href="/cafes-coffee-shop-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Cafes & Coffee Shops</a>
+                        </li>
+                        <li>
+                          <a href="/juice-bars-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Juice Bars & Smoothie Shops</a>
+                        </li>
+                        <li>
+                          <a href="/bakeries-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Bakeries</a>
+                        </li>
+                        <li>
+                          <a href="/ice-cream-dessert-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Ice Creams & Desserts Shops</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-6 hidden" data-panel="retail">
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Discover
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/overview.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Overview</a>
+                        </li>
+                        <li>
+                          <a href="/feature.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Switch to Tequila</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/feature.html" class="nav-link">Feature</a>
+          <a href="/hardware.html" class="nav-link">Hardware</a>
+          <a href="/pricing.html" class="nav-link">Pricing</a>
+          <a href="/resourse.html" class="nav-link">Resources</a>
+        </div>
+      </div>
+      <div class="nav-extra-links">
+        <div class="language-selector cursor-pointer" onclick="toggleLanguage()">
+          <span id="language-text">ENGLISH</span>
+          <img id="flag-icon" src="/assets/images/flags/usa.png" alt="USA Flag" class="flag-icon" />
+        </div>
+        <a href="/login.html" class="nav-link">Sign in</a>
+        <a href="/free-demo.html"><button class="demo-btn"><span>Free Demo</span></button></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navbar -->
+  <nav class="navbar xl:hidden shadow-md relative">
+    <div class="navbar-container container mx-auto flex items-center justify-between py-2 px-4">
+      <div class="logo-container flex items-center">
+        <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="logo-light logo" alt="Logo" />
+        <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="logo-dark logo" alt="Logo" />
+      </div>
+      <button id="mobile-menu-btn" class="xl:hidden p-2" style="color: inherit">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu"
+      class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg overflow-y-auto"
+      style="background-color: var(--nav-bg, #fff)">
+      <div class="p-4 space-y-2">
+        <!-- Business Type (Level 1 Accordion) -->
+        <div class="mobile-nav-accordion">
+          <button class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg"
+            style="color: var(--text-primary)">
+            Business Type
+            <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 transition-transform duration-200">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+            </svg>
+          </button>
+          <div class="accordion-content hidden border-l-2 border-gray-200 ml-4">
+            <!-- Food & Beverage (Level 2 Accordion) -->
+            <div class="mobile-sub-accordion">
+              <button class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold">
+                Food & Beverage
+                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform duration-200">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+              </button>
+              <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Discover
+                  </h6>
+                  <a href="/overview.html" class="block py-1 text-sm font-bold">Overview</a>
+                  <a href="/feature.html" class="block py-1 text-sm font-bold">Switch to Tequila</a>
+                </div>
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Capacity
+                  </h6>
+                  <div class="grid grid-cols-1 gap-1">
+                    <a href="/resturent-capabilities.html" class="block py-1 text-sm font-bold">Restaurants</a>
+                    <a href="/bar-capabilities.html" class="block py-1 text-sm font-bold">Bars</a>
+                    <a href="/food-truck-capabilities.html" class="block py-1 text-sm font-bold">Food Trucks &
+                      Pop-ups</a>
+                    <a href="/cafes-coffee-shop-capabilities.html" class="block py-1 text-sm font-bold">Cafes & Coffee
+                      Shops</a>
+                    <a href="/juice-bars-capabilities.html" class="block py-1 text-sm font-bold">Juice Bars & Smoothie
+                      Shops</a>
+                    <a href="/bakeries-capabilities.html" class="block py-1 text-sm font-bold">Bakeries</a>
+                    <a href="/ice-cream-dessert-capabilities.html" class="block py-1 text-sm font-bold">Ice Creams &
+                      Desserts</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Retail (Level 2 Accordion) -->
+            <div class="mobile-sub-accordion">
+              <button class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold">
+                Retail
+                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform duration-200">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+              </button>
+              <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Discover
+                  </h6>
+                  <a href="/overview.html" class="block py-1 text-sm font-bold">Overview</a>
+                  <a href="/feature.html" class="block py-1 text-sm font-bold">Switch to Tequila</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/feature.html" class="block px-4 py-3 font-bold text-lg">Features</a>
+        <a href="/hardware.html" class="block px-4 py-3 font-bold text-lg">Hardware</a>
+        <a href="/pricing.html" class="block px-4 py-3 font-bold text-lg">Pricing</a>
+        <a href="/resourse.html" class="block px-4 py-3 font-bold text-lg">Resources</a>
+
+        <div class="px-4 py-3 border-t border-gray-100">
+          <div class="language-selector flex items-center gap-2 cursor-pointer" onclick="toggleLanguage()">
+            <span id="mobile-language-text" class="font-bold text-sm">ENGLISH</span>
+            <img id="mobile-flag-icon" src="/assets/images/flags/usa.png" alt="USA" class="w-6 h-4 object-cover" />
+          </div>
+        </div>
+
+        <div class="px-4 py-4 space-y-4 border-t border-gray-100">
+          <a href="/login.html" class="block font-bold text-lg">Sign In</a>
+          <a href="/free-demo.html" class="block">
+            <button class="demo-btn w-full"><span>Free Demo</span></button>
           </a>
-          <div class="nav-links ml-4">
-            <div class="nav-item relative group">
-              <a href="#business-type" class="nav-link">Business Type</a>
-              <div
-                class="mega-menu mega-anim absolute left-0 top-full pt-10"
-                onmouseleave="clearActive()"
-              >
-                <div class="flex flex-nowrap gap-10">
-                  <div
-                    class="flex flex-col p-10 gap-4"
-                    id="categoryList"
-                    data-aos="fade-left"
-                  >
-                    <a
-                      href="/food.html"
-                      class="text-[26px] font-bold hover:underline"
-                      data-cat="food"
-                      onmouseenter="setActive('food')"
-                      onfocus="setActive('food')"
-                      >Food &amp; Beverage</a
-                    >
-                    <a
-                      href="/retail.html"
-                      class="text-[26px] font-bold hover:underline"
-                      data-cat="retail"
-                      onmouseenter="setActive('retail')"
-                      onfocus="setActive('retail')"
-                      >Retail</a
-                    >
-                  </div>
-                  <div class="flex gap-16 p-10">
-                    <div class="flex justify-between gap-10" data-panel="food">
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Discover
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/overview.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/feature.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Switch to Tequila</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Capacity
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/resturent-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Resturents</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/bar-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Bars</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/food-truck-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Food Trucks and Pop-ups</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/cafes-coffee-shop-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Cafes & Coffee Shops</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/juice-bars-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Juice Bars & Smoothie Shops</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/bakeries-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Bakeries</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/ice-cream-dessert-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Ice Creams & Desserts Shops</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="space-y-6 hidden" data-panel="retail">
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Discover
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/overview.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/feature.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Switch to Tequila</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a href="/feature.html" class="nav-link">Feature</a>
-            <a href="/hardware.html" class="nav-link">Hardware</a>
-            <a href="/pricing.html" class="nav-link">Pricing</a>
-            <a href="/resourse.html" class="nav-link">Resources</a>
-          </div>
-        </div>
-        <div class="nav-extra-links">
-          <div
-            class="language-selector cursor-pointer"
-            onclick="toggleLanguage()"
-          >
-            <span id="language-text">ENGLISH</span>
-            <img
-              id="flag-icon"
-              src="/assets/images/flags/usa.png"
-              alt="USA Flag"
-              class="flag-icon"
-            />
-          </div>
-          <a href="/login.html" class="nav-link">Sign in</a>
-          <a href="/free-demo.html"
-            ><button class="demo-btn"><span>Free Demo</span></button></a
-          >
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Mobile Navbar -->
-    <nav class="navbar xl:hidden shadow-md relative">
-      <div
-        class="navbar-container container mx-auto flex items-center justify-between py-2 px-4"
-      >
-        <div class="logo-container flex items-center">
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="logo-light logo"
-            alt="Logo"
-          />
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-            class="logo-dark logo"
-            alt="Logo"
-          />
-        </div>
-        <button
-          id="mobile-menu-btn"
-          class="xl:hidden p-2"
-          style="color: inherit"
-        >
-          <svg
-            id="hamburger-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-          <svg
-            id="close-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 hidden"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
-      </div>
-      <div
-        id="mobile-menu"
-        class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg overflow-y-auto"
-        style="background-color: var(--nav-bg, #fff)"
-      >
-        <div class="p-4 space-y-2">
-          <!-- Business Type (Level 1 Accordion) -->
-          <div class="mobile-nav-accordion">
-            <button
-              class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg"
-              style="color: var(--text-primary)"
-            >
-              Business Type
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-5 h-5 transition-transform duration-200"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                />
-              </svg>
-            </button>
-            <div
-              class="accordion-content hidden border-l-2 border-gray-200 ml-4"
-            >
-              <!-- Food & Beverage (Level 2 Accordion) -->
-              <div class="mobile-sub-accordion">
-                <button
-                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
-                >
-                  Food & Beverage
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="w-4 h-4 transition-transform duration-200"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    />
-                  </svg>
-                </button>
-                <div class="accordion-content hidden pl-4 space-y-4 py-2">
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Discover
-                    </h6>
-                    <a
-                      href="/overview.html"
-                      class="block py-1 text-sm font-bold"
-                      >Overview</a
-                    >
-                    <a href="/feature.html" class="block py-1 text-sm font-bold"
-                      >Switch to Tequila</a
-                    >
-                  </div>
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Capacity
-                    </h6>
-                    <div class="grid grid-cols-1 gap-1">
-                      <a
-                        href="/resturent-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Restaurants</a
-                      >
-                      <a
-                        href="/bar-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Bars</a
-                      >
-                      <a
-                        href="/food-truck-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Food Trucks & Pop-ups</a
-                      >
-                      <a
-                        href="/cafes-coffee-shop-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Cafes & Coffee Shops</a
-                      >
-                      <a
-                        href="/juice-bars-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Juice Bars & Smoothie Shops</a
-                      >
-                      <a
-                        href="/bakeries-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Bakeries</a
-                      >
-                      <a
-                        href="/ice-cream-dessert-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Ice Creams & Desserts</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Retail (Level 2 Accordion) -->
-              <div class="mobile-sub-accordion">
-                <button
-                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
-                >
-                  Retail
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="w-4 h-4 transition-transform duration-200"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    />
-                  </svg>
-                </button>
-                <div class="accordion-content hidden pl-4 space-y-4 py-2">
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Discover
-                    </h6>
-                    <a
-                      href="/overview.html"
-                      class="block py-1 text-sm font-bold"
-                      >Overview</a
-                    >
-                    <a href="/feature.html" class="block py-1 text-sm font-bold"
-                      >Switch to Tequila</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+  <!-- hero section -->
 
-          <a href="/feature.html" class="block px-4 py-3 font-bold text-lg"
-            >Features</a
-          >
-          <a href="/hardware.html" class="block px-4 py-3 font-bold text-lg"
-            >Hardware</a
-          >
-          <a href="/pricing.html" class="block px-4 py-3 font-bold text-lg"
-            >Pricing</a
-          >
-          <a href="/resourse.html" class="block px-4 py-3 font-bold text-lg"
-            >Resources</a
-          >
-
-          <div class="px-4 py-3 border-t border-gray-100">
-            <div
-              class="language-selector flex items-center gap-2 cursor-pointer"
-              onclick="toggleLanguage()"
-            >
-              <span id="mobile-language-text" class="font-bold text-sm"
-                >ENGLISH</span
-              >
-              <img
-                id="mobile-flag-icon"
-                src="/assets/images/flags/usa.png"
-                alt="USA"
-                class="w-6 h-4 object-cover"
-              />
-            </div>
-          </div>
-
-          <div class="px-4 py-4 space-y-4 border-t border-gray-100">
-            <a href="/login.html" class="block font-bold text-lg">Sign In</a>
-            <a href="/free-demo.html" class="block">
-              <button class="demo-btn w-full"><span>Free Demo</span></button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-
-    <!-- hero section -->
-
-    <section class="py-8 lg:py-16">
-      <div
-        class="container mx-auto px-4 flex flex-row items-center justify-between gap-4 md:gap-12"
-      >
-        <div class="w-full md:w-1/2 lg:w-[900px] text-left">
-          <h1
-            class="text-[20px] md:text-3xl lg:text-7xl font-bold mb-4 md:mb-8"
-          >
+  <section class="py-8 lg:py-16">
+    <div class="container mx-auto px-4 flex flex-row items-center justify-between gap-4 md:gap-12">
+      <div class="w-full md:w-1/2 lg:w-[900px] text-left">
+        <h1 class="text-[20px] md:text-3xl lg:text-7xl font-bold mb-4 md:mb-8">
           <span class="page-accent">Why Accepting Bitcoin Is the</span>
-            
-            <span class="page-main"> Future of Restaurant Payments</span>
-          </h1>
 
-          <p
-            class="lg:w-[611px] w-full page-sub text-[10px] md:text-base lg:text-[20px] md:leading-[25.20px] leading-normal md:mb-8"
-          >
-            Faster transactions, lower fees, and tech-savvy customers—discover
-            how Bitcoin can give your restaurant a competitive edge.
+          <span class="page-main"> Future of Restaurant Payments</span>
+        </h1>
+
+        <p
+          class="lg:w-[611px] w-full page-sub text-[10px] md:text-base lg:text-[20px] md:leading-[25.20px] leading-normal md:mb-8">
+          Faster transactions, lower fees, and tech-savvy customers—discover
+          how Bitcoin can give your restaurant a competitive edge.
+        </p>
+      </div>
+
+      <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
+        <img src="/assets/images/blog-five/blog-five-hero.png" alt="" class="w-full h-auto" />
+      </div>
+    </div>
+  </section>
+  <!--Digital Payment Solution slider-->
+  <section class="py-8 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[650px] mx-auto">
+          <span class="page-accent">Understanding Bitcoin as a </span>
+          <span class="page-main">Digital Payment Solution</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Bitcoin is a decentralized, secure form of digital currency that
+            enables fast, direct transactions—eliminating intermediaries and
+            reducing payment processing costs for restaurants
           </p>
         </div>
+      </div>
+      <!-- Slider Section -->
+      <div class="relative overflow-visible">
+        <div class="relative rounded-2xl overflow-visible">
+          <!-- Main Slider Content Container -->
+          <div id="slider-container" class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+            <!-- Slide 1 -->
+            <div class="flex-shrink-0 w-full snap-center py-8">
+              <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-12">
+                <!-- Image Column -->
+                <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
+                  <img src="/assets/images/blog-five/digital-payment-slider-one.png"
+                    alt="Bitcoin digital payment explanation" class="w-full max-h-[500px] object-cover" />
+                </div>
+                <!-- Text Content Column -->
+                <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
+                  <div class="h-px bg-gray-200 w-full mb-6"></div>
+                  <h2
+                    class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight">
+                    WHAT IS <span class="font-bold uppercase">BITCOIN?</span>
+                  </h2>
+                  <div class="h-px bg-gray-200 w-full my-6"></div>
+                  <div class="space-y-4">
+                    <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
+                      Bitcoin is a type of digital currency (also called cryptocurrency) that allows people to send and
+                      receive money over the internet without needing a bank or payment processor. It was invented in
+                      2009 by an unknown person or group using the name Satoshi Nakamoto.
+                    </p>
+                    <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
+                      Instead of relying on a central authority, Bitcoin uses a decentralized network of computers
+                      (called nodes) that verify and record all transactions on a public ledger known as the blockchain.
+                      This makes it secure, transparent, and nearly impossible to alter.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
 
+            <!-- Slide 2 -->
+            <div class="flex-shrink-0 w-full snap-center py-8">
+              <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-12">
+                <!-- Image Column -->
+                <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
+                  <img src="/assets/images/blog-five/digital-payment-slider-two.png"
+                    alt="Bitcoin payment process illustration" class="w-full max-h-[500px] object-cover" />
+                </div>
+                <!-- Text Content Column -->
+                <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
+                  <div class="h-px bg-gray-200 w-full mb-6"></div>
+                  <h2
+                    class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight uppercase">
+                    HOW BITCOIN WORKS FOR <br /><span class="font-bold">PAYMENTS</span>
+                  </h2>
+                  <div class="h-px bg-gray-200 w-full my-6"></div>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
+                    <div class="flex flex-col gap-2 text-left p-6 border-b border-r border-gray-200">
+                      <div class="text-xl font-bold flex items-baseline gap-2">
+                        <span class="text-3xl font-black page-accent opacity-50">01</span>
+                        <span class="page-main">Digital Wallet</span>
+                      </div>
+                      <p class="page-sub text-sm leading-relaxed">Users store their Bitcoin in a digital wallet (an app
+                        or software).</p>
+                    </div>
+                    <div class="flex flex-col gap-2 text-left p-6 border-b border-gray-200">
+                      <div class="text-xl font-bold flex items-baseline gap-2">
+                        <span class="text-3xl font-black page-accent opacity-50">02</span>
+                        <span class="page-main">Sending Bitcoin</span>
+                      </div>
+                      <p class="page-sub text-sm leading-relaxed">To make a payment, the sender enters the recipient's
+                        wallet address and the amount, then authorizes the transaction.</p>
+                    </div>
+                    <div
+                      class="flex flex-col gap-2 text-left p-6 border-r border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-gray-200">
+                      <div class="text-xl font-bold flex items-baseline gap-2">
+                        <span class="text-3xl font-black page-accent opacity-50">03</span>
+                        <span class="page-main">Transaction Verification</span>
+                      </div>
+                      <p class="page-sub text-sm leading-relaxed">The network verifies the transaction using a process
+                        called mining, ensuring it's legitimate.</p>
+                    </div>
+                    <div class="flex flex-col gap-2 text-left p-6">
+                      <div class="text-xl font-bold flex items-baseline gap-2">
+                        <span class="text-3xl font-black page-accent opacity-50">04</span>
+                        <span class="page-main">Confirmation</span>
+                      </div>
+                      <p class="page-sub text-sm leading-relaxed">Once verified, the transaction is recorded on the
+                        blockchain and the payment is complete—usually within minutes.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Navigation Arrows -->
+          <!-- Left Arrow -->
+          <button id="prev-button"
+            class="absolute top-1/2 -left-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
+            aria-label="Previous slide">
+            <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+            </svg>
+          </button>
+          <!-- Right Arrow -->
+          <button id="next-button"
+            class="absolute top-1/2 -right-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
+            aria-label="Next slide">
+            <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--cryptocurrency payment section-->
+  <section class="bg-white py-8 md:py-16 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto">
+          <span class="page-accent">Understanding Customer Preferences
+          </span>
+          <span class="page-main">for Cryptocurrency Payments</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Each feature solves a real-world problem — here’s how they make
+            daily operations smoother and more profitable.
+          </p>
+        </div>
+      </div>
+      <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12">
         <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
-          <img
-            src="/assets/images/blog-five/blog-five-hero.png"
-            alt=""
-            class="w-full h-auto"
-          />
+          <img src="/assets/images/blog-five/cryptocurrency-payment-one.png" alt="" class="w-full h-auto" />
+        </div>
+        <div class="w-full md:w-2/3 p-6 md:p-10">
+          <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
+            Privacy and Anonymity
+          </h2>
+          <p class="page-sub mb-6">
+            Crypto payments don’t require sharing personal or banking
+            information. Transactions are recorded on a public ledger (the
+            blockchain), but users remain pseudonymous—identified only by
+            wallet addresses, not names or account numbers.
+          </p>
+          <h3 class="text-lg font-semibold text-black mb-3">
+            With cryptocurrency:
+          </h3>
+          <ul class="list-disc ml-6 space-y-2 page-sub">
+            <li>
+              Users are identified only by their wallet address, not personal
+              details.
+            </li>
+            <li>No bank or payment processor stores your private data.</li>
+            <li>
+              This pseudonymity appeals to users who want to keep their
+              purchases private or avoid surveillance.
+            </li>
+          </ul>
         </div>
       </div>
-    </section>
-    <!--Digital Payment Solution slider-->
-    <section class="py-8 lg:py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2
-            class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[650px] mx-auto"
-          >
-            <span class="page-accent">Understanding Bitcoin as a </span>
-            <span class="page-main">Digital Payment Solution</span>
+      <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="w-full md:w-2/3 p-6 md:p-10">
+          <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
+            Speed and Global Accessibility
           </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Bitcoin is a decentralized, secure form of digital currency that
-              enables fast, direct transactions—eliminating intermediaries and
-              reducing payment processing costs for restaurants
-            </p>
-          </div>
+          <p class="page-sub mb-6">
+            Unlike traditional banks, which may take hours or days to process
+            payments—especially across borders—crypto transactions can settle
+            in minutes, 24/7, including weekends and holidays.
+          </p>
+          <h3 class="text-lg font-semibold text-black mb-3">
+            Crypto solves this by being:
+          </h3>
+          <ul class="list-disc ml-6 space-y-2 page-sub">
+            <li>
+              Always online: Transactions are processed 24/7, even on
+              holidays.
+            </li>
+            <li>
+              Fast: Bitcoin payments take 10–60 minutes; other
+              cryptocurrencies (like Litecoin or Solana) can be instant.
+            </li>
+            <li>
+              Global: Crypto doesn’t care where you or the receiver are. You
+              can send funds to someone across the world in seconds.
+            </li>
+          </ul>
         </div>
-        <!-- Slider Section -->
-        <div class="relative overflow-visible">
-          <div class="relative rounded-2xl overflow-visible">
-            <!-- Main Slider Content Container -->
-            <div
-              id="slider-container"
-              class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory"
-            >
-              <!-- Slide 1 -->
-              <div class="flex-shrink-0 w-full snap-center py-8">
-                <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-12">
-                  <!-- Image Column -->
-                  <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
-                    <img
-                      src="/assets/images/blog-five/digital-payment-slider-one.png"
-                      alt="Bitcoin digital payment explanation"
-                      class="w-full max-h-[500px] object-cover"
-                    />
-                  </div>
-                  <!-- Text Content Column -->
-                  <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
-                    <div class="h-px bg-gray-200 w-full mb-6"></div>
-                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight">
-                      WHAT IS <span class="font-bold uppercase">BITCOIN?</span>
-                    </h2>
-                    <div class="h-px bg-gray-200 w-full my-6"></div>
-                    <div class="space-y-4">
-                      <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
-                        Bitcoin is a type of digital currency (also called cryptocurrency) that allows people to send and receive money over the internet without needing a bank or payment processor. It was invented in 2009 by an unknown person or group using the name Satoshi Nakamoto.
-                      </p>
-                      <p class="page-sub text-base md:text-[18px] leading-relaxed text-left">
-                        Instead of relying on a central authority, Bitcoin uses a decentralized network of computers (called nodes) that verify and record all transactions on a public ledger known as the blockchain. This makes it secure, transparent, and nearly impossible to alter.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="flex-shrink-0 w-full snap-center py-8">
-                <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-12">
-                  <!-- Image Column -->
-                  <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
-                    <img
-                      src="/assets/images/blog-five/digital-payment-slider-two.png"
-                      alt="Bitcoin payment process illustration"
-                      class="w-full max-h-[500px] object-cover"
-                    />
-                  </div>
-                  <!-- Text Content Column -->
-                  <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
-                    <div class="h-px bg-gray-200 w-full mb-6"></div>
-                    <h2 class="text-left font-normal md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto page-main leading-tight uppercase">
-                      HOW BITCOIN WORKS FOR <br /><span class="font-bold">PAYMENTS</span>
-                    </h2>
-                    <div class="h-px bg-gray-200 w-full my-6"></div>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-0">
-                      <div class="flex flex-col gap-2 text-left p-6 border-b border-r border-gray-200">
-                        <div class="text-xl font-bold flex items-baseline gap-2">
-                          <span class="text-3xl font-black page-accent opacity-50">01</span>
-                          <span class="page-main">Digital Wallet</span>
-                        </div>
-                        <p class="page-sub text-sm leading-relaxed">Users store their Bitcoin in a digital wallet (an app or software).</p>
-                      </div>
-                      <div class="flex flex-col gap-2 text-left p-6 border-b border-gray-200">
-                        <div class="text-xl font-bold flex items-baseline gap-2">
-                          <span class="text-3xl font-black page-accent opacity-50">02</span>
-                          <span class="page-main">Sending Bitcoin</span>
-                        </div>
-                        <p class="page-sub text-sm leading-relaxed">To make a payment, the sender enters the recipient's wallet address and the amount, then authorizes the transaction.</p>
-                      </div>
-                      <div class="flex flex-col gap-2 text-left p-6 border-r border-b sm:border-t sm:border-t-gray-200 md:border-t-0 border-gray-200">
-                        <div class="text-xl font-bold flex items-baseline gap-2">
-                          <span class="text-3xl font-black page-accent opacity-50">03</span>
-                          <span class="page-main">Transaction Verification</span>
-                        </div>
-                        <p class="page-sub text-sm leading-relaxed">The network verifies the transaction using a process called mining, ensuring it's legitimate.</p>
-                      </div>
-                      <div class="flex flex-col gap-2 text-left p-6">
-                        <div class="text-xl font-bold flex items-baseline gap-2">
-                          <span class="text-3xl font-black page-accent opacity-50">04</span>
-                          <span class="page-main">Confirmation</span>
-                        </div>
-                        <p class="page-sub text-sm leading-relaxed">Once verified, the transaction is recorded on the blockchain and the payment is complete—usually within minutes.</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slider Navigation Arrows -->
-            <!-- Left Arrow -->
-            <button
-              id="prev-button"
-              class="absolute top-1/2 -left-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
-              aria-label="Previous slide"
-            >
-              <svg
-                class="w-6 h-6 page-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 19l-7-7 7-7"
-                ></path>
-              </svg>
-            </button>
-            <!-- Right Arrow -->
-            <button
-              id="next-button"
-              class="absolute top-1/2 -right-10 transform -translate-y-1/2 p-2 bg-white/90 hover:bg-white transition rounded-full z-20 hidden md:block shadow-lg"
-              aria-label="Next slide"
-            >
-              <svg
-                class="w-6 h-6 page-accent"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 5l7 7-7 7"
-                ></path>
-              </svg>
-            </button>
-          </div>
+        <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
+          <img src="/assets/images/blog-five/cryptocurrency-payment-two.png" alt="" class="w-full h-auto" />
         </div>
       </div>
-    </section>
-    <!--cryptocurrency payment section-->
-    <section class="bg-white py-8 md:py-16 lg:py-24">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2
-            class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[804px] mx-auto"
-          >
-            <span class="page-accent"
-              >Understanding Customer Preferences
-            </span>
-            <span class="page-main">for Cryptocurrency Payments</span>
+      <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
+          <img src="/assets/images/blog-five/cryptocurrency-payment-three.png" alt="" class="w-full h-auto" />
+        </div>
+        <div class="w-full md:w-2/3 p-6 md:p-10">
+          <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
+            Freedom from Banks and Intermediaries
           </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Each feature solves a real-world problem — here’s how they make
-              daily operations smoother and more profitable.
-            </p>
-          </div>
-        </div>
-        <div
-          class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12"
-        >
-          <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
-            <img
-              src="/assets/images/blog-five/cryptocurrency-payment-one.png"
-              alt=""
-              class="w-full h-auto"
-            />
-          </div>
-          <div class="w-full md:w-2/3 p-6 md:p-10">
-            <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
-              Privacy and Anonymity
-            </h2>
-            <p class="page-sub mb-6">
-              Crypto payments don’t require sharing personal or banking
-              information. Transactions are recorded on a public ledger (the
-              blockchain), but users remain pseudonymous—identified only by
-              wallet addresses, not names or account numbers.
-            </p>
-            <h3 class="text-lg font-semibold text-black mb-3">
-              With cryptocurrency:
-            </h3>
-            <ul class="list-disc ml-6 space-y-2 page-sub">
-              <li>
-                Users are identified only by their wallet address, not personal
-                details.
-              </li>
-              <li>No bank or payment processor stores your private data.</li>
-              <li>
-                This pseudonymity appeals to users who want to keep their
-                purchases private or avoid surveillance.
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div
-          class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12"
-        >
-          <div class="w-full md:w-2/3 p-6 md:p-10">
-            <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
-              Speed and Global Accessibility
-            </h2>
-            <p class="page-sub mb-6">
-              Unlike traditional banks, which may take hours or days to process
-              payments—especially across borders—crypto transactions can settle
-              in minutes, 24/7, including weekends and holidays.
-            </p>
-            <h3 class="text-lg font-semibold text-black mb-3">
-              Crypto solves this by being:
-            </h3>
-            <ul class="list-disc ml-6 space-y-2 page-sub">
-              <li>
-                Always online: Transactions are processed 24/7, even on
-                holidays.
-              </li>
-              <li>
-                Fast: Bitcoin payments take 10–60 minutes; other
-                cryptocurrencies (like Litecoin or Solana) can be instant.
-              </li>
-              <li>
-                Global: Crypto doesn’t care where you or the receiver are. You
-                can send funds to someone across the world in seconds.
-              </li>
-            </ul>
-          </div>
-          <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
-            <img
-              src="/assets/images/blog-five/cryptocurrency-payment-two.png"
-              alt=""
-              class="w-full h-auto"
-            />
-          </div>
-        </div>
-        <div
-          class="container mx-auto px-4 py-4 flex flex-col md:flex-row items-center justify-between gap-12"
-        >
-          <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
-            <img
-              src="/assets/images/blog-five/cryptocurrency-payment-three.png"
-              alt=""
-              class="w-full h-auto"
-            />
-          </div>
-          <div class="w-full md:w-2/3 p-6 md:p-10">
-            <h2 class="text-xl md:text-3xl font-bold page-main mb-4">
-              Freedom from Banks and Intermediaries
-            </h2>
-            <p class="page-sub mb-6">
-              Many customers—especially in countries with unstable banking
-              systems or strict financial controls—see crypto as a form of
-              financial freedom:
-            </p>
-            <h3 class="text-lg font-semibold text-black mb-3">
-              Crypto solves this by being:
-            </h3>
-            <ul class="list-disc ml-6 space-y-2 page-sub">
-              <li>No need to open or rely on a bank account.</li>
-              <li>No risk of accounts being frozen, seized, or restricted.</li>
-              <li>No gatekeeping from payment providers or governments.</li>
-            </ul>
-          </div>
+          <p class="page-sub mb-6">
+            Many customers—especially in countries with unstable banking
+            systems or strict financial controls—see crypto as a form of
+            financial freedom:
+          </p>
+          <h3 class="text-lg font-semibold text-black mb-3">
+            Crypto solves this by being:
+          </h3>
+          <ul class="list-disc ml-6 space-y-2 page-sub">
+            <li>No need to open or rely on a bank account.</li>
+            <li>No risk of accounts being frozen, seized, or restricted.</li>
+            <li>No gatekeeping from payment providers or governments.</li>
+          </ul>
         </div>
       </div>
-    </section>
-    <!--Accepting Crypto section-->
-    <section class="py-6 lg:py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2
-            class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto"
-          >
-            <span class="page-accent">he Business Advantage of </span>
-            <span class="page-main">Accepting Crypto Payments</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Reduce processing fees, eliminate chargebacks, and enjoy faster
-              settlements—designed to improve restaurant profitability and cash
-              flow.
-            </p>
-          </div>
-        </div>
-
-        <div class="w-full mx-auto p-8">
-          <div class="flex space-x-2 mb-8 bg-gray-100 p-1 rounded-full w-fit">
-            <button
-              id="tab-permissions"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-black page-main"
-              data-target="content-permissions"
-            >
-              Credit Cards
-            </button>
-            <button
-              id="tab-audit"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
-              data-target="content-audit"
-            >
-              No Chargebacks
-            </button>
-            <button
-              id="tab-reports"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
-              data-target="content-reports"
-            >
-              Fast Settlement
-            </button>
-          </div>
-
-          <div class="flex flex-col md:flex-row gap-8">
-            <div class="md:w-2/3">
-              <div
-                id="content-permissions"
-                class="tab-content active-content space-y-4"
-              >
-                <h2 class="text-lg font-bold mt-6">Lower Transaction Fees</h2>
-                <p class="page-sub">
-                  Credit card payments typically come with processing fees
-                  ranging from 2% to 4% per transaction. For high-volume
-                  restaurants, these fees add up quickly and eat into already
-                  tight profit margins.
-                </p>
-
-                <h3 class="text-lg font-bold mt-6">With cryptocurrency:</h3>
-                <ul class="list-none space-y-3 px-2 page-sub">
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Transaction fees are often under 1%, and in some cases,
-                        nearly zero.</span
-                      >
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >No intermediary banks or processors means fewer parties
-                        taking a cut.</span
-                      >
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Restaurants keep more of their revenue, especially on
-                        large or frequent transactions.</span
-                      >
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-              <div id="content-audit" class="tab-content hidden space-y-4">
-                <p class="page-sub">
-                  An audit trail is a detailed log of every action taken in the
-                  POS system—who did what, when, and from which terminal. This
-                  includes voids, discounts, no-sale drawer openings, deleted
-                  items, and more.
-                </p>
-
-                <h3 class="text-lg font-bold mt-6">How it helps:</h3>
-                <ul class="list-none space-y-3 px-2 page-sub">
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Provides a clear record of employee activity.</span
-                      >
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Helps identify patterns linked to theft,</span
-                      >
-                      like repeated voids or excessive discounts.
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold">Builds accountability</span
-                      >—employees are less likely to steal if they know their
-                      actions are tracked.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-
-              <div id="content-reports" class="tab-content hidden space-y-4">
-                <p class="page-sub">
-                  End-of-shift reports give managers a snapshot of key metrics
-                  like total sales, cash collected, number of voids, discounts
-                  applied, and drawer over/short amounts. These can be broken
-                  down by employee.
-                </p>
-
-                <h3 class="text-lg font-bold mt-6">How it helps:</h3>
-                <ul class="list-none space-y-3 px-2 page-sub">
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Makes it easy to spot red flags</span
-                      >
-                      at the end of each shift.
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Helps compare staff performance</span
-                      >
-                      and identify anomalies.
-                    </p>
-                  </li>
-                  <li class="flex items-start">
-                    <span
-                      class="text-2xl leading-none mr-2 font-light page-sub"
-                      >&bull;</span
-                    >
-                    <p>
-                      <span class="font-semibold"
-                        >Supports quick resolution</span
-                      >
-                      of cash drawer discrepancies.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div class="md:w-1/3 p-6 border border-gray-200 rounded-xl">
-              <form class="space-y-6">
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Enter your name here"
-                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Enter your email here"
-                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Business name"
-                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Phone no."
-                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Product you want"
-                    class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Have any question?"
-                    rows="4"
-                    class="w-full border bg-transparent border-gray-300 focus:border-black focus:outline-none p-3 text-sm page-main placeholder-gray-400 rounded-lg"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  class="w-full py-2 text-sm font-bold text-black tracking-widest hover:underline no-bg"
-                >
-                  CONNECT TO US
-                </button>
-              </form>
-            </div>
-          </div>
+    </div>
+  </section>
+  <!--Accepting Crypto section-->
+  <section class="py-6 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto">
+          <span class="page-accent">he Business Advantage of </span>
+          <span class="page-main">Accepting Crypto Payments</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Reduce processing fees, eliminate chargebacks, and enjoy faster
+            settlements—designed to improve restaurant profitability and cash
+            flow.
+          </p>
         </div>
       </div>
-    </section>
-    <!--Food and Hospitality section-->
-    <section class="py-6 lg:py-20">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2
-            class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto"
-          >
-            <span class="page-accent">Rising Crypto Adoption in the </span>
-            <span class="page-main">Food and Hospitality Industry</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              As digital payments evolve, more restaurants and hospitality
-              businesses are adopting cryptocurrency to enhance customer
-              experience, reduce costs, and stay competitive.
-            </p>
-          </div>
+
+      <div class="w-full mx-auto p-8">
+        <div class="flex space-x-2 mb-8 bg-gray-100 p-1 rounded-full w-fit">
+          <button id="tab-permissions"
+            class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-black page-main"
+            data-target="content-permissions">
+            Credit Cards
+          </button>
+          <button id="tab-audit"
+            class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
+            data-target="content-audit">
+            No Chargebacks
+          </button>
+          <button id="tab-reports"
+            class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-main hover:bg-gray-200"
+            data-target="content-reports">
+            Fast Settlement
+          </button>
         </div>
-        <div class="container mx-auto p-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            <div
-              class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
-            >
-              <h2 class="text-xl font-bold page-main">
-                Major Brands Are Leading the Way
-              </h2>
-              <ul class="list-none space-y-3 px-2 page-sub text-left">
+
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="md:w-2/3">
+            <div id="content-permissions" class="tab-content active-content space-y-4">
+              <h2 class="text-lg font-bold mt-6">Lower Transaction Fees</h2>
+              <p class="page-sub">
+                Credit card payments typically come with processing fees
+                ranging from 2% to 4% per transaction. For high-volume
+                restaurants, these fees add up quickly and eat into already
+                tight profit margins.
+              </p>
+
+              <h3 class="text-lg font-bold mt-6">With cryptocurrency:</h3>
+              <ul class="list-none space-y-3 px-2 page-sub">
                 <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
                   <p>
-                    Starbucks allows customers to pay with Bitcoin via
-                    third-party apps like Bakkt.
+                    <span class="font-semibold">Transaction fees are often under 1%, and in some cases,
+                      nearly zero.</span>
                   </p>
                 </li>
                 <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
                   <p>
-                    Chipotle has run crypto promotions and accepts digital
-                    currency through platforms like Flexa.
+                    <span class="font-semibold">No intermediary banks or processors means fewer parties
+                      taking a cut.</span>
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                  <p>
+                    <span class="font-semibold">Restaurants keep more of their revenue, especially on
+                      large or frequent transactions.</span>
                   </p>
                 </li>
               </ul>
             </div>
-            <div
-              class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-left text-center space-y-4"
-            >
-              <h2 class="text-xl font-bold page-main">
-                Independent Restaurants and Cafés Are Joining In
-              </h2>
-              <h3 class="text-[15px] font-bold page-main text-left">
-                Small and mid-sized food businesses are adopting crypto to:
-              </h3>
-              <ul class="list-none space-y-3 px-2 page-sub text-left">
-                <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
-                  <p>Cut processing costs</p>
-                </li>
-                <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub "
-                    >&bull;</span
-                  >
-                  <p>Appeal to tech-savvy clientele</p>
-                </li>
-                <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
-                  <p>Stand out in competitive markets</p>
-                </li>
-              </ul>
-            </div>
-            <div
-              class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
-            >
-              <h2 class="text-xl font-bold page-main">
-                Hotels and Resorts Accepting Crypto
-              </h2>
 
-              <h3 class="text-[15px] font-bold page-main text-left">
-                Hospitality is another fast-growing space for crypto:
-              </h3>
+            <div id="content-audit" class="tab-content hidden space-y-4">
+              <p class="page-sub">
+                An audit trail is a detailed log of every action taken in the
+                POS system—who did what, when, and from which terminal. This
+                includes voids, discounts, no-sale drawer openings, deleted
+                items, and more.
+              </p>
 
-              <ul class="list-none space-y-3 px-2 page-sub text-left">
+              <h3 class="text-lg font-bold mt-6">How it helps:</h3>
+              <ul class="list-none space-y-3 px-2 page-sub">
                 <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
                   <p>
-                    Boutique hotels, especially in crypto-friendly destinations,
-                    now allow guests to book stays using Bitcoin or other
-                    cryptocurrencies.
+                    <span class="font-semibold">Provides a clear record of employee activity.</span>
                   </p>
                 </li>
                 <li class="flex items-start">
-                  <span
-                    class="text-2xl leading-none mr-2 font-light page-sub"
-                    >&bull;</span
-                  >
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
                   <p>
-                    Luxury resorts and travel providers are tapping into wealthy
-                    crypto holders who prefer to use their digital assets while
-                    traveling.
+                    <span class="font-semibold">Helps identify patterns linked to theft,</span>
+                    like repeated voids or excessive discounts.
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                  <p>
+                    <span class="font-semibold">Builds accountability</span>—employees are less likely to steal if they
+                    know their
+                    actions are tracked.
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div id="content-reports" class="tab-content hidden space-y-4">
+              <p class="page-sub">
+                End-of-shift reports give managers a snapshot of key metrics
+                like total sales, cash collected, number of voids, discounts
+                applied, and drawer over/short amounts. These can be broken
+                down by employee.
+              </p>
+
+              <h3 class="text-lg font-bold mt-6">How it helps:</h3>
+              <ul class="list-none space-y-3 px-2 page-sub">
+                <li class="flex items-start">
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                  <p>
+                    <span class="font-semibold">Makes it easy to spot red flags</span>
+                    at the end of each shift.
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                  <p>
+                    <span class="font-semibold">Helps compare staff performance</span>
+                    and identify anomalies.
+                  </p>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                  <p>
+                    <span class="font-semibold">Supports quick resolution</span>
+                    of cash drawer discrepancies.
                   </p>
                 </li>
               </ul>
             </div>
           </div>
+
+          <div class="md:w-1/3 p-6 border border-gray-200 rounded-xl">
+            <form class="space-y-6">
+              <div>
+                <input type="text" placeholder="Enter your name here"
+                  class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400" />
+              </div>
+              <div>
+                <input type="email" placeholder="Enter your email here"
+                  class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400" />
+              </div>
+              <div>
+                <input type="text" placeholder="Business name"
+                  class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400" />
+              </div>
+              <div>
+                <input type="tel" placeholder="Phone no."
+                  class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400" />
+              </div>
+              <div>
+                <input type="text" placeholder="Product you want"
+                  class="w-full border-b bg-transparent border-gray-300 focus:border-black focus:outline-none pb-2 text-sm page-main placeholder-gray-400" />
+              </div>
+              <div>
+                <textarea placeholder="Have any question?" rows="4"
+                  class="w-full border bg-transparent border-gray-300 focus:border-black focus:outline-none p-3 text-sm page-main placeholder-gray-400 rounded-lg"></textarea>
+              </div>
+              <button type="submit"
+                class="w-full py-2 text-sm font-bold text-black tracking-widest hover:underline no-bg">
+                CONNECT TO US
+              </button>
+            </form>
+          </div>
         </div>
       </div>
-    </section>
-    <!--last slider-->
-    <section class="bg-white py-16">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2
-            class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto"
-          >
-            <span class="text-[#4f4f4f]">Seamless Bitcoin </span>
-            <span class="text-black">Integration with TequilaPOS</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center text-[#4f4f4f] md:text-[15px] text-[10px] font-normal"
-            >
-              Accept crypto payments effortlessly—TequilaPOS handles the
-              technology so your staff doesn’t need to. No technical expertise
-              required.
-            </p>
-          </div>
+    </div>
+  </section>
+  <!--Food and Hospitality section-->
+  <section class="py-6 lg:py-20">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto">
+          <span class="page-accent">Rising Crypto Adoption in the </span>
+          <span class="page-main">Food and Hospitality Industry</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            As digital payments evolve, more restaurants and hospitality
+            businesses are adopting cryptocurrency to enhance customer
+            experience, reduce costs, and stay competitive.
+          </p>
         </div>
-        <section id="main-slider-two" class="splide" aria-label="Splide Slider">
-          <div class="splide__track">
-            <ul class="splide__list">
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
-                    <h1
-                      class="justify-start text-black md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Built-In Bitcoin Payment Support
-                    </h1>
-
-                    <p
-                      class="md:w-[808px] text-black text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4"
-                    >
-                      TequilaPOS comes with native integration for Bitcoin and
-                      other cryptocurrencies. That means no third-party hardware
-                      or complicated setup—it's already part of your POS system.
-                    </p>
-                    <ul
-                      class="list-none space-y-3 px-2 page-sub text-left"
-                    >
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          Accept Bitcoin right from the same screen you take
-                          cash or card payments.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          The system automatically detects the payment type and
-                          processes it through your pre-connected crypto wallet
-                          or payment processor.
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/blog-five/blog-five-last slider.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
-                    <h1
-                      class="justify-start text-black md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Easy, Guided Checkout for Staff
-                    </h1>
-
-                    <p
-                      class="md:w-[808px] text-black text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4"
-                    >
-                      When a customer wants to pay with Bitcoin:
-                    </p>
-                    <ul
-                      class="list-none space-y-3 px-2 page-sub text-left"
-                    >
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          The staff simply selects "Bitcoin" on the payment
-                          screen.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          A QR code is instantly generated on the POS or
-                          customer-facing display.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub "
-                          >&bull;</span
-                        >
-                        <p>
-                          The customer scans it with their crypto wallet and
-                          confirms the payment.
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/blog-five/blog-five-last slider-two.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
-                    <h1
-                      class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Real-Time Confirmation and Receipts
-                    </h1>
-
-                    <p
-                      class="lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4"
-                    >
-                      TequilaPOS tracks each payment in real time:
-                    </p>
-                    <ul
-                      class="list-none space-y-3 px-2 page-sub text-left"
-                    >
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          Once the transaction is confirmed on the blockchain
-                          (usually in seconds to a few minutes), the receipt is
-                          automatically printed or emailed.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          The payment is logged just like any cash or card
-                          sale—no extra steps.
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/blog-five/blog-five-last slider-three.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
-                    <h1
-                      class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Full Reporting and Accounting Integration
-                    </h1>
-
-                    <p
-                      class="lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4"
-                    >
-                      Crypto payments are included in:
-                    </p>
-                    <ul
-                      class="list-none space-y-3 px-2 page-sub text-left"
-                    >
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>Daily sales summaries</p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>Shift reports</p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>Tax and accounting exports</p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/blog-five/blog-five-last slider-four.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-              <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
-                    <h1
-                      class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
-                    >
-                      Staff Training Not Required
-                    </h1>
-
-                    <p
-                      class="lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4"
-                    >
-                      Because TequilaPOS handles the technical backend:
-                    </p>
-                    <ul
-                      class="list-none space-y-3 px-2 page-sub text-left"
-                    >
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          No staff training is required beyond knowing which
-                          button to press.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          The process is as simple as taking a card payment.
-                        </p>
-                      </li>
-                      <li class="flex items-start">
-                        <span
-                          class="text-2xl leading-none mr-2 font-light page-sub"
-                          >&bull;</span
-                        >
-                        <p>
-                          Built-in help prompts and tooltips ensure staff always
-                          know what to do.
-                        </p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="col-span-1 md:col-span-4">
-                    <img
-                      src="/assets/images/blog-five/blog-five-last slider-five.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </section>
       </div>
-    </section>
-    <!-- Footer -->
-    <footer class="py-10">
-      <div class="container mx-auto px-4">
-        <!-- Top Logo + Switch -->
-         <div
-          class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center"
-        >
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="w-10 md:w-40 h-auto logo-light"
-            alt=""
-          />
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-            class="w-10 md:w-40 h-auto logo-dark"
-            alt=""
-          />
-
-          <div class="flex items-center space-x-2">
-            <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
-              Switch to dark mode
-            </p>
-
-            <!-- Toggle Switch -->
-            <label
-              for="dark-mode-toggle"
-              class="relative inline-flex items-center cursor-pointer"
-            >
-              <label for="dark-mode-toggle" class="sr-only"
-                >Toggle dark mode</label
-              >
-              <input
-                type="checkbox"
-                id="dark-mode-toggle"
-                class="sr-only peer"
-                title="Toggle dark mode"
-                placeholder="Toggle dark mode"
-              />
-              <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
-              <div class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]"></div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div class="border-t border-gray-300 pt-6">
+      <div class="container mx-auto p-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
           <div
-            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12"
-          >
-            <!-- Company -->
-            <div>
-              <!-- Accordion Header Button -->
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="company-links"
-                onclick="toggleAccordion(this)"
-              >
-                Company
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
+            class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4">
+            <h2 class="text-xl font-bold page-main">
+              Major Brands Are Leading the Way
+            </h2>
+            <ul class="list-none space-y-3 px-2 page-sub text-left">
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>
+                  Starbucks allows customers to pay with Bitcoin via
+                  third-party apps like Bakkt.
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>
+                  Chipotle has run crypto promotions and accepts digital
+                  currency through platforms like Flexa.
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-left text-center space-y-4">
+            <h2 class="text-xl font-bold page-main">
+              Independent Restaurants and Cafés Are Joining In
+            </h2>
+            <h3 class="text-[15px] font-bold page-main text-left">
+              Small and mid-sized food businesses are adopting crypto to:
+            </h3>
+            <ul class="list-none space-y-3 px-2 page-sub text-left">
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>Cut processing costs</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub ">&bull;</span>
+                <p>Appeal to tech-savvy clientele</p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>Stand out in competitive markets</p>
+              </li>
+            </ul>
+          </div>
+          <div
+            class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4">
+            <h2 class="text-xl font-bold page-main">
+              Hotels and Resorts Accepting Crypto
+            </h2>
 
-              <!-- Links Container -->
-              <div
-                id="company-links"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="about.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >About Us</a
-                >
-                <a
-                  href="contact.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Contact Us</a
-                >
-                <a
-                  href="hardware.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Hardware</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Terms of Service</a
-                >
-                <a
-                  href="privacy-policy.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Privacy Policy</a
-                >
+            <h3 class="text-[15px] font-bold page-main text-left">
+              Hospitality is another fast-growing space for crypto:
+            </h3>
+
+            <ul class="list-none space-y-3 px-2 page-sub text-left">
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>
+                  Boutique hotels, especially in crypto-friendly destinations,
+                  now allow guests to book stays using Bitcoin or other
+                  cryptocurrencies.
+                </p>
+              </li>
+              <li class="flex items-start">
+                <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                <p>
+                  Luxury resorts and travel providers are tapping into wealthy
+                  crypto holders who prefer to use their digital assets while
+                  traveling.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--last slider-->
+  <section class="py-16">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl md:leading-[46px] max-w-[677px] mx-auto">
+          <span class="page-accent">Seamless Bitcoin </span>
+          <span class="page-main">Integration with TequilaPOS</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Accept crypto payments effortlessly—TequilaPOS handles the
+            technology so your staff doesn’t need to. No technical expertise
+            required.
+          </p>
+        </div>
+      </div>
+      <section id="main-slider-two" class="splide" aria-label="Splide Slider">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide relative px-10 md:px-0">
+              <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <h1
+                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    Built-In Bitcoin Payment Support
+                  </h1>
+
+                  <p
+                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    TequilaPOS comes with native integration for Bitcoin and
+                    other cryptocurrencies. That means no third-party hardware
+                    or complicated setup—it's already part of your POS system.
+                  </p>
+                  <ul class="list-none space-y-3 px-2 page-sub text-left">
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        Accept Bitcoin right from the same screen you take
+                        cash or card payments.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        The system automatically detects the payment type and
+                        processes it through your pre-connected crypto wallet
+                        or payment processor.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <img src="/assets/images/blog-five/blog-five-last slider.png" alt="Built-In Bitcoin Payment Support" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
+                </div>
               </div>
+            </li>
+
+            <li class="splide__slide relative px-10 md:px-0">
+              <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <h1
+                    class="justify-start text-black md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    Easy, Guided Checkout for Staff
+                  </h1>
+
+                  <p
+                    class="w-full lg:w-[808px] text-black text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    When a customer wants to pay with Bitcoin:
+                  </p>
+                  <ul class="list-none space-y-3 px-2 page-sub text-left">
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        The staff simply selects "Bitcoin" on the payment
+                        screen.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        A QR code is instantly generated on the POS or
+                        customer-facing display.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub ">&bull;</span>
+                      <p>
+                        The customer scans it with their crypto wallet and
+                        confirms the payment.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <img src="/assets/images/blog-five/blog-five-last slider-two.png" alt="Guided Checkout" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
+                </div>
+              </div>
+            </li>
+
+            <li class="splide__slide relative px-10 md:px-0">
+              <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <h1
+                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    Real-Time Confirmation and Receipts
+                  </h1>
+
+                  <p
+                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    TequilaPOS tracks each payment in real time:
+                  </p>
+                  <ul class="list-none space-y-3 px-2 page-sub text-left">
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        Once the transaction is confirmed on the blockchain
+                        (usually in seconds to a few minutes), the receipt is
+                        automatically printed or emailed.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        The payment is logged just like any cash or card
+                        sale—no extra steps.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <img src="/assets/images/blog-five/blog-five-last slider-three.png" alt="Real-Time Confirmation" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide relative px-10 md:px-0">
+              <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <h1
+                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    Full Reporting and Accounting Integration
+                  </h1>
+
+                  <p
+                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    Crypto payments are included in:
+                  </p>
+                  <ul class="list-none space-y-3 px-2 page-sub text-left">
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>Daily sales summaries</p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>Shift reports</p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>Tax and accounting exports</p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <img src="/assets/images/blog-five/blog-five-last slider-four.png" alt="Accounting Integration" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
+                </div>
+              </div>
+            </li>
+            <li class="splide__slide relative px-10 md:px-0">
+              <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
+                <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <h1
+                    class="justify-start page-main md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]">
+                    Staff Training Not Required
+                  </h1>
+
+                  <p
+                    class="w-full lg:w-[808px] page-main text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10 mb-2 md:mb-4">
+                    Because TequilaPOS handles the technical backend:
+                  </p>
+                  <ul class="list-none space-y-3 px-2 page-sub text-left">
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        No staff training is required beyond knowing which
+                        button to press.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        The process is as simple as taking a card payment.
+                      </p>
+                    </li>
+                    <li class="flex items-start">
+                      <span class="text-2xl leading-none mr-2 font-light page-sub">&bull;</span>
+                      <p>
+                        Built-in help prompts and tooltips ensure staff always
+                        know what to do.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <img src="/assets/images/blog-five/blog-five-last slider-five.png" alt="Staff Training" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="py-10">
+    <div class="container mx-auto px-4">
+      <!-- Top Logo + Switch -->
+      <div class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center">
+        <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="w-10 md:w-40 h-auto logo-light" alt="" />
+        <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="w-10 md:w-40 h-auto logo-dark"
+          alt="" />
+
+        <div class="flex items-center space-x-2">
+          <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
+            Switch to dark mode
+          </p>
+
+          <!-- Toggle Switch -->
+          <label for="dark-mode-toggle" class="relative inline-flex items-center cursor-pointer">
+            <label for="dark-mode-toggle" class="sr-only">Toggle dark mode</label>
+            <input type="checkbox" id="dark-mode-toggle" class="sr-only peer" title="Toggle dark mode"
+              placeholder="Toggle dark mode" />
+            <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
+            <div
+              class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]">
             </div>
+          </label>
+        </div>
+      </div>
 
-            <!-- Products -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="products"
-                onclick="toggleAccordion(this)"
-              >
-                Products
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="products"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="/a920.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX A920</a
-                >
-                <a
-                  href="/a35-android.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX A35</a
-                >
-                <a
-                  href="/magtek.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >MagTek DynaFlex</a
-                >
-                <a
-                  href="/elys-workstation.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX Elys Workstation</a
-                >
-              </div>
-            </div>
+      <!-- Links -->
+      <div class="border-t border-gray-300 pt-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12">
+          <!-- Company -->
+          <div>
+            <!-- Accordion Header Button -->
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="company-links" onclick="toggleAccordion(this)">
+              Company
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
 
-            <!-- Resources -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="resources"
-                onclick="toggleAccordion(this)"
-              >
-                Resources
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="resources"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Product Guides & Tutorials</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Video Tutorials</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >FAQs</a
-                >
-              </div>
-            </div>
-
-            <!-- Legal -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="legal"
-                onclick="toggleAccordion(this)"
-              >
-                Legal
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="legal"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="privacy-policy.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Privacy Policy</a
-                >
-                <a
-                  href="terms-and-conditions.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Terms & Condition</a
-                >
-              </div>
-            </div>
-
-            <!-- Social -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="social"
-                onclick="toggleAccordion(this)"
-              >
-                Social
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="social"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Twitter</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Instagram</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Facebook</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Youtube</a
-                >
-              </div>
+            <!-- Links Container -->
+            <div id="company-links"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="about.html" class="text-gray-500 hover:text-gray-800 transition-colors block">About Us</a>
+              <a href="contact.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Contact Us</a>
+              <a href="hardware.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Hardware</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Terms of Service</a>
+              <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy
+                Policy</a>
             </div>
           </div>
 
-          <!-- Subscribe -->
-          <div class="border-t border-gray-300 pt-6">
-            <div
-              class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-            >
-              <div>
-                <h4
-                  class="font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-2"
-                >
+          <!-- Products -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="products" onclick="toggleAccordion(this)">
+              Products
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="products"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="/a920.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX A920</a>
+              <a href="/a35-android.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX A35</a>
+              <a href="/magtek.html" class="text-gray-500 hover:text-gray-800 transition-colors block">MagTek
+                DynaFlex</a>
+              <a href="/elys-workstation.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX
+                Elys Workstation</a>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="resources" onclick="toggleAccordion(this)">
+              Resources
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="resources"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Product Guides &
+                Tutorials</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Video Tutorials</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">FAQs</a>
+            </div>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="legal" onclick="toggleAccordion(this)">
+              Legal
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="legal"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy
+                Policy</a>
+              <a href="terms-and-conditions.html"
+                class="text-gray-500 hover:text-gray-800 transition-colors block">Terms & Condition</a>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="social" onclick="toggleAccordion(this)">
+              Social
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="social"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Twitter</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Instagram</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Facebook</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Youtube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="border-t border-gray-300 pt-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h4 class="font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-2">
+                Subscribe
+              </h4>
+              <p class="text-gray-500 text-sm sm:text-base mb-1">
+                Join our community to receive updates
+              </p>
+            </div>
+            <div>
+              <p class="text-gray-800 text-xs ps-3 pb-1">Stay up to date</p>
+              <div class="flex w-full sm:w-auto">
+                <input type="email" placeholder="Enter your email"
+                  class="bg-gray-100 h-9 rounded-l-full px-4 w-full sm:w-64 text-gray-600 text-base border-0 outline-none" />
+                <button
+                  class="bg-black h-9 rounded-r-full px-6 text-white text-base hover:bg-gray-800 transition-colors">
                   Subscribe
-                </h4>
-                <p class="text-gray-500 text-sm sm:text-base mb-1">
-                  Join our community to receive updates
-                </p>
-              </div>
-              <div>
-                <p class="text-gray-800 text-xs ps-3 pb-1">Stay up to date</p>
-                <div class="flex w-full sm:w-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    class="bg-gray-100 h-9 rounded-l-full px-4 w-full sm:w-64 text-gray-600 text-base border-0 outline-none"
-                  />
-                  <button
-                    class="bg-black h-9 rounded-r-full px-6 text-white text-base hover:bg-gray-800 transition-colors"
-                  >
-                    Subscribe
-                  </button>
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Splide JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/footer-accordion.js"></script>
-    <script src="../assets/js/videoPlay.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // 1. Initialize Splide
-        var splide = new Splide("#main-slider-two", {
-          type: "slide", // Use 'slide' for simple progression (no loop)
-          rewind: false, // Disable rewind to keep the progress bar accurate
-          arrows: true, // Keep the arrows for navigation (we will style them)
-          pagination: false, // Explicitly hide the default Splide dots
-          speed: 500, // Match the transition speed to the CSS transition
-        });
-
-        // 2. Select the progress bar element
-        var bar = splide.root.querySelector(".my-slider-progress-bar");
-
-        // 3. Attach the event listener to update the bar width
-        splide.on("mounted move", function () {
-          // Get the last index of the slides
-          var end = splide.Components.Controller.getEnd() + 1;
-
-          // Calculate the percentage: (current index + 1) / total slides * 100
-          var percentage = String((100 * (splide.index + 1)) / end) + "%";
-
-          // Apply the calculated width to the progress bar element
-          bar.style.width = percentage;
-        });
-
-        // 4. Mount the slider to start it
-        splide.mount();
-      });
-      document.addEventListener("DOMContentLoaded", () => {
-        const slider = document.getElementById("slider-container");
-        const nextButton = document.getElementById("next-button");
-        const prevButton = document.getElementById("prev-button");
-        const slideWidth = slider.querySelector("div").offsetWidth;
-
-        nextButton.addEventListener("click", () => {
-          slider.scrollBy({ left: slideWidth, behavior: "smooth" });
-        });
-
-        prevButton.addEventListener("click", () => {
-          slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
-        });
+  <!-- Splide JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/footer-accordion.js"></script>
+  <script src="../assets/js/videoPlay.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // 1. Initialize Splide
+      var splide = new Splide("#main-slider-two", {
+        type: "slide", // Use 'slide' for simple progression (no loop)
+        rewind: false, // Disable rewind to keep the progress bar accurate
+        arrows: true, // Keep the arrows for navigation (we will style them)
+        pagination: false, // Explicitly hide the default Splide dots
+        speed: 500, // Match the transition speed to the CSS transition
       });
 
-      document.addEventListener("DOMContentLoaded", () => {
-        const tabButtons = document.querySelectorAll(".tab-button");
-        const tabContents = document.querySelectorAll(".tab-content");
+      // 2. Select the progress bar element
+      var bar = splide.root.querySelector(".my-slider-progress-bar");
 
-        // Function to handle tab clicks
-        const switchTab = (button) => {
-          const targetId = button.getAttribute("data-target");
+      // 3. Attach the event listener to update the bar width
+      splide.on("mounted move", function () {
+        // Get the last index of the slides
+        var end = splide.Components.Controller.getEnd() + 1;
 
-          // 1. Update Button Styles
-          tabButtons.forEach((btn) => {
-            btn.classList.remove("bg-black", "text-white");
-            btn.classList.add("text-gray-700", "hover:bg-gray-200");
-          });
+        // Calculate the percentage: (current index + 1) / total slides * 100
+        var percentage = String((100 * (splide.index + 1)) / end) + "%";
 
-          button.classList.add("bg-black", "text-white");
-          button.classList.remove("text-gray-700", "hover:bg-gray-200");
+        // Apply the calculated width to the progress bar element
+        bar.style.width = percentage;
+      });
 
-          // 2. Switch Content Visibility
-          tabContents.forEach((content) => {
-            content.classList.add("hidden");
-            content.classList.remove("active-content");
-          });
+      // 4. Mount the slider to start it
+      splide.mount();
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+      const slider = document.getElementById("slider-container");
+      const nextButton = document.getElementById("next-button");
+      const prevButton = document.getElementById("prev-button");
+      const slideWidth = slider.querySelector("div").offsetWidth;
 
-          const targetContent = document.getElementById(targetId);
-          if (targetContent) {
-            targetContent.classList.remove("hidden");
-            targetContent.classList.add("active-content");
-          }
-        };
+      nextButton.addEventListener("click", () => {
+        slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+      });
 
-        // Attach event listener to all tab buttons
-        tabButtons.forEach((button) => {
-          button.addEventListener("click", () => switchTab(button));
+      prevButton.addEventListener("click", () => {
+        slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
+      });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabButtons = document.querySelectorAll(".tab-button");
+      const tabContents = document.querySelectorAll(".tab-content");
+
+      // Function to handle tab clicks
+      const switchTab = (button) => {
+        const targetId = button.getAttribute("data-target");
+
+        // 1. Update Button Styles
+        tabButtons.forEach((btn) => {
+          btn.classList.remove("bg-black", "text-white");
+          btn.classList.add("text-gray-700", "hover:bg-gray-200");
         });
 
-        // Initialize the first tab (User Permissions) as active
-        const initialTab = document.getElementById("tab-permissions");
-        if (initialTab) {
-          switchTab(initialTab);
+        button.classList.add("bg-black", "text-white");
+        button.classList.remove("text-gray-700", "hover:bg-gray-200");
+
+        // 2. Switch Content Visibility
+        tabContents.forEach((content) => {
+          content.classList.add("hidden");
+          content.classList.remove("active-content");
+        });
+
+        const targetContent = document.getElementById(targetId);
+        if (targetContent) {
+          targetContent.classList.remove("hidden");
+          targetContent.classList.add("active-content");
         }
+      };
+
+      // Attach event listener to all tab buttons
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => switchTab(button));
       });
 
-      function toggleFaq(element) {
-        element.classList.toggle("active");
+      // Initialize the first tab (User Permissions) as active
+      const initialTab = document.getElementById("tab-permissions");
+      if (initialTab) {
+        switchTab(initialTab);
+      }
+    });
+
+    function toggleFaq(element) {
+      element.classList.toggle("active");
+    }
+
+    let isEnglish = true;
+
+    function toggleLanguage() {
+      const textEl = document.getElementById("language-text");
+      const flagEl = document.getElementById("flag-icon");
+
+      if (isEnglish) {
+        textEl.textContent = "ESPAÑOL";
+        flagEl.src = "/assets/images/flags/espan.png"; // your Spain flag
+        flagEl.alt = "Spain Flag";
+      } else {
+        textEl.textContent = "ENGLISH";
+        flagEl.src = "/assets/images/flags/usa.png";
+        flagEl.alt = "USA Flag";
       }
 
-      let isEnglish = true;
+      isEnglish = !isEnglish; // flip state
+    }
+  </script>
+</body>
 
-      function toggleLanguage() {
-        const textEl = document.getElementById("language-text");
-        const flagEl = document.getElementById("flag-icon");
-
-        if (isEnglish) {
-          textEl.textContent = "ESPAÑOL";
-          flagEl.src = "/assets/images/flags/espan.png"; // your Spain flag
-          flagEl.alt = "Spain Flag";
-        } else {
-          textEl.textContent = "ENGLISH";
-          flagEl.src = "/assets/images/flags/usa.png";
-          flagEl.alt = "USA Flag";
-        }
-
-        isEnglish = !isEnglish; // flip state
-      }
-    </script>
-  </body>
 </html>
