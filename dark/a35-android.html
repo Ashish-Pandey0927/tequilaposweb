@@ -22,7 +22,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/assets/style/dark.css" />
-  </head>
+    <style>
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2 {
+        line-height: 1.4 !important;
+      }
+    }
+  </style>
+</head>
   <body class="bg-[#1C1C1C] font-inter text-sm">
     <nav class="navbar md:block hidden">
       <div class="navbar-container container mx-auto">

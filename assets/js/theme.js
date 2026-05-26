@@ -85,10 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
 // This ensures that the desktop navbar shows on all laptops (13-inch, 15-inch, etc) 
 // instead of the hamburger menu.
 window.tailwind = {
-  theme: {
-    extend: {
-      screens: {
-        'xl': '1024px',
+  config: {
+    theme: {
+      extend: {
+        screens: {
+          'xl': '1024px',
+        }
       }
     }
   }

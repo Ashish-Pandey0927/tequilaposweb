@@ -435,7 +435,14 @@
     footer {
       transition: all 0.4s ease;
     }
-  </style>
+  
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2 {
+        line-height: 1.4 !important;
+      }
+    }
+</style>
 
   <style>
     /* ---- Light defaults ---- */

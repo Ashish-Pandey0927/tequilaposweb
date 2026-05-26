@@ -96,7 +96,14 @@
       /* Feature section icons */
       .feature-icon-color { color: #505050; }
       html.dark .feature-icon-color { color: #c98366 !important; }
-    </style>
+    
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2 {
+        line-height: 1.4 !important;
+      }
+    }
+</style>
   </head>
   <body class="font-inter text-sm">
     <!-- Navigation -->
