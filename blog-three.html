@@ -905,21 +905,16 @@
           <div class="absolute -bottom-0 md:-bottom-[.5rem]  left-8 z-10">
             <div class="splide__arrows flex w-auto space-x-4">
               <button
-                class="splide__arrow splide__arrow--prev text-4xl bg-slate-300 page-accent hover:text-gray-900 transition"
+                class="splide__arrow splide__arrow--prev flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Previous Slide"
               >
-                <span class="material-symbols-outlined">
-arrow_back
-</span>
+                <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
               </button>
               <button
-                class="splide__arrow splide__arrow--next 
-                 md:text-4xl text-2xl page-accent hover:text-gray-900 transition"
+                class="splide__arrow splide__arrow--next flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
                 aria-label="Next Slide"
               >
-                <span class="material-symbols-outlined">
-arrow_forward
-</span>
+                <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
               </button>
             </div>
           </div>
@@ -1413,15 +1408,21 @@ arrow_forward
         const slider = document.getElementById("slider-container");
         const nextButton = document.getElementById("next-button");
         const prevButton = document.getElementById("prev-button");
-        const slideWidth = slider.querySelector("div").offsetWidth;
+        if (slider) {
+          const slideWidth = slider.querySelector("div") ? slider.querySelector("div").offsetWidth : 0;
 
-        nextButton.addEventListener("click", () => {
-          slider.scrollBy({ left: slideWidth, behavior: "smooth" });
-        });
+          if (nextButton) {
+            nextButton.addEventListener("click", () => {
+              slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+            });
+          }
 
-        prevButton.addEventListener("click", () => {
-          slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
-        });
+          if (prevButton) {
+            prevButton.addEventListener("click", () => {
+              slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
+            });
+          }
+        }
       });
     </script>
     <script>

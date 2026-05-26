@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
       arrows: true, // Keep the arrows for navigation (we will style them)
       pagination: false, // Explicitly hide the default Splide dots
       speed: 500, // Match the transition speed to the CSS transition
+      autoHeight: true, // Adjust slider height dynamically based on active slide content
     });
 
     var bar = splide.root.querySelector(".my-slider-progress-bar");

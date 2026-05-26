@@ -948,7 +948,8 @@
             <!-- Main Slider Content Container -->
             <div
               id="slider-container"
-              class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory"
+              class="flex items-start overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory"
+              style="transition: height 0.3s ease-in-out;"
             >
               <!-- Slide 1: Testimonial -->
               <div
@@ -1017,11 +1018,11 @@
             <!-- Left Arrow -->
             <button
               id="prev-button"
-              class="absolute top-1/2 left-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10"
+              class="absolute top-1/2 left-2 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Previous slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1039,11 +1040,11 @@
             <!-- Right Arrow -->
             <button
               id="next-button"
-              class="absolute top-1/2 right-4 transform -translate-y-1/2 p-2 bg-gray-200 hover:bg-gray-300 transition rounded-full z-10"
+              class="absolute top-1/2 right-2 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Next slide"
             >
               <svg
-                class="w-6 h-6 text-gray-700"
+                class="w-6 h-6 page-accent"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -1401,15 +1402,59 @@
         const slider = document.getElementById("slider-container");
         const nextButton = document.getElementById("next-button");
         const prevButton = document.getElementById("prev-button");
-        const slideWidth = slider.querySelector("div").offsetWidth;
 
-        nextButton.addEventListener("click", () => {
-          slider.scrollBy({ left: slideWidth, behavior: "smooth" });
-        });
+        if (slider) {
+          const slides = Array.from(slider.children);
+          
+          const adjustHeight = () => {
+            const scrollLeft = slider.scrollLeft;
+            const sliderWidth = slider.clientWidth;
+            if (sliderWidth === 0) return;
+            
+            let activeIndex = Math.round(scrollLeft / sliderWidth);
+            if (activeIndex < 0) activeIndex = 0;
+            if (activeIndex >= slides.length) activeIndex = slides.length - 1;
+            
+            const activeSlide = slides[activeIndex];
+            const innerContent = activeSlide.firstElementChild;
+            if (innerContent) {
+              const padding = parseInt(window.getComputedStyle(activeSlide).paddingTop || 0) + 
+                              parseInt(window.getComputedStyle(activeSlide).paddingBottom || 0);
+              const newHeight = innerContent.offsetHeight + padding;
+              slider.style.height = `${newHeight}px`;
+            }
+          };
 
-        prevButton.addEventListener("click", () => {
-          slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
-        });
+          const resizeObserver = new ResizeObserver(() => {
+            adjustHeight();
+          });
+
+          slides.forEach(slide => {
+            if (slide.firstElementChild) {
+              resizeObserver.observe(slide.firstElementChild);
+            }
+          });
+
+          // Scroll event to trigger height adjustments
+          slider.addEventListener("scroll", adjustHeight);
+          // Window resize to recalculate height on rotation/resizing
+          window.addEventListener("resize", adjustHeight);
+          
+          // Initial call after DOM and images load
+          adjustHeight();
+          // Fallback for slower loading images
+          window.addEventListener("load", adjustHeight);
+
+          nextButton.addEventListener("click", () => {
+            const slideWidth = slider.querySelector("div").offsetWidth;
+            slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+          });
+
+          prevButton.addEventListener("click", () => {
+            const slideWidth = slider.querySelector("div").offsetWidth;
+            slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
+          });
+        }
       });
     </script>
     <script>

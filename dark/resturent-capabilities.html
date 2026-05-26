@@ -1230,77 +1230,15 @@
     <script src="../assets/js/footer-accordion.js"></script>
 
     <script>
-      // Initialize Splide
-      new Splide("#main-slider", {
-        type: "slide",
-        perPage: 1,
-        gap: "1.25rem",
-        arrows: true,
-        pagination: false,
-        speed: 500,
-        rewind: true,
-        // Keep layout nice on small screens (image stacks on top)
-        breakpoints: {
-          768: { gap: "0.75rem" },
-        },
-      }).mount();
-
-      // Initialize Splide
-      new Splide("#seamless-slider", {
-        type: "slide",
-        perPage: 1,
-        gap: "1.25rem",
-        arrows: true,
-        pagination: false,
-        speed: 500,
-        rewind: true,
-        // Keep layout nice on small screens (image stacks on top)
-        breakpoints: {
-          768: { gap: "0.75rem" },
-        },
-      }).mount();
-      // Initialize Splide
-      new Splide("#slider-3", {
-        type: "slide",
-        perPage: 1,
-        gap: "1.25rem",
-        arrows: true,
-        pagination: false,
-        speed: 500,
-        rewind: true,
-        // Keep layout nice on small screens (image stacks on top)
-        breakpoints: {
-          768: { gap: "0.75rem" },
-        },
-      }).mount();
-      // Initialize Splide
-      new Splide("#slider-4", {
-        type: "slide",
-        perPage: 1,
-        gap: "1.25rem",
-        arrows: true,
-        pagination: false,
-        speed: 500,
-        rewind: true,
-        // Keep layout nice on small screens (image stacks on top)
-        breakpoints: {
-          768: { gap: "0.75rem" },
-        },
-      }).mount();
-      // Initialize Splide
-      new Splide("#slider-5", {
-        type: "slide",
-        perPage: 1,
-        gap: "1.25rem",
-        arrows: true,
-        pagination: false,
-        speed: 500,
-        rewind: true,
-        // Keep layout nice on small screens (image stacks on top)
-        breakpoints: {
-          768: { gap: "0.75rem" },
-        },
-      }).mount();
+      // Initialize Splide sliders
+      ['seamless-slider','main-slider','slider-3','slider-4','slider-5'].forEach(function(id) {
+        new Splide('#' + id, {
+          type: 'slide', perPage: 1, gap: '1.25rem',
+          arrows: true, pagination: false, speed: 500, rewind: true,
+          autoHeight: true,
+          breakpoints: { 768: { gap: '0.75rem' } }
+        }).mount();
+      });
       function toggleFaq(element) {
         element.classList.toggle("active");
       }

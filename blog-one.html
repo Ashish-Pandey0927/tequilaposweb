@@ -868,7 +868,7 @@
       <div class=" ">
         <div class="relative overflow-visible">
           <!-- Main Slider Content Container -->
-          <div id="slider-container" class="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory">
+          <div id="slider-container" class="flex items-start overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory" style="transition: height 0.3s ease-in-out;">
             <!-- Slide 1 -->
             <div class="flex-shrink-0 w-full snap-center py-8">
               <div class="container mx-auto px-4 flex flex-col md:flex-row items-start justify-between gap-12">
@@ -1067,7 +1067,7 @@
           <!-- Slider Navigation Arrows -->
           <!-- Left Arrow -->
           <button id="prev-button"
-            class="absolute top-1/2 left-4 lg:-left-12 transform -translate-y-1/2 p-2 transition rounded-full z-20 hidden lg:block"
+            class="absolute top-1/2 left-2 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
             aria-label="Previous slide">
             <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
@@ -1076,7 +1076,7 @@
           </button>
           <!-- Right Arrow -->
           <button id="next-button"
-            class="absolute top-1/2 right-4 lg:-right-12 transform -translate-y-1/2 p-2 transition rounded-full z-20 hidden lg:block"
+            class="absolute top-1/2 right-2 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
             aria-label="Next slide">
             <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg">
@@ -2070,22 +2070,65 @@
       const nextButton = document.getElementById("next-button");
       const prevButton = document.getElementById("prev-button");
 
-      const scrollSlider = (direction) => {
-        const firstSlide = slider.querySelector("div");
-        if (!firstSlide) return;
-        const slideWidth = firstSlide.offsetWidth;
-        slider.scrollBy({ left: direction * slideWidth, behavior: "smooth" });
-      };
+      if (slider) {
+        const slides = Array.from(slider.children);
+        
+        const adjustHeight = () => {
+          const scrollLeft = slider.scrollLeft;
+          const sliderWidth = slider.clientWidth;
+          if (sliderWidth === 0) return;
+          
+          let activeIndex = Math.round(scrollLeft / sliderWidth);
+          if (activeIndex < 0) activeIndex = 0;
+          if (activeIndex >= slides.length) activeIndex = slides.length - 1;
+          
+          const activeSlide = slides[activeIndex];
+          const innerContent = activeSlide.firstElementChild;
+          if (innerContent) {
+            const padding = parseInt(window.getComputedStyle(activeSlide).paddingTop || 0) + 
+                            parseInt(window.getComputedStyle(activeSlide).paddingBottom || 0);
+            const newHeight = innerContent.offsetHeight + padding;
+            slider.style.height = `${newHeight}px`;
+          }
+        };
 
-      if (nextButton) nextButton.addEventListener("click", () => scrollSlider(1));
-      if (prevButton) prevButton.addEventListener("click", () => scrollSlider(-1));
+        const resizeObserver = new ResizeObserver(() => {
+          adjustHeight();
+        });
 
-      document.querySelectorAll(".prev-mobile-btn").forEach(btn => {
-        btn.addEventListener("click", () => scrollSlider(-1));
-      });
-      document.querySelectorAll(".next-mobile-btn").forEach(btn => {
-        btn.addEventListener("click", () => scrollSlider(1));
-      });
+        slides.forEach(slide => {
+          if (slide.firstElementChild) {
+            resizeObserver.observe(slide.firstElementChild);
+          }
+        });
+
+        // Scroll event to trigger height adjustments
+        slider.addEventListener("scroll", adjustHeight);
+        // Window resize to recalculate height on rotation/resizing
+        window.addEventListener("resize", adjustHeight);
+        
+        // Initial call after DOM and images load
+        adjustHeight();
+        // Fallback for slower loading images
+        window.addEventListener("load", adjustHeight);
+
+        const scrollSlider = (direction) => {
+          const firstSlide = slider.querySelector("div");
+          if (!firstSlide) return;
+          const slideWidth = firstSlide.offsetWidth;
+          slider.scrollBy({ left: direction * slideWidth, behavior: "smooth" });
+        };
+
+        if (nextButton) nextButton.addEventListener("click", () => scrollSlider(1));
+        if (prevButton) prevButton.addEventListener("click", () => scrollSlider(-1));
+
+        document.querySelectorAll(".prev-mobile-btn").forEach(btn => {
+          btn.addEventListener("click", () => scrollSlider(-1));
+        });
+        document.querySelectorAll(".next-mobile-btn").forEach(btn => {
+          btn.addEventListener("click", () => scrollSlider(1));
+        });
+      }
     });
   </script>
   <script>
