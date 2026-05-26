@@ -22,7 +22,14 @@
         -ms-overflow-style: none; /* IE and Edge */
         scrollbar-width: none; /* Firefox */
       }
-    </style> -->
+    
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2, h3 {
+        line-height: 1.4 !important;
+      }
+    }
+</style> -->
 
     <!-- Splide CSS -->
     <link
@@ -715,7 +722,7 @@
           </p>
         </div>
 
-        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
           <img
             src="/assets/images/blog-four/blog-four-hero.png"
             alt=""
@@ -770,8 +777,8 @@
             </button>
           </div>
 
-          <div class="flex flex-col lg:flex-row gap-8">
-            <div class="lg:w-2/3">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-2/3">
               <div id="content-permissions" class="tab-content space-y-4">
                 <p class="page-sub text-[12px] md:text-[18px]">
                   User permissions allow you to control what each employee can
@@ -917,7 +924,7 @@
               </div>
             </div>
 
-            <div class="lg:w-1/3 p-6 border border-gray-200 rounded-xl">
+            <div class="md:w-1/3 p-6 border border-gray-200 rounded-xl">
               <form class="space-y-6">
                 <div>
                   <input
@@ -996,7 +1003,7 @@
         </div>
 
         <div class="w-full mx-auto p-8 bg-white h-auto">
-          <div class="flex flex-col lg:flex-row gap-8">
+          <div class="flex flex-col md:flex-row gap-8">
             <div class="flex flex-col space-y-4 lg:w-1/5">
               <button
                 id="tab-daily-reports"
@@ -1366,7 +1373,7 @@
         </div>
 
         <div class="container mx-auto p-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div
               class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
             >

@@ -174,7 +174,14 @@
       .splide__arrow--next {
         right: -1150px;
       } */
-    </style>
+    
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2, h3 {
+        line-height: 1.4 !important;
+      }
+    }
+</style>
 
     <style>
       /* ---- Light defaults ---- */
@@ -738,7 +745,7 @@
           </p>
         </div>
 
-        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
           <img
             src="/assets/images/blog-two/blog-two-hero.png"
             alt=""

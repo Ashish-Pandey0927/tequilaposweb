@@ -22,7 +22,15 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="/assets/style/dark.css" />
-  </head>
+    <style>
+    /* Tablet view heading line-height fix */
+    @media (min-width: 768px) and (max-width: 1023px) {
+      h1, h2, h3 {
+        line-height: 1.4 !important;
+      }
+    }
+  </style>
+</head>
   <body class="bg-[#1C1C1C] font-inter text-sm">
     <nav class="navbar md:block hidden">
       <div class="navbar-container container mx-auto">
@@ -275,7 +283,7 @@
           </p>
         </div>
 
-        <div class="w-full lg:w-1/2 flex justify-center lg:justify-end">
+        <div class="w-full md:w-1/2 flex justify-center lg:justify-end">
           <img
             src="/assets/images/blog-six/blog-six-hero.png"
             alt=""
@@ -434,7 +442,7 @@
         </div>
 
         <div class="container mx-auto p-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div
               class="p-6 rounded-[38px] border-[0.50px] border-[#cbcbcb] flex flex-col items-center text-center space-y-4"
             >
