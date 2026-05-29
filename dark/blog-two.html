@@ -952,64 +952,65 @@
               style="transition: height 0.3s ease-in-out;"
             >
               <!-- Slide 1: Testimonial -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center p-8 md:p-12"
-              >
-                <!-- Image Column -->
-                <div class="w-full flex justify-center md:pr-12">
-                  <img
-                    src="/assets/images/blog-two/review-one.png"
-                    alt="A portrait of Maria Lopez, a restaurant owner."
-                    class="rounded-full w-48 h-48 object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="pt-8 md:pt-0">
-                  <p
-                    class="text-[#CDCDCD] text-lg md:text-xl leading-relaxed mb-4"
-                  >
-                    We used to pay over $1,500 a month in credit card fees. With
-                    the cash discount program, we’re down to under $100. Our
-                    customers don’t mind the small service fee — and now we
-                    actually understand every charge. Total game-changer
-                  </p>
-                  <p class="font-bold text-white text-lg mt-4">
-                    — Maria Lopez, Owner
-                  </p>
-                  <p class="text-white text-base">
-                    Sunny Side Diner, Austin, TX
-                  </p>
+              <div class="flex-shrink-0 w-full snap-center p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center">
+                  <!-- Image Column -->
+                  <div class="w-full flex justify-center md:pr-12">
+                    <img
+                      src="/assets/images/blog-two/review-one.png"
+                      alt="A portrait of Maria Lopez, a restaurant owner."
+                      class="rounded-full w-48 h-48 object-cover"
+                    />
+                  </div>
+                  <!-- Text Content Column -->
+                  <div class="pt-8 md:pt-0">
+                    <p
+                      class="text-[#CDCDCD] text-lg md:text-xl leading-relaxed mb-4"
+                    >
+                      We used to pay over $1,500 a month in credit card fees. With
+                      the cash discount program, we’re down to under $100. Our
+                      customers don’t mind the small service fee — and now we
+                      actually understand every charge. Total game-changer
+                    </p>
+                    <p class="font-bold text-white text-lg mt-4">
+                      — Maria Lopez, Owner
+                    </p>
+                    <p class="text-white text-base">
+                      Sunny Side Diner, Austin, TX
+                    </p>
+                  </div>
                 </div>
               </div>
 
               <!-- Slide 2: Case Study -->
-              <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center p-8 md:p-12"
-              >
-                <!-- Image Column -->
-                <div class="w-full flex justify-center md:pr-12">
-                  <img
-                    src="/assets/images/blog-two/review-two.png"
-                    alt="A portrait of Maria Lopez, a restaurant owner."
-                    class="rounded-full w-48 h-48 object-cover"
-                  />
-                </div>
-                <!-- Text Content Column -->
-                <div class="pt-8 md:pt-0">
-                  <p
-                    class="text-[#CDCDCD] text-lg md:text-xl leading-relaxed mb-4"
-                  >
-                    We were worried about legal risks with cash discounting.
-                    TequilaPOS walked us through everything and made sure the
-                    signage, receipts, and pricing were compliant. And we saved
-                    thousands every mont
-                  </p>
-                  <p class="font-bold text-white text-lg mt-4">
-                    — Alicia Fernandes, Co-owner
-                  </p>
-                  <p class="text-white text-base">
-                    La Mesa Bistro, Seattle, WA
-                  </p>
+              <div class="flex-shrink-0 w-full snap-center p-8 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center">
+                  <!-- Image Column -->
+                  <div class="w-full flex justify-center md:pr-12">
+                    <img
+                      src="/assets/images/blog-two/review-two.png"
+                      alt="A portrait of Maria Lopez, a restaurant owner."
+                      class="rounded-full w-48 h-48 object-cover"
+                    />
+                  </div>
+
+                  <!-- Text Content Column -->
+                  <div class="pt-8 md:pt-0">
+                    <p
+                      class="text-[#CDCDCD] text-lg md:text-xl leading-relaxed mb-4"
+                    >
+                      We were worried about legal risks with cash discounting.
+                      TequilaPOS walked us through everything and made sure the
+                      signage, receipts, and pricing were compliant. And we saved
+                      thousands every mont
+                    </p>
+                    <p class="font-bold text-white text-lg mt-4">
+                      — Alicia Fernandes, Co-owner
+                    </p>
+                    <p class="text-white text-base">
+                      La Mesa Bistro, Seattle, WA
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1445,14 +1446,53 @@
           // Fallback for slower loading images
           window.addEventListener("load", adjustHeight);
 
+          let autoPlayInterval;
+          const startAutoPlay = () => {
+            stopAutoPlay();
+            autoPlayInterval = setInterval(() => {
+              const scrollLeft = slider.scrollLeft;
+              const sliderWidth = slider.clientWidth;
+              if (sliderWidth === 0) return;
+              
+              let activeIndex = Math.round(scrollLeft / sliderWidth);
+              let nextIndex = activeIndex + 1;
+              if (nextIndex >= slides.length) {
+                nextIndex = 0;
+              }
+              
+              slider.scrollTo({
+                left: nextIndex * sliderWidth,
+                behavior: "smooth"
+              });
+            }, 5000);
+          };
+
+          const stopAutoPlay = () => {
+            if (autoPlayInterval) {
+              clearInterval(autoPlayInterval);
+              autoPlayInterval = null;
+            }
+          };
+
+          startAutoPlay();
+
+          slider.addEventListener("mouseenter", stopAutoPlay);
+          slider.addEventListener("mouseleave", startAutoPlay);
+          slider.addEventListener("touchstart", stopAutoPlay, { passive: true });
+          slider.addEventListener("touchend", startAutoPlay, { passive: true });
+
           nextButton.addEventListener("click", () => {
+            stopAutoPlay();
             const slideWidth = slider.querySelector("div").offsetWidth;
             slider.scrollBy({ left: slideWidth, behavior: "smooth" });
+            startAutoPlay();
           });
 
           prevButton.addEventListener("click", () => {
+            stopAutoPlay();
             const slideWidth = slider.querySelector("div").offsetWidth;
             slider.scrollBy({ left: -slideWidth, behavior: "smooth" });
+            startAutoPlay();
           });
         }
       });
