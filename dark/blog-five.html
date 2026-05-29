@@ -730,22 +730,22 @@
         </div>
 
         <div class="w-full mx-auto p-8 text-gray-200">
-          <div class="flex flex-wrap md:flex-nowrap justify-center items-center gap-2 mb-8 bg-[#333333] p-2 md:p-1 rounded-3xl md:rounded-full w-full max-w-[fit-content] mx-auto">
+          <div class="grid grid-cols-3 md:flex md:flex-nowrap justify-center items-center gap-2 mb-8 bg-[#333333] p-2 md:p-1 rounded-3xl md:rounded-full w-full md:w-auto md:max-w-[fit-content] mx-auto">
             <button
               id="tab-permissions"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-white text-gray-900"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-white text-gray-900"
               data-target="content-permissions"
             >
  Credit Cards            </button>
             <button
               id="tab-audit"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-400 hover:bg-gray-700 hover:text-white"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-400 hover:bg-gray-700 hover:text-white"
               data-target="content-audit"
             >
  No Chargebacks            </button>
             <button
               id="tab-reports"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-400 hover:bg-gray-700 hover:text-white"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 text-gray-400 hover:bg-gray-700 hover:text-white"
               data-target="content-reports"
             >
 Fast Settlement            </button>
@@ -1104,7 +1104,7 @@ Fast Settlement            </button>
             <ul class="splide__list">
               <li class="splide__slide relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 order-2 md:order-1">
                     <h1
                       class="justify-start text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                       Built-In Bitcoin Payment Support
@@ -1134,7 +1134,7 @@ Fast Settlement            </button>
                       </li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <div class="col-span-1 md:col-span-4 flex items-center justify-center order-1 md:order-2">
                     <img src="/assets/images/blog-five/blog-five-last slider.png" alt="Built-In Bitcoin Payment Support" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
                   </div>
                 </div>
@@ -1142,7 +1142,7 @@ Fast Settlement            </button>
 
               <li class="splide__slide relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 order-2 md:order-1">
                     <h1
                       class="justify-start text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                       Easy, Guided Checkout for Staff
@@ -1176,7 +1176,7 @@ Fast Settlement            </button>
                       </li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <div class="col-span-1 md:col-span-4 flex items-center justify-center order-1 md:order-2">
                     <img src="/assets/images/blog-five/blog-five-last slider-two.png" alt="Guided Checkout" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
                   </div>
                 </div>
@@ -1184,7 +1184,7 @@ Fast Settlement            </button>
 
               <li class="splide__slide relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 order-2 md:order-1">
                     <h1
                       class="justify-start text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                       Real-Time Confirmation and Receipts
@@ -1212,14 +1212,14 @@ Fast Settlement            </button>
                       </li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <div class="col-span-1 md:col-span-4 flex items-center justify-center order-1 md:order-2">
                     <img src="/assets/images/blog-five/blog-five-last slider-three.png" alt="Real-Time Confirmation" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
                   </div>
                 </div>
               </li>
               <li class="splide__slide relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 order-2 md:order-1">
                     <h1
                       class="justify-start text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                       Full Reporting and Accounting Integration
@@ -1244,14 +1244,14 @@ Fast Settlement            </button>
                       </li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <div class="col-span-1 md:col-span-4 flex items-center justify-center order-1 md:order-2">
                     <img src="/assets/images/blog-five/blog-five-last slider-four.png" alt="Accounting Integration" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
                   </div>
                 </div>
               </li>
               <li class="splide__slide relative">
                 <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16">
+                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 order-2 md:order-1">
                     <h1
                       class="justify-start text-white text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-normal md:leading-[50.99px]">
                       Staff Training Not Required
@@ -1284,7 +1284,7 @@ Fast Settlement            </button>
                       </li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4 flex items-center justify-center">
+                  <div class="col-span-1 md:col-span-4 flex items-center justify-center order-1 md:order-2">
                     <img src="/assets/images/blog-five/blog-five-last slider-five.png" alt="Staff Training" class="w-full max-w-sm mx-auto h-auto mt-6 md:mt-0" />
                   </div>
                 </div>
@@ -1729,12 +1729,12 @@ Fast Settlement            </button>
 
           // 1. Update Button Styles
           tabButtons.forEach((btn) => {
-            btn.classList.remove("bg-black", "text-white");
-            btn.classList.add("text-gray-700", "hover:bg-gray-200");
+            btn.classList.remove("bg-white", "text-gray-900");
+            btn.classList.add("text-gray-400", "hover:bg-gray-700", "hover:text-white");
           });
 
-          button.classList.add("bg-black", "text-white");
-          button.classList.remove("text-gray-700", "hover:bg-gray-200");
+          button.classList.add("bg-white", "text-gray-900");
+          button.classList.remove("text-gray-400", "hover:bg-gray-700", "hover:text-white");
 
           // 2. Switch Content Visibility
           tabContents.forEach((content) => {

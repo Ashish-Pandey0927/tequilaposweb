@@ -752,25 +752,25 @@
           </div>
         </div>
 
-        <div class="w-full mx-auto p-8">
-          <div class="flex space-x-2 mb-8 bg-gray-100 p-1 rounded-full w-fit">
+        <div class="w-full mx-auto p-4 md:p-8">
+          <div class="grid grid-cols-3 md:flex md:flex-nowrap justify-center items-center gap-2 mb-8 bg-gray-100 p-2 md:p-1 rounded-3xl md:rounded-full w-full md:w-auto md:max-w-[fit-content] mx-auto">
             <button
               id="tab-permissions"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 bg-black page-main"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors duration-200 bg-black text-white"
               data-target="content-permissions"
             >
               User Permissions
             </button>
             <button
               id="tab-audit"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-sub hover:page-main"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors duration-200 text-gray-700 hover:bg-gray-200"
               data-target="content-audit"
             >
               Audit Trails
             </button>
             <button
               id="tab-reports"
-              class="tab-button px-6 py-2 text-sm font-semibold rounded-full transition-colors duration-200 page-sub hover:page-main"
+              class="tab-button w-full md:w-auto text-center px-2 sm:px-6 py-2 text-xs sm:text-sm font-semibold rounded-full transition-colors duration-200 text-gray-700 hover:bg-gray-200"
               data-target="content-reports"
             >
               Shift Reports
@@ -1007,14 +1007,14 @@
             <div class="flex flex-col space-y-4 lg:w-1/5">
               <button
                 id="tab-daily-reports"
-                class="tab-button w-full lg:w-auto h-24 flex items-center justify-center rounded-xl transition-colors duration-200 bg-black page-main text-lg font-bold"
+                class="tab-button w-full lg:w-auto h-24 flex items-center justify-center rounded-xl transition-colors duration-200 bg-black text-white text-lg font-bold"
                 data-target="content-daily-reports"
               >
                 Daily Reports
               </button>
               <button
                 id="tab-weekly-report"
-                class="tab-button w-full lg:w-auto h-24 flex items-center justify-center rounded-xl transition-colors duration-200 bg-gray-100 page-sub text-lg font-bold hover:bg-gray-200"
+                class="tab-button w-full lg:w-auto h-24 flex items-center justify-center rounded-xl transition-colors duration-200 bg-gray-100 text-gray-700 text-lg font-bold hover:bg-gray-200"
                 data-target="content-weekly-report"
               >
                 Weekly Report
@@ -2188,21 +2188,22 @@
 
         const activate = (btn) => {
           const targetId = btn.getAttribute("data-target");
-          // buttons
+          const isTheftTabs = rootId === "theft-tabs";
+          
           tabButtons.forEach((b) => {
             b.classList.remove("bg-black", "text-white");
-            b.classList.add(
-              "text-gray-700",
-              "hover:bg-gray-200",
-              "bg-gray-100"
-            );
+            if (isTheftTabs) {
+              b.classList.add("text-gray-700", "bg-gray-100", "hover:bg-gray-200");
+            } else {
+              b.classList.add("text-gray-700", "hover:bg-gray-200");
+            }
           });
+          
           btn.classList.add("bg-black", "text-white");
-          btn.classList.remove(
-            "text-gray-700",
-            "hover:bg-gray-200",
-            "bg-gray-100"
-          );
+          if (isTheftTabs) {
+            btn.classList.remove("bg-gray-100");
+          }
+          btn.classList.remove("text-gray-700", "hover:bg-gray-200");
 
           // contents
           tabContents.forEach((c) => c.classList.add("hidden"));
