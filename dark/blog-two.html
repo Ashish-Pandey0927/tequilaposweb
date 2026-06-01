@@ -1443,6 +1443,9 @@
           
           // Initial call after DOM and images load
           adjustHeight();
+          if (document.fonts) {
+            document.fonts.ready.then(adjustHeight);
+          }
           // Fallback for slower loading images
           window.addEventListener("load", adjustHeight);
 

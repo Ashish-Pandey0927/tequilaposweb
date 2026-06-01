@@ -455,7 +455,7 @@
             >
               <!-- Slide 1 -->
               <div class="flex-shrink-0 w-full snap-center py-8">
-                <div class="container mx-auto px-12 md:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
+                <div class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
                   <!-- Image Column -->
                   <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
                     <img
@@ -485,7 +485,7 @@
 
               <!-- Slide 2 -->
               <div class="flex-shrink-0 w-full snap-center py-8">
-                <div class="container mx-auto px-12 md:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
+                <div class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
                   <!-- Image Column -->
                   <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1">
                     <img
@@ -539,7 +539,7 @@
             <!-- Slider Navigation Arrows -->
             <button
               id="prev-button"
-              class="absolute top-1/2 left-2 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              class="absolute top-1/2 left-2 md:left-4 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Previous slide"
             >
               <svg
@@ -559,7 +559,7 @@
             </button>
             <button
               id="next-button"
-              class="absolute top-1/2 right-2 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              class="absolute top-1/2 right-2 md:right-4 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Next slide"
             >
               <svg
@@ -1704,6 +1704,9 @@ Fast Settlement            </button>
 
         // Initial call after DOM and images load
         adjustHeight();
+        if (document.fonts) {
+          document.fonts.ready.then(adjustHeight);
+        }
         // Fallback for slower loading images
         window.addEventListener("load", adjustHeight);
 

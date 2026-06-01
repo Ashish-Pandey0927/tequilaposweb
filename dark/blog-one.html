@@ -337,7 +337,7 @@
             >
               <!-- Slide 1 -->
               <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
+                class="flex-shrink-0 w-full snap-center px-12 md:px-16 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
               >
                 <!-- Image Column -->
                 <div class="w-full md:h-full flex">
@@ -374,7 +374,7 @@
 
               <!-- Slide 2 -->
               <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
+                class="flex-shrink-0 w-full snap-center px-12 md:px-16 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
               >
                 <!-- Image Column -->
                 <div class="w-full md:h-full flex">
@@ -474,7 +474,7 @@
 
               <!-- Slide 3 -->
               <div
-                class="flex-shrink-0 w-full snap-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
+                class="flex-shrink-0 w-full snap-center px-12 md:px-16 lg:px-0 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-0 items-center md:items-stretch"
               >
                 <!-- Image Column -->
                 <div class="w-full md:h-full flex">
@@ -574,7 +574,7 @@
             <!-- Left Arrow -->
             <button
               id="prev-button"
-              class="absolute top-1/2 left-2 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              class="absolute top-1/2 left-2 md:left-4 lg:-left-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Previous slide"
             >
               <svg
@@ -595,7 +595,7 @@
             <!-- Right Arrow -->
             <button
               id="next-button"
-              class="absolute top-1/2 right-2 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              class="absolute top-1/2 right-2 md:right-4 lg:-right-10 transform -translate-y-1/2 flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
               aria-label="Next slide"
             >
               <svg
@@ -1701,6 +1701,9 @@
           
           // Initial call after DOM and images load
           adjustHeight();
+          if (document.fonts) {
+            document.fonts.ready.then(adjustHeight);
+          }
           // Fallback for slower loading images
           window.addEventListener("load", adjustHeight);
 
