@@ -527,3 +527,145 @@ button[style*="underline"] {
   height: 36px;
   flex-shrink: 0;
 }
+
+/* ============================================================
+   SLIDER ARROWS UNIFORM STYLING (Statically Dark Pages)
+   ============================================================ */
+html body .splide__arrow,
+html body .splide__arrows .splide__arrow,
+html body #main-slider-two .splide__arrow,
+html body #main-slider-two .splide__arrows .splide__arrow,
+html body #feature-carousel .splide__arrow,
+html body #image-carousel .splide__arrow,
+html body #seamless-slider .splide__arrow,
+html body #main-slider .splide__arrow,
+html body #slider-3 .splide__arrow,
+html body #slider-4 .splide__arrow,
+html body #slider-5 .splide__arrow,
+html body #core-feature-slider .splide__arrow,
+html body #mobile-core-feature-slider .splide__arrow,
+html body .carousel-arrow-left,
+html body .carousel-arrow-right,
+html body #prev-button,
+html body #next-button,
+html body .prev-mobile-btn,
+html body .next-mobile-btn,
+html body .swiper-button-prev,
+html body .swiper-button-next,
+html.dark body .splide__arrow,
+html.dark body .splide__arrows .splide__arrow,
+html.dark body #main-slider-two .splide__arrow,
+html.dark body #main-slider-two .splide__arrows .splide__arrow,
+html.dark body #feature-carousel .splide__arrow,
+html.dark body #image-carousel .splide__arrow,
+html.dark body #seamless-slider .splide__arrow,
+html.dark body #main-slider .splide__arrow,
+html.dark body #slider-3 .splide__arrow,
+html.dark body #slider-4 .splide__arrow,
+html.dark body #slider-5 .splide__arrow,
+html.dark body #core-feature-slider .splide__arrow,
+html.dark body #mobile-core-feature-slider .splide__arrow,
+html.dark body .carousel-arrow-left,
+html.dark body .carousel-arrow-right,
+html.dark body #prev-button,
+html.dark body #next-button,
+html.dark body .prev-mobile-btn,
+html.dark body .next-mobile-btn,
+html.dark body .swiper-button-prev,
+html.dark body .swiper-button-next {
+  background: #373737 !important;
+  background-color: #373737 !important;
+  border: none !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+  transition: all 0.2s ease !important;
+  opacity: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #ffffff !important;
+}
+
+/* Dark Mode Arrow Colors (fill-based SVGs like Splide default) */
+html body .splide__arrow svg,
+html body .splide__arrows .splide__arrow svg,
+html body #main-slider-two .splide__arrow svg,
+html body #main-slider-two .splide__arrows .splide__arrow svg,
+html body #feature-carousel .splide__arrow svg,
+html body #image-carousel .splide__arrow svg,
+html body #seamless-slider .splide__arrow svg,
+html body #main-slider .splide__arrow svg,
+html body #slider-3 .splide__arrow svg,
+html body #slider-4 .splide__arrow svg,
+html body #slider-5 .splide__arrow svg,
+html body #core-feature-slider .splide__arrow svg,
+html body #mobile-core-feature-slider .splide__arrow svg,
+html.dark body .splide__arrow svg,
+html.dark body .splide__arrows .splide__arrow svg,
+html.dark body #main-slider-two .splide__arrow svg,
+html.dark body #main-slider-two .splide__arrows .splide__arrow svg,
+html.dark body #feature-carousel .splide__arrow svg,
+html.dark body #image-carousel .splide__arrow svg,
+html.dark body #seamless-slider .splide__arrow svg,
+html.dark body #main-slider .splide__arrow svg,
+html.dark body #slider-3 .splide__arrow svg,
+html.dark body #slider-4 .splide__arrow svg,
+html.dark body #slider-5 .splide__arrow svg,
+html.dark body #core-feature-slider .splide__arrow svg,
+html.dark body #mobile-core-feature-slider .splide__arrow svg {
+  fill: #ffffff !important;
+  stroke: none !important;
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Dark Mode Arrow Colors (stroke-based SVGs like custom buttons) */
+html body #prev-button svg,
+html body #next-button svg,
+html body .carousel-arrow-left svg,
+html body .carousel-arrow-right svg,
+html body .prev-mobile-btn svg,
+html body .next-mobile-btn svg,
+html.dark body #prev-button svg,
+html.dark body #next-button svg,
+html.dark body .carousel-arrow-left svg,
+html.dark body .carousel-arrow-right svg,
+html.dark body .prev-mobile-btn svg,
+html.dark body .next-mobile-btn svg {
+  stroke: #ffffff !important;
+  fill: none !important;
+}
+
+/* For Swiper text arrow indicators (if any) */
+html body .swiper-button-prev::after,
+html body .swiper-button-next::after,
+html.dark body .swiper-button-prev::after,
+html.dark body .swiper-button-next::after {
+  color: #ffffff !important;
+}
+
+/* Hover style - Dark mode */
+html body .splide__arrow:hover,
+html body #main-slider-two .splide__arrow:hover,
+html body #feature-carousel .splide__arrow:hover,
+html body .carousel-arrow-left:hover,
+html body .carousel-arrow-right:hover,
+html body #prev-button:hover,
+html body #next-button:hover,
+html body .prev-mobile-btn:hover,
+html body .next-mobile-btn:hover,
+html body .swiper-button-prev:hover,
+html body .swiper-button-next:hover,
+html.dark body .splide__arrow:hover,
+html.dark body #main-slider-two .splide__arrow:hover,
+html.dark body #feature-carousel .splide__arrow:hover,
+html.dark body .carousel-arrow-left:hover,
+html.dark body .carousel-arrow-right:hover,
+html.dark body #prev-button:hover,
+html.dark body #next-button:hover,
+html.dark body .prev-mobile-btn:hover,
+html.dark body .next-mobile-btn:hover,
+html.dark body .swiper-button-prev:hover,
+html.dark body .swiper-button-next:hover {
+  background: #4b5563 !important;
+  background-color: #4b5563 !important;
+}
