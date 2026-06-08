@@ -45,7 +45,7 @@ function toggleAccordion(button) {
 
   function setTheme(theme) {
     document.body.dataset.theme = theme;
-    applyThemeLogos(theme);
+    // applyThemeLogos(theme);
     updateToggleLabel(theme);
     const toggle = document.getElementById('dark-mode-toggle');
     if (toggle) {

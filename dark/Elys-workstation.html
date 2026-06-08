@@ -83,7 +83,14 @@
     /* Tablet view heading line-height fix */
     @media (min-width: 768px) and (max-width: 1023px) {
       h1, h2 {
-        line-height: 1.4 !important;
+        line-height: 1.15 !important;
+      }
+    }
+
+    /* Mobile view heading line-height fix */
+    @media (max-width: 767px) {
+      h1 {
+        line-height: 1.15 !important;
       }
     }
 </style>
@@ -439,7 +446,7 @@
       <div class="container mx-auto px-4 md:px-2">
         <div class="grid md:grid-cols-2 grid-cols-1 gap-4">
           <div class="flex flex-col justify-center order-2 md:order-1">
-            <div class="md:text-[96px] text-xl flex md:flex-col md:gap-4 gap-1">
+            <div class="md:text-[96px] text-xl flex md:flex-col md:gap-1 gap-1">
               <h1 class="text-[#C89633] font-bold md:pb-16 pb-2">Elys</h1>
               <h1 class="text-white mb-1 md:mb-6 font-bold">Workstation</h1>
             </div>

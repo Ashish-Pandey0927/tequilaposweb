@@ -50,9 +50,15 @@
       html.dark #next-button:hover {
         background-color: #4b5563 !important;
       }
+      .rail-item {
+        transition: flex-basis 500ms ease, transform 500ms ease,
+          border-radius 500ms ease, filter 300ms ease;
+        will-change: flex-basis, transform;
+        flex-shrink: 1 !important;
+        flex-grow: 1 !important;
+      }
+    </style>
 
-</style>
-    <!-- Splide CSS -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
@@ -357,7 +363,7 @@
         <div class="grid md:grid-cols-2 gap-6 items-center">
           <!-- Left: details (tabbed) -->
           <div
-            class="bg-[#1C1C1C] rounded-2xl shadow-sm border border-gray-700 p-5 md:p-7"
+            class="rounded-2xl p-5 md:p-7"
           >
             <!-- Tab chips -->
             <div class="flex flex-wrap gap-2 mb-4" id="caseChips"></div>
@@ -643,7 +649,7 @@
               <div class="mt-8 flex justify-end">
                 <button
                   data-switch="solutions"
-                  class="group inline-flex items-center gap-2 text-[11px] md:text-xs font-semibold tracking-wide text-white hover:text-[#CDCDCD]"
+                  class="no-bg group inline-flex items-center gap-2 text-[11px] md:text-xs font-semibold tracking-wide text-white hover:text-[#CDCDCD]"
                 >
                   EXPLORE THE SOLUTIONS
                   <svg

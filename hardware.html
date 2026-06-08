@@ -867,10 +867,12 @@
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       var splide = new Splide("#image-carousel", {
-        type: "loop",
+        type: "fade",
+        rewind: true,
         perPage: 1,
         arrows: false,
         pagination: true,
+        speed: 600,
       });
 
       splide.mount();
@@ -912,6 +914,27 @@
 
       updateArrows();
       window.addEventListener("resize", updateArrows);
+
+      // Dissolve animation on slide change (matches index.html product section pattern)
+      splide.on("move", function () {
+        var activeSlide = carousel.querySelector(".splide__slide.is-active");
+        if (!activeSlide) return;
+        var textDiv = activeSlide.querySelector(".flex.flex-col.justify-center");
+        if (!textDiv) return;
+        textDiv.style.transition = "opacity 0.2s ease-in-out, transform 0.2s ease-in-out";
+        textDiv.style.opacity = "0";
+        textDiv.style.transform = "translateY(8px)";
+      });
+
+      splide.on("moved", function () {
+        var activeSlide = carousel.querySelector(".splide__slide.is-active");
+        if (!activeSlide) return;
+        var textDiv = activeSlide.querySelector(".flex.flex-col.justify-center");
+        if (!textDiv) return;
+        textDiv.style.transition = "opacity 0.35s ease-in-out, transform 0.35s ease-in-out";
+        textDiv.style.opacity = "1";
+        textDiv.style.transform = "translateY(0)";
+      });
     });
   </script>
   <script>

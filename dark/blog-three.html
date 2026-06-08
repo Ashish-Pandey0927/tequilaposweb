@@ -31,37 +31,11 @@
       }
 
       .splide__arrow {
-        -ms-flex-align: center;
-        align-items: center;
-        border: 0;
-        border-radius: 50%;
-        cursor: pointer;
-        display: -ms-flexbox;
-        display: flex;
-        height: 1em;
-        -ms-flex-pack: center;
-        justify-content: center;
-        opacity: 0.7;
-        padding: 0;
-        position: absolute;
-        top: 89%;
-        transform: translateY(-53%) !important;
-        width: 1em;
-        z-index: 1;
-      }
-
-      .splide__arrow--next {
-        right: 39em;
-      }
-
-      @media screen and (max-width: 1024px) {
-        .splide__arrow--next {
-          right: 1em;
-        }
-
-        .splide__arrow {
-          top: 108%;
-        }
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        transform: none !important;
       }
     
     /* Tablet view heading line-height fix */
@@ -69,6 +43,10 @@
       h1, h2, h3 {
         line-height: 1.4 !important;
       }
+    }
+
+    .splide {
+      visibility: visible !important;
     }
 </style>
   </head>
@@ -478,167 +456,174 @@
           </div>
         </div>
 
-        <div id="main-slider" class="splide" aria-label="Splide Slider">
-          <div class="flex justify-end p-4">
-            <div class="splide__arrows flex space-x-4">
-              <button
-                class="splide__arrow splide__arrow--prev flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
-              aria-label="Previous Slide"
-              >
-                <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-              </button>
-              <button
-                class="splide__arrow splide__arrow--next flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
-                aria-label="Next Slide"
-              >
-                <svg class="w-6 h-6 page-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-              </button>
-            </div>
-          </div>
-
+        <div id="main-slider" class="splide relative" aria-label="Splide Slider">
+          <!-- Feature Slider Container -->
           <div class="splide__track">
-           <ul class="splide__list">
+            <ul class="splide__list">
               <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 text-[#CDCDCD]">
-                    <h1
-                      class="justify-start text-white md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[320px] md:min-h-[400px]">
+                  <!-- Text Content Column (LEFT) -->
+                  <div class="flex flex-col justify-center p-6 md:p-10 order-2 md:order-1 text-[#CDCDCD]">
+                    <h2
+                      class="text-white md:text-4xl text-2xl font-bold leading-normal mb-4"
                     >
                       Real-time inventory tracking
-                    </h1>
-
+                    </h2>
                     <p
-                      class="md:w-[808px]  text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                      class="text-base md:text-lg font-normal leading-relaxed"
                     >
-                     Restaurants are fast-paced environments where every second counts. An unexpected internet outage can bring service to a halt, causing long wait times, missed orders, and unhappy guests. With offline mode, your team keeps operating without interruption — taking orders, printing receipts, and completing transactions as if nothing happened.</p>
+                      Restaurants are fast-paced environments where every second counts. An unexpected internet outage can bring service to a halt, causing long wait times, missed orders, and unhappy guests. With offline mode, your team keeps operating without interruption — taking orders, printing receipts, and completing transactions as if nothing happened.
+                    </p>
                   </div>
-                  <div class="col-span-1 md:col-span-4">
+                  <!-- Image Column (RIGHT) -->
+                  <div class="order-1 md:order-2 w-full overflow-hidden min-h-[240px] md:min-h-[400px]">
                     <img
                       src="/assets/images/blog-three/slider_one.png"
-                      alt=""
+                      alt="Real-time inventory tracking"
+                      class="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
               </li>
 
               <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 text-[#CDCDCD]">
-                    <h1
-                      class="justify-start text-white md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[320px] md:min-h-[400px]">
+                  <!-- Text Content Column (LEFT) -->
+                  <div class="flex flex-col justify-center p-6 md:p-10 order-2 md:order-1 text-[#CDCDCD]">
+                    <h2
+                      class="text-white md:text-4xl text-2xl font-bold leading-normal mb-4"
                     >
                       Offline Functionality
-                    </h1>
-
+                    </h2>
                     <p
-                      class="md:w-[808px]  text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                      class="text-base md:text-lg font-normal leading-relaxed"
                     >
-                      Internet outages are unpredictable — but your service shouldn’t be. Without offline functionality, a lost connection can mean lost orders, halted operations, and frustrated guests. Staff are forced to scramble, handwrite tickets, or even stop taking orders entirely, leading to chaos during peak hours.
+                      Internet outages are unpredictable — but your service shouldn't be. Without offline functionality, a lost connection can mean lost orders, halted operations, and frustrated guests. Staff are forced to scramble, handwrite tickets, or even stop taking orders entirely, leading to chaos during peak hours.
                     </p>
                   </div>
-                  <div class="col-span-1 md:col-span-4">
+                  <!-- Image Column (RIGHT) -->
+                  <div class="order-1 md:order-2 w-full overflow-hidden min-h-[240px] md:min-h-[400px]">
                     <img
                       src="/assets/images/blog-three/slide_two.png"
-                      alt=""
+                      alt="Offline Functionality"
+                      class="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
               </li>
 
               <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 text-[#CDCDCD]">
-                    <h1
-                      class="justify-start text-white md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[320px] md:min-h-[400px]">
+                  <!-- Text Content Column (LEFT) -->
+                  <div class="flex flex-col justify-center p-6 md:p-10 order-2 md:order-1 text-[#CDCDCD]">
+                    <h2
+                      class="text-white md:text-4xl text-2xl font-bold leading-normal mb-4"
                     >
                       Mobile Order-Taking
-                    </h1>
-
+                    </h2>
                     <p
-                      class="md:w-[808px] text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                      class="text-base md:text-lg font-normal leading-relaxed mb-3"
                     >
                       Walking back and forth to a stationary POS wastes time and opens the door to mistakes. With mobile order-taking:
-                      <ul class="list-disc list-inside ">
-  <li>Orders are more accurate, since they're entered immediately at the table</li>
-  <li>Service is faster, with no bottlenecks at a single terminal</li>
-  <li>Staff efficiency improves, especially during rushes or in large dining spaces</li>
-  <li>Customer satisfaction increases, thanks to quicker turnaround and fewer errors</li>
-</ul>
-
                     </p>
+                    <ul class="list-disc list-inside text-base md:text-lg space-y-1">
+                      <li>Orders are more accurate, since they're entered immediately at the table</li>
+                      <li>Service is faster, with no bottlenecks at a single terminal</li>
+                      <li>Staff efficiency improves, especially during rushes or in large dining spaces</li>
+                      <li>Customer satisfaction increases, thanks to quicker turnaround and fewer errors</li>
+                    </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4">
+                  <!-- Image Column (RIGHT) -->
+                  <div class="order-1 md:order-2 w-full overflow-hidden min-h-[240px] md:min-h-[400px]">
                     <img
                       src="/assets/images/blog-three/slide_three.png"
-                      alt=""
+                      alt="Mobile Order-Taking"
+                      class="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
               </li>
 
               <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 text-[#CDCDCD]">
-                    <h1
-                      class="justify-start text-white md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[320px] md:min-h-[400px]">
+                  <!-- Text Content Column (LEFT) -->
+                  <div class="flex flex-col justify-center p-6 md:p-10 order-2 md:order-1 text-[#CDCDCD]">
+                    <h2
+                      class="text-white md:text-4xl text-2xl font-bold leading-normal mb-4"
                     >
                       Sales and tax reports
-                    </h1>
-
-                     <p
-                      class="md:w-[808px]  text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                    </h2>
+                    <p
+                      class="text-base md:text-lg font-normal leading-relaxed mb-3"
                     >
-                      Running a restaurant means juggling a lot — and manual reports shouldn’t be one of them. With real-time, automated reporting:
+                      Running a restaurant means juggling a lot — and manual reports shouldn't be one of them. With real-time, automated reporting:
                     </p>
-
-                  
-                    <ul class="list-disc list-inside">
+                    <ul class="list-disc list-inside text-base md:text-lg space-y-1">
                       <li>You stay tax-compliant, with accurate, up-to-date tax totals at your fingertips</li>
                       <li>You save time, eliminating hours of manual data entry and end-of-day reconciliation</li>
                       <li>You gain insights, spotting trends in sales, staff performance, and peak hours</li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4">
+                  <!-- Image Column (RIGHT) -->
+                  <div class="order-1 md:order-2 w-full overflow-hidden min-h-[240px] md:min-h-[400px]">
                     <img
                       src="/assets/images/blog-three/slide_four.png"
-                      alt=""
+                      alt="Sales and tax reports"
+                      class="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
               </li>
 
               <li class="splide__slide relative">
-                <div class="grid grid-cols-1 md:grid-cols-12 md:gap-4 gap-2">
-                  <div class="col-span-1 md:col-span-8 mt-4 md:mt-16 text-[#CDCDCD]">
-                    <h1
-                      class="justify-start text-white md:text-5xl text-3xl font-bold leading-normal md:leading-[50.99px]"
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch min-h-[320px] md:min-h-[400px]">
+                  <!-- Text Content Column (LEFT) -->
+                  <div class="flex flex-col justify-center p-6 md:p-10 order-2 md:order-1 text-[#CDCDCD]">
+                    <h2
+                      class="text-white md:text-4xl text-2xl font-bold leading-normal mb-4"
                     >
-                      Staff Permissions & Login Security
-                    </h1>
-
+                      Staff Permissions &amp; Login Security
+                    </h2>
                     <p
-                      class="md:w-[808px]  text-lg md:text-xl font-normal leading-normal md:leading-7 mt-6 md:mt-10"
+                      class="text-base md:text-lg font-normal leading-relaxed mb-3"
                     >
                       Not all staff need full access — permissions protect data and keep actions accountable.
                     </p>
-
-                    <p class>Common alert triggers include:</p>
-                    <ul class="list-disc list-inside ">
+                    <p class="text-base md:text-lg mb-2">Common alert triggers include:</p>
+                    <ul class="list-disc list-inside text-base md:text-lg space-y-1">
                       <li>Sensitive data stays secure, visible only to those who need it</li>
                       <li>Errors and fraud are reduced, with trackable user activity</li>
                       <li>Managers gain control, without micromanaging every transaction</li>
                       <li>Training is easier, as roles are customized to each position</li>
                     </ul>
                   </div>
-                  <div class="col-span-1 md:col-span-4">
+                  <!-- Image Column (RIGHT) -->
+                  <div class="order-1 md:order-2 w-full overflow-hidden min-h-[240px] md:min-h-[400px]">
                     <img
                       src="/assets/images/blog-three/slide_five.png"
-                      alt=""
+                      alt="Staff Permissions &amp; Login Security"
+                      class="w-full h-full object-cover object-center"
                     />
                   </div>
                 </div>
               </li>
             </ul>
+          </div>
+
+          <!-- Slider Navigation Arrows (below slider, left-aligned) -->
+          <div class="splide__arrows flex items-center gap-4 mt-6 px-4 md:px-6">
+            <button
+              class="splide__arrow splide__arrow--prev flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              aria-label="Previous Slide"
+            >
+              <svg class="w-6 h-6 text-[#C98633]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button
+              class="splide__arrow splide__arrow--next flex items-center justify-center w-10 h-10 md:w-12 md:h-12 bg-white border border-gray-200 text-gray-700 shadow-md hover:bg-gray-100 dark:bg-[#373737] dark:border-[#4b5563] dark:text-white dark:hover:bg-[#4b5563] transition rounded-full z-20"
+              aria-label="Next Slide"
+            >
+              <svg class="w-6 h-6 text-[#C98633]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
           </div>
         </div>
       </div>
@@ -977,7 +962,20 @@
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <script src="../assets/js/navbar.js"></script>
     <script src="../assets/js/footer-accordion.js"></script>
-    <script src="../assets/js/slider.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        if (document.querySelector("#main-slider")) {
+          new Splide("#main-slider", {
+            type: "loop",
+            rewind: false,
+            arrows: true,
+            pagination: false,
+            speed: 500,
+            autoHeight: true,
+          }).mount();
+        }
+      });
+    </script>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
         const slider = document.getElementById("slider-container");

@@ -1,1676 +1,1292 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tequila POS - Smart POS Solutions</title>
 
-    <script src="/assets/js/theme.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tequila POS - Smart POS Solutions</title>
 
-    <!-- Splide CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
-    />
+  <script src="/assets/js/theme.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Optional: Default Theme -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css"
-    />
+  <!-- Splide CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
 
-    <!-- aos -->
-    <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
+  <!-- Optional: Default Theme -->
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-default.min.css" />
 
-    <link rel="stylesheet" href="/assets/style/global.css" />
+  <!-- aos -->
+  <!-- <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" /> -->
 
-    <style>
-      /* ---- Light defaults ---- */
-      /* body { background-color: #ffffff; color: #000000; }
+  <link rel="stylesheet" href="/assets/style/global.css" />
+
+  <style>
+    /* ---- Light defaults ---- */
+    /* body { background-color: #ffffff; color: #000000; }
       footer { background-color: #ffffff; }
       section { background-color: #ffffff; }
       
       .logo-dark { display: none; }
       .logo-light { display: block; } */
 
-      /* Light mode defaults */
-     
-      .mega-menu { background-color: #ffffff; }
-      #mobile-menu { background-color: #ffffff; }
-      #dropdownBtn { background-color: #f3f4f6; }
-      #dropdownMenu { background-color: #f9fafb; border-color: #e5e7eb; }
+    /* Light mode defaults */
+    .pro-lead {
+      line-height: normal !important;
+    }
 
-      .slide-card  { background-color: #fafafa; }
-    .slide-title { color: #000000; }
-    .slide-body  { color: #4b5563; }
+    .mega-menu {
+      background-color: #ffffff;
+    }
 
-      .page-accent { color: #505050; }
-    .page-main   { color: #000000; }
-    .page-sub    { color: #4f4f4f; }
-    .page-btn { background-color: #000000; color: #ffffff; }
-      
-      /* ---- Dark mode overrides ---- */
-      html.dark body    { background-color: #1c1c1c; color: #ffffff; }
-      html.dark footer  { background-color: #1c1c1c; }
-      html.dark section { background-color: #1c1c1c; }
+    #mobile-menu {
+      background-color: #ffffff;
+    }
 
-      html.dark .slide-card  { background-color: #373737; }
-    html.dark .slide-title { color: #ffffff; }
-    html.dark .slide-body  { color: #cdcdcd; }
-      
-      html.dark .logo-dark { display: block; }
-      html.dark .logo-light { display: none; }
-      html.dark .page-accent { color: #C98633; }
-    html.dark .page-main   { color: #ffffff; }
-    html.dark .page-sub    { color: #cdcdcd; }
-    html.dark .page-btn { background-color: #fff; color: #000; }
-      
-      html.dark .mega-menu { background-color: #000000; }
-      html.dark #mobile-menu { background-color: #1c1c1c; color: #ffffff; }
-      html.dark #dropdownBtn { background-color: #1f2937; color: #ffffff; }
-      html.dark #dropdownMenu { background-color: #111827; border-color: #374151; }
-      
-      /* Text color overrides for dark mode */
-       html.dark .text-black { color: #ffffff; }
-      html.dark .text-gray-500,
-      html.dark .text-gray-600,
-      html.dark .text-gray-700,
-      html.dark .text-gray-800 { color: #cdcdcd; }
-      
-      /* Background and border overrides for dark mode */
-      html.dark .bg-white { background-color: #1c1c1c; }
-      html.dark .bg-gray-100,
-      html.dark .bg-gray-200 { background-color: #2c2c2c; }
-      html.dark .border-gray-300,
-      html.dark .border-gray-200 { border-color: #444444; }
-      html.dark .shadow-md { box-shadow: 0px 4px 18.9px rgba(0,0,0,0.5); }
+    #dropdownBtn {
+      background-color: #f3f4f6;
+    }
 
-      /* Feature card dark mode */
-      html.dark .bg-\[#FAFAFA\] { background-color: #373737; }
-      li h2 {
+    #dropdownMenu {
+      background-color: #f9fafb;
+      border-color: #e5e7eb;
+    }
+
+    .slide-card {
+      background-color: #fafafa;
+    }
+
+    .slide-title {
+      color: #000000;
+    }
+
+    .slide-body {
+      color: #4b5563;
+    }
+
+    .page-accent {
+      color: #505050;
+    }
+
+    .page-main {
+      color: #000000;
+    }
+
+    .page-sub {
+      color: #4f4f4f;
+    }
+
+    .page-btn {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    /* ---- Dark mode overrides ---- */
+    html.dark body {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    html.dark footer {
+      background-color: #1c1c1c;
+    }
+
+    html.dark section {
+      background-color: #1c1c1c;
+    }
+
+    html.dark .slide-card {
+      background-color: #373737;
+    }
+
+    html.dark .slide-title {
+      color: #ffffff;
+    }
+
+    html.dark .slide-body {
+      color: #cdcdcd;
+    }
+
+    html.dark .logo-dark {
+      display: block;
+    }
+
+    html.dark .logo-light {
+      display: none;
+    }
+
+    html.dark .page-accent {
+      color: #C98633;
+    }
+
+    html.dark .page-main {
+      color: #ffffff;
+    }
+
+    html.dark .page-sub {
+      color: #cdcdcd;
+    }
+
+    html.dark .page-btn {
+      background-color: #fff;
+      color: #000;
+    }
+
+    html.dark .mega-menu {
+      background-color: #000000;
+    }
+
+    html.dark #mobile-menu {
+      background-color: #1c1c1c;
+      color: #ffffff;
+    }
+
+    html.dark #dropdownBtn {
+      background-color: #1f2937;
+      color: #ffffff;
+    }
+
+    html.dark #dropdownMenu {
+      background-color: #111827;
+      border-color: #374151;
+    }
+
+    /* Text color overrides for dark mode */
+    html.dark .text-black {
+      color: #ffffff;
+    }
+
+    html.dark .text-gray-500,
+    html.dark .text-gray-600,
+    html.dark .text-gray-700,
+    html.dark .text-gray-800 {
+      color: #cdcdcd;
+    }
+
+    /* Background and border overrides for dark mode */
+    html.dark .bg-white {
+      background-color: #1c1c1c;
+    }
+
+    html.dark .bg-gray-100,
+    html.dark .bg-gray-200 {
+      background-color: #2c2c2c;
+    }
+
+    html.dark .border-gray-300,
+    html.dark .border-gray-200 {
+      border-color: #444444;
+    }
+
+    html.dark .shadow-md {
+      box-shadow: 0px 4px 18.9px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Feature card dark mode */
+    html.dark .bg-\[#FAFAFA\] {
+      background-color: #373737;
+    }
+
+    li h2 {
       font-size: 1.2rem;
       margin-bottom: 16px;
     }
-       @media (min-width: 768px) and (max-width: 1023px) {
+
+    @media (min-width: 768px) and (max-width: 1023px) {
       .page-sub {
         line-height: 1.85rem !important;
       }
-      h1 .page-accent { display: block; }
-      h1 .page-main { display: inline-block; margin-top: 0.125rem; }
+
+      h1 .page-accent {
+        display: inline-block;
+      }
+
+      h1 .page-main {
+        display: inline-block;
+        margin-top: 0.125rem;
+      }
+
       h1 .page-accent,
       h1 .page-main {
         line-height: 1.05;
       }
+
       /* h1 .page-main {
         display: block;
         margin-top: 0.125rem;
       } */
     }
-    
-    /* Tablet view heading line-height fix */
+
+        /* Tablet view heading line-height fix */
     @media (min-width: 768px) and (max-width: 1023px) {
       h1, h2 {
-        line-height: 1.4 !important;
+        line-height: 1.15 !important;
       }
     }
-</style>
-  </head>
-  <body class="font-inter text-sm">
-    <!-- Navigation -->
-    <nav class="navbar xl:block hidden">
-      <div class="navbar-container container mx-auto px-4">
-        <div class="logo-container">
-          <a href="/index.html">
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent.png"
-              class="logo-light logo"
-              alt="Logo"
-            />
-            <img
-              src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-              class="logo-dark logo"
-              alt="Logo"
-            />
+
+    /* Mobile view heading line-height fix */
+    @media (max-width: 767px) {
+      h1 {
+        line-height: 1.15 !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="font-inter text-sm">
+  <!-- Navigation -->
+  <nav class="navbar xl:block hidden">
+    <div class="navbar-container container mx-auto px-4">
+      <div class="logo-container">
+        <a href="/index.html">
+          <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="logo-light logo" alt="Logo" />
+          <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="logo-dark logo" alt="Logo" />
+        </a>
+        <div class="nav-links ml-4">
+          <div class="nav-item relative group">
+            <a href="#business-type" class="nav-link">Business Type</a>
+            <div class="mega-menu mega-anim absolute left-0 top-full pt-10" onmouseleave="clearActive()">
+              <div class="flex flex-nowrap gap-10">
+                <div class="flex flex-col p-10 gap-4" id="categoryList" data-aos="fade-left">
+                  <a href="/food.html" class="text-[26px] font-bold hover:underline" data-cat="food"
+                    onmouseenter="setActive('food')" onfocus="setActive('food')">Food &amp; Beverage</a>
+                  <a href="/retail.html" class="text-[26px] font-bold hover:underline" data-cat="retail"
+                    onmouseenter="setActive('retail')" onfocus="setActive('retail')">Retail</a>
+                </div>
+                <div class="flex gap-16 p-10">
+                  <div class="flex justify-between gap-10" data-panel="food">
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Discover
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/overview.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Overview</a>
+                        </li>
+                        <li>
+                          <a href="/feature.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Switch to Tequila</a>
+                        </li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Capacity
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/resturent-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Resturents</a>
+                        </li>
+                        <li>
+                          <a href="/bar-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Bars</a>
+                        </li>
+                        <li>
+                          <a href="/food-truck-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Food Trucks and Pop-ups</a>
+                        </li>
+                        <li>
+                          <a href="/cafes-coffee-shop-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Cafes & Coffee Shops</a>
+                        </li>
+                        <li>
+                          <a href="/juice-bars-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Juice Bars & Smoothie Shops</a>
+                        </li>
+                        <li>
+                          <a href="/bakeries-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Bakeries</a>
+                        </li>
+                        <li>
+                          <a href="/ice-cream-dessert-capabilities.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Ice Creams & Desserts Shops</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="space-y-6 hidden" data-panel="retail">
+                    <div>
+                      <h6 class="text-xs font-normal mb-[10px]" style="color: inherit">
+                        Discover
+                      </h6>
+                      <ul class="space-y-2 text-sm">
+                        <li>
+                          <a href="/overview.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Overview</a>
+                        </li>
+                        <li>
+                          <a href="/feature.html" class="hover:underline text-xl font-bold"
+                            style="color: inherit">Switch to Tequila</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="/feature.html" class="nav-link">Feature</a>
+          <a href="/hardware.html" class="nav-link">Hardware</a>
+          <a href="/pricing.html" class="nav-link">Pricing</a>
+          <a href="/resourse.html" class="nav-link">Resources</a>
+        </div>
+      </div>
+      <div class="nav-extra-links">
+        <div class="language-selector cursor-pointer" onclick="toggleLanguage()">
+          <span id="language-text">ENGLISH</span>
+          <img id="flag-icon" src="/assets/images/flags/usa.png" alt="USA Flag" class="flag-icon" />
+        </div>
+        <a href="/login.html" class="nav-link">Sign in</a>
+        <a href="/free-demo.html"><button class="demo-btn"><span>Free Demo</span></button></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Navbar -->
+  <nav class="navbar xl:hidden shadow-md relative">
+    <div class="navbar-container container mx-auto flex items-center justify-between py-2 px-4">
+      <div class="logo-container flex items-center">
+        <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="logo-light logo" alt="Logo" />
+        <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="logo-dark logo" alt="Logo" />
+      </div>
+      <button id="mobile-menu-btn" class="xl:hidden p-2" style="color: inherit">
+        <svg id="hamburger-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu"
+      class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg overflow-y-auto"
+      style="background-color: var(--nav-bg, #fff)">
+      <div class="p-4 space-y-2">
+        <!-- Business Type (Level 1 Accordion) -->
+        <div class="mobile-nav-accordion">
+          <button class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg"
+            style="color: var(--text-primary)">
+            Business Type
+            <svg viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 transition-transform duration-200">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+            </svg>
+          </button>
+          <div class="accordion-content hidden border-l-2 border-gray-200 ml-4">
+            <!-- Food & Beverage (Level 2 Accordion) -->
+            <div class="mobile-sub-accordion">
+              <button class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold">
+                Food & Beverage
+                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform duration-200">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+              </button>
+              <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Discover
+                  </h6>
+                  <a href="/overview.html" class="block py-1 text-sm font-bold">Overview</a>
+                  <a href="/feature.html" class="block py-1 text-sm font-bold">Switch to Tequila</a>
+                </div>
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Capacity
+                  </h6>
+                  <div class="grid grid-cols-1 gap-1">
+                    <a href="/resturent-capabilities.html" class="block py-1 text-sm font-bold">Restaurants</a>
+                    <a href="/bar-capabilities.html" class="block py-1 text-sm font-bold">Bars</a>
+                    <a href="/food-truck-capabilities.html" class="block py-1 text-sm font-bold">Food Trucks &
+                      Pop-ups</a>
+                    <a href="/cafes-coffee-shop-capabilities.html" class="block py-1 text-sm font-bold">Cafes & Coffee
+                      Shops</a>
+                    <a href="/juice-bars-capabilities.html" class="block py-1 text-sm font-bold">Juice Bars & Smoothie
+                      Shops</a>
+                    <a href="/bakeries-capabilities.html" class="block py-1 text-sm font-bold">Bakeries</a>
+                    <a href="/ice-cream-dessert-capabilities.html" class="block py-1 text-sm font-bold">Ice Creams &
+                      Desserts</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Retail (Level 2 Accordion) -->
+            <div class="mobile-sub-accordion">
+              <button class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold">
+                Retail
+                <svg viewBox="0 0 20 20" fill="currentColor" class="w-4 h-4 transition-transform duration-200">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" />
+                </svg>
+              </button>
+              <div class="accordion-content hidden pl-4 space-y-4 py-2">
+                <div>
+                  <h6 class="text-[10px] uppercase opacity-60 font-normal mb-2">
+                    Discover
+                  </h6>
+                  <a href="/overview.html" class="block py-1 text-sm font-bold">Overview</a>
+                  <a href="/feature.html" class="block py-1 text-sm font-bold">Switch to Tequila</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <a href="/feature.html" class="block px-4 py-3 font-bold text-lg">Features</a>
+        <a href="/hardware.html" class="block px-4 py-3 font-bold text-lg">Hardware</a>
+        <a href="/pricing.html" class="block px-4 py-3 font-bold text-lg">Pricing</a>
+        <a href="/resourse.html" class="block px-4 py-3 font-bold text-lg">Resources</a>
+
+        <div class="px-4 py-3 border-t border-gray-100">
+          <div class="language-selector flex items-center gap-2 cursor-pointer" onclick="toggleLanguage()">
+            <span id="mobile-language-text" class="font-bold text-sm">ENGLISH</span>
+            <img id="mobile-flag-icon" src="/assets/images/flags/usa.png" alt="USA" class="w-6 h-4 object-cover" />
+          </div>
+        </div>
+
+        <div class="px-4 py-4 space-y-4 border-t border-gray-100">
+          <a href="/login.html" class="block font-bold text-lg">Sign In</a>
+          <a href="/free-demo.html" class="block">
+            <button class="demo-btn w-full"><span>Free Demo</span></button>
           </a>
-          <div class="nav-links ml-4">
-            <div class="nav-item relative group">
-              <a href="#business-type" class="nav-link">Business Type</a>
-              <div
-                class="mega-menu mega-anim absolute left-0 top-full pt-10"
-                onmouseleave="clearActive()"
-              >
-                <div class="flex flex-nowrap gap-10">
-                  <div
-                    class="flex flex-col p-10 gap-4"
-                    id="categoryList"
-                    data-aos="fade-left"
-                  >
-                    <a
-                      href="/food.html"
-                      class="text-[26px] font-bold hover:underline"
-                      data-cat="food"
-                      onmouseenter="setActive('food')"
-                      onfocus="setActive('food')"
-                      >Food &amp; Beverage</a
-                    >
-                    <a
-                      href="/retail.html"
-                      class="text-[26px] font-bold hover:underline"
-                      data-cat="retail"
-                      onmouseenter="setActive('retail')"
-                      onfocus="setActive('retail')"
-                      >Retail</a
-                    >
-                  </div>
-                  <div class="flex gap-16 p-10">
-                    <div class="flex justify-between gap-10" data-panel="food">
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Discover
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/overview.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/feature.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Switch to Tequila</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Capacity
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/resturent-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Resturents</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/bar-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Bars</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/food-truck-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Food Trucks and Pop-ups</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/cafes-coffee-shop-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Cafes & Coffee Shops</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/juice-bars-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Juice Bars & Smoothie Shops</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/bakeries-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Bakeries</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/ice-cream-dessert-capabilities.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Ice Creams & Desserts Shops</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="space-y-6 hidden" data-panel="retail">
-                      <div>
-                        <h6
-                          class="text-xs font-normal mb-[10px]"
-                          style="color: inherit"
-                        >
-                          Discover
-                        </h6>
-                        <ul class="space-y-2 text-sm">
-                          <li>
-                            <a
-                              href="/overview.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Overview</a
-                            >
-                          </li>
-                          <li>
-                            <a
-                              href="/feature.html"
-                              class="hover:underline text-xl font-bold"
-                              style="color: inherit"
-                              >Switch to Tequila</a
-                            >
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a href="/feature.html" class="nav-link">Feature</a>
-            <a href="/hardware.html" class="nav-link">Hardware</a>
-            <a href="/pricing.html" class="nav-link">Pricing</a>
-            <a href="/resourse.html" class="nav-link">Resources</a>
-          </div>
-        </div>
-        <div class="nav-extra-links">
-          <div
-            class="language-selector cursor-pointer"
-            onclick="toggleLanguage()"
-          >
-            <span id="language-text">ENGLISH</span>
-            <img
-              id="flag-icon"
-              src="/assets/images/flags/usa.png"
-              alt="USA Flag"
-              class="flag-icon"
-            />
-          </div>
-          <a href="/login.html" class="nav-link">Sign in</a>
-          <a href="/free-demo.html"
-            ><button class="demo-btn"><span>Free Demo</span></button></a
-          >
         </div>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Mobile Navbar -->
-    <nav class="navbar xl:hidden shadow-md relative">
-      <div
-        class="navbar-container container mx-auto flex items-center justify-between py-2 px-4"
-      >
-        <div class="logo-container flex items-center">
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="logo-light logo"
-            alt="Logo"
-          />
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-            class="logo-dark logo"
-            alt="Logo"
-          />
-        </div>
-        <button
-          id="mobile-menu-btn"
-          class="xl:hidden p-2"
-          style="color: inherit"
-        >
-          <svg
-            id="hamburger-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-          <svg
-            id="close-icon"
-            xmlns="http://www.w3.org/2000/svg"
-            class="w-6 h-6 hidden"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        </button>
+  <!-- hero section -->
+
+  <section class="lg:py-16 py-6">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12">
+      <div class="order-2 md:order-1 w-full md:w-1/2 text-left">
+        <h1 class="text-5xl md:text-[54px] lg:text-7xl font-bold mb-8 pro-lead">
+          <span class="page-accent">A35 Android </span><br /><span class="page-main">PINpad</span>
+        </h1>
+
+        <p
+          class="w-full lg:w-[611px] page-sub md:text-xl text-sm font-semibold md:leading-[25.20px] leading-normal mb-8">
+          The A35 Android PINpad is a compact, secure, and user-friendly
+          payment device designed for fast and seamless transactions. Powered
+          by Android, it supports a wide range of payment methods including
+          chip, swipe, contactless, and mobile wallets—making it ideal for
+          modern retail and service environments.
+        </p>
+
+        <a href="#"
+          class="inline-block page-btn w-72 h-12 bg-black rounded-[32px] text-center text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-gray-800 transition duration-300 transform hover:scale-105 shadow-lg">
+          Buy now
+        </a>
       </div>
-      <div
-        id="mobile-menu"
-        class="fixed top-0 left-0 h-full w-72 transform -translate-x-full transition-transform duration-300 ease-in-out z-50 shadow-lg overflow-y-auto"
-        style="background-color: var(--nav-bg, #fff)"
-      >
-        <div class="p-4 space-y-2">
-          <!-- Business Type (Level 1 Accordion) -->
-          <div class="mobile-nav-accordion">
-            <button
-              class="accordion-header flex justify-between items-center w-full px-4 py-3 font-bold text-lg"
-              style="color: var(--text-primary)"
-            >
-              Business Type
-              <svg
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="w-5 h-5 transition-transform duration-200"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                />
-              </svg>
-            </button>
-            <div
-              class="accordion-content hidden border-l-2 border-gray-200 ml-4"
-            >
-              <!-- Food & Beverage (Level 2 Accordion) -->
-              <div class="mobile-sub-accordion">
-                <button
-                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
-                >
-                  Food & Beverage
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="w-4 h-4 transition-transform duration-200"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    />
-                  </svg>
-                </button>
-                <div class="accordion-content hidden pl-4 space-y-4 py-2">
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Discover
-                    </h6>
-                    <a
-                      href="/overview.html"
-                      class="block py-1 text-sm font-bold"
-                      >Overview</a
-                    >
-                    <a href="/feature.html" class="block py-1 text-sm font-bold"
-                      >Switch to Tequila</a
-                    >
-                  </div>
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Capacity
-                    </h6>
-                    <div class="grid grid-cols-1 gap-1">
-                      <a
-                        href="/resturent-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Restaurants</a
-                      >
-                      <a
-                        href="/bar-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Bars</a
-                      >
-                      <a
-                        href="/food-truck-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Food Trucks & Pop-ups</a
-                      >
-                      <a
-                        href="/cafes-coffee-shop-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Cafes & Coffee Shops</a
-                      >
-                      <a
-                        href="/juice-bars-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Juice Bars & Smoothie Shops</a
-                      >
-                      <a
-                        href="/bakeries-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Bakeries</a
-                      >
-                      <a
-                        href="/ice-cream-dessert-capabilities.html"
-                        class="block py-1 text-sm font-bold"
-                        >Ice Creams & Desserts</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- Retail (Level 2 Accordion) -->
-              <div class="mobile-sub-accordion">
-                <button
-                  class="accordion-header flex justify-between items-center w-full px-4 py-2 font-semibold"
-                >
-                  Retail
-                  <svg
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
-                    class="w-4 h-4 transition-transform duration-200"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
-                    />
-                  </svg>
-                </button>
-                <div class="accordion-content hidden pl-4 space-y-4 py-2">
-                  <div>
-                    <h6
-                      class="text-[10px] uppercase opacity-60 font-normal mb-2"
-                    >
-                      Discover
-                    </h6>
-                    <a
-                      href="/overview.html"
-                      class="block py-1 text-sm font-bold"
-                      >Overview</a
-                    >
-                    <a href="/feature.html" class="block py-1 text-sm font-bold"
-                      >Switch to Tequila</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <a href="/feature.html" class="block px-4 py-3 font-bold text-lg"
-            >Features</a
-          >
-          <a href="/hardware.html" class="block px-4 py-3 font-bold text-lg"
-            >Hardware</a
-          >
-          <a href="/pricing.html" class="block px-4 py-3 font-bold text-lg"
-            >Pricing</a
-          >
-          <a href="/resourse.html" class="block px-4 py-3 font-bold text-lg"
-            >Resources</a
-          >
-
-          <div class="px-4 py-3 border-t border-gray-100">
-            <div
-              class="language-selector flex items-center gap-2 cursor-pointer"
-              onclick="toggleLanguage()"
-            >
-              <span id="mobile-language-text" class="font-bold text-sm"
-                >ENGLISH</span
-              >
-              <img
-                id="mobile-flag-icon"
-                src="/assets/images/flags/usa.png"
-                alt="USA"
-                class="w-6 h-4 object-cover"
-              />
-            </div>
-          </div>
-
-          <div class="px-4 py-4 space-y-4 border-t border-gray-100">
-            <a href="/login.html" class="block font-bold text-lg">Sign In</a>
-            <a href="/free-demo.html" class="block">
-              <button class="demo-btn w-full"><span>Free Demo</span></button>
-            </a>
-          </div>
-        </div>
+      <div class="w-full md:w-1/2 flex justify-center md:justify-end order-1 md:order-2">
+        <img src="/assets/images/a35-android/your-pinpad-image.png" alt="" class="w-full h-auto" />
       </div>
-    </nav>
+    </div>
+  </section>
 
-    <!-- hero section -->
-
-    <section class="lg:py-16 py-6">
-      <div
-        class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-12"
-      >
-        <div class="order-2 md:order-1 w-full md:w-1/2 text-left">
-          <h1
-            class="text-5xl md:text-[54px] lg:text-7xl font-bold mb-8"
-          >
-            <span class="page-accent">A35 Android </span><br /><span class="page-main">PINpad</span>
-          </h1>
-
-          <p
-            class="w-full lg:w-[611px] page-sub md:text-xl text-sm font-semibold md:leading-[25.20px] leading-normal mb-8"
-          >
-            The A35 Android PINpad is a compact, secure, and user-friendly
-            payment device designed for fast and seamless transactions. Powered
-            by Android, it supports a wide range of payment methods including
-            chip, swipe, contactless, and mobile wallets—making it ideal for
-            modern retail and service environments.
+  <!-- features section -->
+  <section class="py-6 lg:py-24">
+    <div class="container mx-auto px-4">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
+          <span class="page-main">Smart. Secure.</span>
+          <span class="page-main">Seamless.</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Explore the powerful features of the A35 Android PINpad — designed
+            for fast transactions, enhanced security, and effortless customer
+            experiences.
           </p>
-
-          <a
-            href="#"
-            class="inline-block page-btn w-72 h-12 bg-black rounded-[32px] text-center text-white text-lg font-semibold px-8 py-3 rounded-full hover:bg-gray-800 transition duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Buy now
-          </a>
-        </div>
-
-        <div
-          class="w-full md:w-1/2 flex justify-center md:justify-end order-1 md:order-2"
-        >
-          <img
-            src="/assets/images/a35-android/your-pinpad-image.png"
-            alt=""
-            class="w-full h-auto"
-          />
         </div>
       </div>
-    </section>
 
-    <!-- features section -->
-    <section class="py-6 lg:py-24">
-      <div class="container mx-auto px-4">
-        <div class="text-center md:mb-10 mb-6">
-          <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
-            <span class="page-main">Smart. Secure.</span>
-            <span class="page-main">Seamless.</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Explore the powerful features of the A35 Android PINpad — designed
-              for fast transactions, enhanced security, and effortless customer
-              experiences.
-            </p>
-          </div>
+      <div class="flex flex-row items-start gap-6 lg:gap-16">
+        <div class="flex flex-col items-start space-y-4 shrink-0">
+          <button id="tab-feature" data-tab="feature-content"
+            class="tab-button flex items-center justify-between w-[140px] md:w-[200px] bg-black text-white text-[12px] md:text-base font-semibold px-5 py-3 rounded-full shadow-md transition">
+            <span>Feature</span>
+            <div class="tab-dot w-4 h-4 bg-white rounded-full ml-2"></div>
+          </button>
+          <button id="tab-best-for" data-tab="best-for-content"
+            class="tab-button flex items-center justify-between w-[140px] md:w-[200px] bg-white text-gray-900 border border-gray-300 text-[12px] md:text-base font-semibold px-5 py-3 rounded-full shadow-sm hover:bg-gray-50 transition">
+            <span>Best For</span>
+            <div class="tab-dot w-4 h-4 bg-black rounded-full ml-2"></div>
+          </button>
         </div>
 
-        <div
-          class="flex flex-row items-start gap-6 lg:gap-16"
-        >
-          <div class="flex flex-col items-start space-y-4 shrink-0">
-            <button
-              id="tab-feature"
-              data-tab="feature-content"
-              class="tab-button flex items-center justify-between w-[140px] md:w-[200px] bg-black text-white text-[12px] md:text-base font-semibold px-5 py-3 rounded-full shadow-md transition"
-            >
-              <span>Feature</span>
-              <div class="tab-dot w-4 h-4 bg-white rounded-full ml-2"></div>
-            </button>
-            <button
-              id="tab-best-for"
-              data-tab="best-for-content"
-              class="tab-button flex items-center justify-between w-[140px] md:w-[200px] bg-white text-gray-900 border border-gray-300 text-[12px] md:text-base font-semibold px-5 py-3 rounded-full shadow-sm hover:bg-gray-50 transition"
-            >
-              <span>Best For</span>
-              <div class="tab-dot w-4 h-4 bg-black rounded-full ml-2"></div>
-            </button>
-          </div>
+        <div class="flex-1 relative min-h-[200px]">
+          <div id="tab-container" class="relative w-full">
 
-          <div class="flex-1 relative min-h-[200px]">
-            <div id="tab-container" class="relative w-full">
+            <div id="feature-content" class="tab-content">
+              <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10">
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center mb-3">
+                    <img src="/assets/images/a920/a920 f/large.png" alt="" class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a920/a920 f/large-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
 
-              <div id="feature-content" class="tab-content">
-                <div
-                  class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-10"
-                >
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center mb-3"
-                    >
-                     <img src="/assets/images/a920/a920 f/large.png" alt="" class="w-10 h-10 object-contain logo-light">
-                     <img src="/assets/images/a920/a920 f/large-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      4.0" Touchscreen <br />intuitive interface
-                    </h3>
                   </div>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center mb-3"
-                    >
-                      <img src="/assets/images/a35-android/a32/pci.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a35-android/a32/pci-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      PCI PTS 6.x certified <br />security
-                    </h3>
-                  </div>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center  mb-4"
-                    >
-                      <img src="/assets/images/a35-android/a32/wifi.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a35-android/a32/wifi-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Wi-Fi, Bluetooth, and <br />USB-C connectivity
-                    </h3>
-                  </div>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center mb-4"
-                    >
-                      <img src="/assets/images/a35-android/a32/supports.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a35-android/a32/supports-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Supports EMV, <br />Contactless (NFC), and <br />Magstripe
-                    </h3>
-                  </div>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center mb-4"
-                    >
-                      <img src="/assets/images/a35-android/a32/fast.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a35-android/a32/fast-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Fast processor with <br />Android 10 OS
-                    </h3>
-                  </div>
-
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-16 h-16 flex items-center justify-center mb-4"
-                    >
-                      <img src="/assets/images/a35-android/a32/long lasting.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a35-android/a32/long lasting-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Long-lasting battery <br />backup
-                    </h3>
-                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    4.0" Touchscreen <br />intuitive interface
+                  </h3>
                 </div>
-              </div>
 
-              <div
-                id="best-for-content"
-                class="tab-content absolute top-0 left-0 w-full opacity-0 pointer-events-none transition-opacity duration-300"
-              >
-                <div
-                  class="grid grid-cols-2 gap-x-12 gap-y-10"
-                >
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center rounded-full mb-4"
-                    >
-                      <img src="/assets/images/a920/a920 f/restaurants.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a920/a920 f/restaurants-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Restaurants
-                    </h3>
-                    <p class="page-sub">
-                      Ideal for tableside payments and order management.
-                    </p>
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center mb-3">
+                    <img src="/assets/images/a35-android/a32/pci.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a35-android/a32/pci-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
                   </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    PCI PTS 6.x certified <br />security
+                  </h3>
+                </div>
 
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center rounded-full mb-4"
-                    >
-                      <img src="/assets/images/a920/a920 f/pop-up.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a920/a920 f/pop-up-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Retail Stores
-                    </h3>
-                    <p class="page-sub">
-                      Perfect for secure, fast checkout at the counter.
-                    </p>
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center  mb-4">
+                    <img src="/assets/images/a35-android/a32/wifi.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a35-android/a32/wifi-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
                   </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Wi-Fi, Bluetooth, and <br />USB-C connectivity
+                  </h3>
+                </div>
 
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center rounded-full mb-4"
-                    >
-                      <img src="/assets/images/a920/a920 f/field.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a920/a920 f/field-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Delivery agents
-                    </h3>
-                    <p class="page-sub">
-                      Compact and mobile for secure payments on the go.
-                    </p>
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center mb-4">
+                    <img src="/assets/images/a35-android/a32/supports.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a35-android/a32/supports-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
                   </div>
-                  <div class="flex flex-col items-center text-center">
-                    <div
-                      class="w-14 h-14 flex items-center justify-center rounded-full mb-4"
-                    >
-                      <img src="/assets/images/a920/a920 f/professional.png" alt="" class="w-10 h-10 object-contain logo-light">
-                      <img src="/assets/images/a920/a920 f/professional-dark.png" alt="" class="w-10 h-10 object-contain logo-dark">
-                    </div>
-                    <h3
-                      class="md:text-sm text-[11px] font-semibold page-sub leading-snug"
-                    >
-                      Customer-facing payment terminals
-                    </h3>
-                    <p class="page-sub">
-                      Enhances customer experience with a sleek, modern design.
-                    </p>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Supports EMV, <br />Contactless (NFC), and <br />Magstripe
+                  </h3>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center mb-4">
+                    <img src="/assets/images/a35-android/a32/fast.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a35-android/a32/fast-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
                   </div>
-                  
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Fast processor with <br />Android 10 OS
+                  </h3>
+                </div>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-16 h-16 flex items-center justify-center mb-4">
+                    <img src="/assets/images/a35-android/a32/long lasting.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a35-android/a32/long lasting-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
+                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Long-lasting battery <br />backup
+                  </h3>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Technical Specifications Section -->
-    <!-- Technical Specifications Section -->
-    <section class="lg:py-16 py-4 lg:m-8 group/specs">
-      <div class="container mx-auto px-4 text-center">
-        <!-- Title -->
-        <div class="text-center md:mb-10 mb-6">
-          <h2 class="mb-1 md:mb-6 font-bold md:text-5xl text-3xl font-inter">
-            <span class="page-accent">Technical</span>
-            <span class="page-main"> Specifications</span>
-          </h2>
-          <div class="flex justify-center">
-            <p class="md:w-[562px] w-full page-sub md:text-lg text-base">
-              Discover the core hardware and software capabilities that power
-              the performance of the A35 Android PINpad. Built for reliability,
-              speed, and security.
-            </p>
-          </div>
-        </div>
-
-        <!-- TIMELINE -->
-        <!-- Desktop / Tablet Timeline -->
-        <div class="hidden md:block relative max-w-6xl mx-auto mt-8 md:mt-16 pb-12">
-          <!-- Desktop Horizontal Spine -->
-          <div
-            class="absolute inset-x-0 top-0 h-0.5 bg-gray-200 mx-auto z-0"
-          ></div>
-
-          <ol
-            class="flex md:flex-row md:justify-between md:items-start relative"
-          >
-            <!-- === SPEC CARD TEMPLATE === -->
-            <!-- To alternate top/bottom: use md:mt-10 for top and md:mt-48 for bottom -->
-            <!-- Each item has a hanging vertical line + horizontal connector -->
-
-            <!-- 1. OS -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <!-- Dot on top spine -->
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <!-- Vertical line to horizontal connector -->
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]"
-              ></span>
-              <!-- Horizontal connector line with dots -->
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <!-- Card -->
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/os.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">OS</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">Android 10</p>
-                </div>
-              </div>
-            </li>
-
-            <!-- 2. Display -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]"
-              ></span>
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/display.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">Display</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">
-                    4.0" Capacitive Touchscreen
+            <div id="best-for-content"
+              class="tab-content absolute top-0 left-0 w-full opacity-0 pointer-events-none transition-opacity duration-300">
+              <div class="grid grid-cols-2 gap-x-12 gap-y-10">
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                    <img src="/assets/images/a920/a920 f/restaurants.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a920/a920 f/restaurants-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
+                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Restaurants
+                  </h3>
+                  <p class="page-sub">
+                    Ideal for tableside payments and order management.
                   </p>
                 </div>
-              </div>
-            </li>
 
-            <!-- 3. Processor -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]"
-              ></span>
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/processor.png" alt="" />
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                    <img src="/assets/images/a920/a920 f/pop-up.png" alt="" class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a920/a920 f/pop-up-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
+                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Retail Stores
+                  </h3>
+                  <p class="page-sub">
+                    Perfect for secure, fast checkout at the counter.
+                  </p>
                 </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">Processor</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">Secure ARM Cortex-A53</p>
+
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                    <img src="/assets/images/a920/a920 f/field.png" alt="" class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a920/a920 f/field-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
+                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Delivery agents
+                  </h3>
+                  <p class="page-sub">
+                    Compact and mobile for secure payments on the go.
+                  </p>
                 </div>
-              </div>
-            </li>
-
-            <!-- 4. Memory -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]"
-              ></span>
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/memory.png" alt="" />
+                <div class="flex flex-col items-center text-center">
+                  <div class="w-14 h-14 flex items-center justify-center rounded-full mb-4">
+                    <img src="/assets/images/a920/a920 f/professional.png" alt=""
+                      class="w-10 h-10 object-contain logo-light">
+                    <img src="/assets/images/a920/a920 f/professional-dark.png" alt=""
+                      class="w-10 h-10 object-contain logo-dark">
+                  </div>
+                  <h3 class="md:text-sm text-[11px] font-semibold page-sub leading-snug">
+                    Customer-facing payment terminals
+                  </h3>
+                  <p class="page-sub">
+                    Enhances customer experience with a sleek, modern design.
+                  </p>
                 </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">Memory</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">1GB RAM / 8GB ROM</p>
-                </div>
+
               </div>
-            </li>
-
-            <!-- 5. Card Reader -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]"
-              ></span>
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/card.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">Card Reader</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">EMV L1/L2, NFC, Magstripe</p>
-                </div>
-              </div>
-            </li>
-
-            <!-- 6. Connectivity -->
-            <li class="md:w-1/6 md:flex-shrink-0 relative">
-              <span
-                class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"
-              ></span>
-              <span
-                class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]"
-              ></span>
-              <div
-                class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]"
-              >
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-                <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
-                <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
-              </div>
-
-              <div
-                class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]"
-              >
-                <div
-                  class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center"
-                >
-                  <img src="/assets/images/a920/connectivity.png" alt="" />
-                </div>
-                <div>
-                  <h3 class="font-bold text-[14px] lg:text-xl page-main">Connectivity</h3>
-                  <p class="page-sub text-[10px] lg:text-sm">USB-C, Wi-Fi, Bluetooth</p>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-
-        <!-- Mobile Timeline -->
-        <div class="block md:hidden relative mt-8 pb-12 w-full">
-          <!-- Spine Line -->
-          <div class="absolute inset-x-0 top-0 h-0.5 bg-gray-200 w-full z-0"></div>
-
-          <ol class="flex flex-row justify-between items-start gap-1 relative px-1 w-full">
-            <!-- 1. OS -->
-            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
-              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
-              <span class="w-px bg-gray-200 top-0 h-[35px]"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
-              <div class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
-                <div class="w-5 h-5 flex items-center justify-center mb-1">
-                  <img src="/assets/images/a920/os.png" class="object-contain" alt="" />
-                </div>
-                <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">OS</h3>
-                <p class="page-sub text-[7.5px] leading-snug">Android 10</p>
-              </div>
-            </li>
-
-            <!-- 2. Display -->
-            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
-              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
-              <span class="w-px bg-gray-200 top-0 h-[95px]"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
-              <div class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
-                <div class="w-5 h-5 flex items-center justify-center mb-1">
-                  <img src="/assets/images/a920/display.png" class="object-contain" alt="" />
-                </div>
-                <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Display</h3>
-                <p class="page-sub text-[7.5px] leading-snug">4.0" Capacitive Touch</p>
-              </div>
-            </li>
-
-            <!-- 3. Card Reader -->
-            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
-              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
-              <span class="w-px bg-gray-200 top-0 h-[75px]"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
-              <div class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
-                <div class="w-5 h-5 flex items-center justify-center mb-1">
-                  <img src="/assets/images/a920/card.png" class="object-contain" alt="" />
-                </div>
-                <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Card Reader</h3>
-                <p class="page-sub text-[7.5px] leading-snug">EMV, NFC, Magstripe</p>
-              </div>
-            </li>
-
-            <!-- 4. Connectivity -->
-            <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
-              <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
-              <span class="w-px bg-gray-200 top-0 h-[45px]"></span>
-              <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
-              <div class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
-                <div class="w-5 h-5 flex items-center justify-center mb-1">
-                  <img src="/assets/images/a920/connectivity.png" class="object-contain" alt="" />
-                </div>
-                <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Connectivity</h3>
-                <p class="page-sub text-[7.5px] leading-snug">USB-C, Wi-Fi, BT</p>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <!-- Watch the A35 Section -->
-    <section class="lg:py-16 py-6">
-      <div class="container px-4 mx-auto">
-        <div class="text-center md:mb-10 mb-6">
-          <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
-            <span class="page-accent">Watch the</span>
-            <span class="page-main">A35 in Action</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              See how the A35 Android PINpad delivers smooth, secure, and
-              efficient payment experiences—right at your fingertips.
-            </p>
-          </div>
-        </div>
-
-        <!-- video section -->
-        <div class="relative w-full mx-auto overflow-hidden rounded-xl">
-          <!-- Thumbnail -->
-          <img
-            src="/assets/images//a35-android/a35-in-action.png"
-            alt="Video Thumbnail"
-            class="w-full block"
-            id="videoThumbnail"
-          />
-
-          <!-- Play Button -->
-          <div
-            id="playVideoBtn"
-            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#c39337] bg-white/20 backdrop-blur-sm cursor-pointer transition hover:bg-white/40"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="w-10 h-10 fill-[#c39337]"
-              viewBox="0 0 24 24"
-            >
-              <path d="M8 5v14l11-7z" />
-            </svg>
-          </div>
-
-          <!-- Video -->
-          <iframe
-            id="videoFrame"
-            class="hidden w-full aspect-video border-0"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose the A35 Section -->
-    <section class="lg:py-16 py-6">
-      <div class="container mx-auto px-4 text-center">
-        <div class="text-center md:mb-10 mb-6">
-          <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
-            <span class="page-accent">Why Choose the</span>
-            <span class="page-main"> A35 Android PINpad?</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Unlock faster payments, enhanced customer satisfaction, and
-              seamless integration with a device built for modern retail and
-              service environments.
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
-        >
-          <div class="">
-            <img
-              src="/assets/images/a35-android/unsplash(1).png"
-              alt="A person holding the compact PINPad"
-              class="rounded-lg object-cover w-full h-auto"
-            />
-          </div>
-          <div
-            class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center"
-          >
-            <div class="">
-              <h3 class="text-xl font-semibold page-main mb-2">
-                Fast and secure payment<br />processing
-              </h3>
-              <p class="page-sub">
-                Powered by a secure ARM processor and Android 10 OS, the A35
-                ensures smooth and rapid transaction processing—minimizing wait
-                times and boosting checkout efficiency during busy hours.
-              </p>
             </div>
-          </div>
-
-          <div class="">
-            <img
-              src="/assets/images/a35-android/unsplash(2).png"
-              alt="A person holding the compact PINPad"
-              class="rounded-lg object-cover w-full h-auto"
-            />
-          </div>
-
-          <div
-            class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center"
-          >
-            <div class="">
-              <h3 class="text-xl font-semibold page-main mb-2">
-                Compact & User-Friendly<br />Design
-              </h3>
-              <p class="page-sub">
-                The slim, lightweight form factor of the A35 makes it perfect
-                for limited counter space or handheld use. Its 4.0" capacitive
-                touchscreen offers a familiar smartphone-like experience,
-                ensuring quick adoption by staff with minimal training.
-              </p>
-            </div>
-          </div>
-
-          <div class="">
-            <img
-              src="/assets/images/a35-android/unsplash(3).png"
-              alt="A person holding the compact PINPad"
-              class="rounded-lg object-cover w-full h-auto"
-            />
-          </div>
-
-          <div
-            class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center"
-          >
-            <div class="">
-              <h3 class="text-xl font-semibold page-main mb-2">
-                Customizable for <br />Business Needs
-              </h3>
-              <p class="page-sub">
-                Easily integrates with your existing POS software and apps, with
-                the flexibility of Android to support additional business tools
-                like inventory, loyalty programs, or CRM.
-              </p>
-            </div>
-          </div>
-
-          <div class="hidden lg:block"></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Documentation Section -->
-    <section class="lg:py-16 py-6">
-      <div class="container mx-auto px-4 ">
-        <div class="text-center md:mb-10 mb-6">
-          <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
-            <span class="page-accent">Explore</span>
-            <span class="page-main"> Our Guides</span>
-          </h2>
-          <div class="flex justify-center">
-            <p
-              class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal"
-            >
-              Access user guides, setup instructions, and technical
-              documentation to get the most out of your A35 Android PINpad.
-            </p>
           </div>
         </div>
       </div>
-    </section>
-    <!-- Single Guide Highlight -->
-    <section class="bg-[#FAFAFA] py-8">
-      <div class="container mx-auto md:px-4 px-2">
-        <h3 class="text-lg font-semibold page-main mb-6">
-          Product Guides & Manuals
-        </h3>
+    </div>
+  </section>
 
-        <div class="flex flex-col md:flex-row items-start justify-between">
-          <div class="flex-1 pr-0 md:pr-8 mb-6 md:mb-0">
-            <h4 class="text-2xl font-bold page-main mb-2">
-              Setup and Installation Manual
-            </h4>
-            <p class="text-sm page-sub mb-4">Published Sep 12, 2025</p>
-            <p class="page-sub">
-              Our Setup and Installation Manual provides a step-by-step guide to
-              get your POS system up and running quickly.<br />
-              From hardware connections to software configuration, it ensures a
-              smooth and hassle-free start.
-            </p>
-            <div class="mt-4 border-b border-gray-600 w-full max-w-sm"></div>
-          </div>
-        </div>
-
-        <div class="w-full flex justify-end mt-8">
-          <a
-            href="#"
-            class=" hover:text-blue-800 font-semibold whitespace-nowrap"
-          >
-            EXPLORE MORE MANUAL >
-          </a>
+  <!-- Technical Specifications Section -->
+  <!-- Technical Specifications Section -->
+  <section class="lg:py-16 py-4 lg:m-8 group/specs">
+    <div class="container mx-auto px-4 text-center">
+      <!-- Title -->
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-5xl text-3xl font-inter">
+          <span class="page-accent">Technical</span>
+          <span class="page-main"> Specifications</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full page-sub md:text-lg text-base">
+            Discover the core hardware and software capabilities that power
+            the performance of the A35 Android PINpad. Built for reliability,
+            speed, and security.
+          </p>
         </div>
       </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-10">
-      <div class="container mx-auto px-4">
-        <!-- Top Logo + Switch -->
-         <div
-          class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center"
-        >
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent.png"
-            class="w-10 md:w-40 h-auto logo-light"
-            alt=""
-          />
-          <img
-            src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png"
-            class="w-10 md:w-40 h-auto logo-dark"
-            alt=""
-          />
+      <!-- TIMELINE -->
+      <!-- Desktop / Tablet Timeline -->
+      <div class="hidden md:block relative max-w-6xl mx-auto mt-8 md:mt-16 pb-12">
+        <!-- Desktop Horizontal Spine -->
+        <div class="absolute inset-x-0 top-0 h-0.5 bg-gray-200 mx-auto z-0"></div>
 
-          <div class="flex items-center space-x-2">
-            <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
-              Switch to dark mode
-            </p>
+        <ol class="flex md:flex-row md:justify-between md:items-start relative">
+          <!-- === SPEC CARD TEMPLATE === -->
+          <!-- To alternate top/bottom: use md:mt-10 for top and md:mt-48 for bottom -->
+          <!-- Each item has a hanging vertical line + horizontal connector -->
 
-            <!-- Toggle Switch -->
-            <label
-              for="dark-mode-toggle"
-              class="relative inline-flex items-center cursor-pointer"
-            >
-              <label for="dark-mode-toggle" class="sr-only"
-                >Toggle dark mode</label
-              >
-              <input
-                type="checkbox"
-                id="dark-mode-toggle"
-                class="sr-only peer"
-                title="Toggle dark mode"
-                placeholder="Toggle dark mode"
-              />
-              <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
-              <div class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]"></div>
-            </label>
-          </div>
-        </div>
-
-        <!-- Links -->
-        <div class="border-t border-gray-300 pt-6">
-          <div
-            class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12"
-          >
-            <!-- Company -->
-            <div>
-              <!-- Accordion Header Button -->
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="company-links"
-                onclick="toggleAccordion(this)"
-              >
-                Company
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-
-              <!-- Links Container -->
-              <div
-                id="company-links"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="about.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >About Us</a
-                >
-                <a
-                  href="contact.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Contact Us</a
-                >
-                <a
-                  href="hardware.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Hardware</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Terms of Service</a
-                >
-                <a
-                  href="privacy-policy.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Privacy Policy</a
-                >
-              </div>
-            </div>
-
-            <!-- Products -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="products"
-                onclick="toggleAccordion(this)"
-              >
-                Products
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="products"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="/a920.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX A920</a
-                >
-                <a
-                  href="/a35-android.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX A35</a
-                >
-                <a
-                  href="/magtek.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >MagTek DynaFlex</a
-                >
-                <a
-                  href="/elys-workstation.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >PAX Elys Workstation</a
-                >
-              </div>
-            </div>
-
-            <!-- Resources -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="resources"
-                onclick="toggleAccordion(this)"
-              >
-                Resources
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="resources"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Product Guides & Tutorials</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Video Tutorials</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >FAQs</a
-                >
-              </div>
-            </div>
-
-            <!-- Legal -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="legal"
-                onclick="toggleAccordion(this)"
-              >
-                Legal
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="legal"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="privacy-policy.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Privacy Policy</a
-                >
-                <a
-                  href="terms-and-conditions.html"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Terms & Condition</a
-                >
-              </div>
-            </div>
-
-            <!-- Social -->
-            <div>
-              <button
-                class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
-                aria-expanded="false"
-                aria-controls="social"
-                onclick="toggleAccordion(this)"
-              >
-                Social
-                <svg
-                  class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </button>
-              <div
-                id="social"
-                class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible"
-              >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Twitter</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Instagram</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Facebook</a
-                >
-                <a
-                  href="#"
-                  class="text-gray-500 hover:text-gray-800 transition-colors block"
-                  >Youtube</a
-                >
-              </div>
-            </div>
-          </div>
-
-          <!-- Subscribe -->
-          <div class="border-t border-gray-300 pt-6">
+          <!-- 1. OS -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <!-- Dot on top spine -->
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <!-- Vertical line to horizontal connector -->
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]"></span>
+            <!-- Horizontal connector line with dots -->
             <div
-              class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4"
-            >
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <!-- Card -->
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[0ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/os.png" alt="" />
+              </div>
               <div>
-                <h4
-                  class="font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-2"
-                >
-                  Subscribe
-                </h4>
-                <p class="text-gray-500 text-sm sm:text-base mb-1">
-                  Join our community to receive updates
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">OS</h3>
+                <p class="page-sub text-[10px] lg:text-sm">Android 10</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. Display -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]"></span>
+            <div
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[100ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/display.png" alt="" />
+              </div>
+              <div>
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">Display</h3>
+                <p class="page-sub text-[10px] lg:text-sm">
+                  4.0" Capacitive Touchscreen
                 </p>
               </div>
+            </div>
+          </li>
+
+          <!-- 3. Processor -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]"></span>
+            <div
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[200ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/processor.png" alt="" />
+              </div>
               <div>
-                <p class="text-gray-800 text-xs ps-3 pb-1">Stay up to date</p>
-                <div class="flex w-full sm:w-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    class="bg-gray-100 h-9 rounded-l-full px-4 w-full sm:w-64 text-gray-600 text-base border-0 outline-none"
-                  />
-                  <button
-                    class="bg-black h-9 rounded-r-full px-6 text-white text-base hover:bg-gray-800 transition-colors"
-                  >
-                    Subscribe
-                  </button>
-                </div>
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">Processor</h3>
+                <p class="page-sub text-[10px] lg:text-sm">Secure ARM Cortex-A53</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- 4. Memory -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]"></span>
+            <div
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[300ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/memory.png" alt="" />
+              </div>
+              <div>
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">Memory</h3>
+                <p class="page-sub text-[10px] lg:text-sm">1GB RAM / 8GB ROM</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- 5. Card Reader -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]"></span>
+            <div
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[80px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[90px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[400ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/card.png" alt="" />
+              </div>
+              <div>
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">Card Reader</h3>
+                <p class="page-sub text-[10px] lg:text-sm">EMV L1/L2, NFC, Magstripe</p>
+              </div>
+            </div>
+          </li>
+
+          <!-- 6. Connectivity -->
+          <li class="md:w-1/6 md:flex-shrink-0 relative">
+            <span
+              class="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-gray-300 z-10"></span>
+            <span
+              class="hidden md:block absolute left-1/2 -translate-x-1/2 w-px bg-gray-200 top-[1px] h-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]"></span>
+            <div
+              class="hidden md:flex items-center justify-center absolute left-1/2 -translate-x-1/2 top-[200px] md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]">
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+              <span class="w-[30px] lg:w-[40px] h-[2px] bg-gray-200"></span>
+              <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            </div>
+
+            <div
+              class="bg-white p-3 lg:p-5 rounded-2xl shadow-xl border border-gray-100 md:mt-[210px] md:mb-0 mt-0 flex md:block text-left md:text-center md:ml-0 md:opacity-100 md:translate-y-0 lg:opacity-0 lg:-translate-y-10 lg:group-hover/specs:opacity-100 lg:group-hover/specs:translate-y-0 transition-all duration-700 ease-in-out delay-[500ms]">
+              <div
+                class="flex-shrink-0 mr-4 md:mx-auto md:mb-2 w-8 lg:w-10 h-8 lg:h-10 flex items-center justify-center">
+                <img src="/assets/images/a920/connectivity.png" alt="" />
+              </div>
+              <div>
+                <h3 class="font-bold text-[14px] lg:text-xl page-main">Connectivity</h3>
+                <p class="page-sub text-[10px] lg:text-sm">USB-C, Wi-Fi, Bluetooth</p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+
+      <!-- Mobile Timeline -->
+      <div class="block md:hidden relative mt-8 pb-12 w-full">
+        <!-- Spine Line -->
+        <div class="absolute inset-x-0 top-0 h-0.5 bg-gray-200 w-full z-0"></div>
+
+        <ol class="flex flex-row justify-between items-start gap-1 relative px-1 w-full">
+          <!-- 1. OS -->
+          <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+            <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
+            <span class="w-px bg-gray-200 top-0 h-[35px]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
+            <div
+              class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+              <div class="w-5 h-5 flex items-center justify-center mb-1">
+                <img src="/assets/images/a920/os.png" class="object-contain" alt="" />
+              </div>
+              <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">OS</h3>
+              <p class="page-sub text-[7.5px] leading-snug">Android 10</p>
+            </div>
+          </li>
+
+          <!-- 2. Display -->
+          <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+            <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
+            <span class="w-px bg-gray-200 top-0 h-[95px]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
+            <div
+              class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+              <div class="w-5 h-5 flex items-center justify-center mb-1">
+                <img src="/assets/images/a920/display.png" class="object-contain" alt="" />
+              </div>
+              <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Display</h3>
+              <p class="page-sub text-[7.5px] leading-snug">4.0" Capacitive Touch</p>
+            </div>
+          </li>
+
+          <!-- 3. Card Reader -->
+          <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+            <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
+            <span class="w-px bg-gray-200 top-0 h-[75px]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
+            <div
+              class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+              <div class="w-5 h-5 flex items-center justify-center mb-1">
+                <img src="/assets/images/a920/card.png" class="object-contain" alt="" />
+              </div>
+              <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Card Reader</h3>
+              <p class="page-sub text-[7.5px] leading-snug">EMV, NFC, Magstripe</p>
+            </div>
+          </li>
+
+          <!-- 4. Connectivity -->
+          <li class="w-[24%] flex-shrink-0 relative flex flex-col items-center">
+            <span class="absolute top-0 -translate-y-1/2 w-2 h-2 rounded-full bg-gray-300 z-10"></span>
+            <span class="w-px bg-gray-200 top-0 h-[45px]"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 z-10"></span>
+            <div
+              class="bg-white border border-gray-100 rounded-xl p-1.5 w-full flex flex-col items-center text-center shadow-md mt-1">
+              <div class="w-5 h-5 flex items-center justify-center mb-1">
+                <img src="/assets/images/a920/connectivity.png" class="object-contain" alt="" />
+              </div>
+              <h3 class="font-bold text-[9px] leading-tight page-main mb-0.5">Connectivity</h3>
+              <p class="page-sub text-[7.5px] leading-snug">USB-C, Wi-Fi, BT</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- Watch the A35 Section -->
+  <section class="lg:py-16 py-6">
+    <div class="container px-4 mx-auto">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
+          <span class="page-accent">Watch the</span>
+          <span class="page-main">A35 in Action</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            See how the A35 Android PINpad delivers smooth, secure, and
+            efficient payment experiences—right at your fingertips.
+          </p>
+        </div>
+      </div>
+
+      <!-- video section -->
+      <div class="relative w-full mx-auto overflow-hidden rounded-xl">
+        <!-- Thumbnail -->
+        <img src="/assets/images//a35-android/a35-in-action.png" alt="Video Thumbnail" class="w-full block"
+          id="videoThumbnail" />
+
+        <!-- Play Button -->
+        <div id="playVideoBtn"
+          class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 flex items-center justify-center rounded-full border-2 border-[#c39337] bg-white/20 backdrop-blur-sm cursor-pointer transition hover:bg-white/40">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 fill-[#c39337]" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </div>
+
+        <!-- Video -->
+        <iframe id="videoFrame" class="hidden w-full aspect-video border-0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose the A35 Section -->
+  <section class="lg:py-16 py-6">
+    <div class="container mx-auto px-4 text-center">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
+          <span class="page-accent">Why Choose the</span>
+          <span class="page-main"> A35 Android PINpad?</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Unlock faster payments, enhanced customer satisfaction, and
+            seamless integration with a device built for modern retail and
+            service environments.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div class="">
+          <img src="/assets/images/a35-android/unsplash(1).png" alt="A person holding the compact PINPad"
+            class="rounded-lg object-cover w-full h-auto" />
+        </div>
+        <div class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center">
+          <div class="">
+            <h3 class="text-xl font-semibold page-main mb-2">
+              Fast and secure payment<br />processing
+            </h3>
+            <p class="page-sub">
+              Powered by a secure ARM processor and Android 10 OS, the A35
+              ensures smooth and rapid transaction processing—minimizing wait
+              times and boosting checkout efficiency during busy hours.
+            </p>
+          </div>
+        </div>
+
+        <div class="">
+          <img src="/assets/images/a35-android/unsplash(2).png" alt="A person holding the compact PINPad"
+            class="rounded-lg object-cover w-full h-auto" />
+        </div>
+
+        <div class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center">
+          <div class="">
+            <h3 class="text-xl font-semibold page-main mb-2">
+              Compact & User-Friendly<br />Design
+            </h3>
+            <p class="page-sub">
+              The slim, lightweight form factor of the A35 makes it perfect
+              for limited counter space or handheld use. Its 4.0" capacitive
+              touchscreen offers a familiar smartphone-like experience,
+              ensuring quick adoption by staff with minimal training.
+            </p>
+          </div>
+        </div>
+
+        <div class="">
+          <img src="/assets/images/a35-android/unsplash(3).png" alt="A person holding the compact PINPad"
+            class="rounded-lg object-cover w-full h-auto" />
+        </div>
+
+        <div class="rounded-[38px] border border-[#d9d9d9] flex flex-col justify-center items-center p-6 text-center">
+          <div class="">
+            <h3 class="text-xl font-semibold page-main mb-2">
+              Customizable for <br />Business Needs
+            </h3>
+            <p class="page-sub">
+              Easily integrates with your existing POS software and apps, with
+              the flexibility of Android to support additional business tools
+              like inventory, loyalty programs, or CRM.
+            </p>
+          </div>
+        </div>
+
+        <div class="hidden lg:block"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Documentation Section -->
+  <section class="lg:py-16 py-6">
+    <div class="container mx-auto px-4 ">
+      <div class="text-center md:mb-10 mb-6">
+        <h2 class="mb-1 md:mb-6 font-bold md:text-[40px] text-xl">
+          <span class="page-accent">Explore</span>
+          <span class="page-main"> Our Guides</span>
+        </h2>
+        <div class="flex justify-center">
+          <p class="md:w-[562px] w-full text-center page-sub md:text-[15px] text-[10px] font-normal">
+            Access user guides, setup instructions, and technical
+            documentation to get the most out of your A35 Android PINpad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Single Guide Highlight -->
+  <section class="bg-[#FAFAFA] py-8">
+    <div class="container mx-auto md:px-4 px-2">
+      <h3 class="text-lg font-semibold page-main mb-6">
+        Product Guides & Manuals
+      </h3>
+
+      <div class="flex flex-col md:flex-row items-start justify-between">
+        <div class="flex-1 pr-0 md:pr-8 mb-6 md:mb-0">
+          <h4 class="text-2xl font-bold page-main mb-2">
+            Setup and Installation Manual
+          </h4>
+          <p class="text-sm page-sub mb-4">Published Sep 12, 2025</p>
+          <p class="page-sub">
+            Our Setup and Installation Manual provides a step-by-step guide to
+            get your POS system up and running quickly.<br />
+            From hardware connections to software configuration, it ensures a
+            smooth and hassle-free start.
+          </p>
+          <div class="mt-4 border-b border-gray-600 w-full max-w-sm"></div>
+        </div>
+      </div>
+
+      <div class="w-full flex justify-end mt-8">
+        <a href="#" class=" hover:text-blue-800 font-semibold whitespace-nowrap">
+          EXPLORE MORE MANUAL >
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-10">
+    <div class="container mx-auto px-4">
+      <!-- Top Logo + Switch -->
+      <div class="border-t border-gray-300 pt-6 mb-10 flex justify-between items-center">
+        <img src="/assets/images/logo/tequila_pos_logo_transparent.png" class="w-10 md:w-40 h-auto logo-light" alt="" />
+        <img src="/assets/images/logo/tequila_pos_logo_transparent 1-dark.png" class="w-10 md:w-40 h-auto logo-dark"
+          alt="" />
+
+        <div class="flex items-center space-x-2">
+          <p id="theme-toggle-label" class="page-sub text-[11px] font-normal select-none">
+            Switch to dark mode
+          </p>
+
+          <!-- Toggle Switch -->
+          <label for="dark-mode-toggle" class="relative inline-flex items-center cursor-pointer">
+            <label for="dark-mode-toggle" class="sr-only">Toggle dark mode</label>
+            <input type="checkbox" id="dark-mode-toggle" class="sr-only peer" title="Toggle dark mode"
+              placeholder="Toggle dark mode" />
+            <div class="theme-toggle-track w-[88px] h-[44px] rounded-full bg-[#e0e0e0] peer-checked:bg-[#252525]"></div>
+            <div
+              class="theme-toggle-knob absolute left-[3px] top-[3px] w-[38px] h-[38px] bg-white rounded-full peer-checked:translate-x-[44px]">
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <!-- Links -->
+      <div class="border-t border-gray-300 pt-6">
+        <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-5 gap-8 sm:gap-10 lg:gap-12 mb-12">
+          <!-- Company -->
+          <div>
+            <!-- Accordion Header Button -->
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="company-links" onclick="toggleAccordion(this)">
+              Company
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            <!-- Links Container -->
+            <div id="company-links"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="about.html" class="text-gray-500 hover:text-gray-800 transition-colors block">About Us</a>
+              <a href="contact.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Contact Us</a>
+              <a href="hardware.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Hardware</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Terms of Service</a>
+              <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy
+                Policy</a>
+            </div>
+          </div>
+
+          <!-- Products -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="products" onclick="toggleAccordion(this)">
+              Products
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="products"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="/a920.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX A920</a>
+              <a href="/a35-android.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX A35</a>
+              <a href="/magtek.html" class="text-gray-500 hover:text-gray-800 transition-colors block">MagTek
+                DynaFlex</a>
+              <a href="/elys-workstation.html" class="text-gray-500 hover:text-gray-800 transition-colors block">PAX
+                Elys Workstation</a>
+            </div>
+          </div>
+
+          <!-- Resources -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="resources" onclick="toggleAccordion(this)">
+              Resources
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="resources"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Product Guides &
+                Tutorials</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Video Tutorials</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">FAQs</a>
+            </div>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="legal" onclick="toggleAccordion(this)">
+              Legal
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="legal"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="privacy-policy.html" class="text-gray-500 hover:text-gray-800 transition-colors block">Privacy
+                Policy</a>
+              <a href="terms-and-conditions.html"
+                class="text-gray-500 hover:text-gray-800 transition-colors block">Terms & Condition</a>
+            </div>
+          </div>
+
+          <!-- Social -->
+          <div>
+            <button
+              class="w-full flex justify-start items-center font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-4 sm:mb-6 focus:outline-none sm:cursor-default sm:pointer-events-none"
+              aria-expanded="false" aria-controls="social" onclick="toggleAccordion(this)">
+              Social
+              <svg class="w-5 h-5 text-gray-600 transition-transform duration-300 sm:hidden" fill="none"
+                stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            <div id="social"
+              class="space-y-3 max-h-0 overflow-hidden transition-[max-height] duration-300 sm:max-h-full sm:overflow-visible">
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Twitter</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Instagram</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Facebook</a>
+              <a href="#" class="text-gray-500 hover:text-gray-800 transition-colors block">Youtube</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Subscribe -->
+        <div class="border-t border-gray-300 pt-6">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h4 class="font-roboto font-medium text-gray-800 text-xl sm:text-2xl mb-2">
+                Subscribe
+              </h4>
+              <p class="text-gray-500 text-sm sm:text-base mb-1">
+                Join our community to receive updates
+              </p>
+            </div>
+            <div>
+              <p class="text-gray-800 text-xs ps-3 pb-1">Stay up to date</p>
+              <div class="flex w-full sm:w-auto">
+                <input type="email" placeholder="Enter your email"
+                  class="bg-gray-100 h-9 rounded-l-full px-4 w-full sm:w-64 text-gray-600 text-base border-0 outline-none" />
+                <button
+                  class="bg-black h-9 rounded-r-full px-6 text-white text-base hover:bg-gray-800 transition-colors">
+                  Subscribe
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
 
-    <!-- Splide JS -->
-    <script src="../assets/js/navbar.js"></script>
-    <script src="../assets/js/footer-accordion.js"></script>
-    <script src="../assets/js/a35-android-feature-tab.js"></script>
-    <script src="./assets/js/videoPlay.js"></script>
+  <!-- Splide JS -->
+  <script src="../assets/js/navbar.js"></script>
+  <script src="../assets/js/footer-accordion.js"></script>
+  <script src="../assets/js/a35-android-feature-tab.js"></script>
+  <script src="./assets/js/videoPlay.js"></script>
 
-    <script>
-      function toggleFaq(element) {
-        element.classList.toggle("active");
+  <script>
+    function toggleFaq(element) {
+      element.classList.toggle("active");
+    }
+
+    let isEnglish = true;
+
+    function toggleLanguage() {
+      const textEl = document.getElementById("language-text");
+      const flagEl = document.getElementById("flag-icon");
+
+      if (isEnglish) {
+        textEl.textContent = "ESPAÑOL";
+        flagEl.src = "/assets/images/flags/espan.png"; // your Spain flag
+        flagEl.alt = "Spain Flag";
+      } else {
+        textEl.textContent = "ENGLISH";
+        flagEl.src = "/assets/images/flags/usa.png";
+        flagEl.alt = "USA Flag";
       }
 
-      let isEnglish = true;
+      isEnglish = !isEnglish; // flip state
+    }
+  </script>
+</body>
 
-      function toggleLanguage() {
-        const textEl = document.getElementById("language-text");
-        const flagEl = document.getElementById("flag-icon");
-
-        if (isEnglish) {
-          textEl.textContent = "ESPAÑOL";
-          flagEl.src = "/assets/images/flags/espan.png"; // your Spain flag
-          flagEl.alt = "Spain Flag";
-        } else {
-          textEl.textContent = "ENGLISH";
-          flagEl.src = "/assets/images/flags/usa.png";
-          flagEl.alt = "USA Flag";
-        }
-
-        isEnglish = !isEnglish; // flip state
-      }
-    </script>
-  </body>
 </html>

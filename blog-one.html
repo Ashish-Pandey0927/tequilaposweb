@@ -135,14 +135,17 @@
       border-radius: var(--img-rad);
       transition: all 1.2s cubic-bezier(0.25, 1, 0.5, 1);
     }
-  
+
     /* Tablet view heading line-height fix */
     @media (min-width: 768px) and (max-width: 1023px) {
-      h1, h2, h3 {
+
+      h1,
+      h2,
+      h3 {
         line-height: 1.4 !important;
       }
     }
-</style>
+  </style>
 
   <!-- Splide CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" />
@@ -868,18 +871,21 @@
       <div class=" ">
         <div class="relative overflow-visible">
           <!-- Main Slider Content Container -->
-          <div id="slider-container" class="flex items-start overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory" style="transition: height 0.3s ease-in-out;">
+          <div id="slider-container"
+            class="flex items-start overflow-x-auto overflow-y-hidden hide-scrollbar snap-x snap-mandatory"
+            style="transition: height 0.3s ease-in-out;">
             <!-- Slide 1 -->
             <div class="flex-shrink-0 w-full snap-center py-8">
-              <div class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
+              <div
+                class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
                 <!-- Image Column -->
                 <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1 relative">
                   <img src="/assets/images/blog-one/cash-discount-slider.png"
                     alt="A hand holding a stack of dollar bills, representing a cash discount."
                     class="w-full h-auto max-h-[500px] md:max-h-none md:h-full object-cover shadow-xl" />
                   <!-- Mobile navigation arrows overlaying image -->
-                  <button
-                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 prev-mobile-btn"
+                  <!-- <button
+                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 prev-mobile-btn"
                     aria-label="Previous slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -888,13 +894,13 @@
                     </svg>
                   </button>
                   <button
-                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 next-mobile-btn"
+                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 next-mobile-btn"
                     aria-label="Next slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                     </svg>
-                  </button>
+                  </button> -->
                 </div>
                 <!-- Text Content Column -->
                 <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
@@ -921,15 +927,16 @@
 
             <!-- Slide 2 -->
             <div class="flex-shrink-0 w-full snap-center py-8">
-              <div class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
+              <div
+                class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
                 <!-- Image Column -->
                 <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1 relative">
                   <img src="/assets/images/blog-one/slider-two.png"
                     alt="A person receiving a gift, representing customer loyalty rewards."
                     class="w-full h-auto max-h-[500px] md:max-h-none md:h-full object-cover shadow-xl" />
                   <!-- Mobile navigation arrows overlaying image -->
-                  <button
-                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 prev-mobile-btn"
+                  <!-- <button
+                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 prev-mobile-btn"
                     aria-label="Previous slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -938,13 +945,13 @@
                     </svg>
                   </button>
                   <button
-                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 next-mobile-btn"
+                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 next-mobile-btn"
                     aria-label="Next slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                     </svg>
-                  </button>
+                  </button> -->
                 </div>
                 <!-- Text Content Column -->
                 <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
@@ -993,14 +1000,15 @@
             </div>
             <!-- Slide 3 -->
             <div class="flex-shrink-0 w-full snap-center py-8">
-              <div class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
+              <div
+                class="container mx-auto px-12 md:px-16 lg:px-4 flex flex-col md:flex-row items-start md:items-stretch justify-between gap-12">
                 <!-- Image Column -->
                 <div class="w-full md:w-1/2 flex justify-center lg:justify-start order-1 relative">
                   <img src="/assets/images/blog-one/slider-three.png" alt="Why is this important?"
                     class="w-full h-auto max-h-[500px] md:max-h-none md:h-full object-cover shadow-xl" />
                   <!-- Mobile navigation arrows overlaying image -->
-                  <button
-                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 prev-mobile-btn"
+                  <!-- <button
+                    class="absolute top-1/2 left-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 prev-mobile-btn"
                     aria-label="Previous slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -1009,13 +1017,13 @@
                     </svg>
                   </button>
                   <button
-                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md lg:hidden z-20 next-mobile-btn"
+                    class="absolute top-1/2 right-2 transform -translate-y-1/2 p-2 bg-white/80 dark:bg-black/80 rounded-full shadow-md md:hidden z-20 next-mobile-btn"
                     aria-label="Next slide">
                     <svg class="w-5 h-5 text-gray-800 dark:text-white" fill="none" stroke="currentColor"
                       viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
                     </svg>
-                  </button>
+                  </button> -->
                 </div>
                 <!-- Text Content Column -->
                 <div class="w-full md:w-1/2 text-center md:text-left lg:text-left order-2 lg:self-start">
@@ -1392,147 +1400,82 @@
             </div>
           </div>
 
-          <!-- Mobile/Tablet Responsive Comparison Table (Stacked on mobile, side-by-side on tablet) -->
+          <!-- Mobile/Tablet Responsive Comparison Table (3 equal cards on tablet) -->
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:hidden">
-            <!-- Card 1: Aspect & Traditional -->
-            <div
-              class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden md:col-span-2 flex flex-col">
-              <!-- Header Row -->
-              <div class="flex flex-row divide-x divide-gray-200 border-b border-gray-200">
-                <div class="w-1/2 text-center font-bold p-4 md:p-6 text-base md:text-lg">Aspect</div>
-                <div class="w-1/2 text-center font-bold p-4 md:p-6 text-base md:text-lg">Traditional</div>
-              </div>
-              <!-- Rows -->
+            <!-- Card 1: Aspect -->
+            <div class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col">
+              <div class="text-center font-bold p-4 md:p-6 text-base md:text-lg border-b border-gray-200">Aspect</div>
               <div class="flex flex-col divide-y divide-gray-200 dark:divide-zinc-700 flex-1">
-                <!-- Row 1 -->
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    POS Price</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    ₹1,000</div>
-                </div>
-                <!-- Row 2 -->
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  POS Price</div>
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Card Payment</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Customer pays ₹1,000</div>
-                </div>
-                <!-- Row 3 -->
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Card Payment</div>
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Cash Payment</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Customer pays ₹1,000</div>
-                </div>
-                <!-- Row 4 -->
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Cash Payment</div>
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Processing Fee</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    30 (paid by business)</div>
-                </div>
-                <!-- Row 5 -->
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Processing Fee</div>
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Business Keeps</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    ₹970 (card) / ₹1,000 (cash)</div>
-                </div>
-                <!-- Row 6 -->
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Business Keeps</div>
                 <div
-                  class="flex flex-row divide-x divide-gray-200 dark:divide-zinc-700 flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Impact</div>
-                  <div
-                    class="w-1/2 p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Lower profit on card sales</div>
-                </div>
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Impact</div>
               </div>
             </div>
 
-            <!-- Card 2: Cash Discount -->
-            <div
-              class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden md:col-span-1 flex flex-col">
-              <!-- Header Row -->
-              <div class="flex flex-row border-b border-gray-200">
-                <!-- Aspect Header (Visible on Mobile only, Hidden on Tablet) -->
-                <div class="w-1/2 text-center font-bold p-4 text-base md:hidden border-r border-gray-200">Aspect</div>
-                <!-- Cash Discount Header -->
-                <div class="w-1/2 md:w-full text-center font-bold p-4 md:p-6 text-base md:text-lg">Cash Discount</div>
+            <!-- Card 2: Traditional -->
+            <div class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col">
+              <div class="text-center font-bold p-4 md:p-6 text-base md:text-lg border-b border-gray-200">Traditional
               </div>
-              <!-- Rows -->
-              <div class="flex flex-col divide-y divide-gray-200 flex-1">
-                <!-- Row 1 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    POS Price</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    ₹1,030 (includes card fee markup)</div>
-                </div>
-                <!-- Row 2 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    Card Payment</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Customer pays ₹1,030</div>
-                </div>
-                <!-- Row 3 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    Cash Payment</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Customer pays ₹1,000 (₹30 discount)</div>
-                </div>
-                <!-- Row 4 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    Processing Fee</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    ₹0 (if paid by cash)</div>
-                </div>
-                <!-- Row 5 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    Business Keeps</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    ₹1,000 (both card & cash)</div>
-                </div>
-                <!-- Row 6 -->
-                <div class="flex flex-row flex-1 min-h-[60px] md:min-h-[75px]">
-                  <div
-                    class="w-1/2 p-3 text-center page-sub text-[12px] md:hidden border-r border-gray-200 dark:border-zinc-700 flex items-center justify-center">
-                    Impact</div>
-                  <div
-                    class="w-1/2 md:w-full p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] flex items-center justify-center">
-                    Full profit on all payments</div>
-                </div>
+              <div class="flex flex-col divide-y divide-gray-200 dark:divide-zinc-700 flex-1">
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;1,000</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Customer pays &#8377;1,000</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Customer pays &#8377;1,000</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;30 (paid by business)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;970 (card) / &#8377;1,000 (cash)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Lower profit on card sales</div>
+              </div>
+            </div>
+
+            <!-- Card 3: Cash Discount -->
+            <div class="savings-card rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col">
+              <div class="text-center font-bold p-4 md:p-6 text-base md:text-lg border-b border-gray-200">Cash Discount
+              </div>
+              <div class="flex flex-col divide-y divide-gray-200 dark:divide-zinc-700 flex-1">
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;1,030 (includes card fee markup)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Customer pays &#8377;1,030</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Customer pays &#8377;1,000 (&#8377;30 discount)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;0 (if paid by cash)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  &#8377;1,000 (both card &amp; cash)</div>
+                <div
+                  class="p-3 md:p-4 text-center page-sub text-[12px] md:text-[15px] min-h-[60px] flex items-center justify-center">
+                  Full profit on all payments</div>
               </div>
             </div>
           </div>
@@ -1853,7 +1796,7 @@
             legal-compliant setup options, TequilaPOS empowers you to make an informed decision and switch between
             models anytime — no extra hardware or setup needed.
           </p>
-          <a href="#contact"
+          <a href="/contact.html"
             class="text-xs md:text-sm font-semibold underline underline-offset-4 hover:text-black transition-colors block pt-2">
             CONNECT TO US
           </a>
@@ -2070,21 +2013,21 @@
 
       if (slider) {
         const slides = Array.from(slider.children);
-        
+
         const adjustHeight = () => {
           const scrollLeft = slider.scrollLeft;
           const sliderWidth = slider.clientWidth;
           if (sliderWidth === 0) return;
-          
+
           let activeIndex = Math.round(scrollLeft / sliderWidth);
           if (activeIndex < 0) activeIndex = 0;
           if (activeIndex >= slides.length) activeIndex = slides.length - 1;
-          
+
           const activeSlide = slides[activeIndex];
           const innerContent = activeSlide.firstElementChild;
           if (innerContent) {
-            const padding = parseInt(window.getComputedStyle(activeSlide).paddingTop || 0) + 
-                            parseInt(window.getComputedStyle(activeSlide).paddingBottom || 0);
+            const padding = parseInt(window.getComputedStyle(activeSlide).paddingTop || 0) +
+              parseInt(window.getComputedStyle(activeSlide).paddingBottom || 0);
             const newHeight = innerContent.offsetHeight + padding;
             slider.style.height = `${newHeight}px`;
           }
@@ -2104,7 +2047,7 @@
         slider.addEventListener("scroll", adjustHeight);
         // Window resize to recalculate height on rotation/resizing
         window.addEventListener("resize", adjustHeight);
-        
+
         // Initial call after DOM and images load
         adjustHeight();
         if (document.fonts) {
