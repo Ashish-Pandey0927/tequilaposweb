@@ -741,5 +741,24 @@ html.dark body .swiper-button-next:hover {
   html body section:first-of-type .page-sub {
     font-weight: 500 !important;
   }
+
+  /* Make specs timeline cards equal height in tablet view */
+  .group\/specs ol li > div {
+    min-height: 155px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
 }
+
+/* Mobile view specs timeline cards equal height */
+@media (max-width: 767px) {
+  .group\/specs ol li > div {
+    min-height: 85px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+  }
+}
+
 
