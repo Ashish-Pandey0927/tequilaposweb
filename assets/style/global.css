@@ -1569,4 +1569,19 @@ html.dark body .swiper-button-next:hover {
   html body [class*="section"] .text-center.mb-8 {
     margin-bottom: 16px !important;
   }
+
+  /* Scale hero images on product pages in tablet view to match text content height */
+  html body section:first-of-type img[src*="-hero"],
+  html body section:first-of-type img[src*="hero-image"],
+  html body section:first-of-type img[src*="pinpad-image"],
+  html body section:first-of-type img[src*="workstation"],
+  html body section:first-of-type img[src*="magtek"] {
+    transform: scale(1.3) !important;
+    transform-origin: center right !important;
+  }
+
+  /* Set hero subheader font-weight to 500 in tablet view */
+  html body section:first-of-type .page-sub {
+    font-weight: 500 !important;
+  }
 }
