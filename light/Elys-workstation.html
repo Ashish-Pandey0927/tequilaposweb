@@ -40,8 +40,9 @@
 
       .flip-card {
         background-color: transparent;
-        width: 335px;
-        height: 488px;
+        width: 100%;
+        max-width: 335px;
+        aspect-ratio: 335 / 488;
         perspective: 1000px;
       }
 
@@ -66,11 +67,19 @@
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
         overflow: hidden;
+        border-radius: 38px;
       }
 
       .flip-card-front {
         background-color: transparent;
         color: black;
+      }
+
+      .flip-card-front img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important;
+        display: block;
       }
 
       .flip-card-back {
@@ -503,8 +512,7 @@
                   <img
                     src="/assets/images/elys workstation/flip-image-1.png"
                     alt="Avatar"
-                    class="w-[335px]"
-                    style="height: 488px"
+                    class="w-full h-full object-cover"
                   />
                 </div>
                 <div
@@ -546,8 +554,7 @@
                   <img
                     src="/assets/images/elys workstation/flip-image-2.png"
                     alt="Avatar"
-                    class="w-[335px]"
-                    style="height: 488px"
+                    class="w-full h-full object-cover"
                   />
                 </div>
                 <div
@@ -604,8 +611,7 @@
                   <img
                     src="/assets/images/elys workstation/flip-image-3.png"
                     alt="Avatar"
-                    class="w-[335px]"
-                    style="height: 488px"
+                    class="w-full h-full object-cover"
                   />
                 </div>
                 <div
@@ -877,13 +883,13 @@
 
     <section class="mt-5 md:mt-20">
       <div class="container mx-auto px-4 overflow-x-hidden">
-        <div class="flex flex-col md:flex-row items-center">
+        <div class="flex flex-col md:flex-row items-stretch">
           <!-- Text Content -->
           <div
             class="w-full md:w-1/2 flex justify-center md:justify-start px-0 md:px-5"
           >
             <div
-              class="bg-white p-6 md:p-10"
+              class="bg-white p-6 md:p-10 w-full h-full flex flex-col justify-center"
               data-aos="fade-right"
               data-aos-duration="1100"
             >
@@ -905,14 +911,14 @@
 
           <!-- Image -->
           <div
-            class="w-full md:w-1/2 mb-5 md:mb-0"
+            class="w-full md:w-1/2 mb-5 md:mb-0 flex"
             data-aos="fade-left"
             data-aos-duration="1100"
           >
             <img
               src="/assets/images/elys workstation/designed-to.png"
               alt=""
-              class="w-full h-auto object-contain"
+              class="w-full h-[250px] sm:h-[300px] md:h-full object-cover"
             />
           </div>
         </div>
