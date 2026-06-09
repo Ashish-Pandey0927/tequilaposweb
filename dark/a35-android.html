@@ -28,6 +28,12 @@
       h1, h2 {
         line-height: 1.15 !important;
       }
+      .why-choose-grid > :nth-child(1) { order: 1; }
+      .why-choose-grid > :nth-child(2) { order: 2; }
+      .why-choose-grid > :nth-child(3) { order: 4; }
+      .why-choose-grid > :nth-child(4) { order: 3; }
+      .why-choose-grid > :nth-child(5) { order: 5; }
+      .why-choose-grid > :nth-child(6) { order: 6; }
     }
 
     /* Mobile view heading line-height fix */
@@ -908,7 +914,7 @@
         </div>
 
         <div
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch why-choose-grid"
         >
           <div class="">
             <img
